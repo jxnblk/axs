@@ -5,6 +5,8 @@ React component primitives built with
 [cxs](https://github.com/jxnblk/cxs)
 and inspired by
 [Basscss](http://basscss.com)
+and
+[jsxstyle](https://github.com/smyte/jsxstyle)
 
 ```sh
 npm i bocxs
@@ -156,5 +158,14 @@ const CustomLink = (props) => (
 
 export default withBocxs(CustomLink)
 ```
+
+## Related
+
+- [cxs](https://github.com/jxnblk/cxs)
+- [cxs-components](https://github.com/jxnblk/cxs-components)
+- [Basscss](http://basscss.com)
+- [jsxstyle](https://github.com/smyte/jsxstyle)
+- [glamor](https://github.com/smyte/jsxstyl://github.com/threepointone/glamor)
+- [open-color](https://yeun.github.io/open-color/)
 
 MIT License
