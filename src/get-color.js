@@ -1,4 +1,5 @@
 
+import openColor from 'open-color/open-color.json'
 const cap = str => str.charAt(0).toUpperCase() + str.slice(1)
 
 const strip = str => str
@@ -6,13 +7,40 @@ const strip = str => str
   .replace(/^border/, '')
   .toLowerCase()
 
-export const colors = {
-  white: '#fff',
-  black: '#000',
-  blue: '#07c',
-  green: '#0c7',
-  red: '#c70',
-}
+export const colors = Object.keys(openColor)
+  .map(key => {
+    const value = openColor[key]
+    if (typeof value === 'string') {
+      return {
+        key,
+        value
+      }
+    }
+
+    if (Array.isArray(value)) {
+      return [
+        {
+          key,
+          value: value[6]
+        },
+        ...value.map((v, i) => ({
+          key: key + i,
+          value: v
+        }))
+      ]
+    }
+  })
+  .reduce((a, color) => {
+    if (Array.isArray(color)) {
+      color.forEach(c => {
+        a[c.key] = c.value
+      })
+      return a
+    }
+
+    a[color.key] = color.value
+    return a
+  }, {})
 
 export const COLOR_REG = new RegExp('^(' + Object.keys(colors).join('|') + ')$')
 

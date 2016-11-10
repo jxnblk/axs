@@ -85,14 +85,6 @@ import {
 - `px0` - `px4` - padding left and right
 - `py0` - `py4` - padding left and right
 
-**WIP**
-
-- `white` - sets colors
-- `black` - sets colors
-- `blue` - sets colors
-- `red` - sets colors
-- `green` - sets colors
-
 ### Numbers
 
 - `w` - percentage width as a number from 0 - 1
@@ -103,6 +95,26 @@ import {
 ### Strings
 
 - `display` - sets display
+
+### Colors
+
+Includes all colors from [open-color](https://github.com/yeun/open-color)
+
+- `white`
+- `black`
+- `gray` - `gray0` - `gray9`
+- `red` - `red0` - `red9`
+- `pink` - `pink0` - `pink9`
+- `grape` - `grape0` - `grape9`
+- `violet` - `violet0` - `violet9`
+- `indigo` - `indigo0` - `indigo9`
+- `blue` - `blue0` - `blue9`
+- `cyan` - `cyan0` - `cyan9`
+- `teal` - `teal0` - `teal9`
+- `green` - `green0` - `green9`
+- `lime` - `lime0` - `lime9`
+- `yellow` - `yellow0` - `yellow9`
+- `orange` - `orange0` - `orange9`
 
 ### Borders
 
