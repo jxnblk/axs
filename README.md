@@ -18,8 +18,8 @@ import React from 'react'
 import { Box } from 'bocxs'
 
 const App = () => (
-  <Box p2 mb2 border>
-    <h1>Box with padding, margin bottom, and border</h1>
+  <Box p2 mb2 white bgBlue>
+    <h1>Box with padding, margin bottom, white text, and blue background</h1>
   </Box>
 )
 ```

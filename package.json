@@ -1,9 +1,10 @@
 {
   "name": "bocxs",
-  "version": "1.0.0-b1",
+  "version": "1.0.0-b3",
   "description": "React component primitives built with cxs and inspired by Basscss",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server"
   },
   "keywords": [],

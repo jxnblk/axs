@@ -5,7 +5,7 @@ import Box from './Box'
 const Flex = props => (
   <Box
     {...props}
-    display='inline-block'
+    display='flex'
   />
 )
 
