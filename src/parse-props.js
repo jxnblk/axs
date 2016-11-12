@@ -37,34 +37,40 @@ const parseProps = original => {
 
   const props = Object.keys(original)
     .map(key => {
+      const val = original[key]
+      const num = parseFloat(val)
+      const isNum = typeof num === 'number' && !isNaN(num)
       // if (original[key] === true) {}
       // change to reducer function?
-      if (MARGIN_REG.test(key)) {
+      if (val && MARGIN_REG.test(key)) {
         styles.push(parseMargin(key))
-      } else if (PADDING_REG.test(key)) {
+      } else if (val && PADDING_REG.test(key)) {
         styles.push(parsePadding(key))
 
       // if (isNum(original[key]))
-      } else if (WREG.test(key)) {
-        styles.push(getWidth()(original[key]))
-      } else if (SWREG.test(key)) {
-        styles.push(getWidth(breakpoints[0])(original[key]))
-      } else if (MWREG.test(key)) {
-        styles.push(getWidth(breakpoints[1])(original[key]))
-      } else if (LWREG.test(key)) {
-        styles.push(getWidth(breakpoints[2])(original[key]))
+      } else if (isNum && WREG.test(key)) {
+        styles.push(getWidth()(val))
+      } else if (isNum && SWREG.test(key)) {
+        styles.push(getWidth(breakpoints[0])(val))
+      } else if (isNum && MWREG.test(key)) {
+        styles.push(getWidth(breakpoints[1])(val))
+      } else if (isNum && LWREG.test(key)) {
+        styles.push(getWidth(breakpoints[2])(val))
 
-      } else if (DISPLAY_REG.test(key)) {
-        styles.push(getDisplay(original[key]))
-      } else if (BORDER_REG.test(key)) {
-        styles.push(getBorder(original[key]))
+      } else if (val && DISPLAY_REG.test(key)) {
+        styles.push(getDisplay(val))
+      } else if (val && BORDER_REG.test(key)) {
+        styles.push(getBorder(val))
 
-      } else if (COLOR_REG.test(key)) {
+      } else if (val && COLOR_REG.test(key)) {
         styles.push(getColor(key))
-      } else if (BG_REG.test(key)) {
+      } else if (val && BG_REG.test(key)) {
         styles.push(getBgColor(key))
-      } else if (BORDER_COLOR_REG.test(key)) {
+      } else if (val && BORDER_COLOR_REG.test(key)) {
         styles.push(getBorderColor(key))
+
+      } else if (key === 'css') {
+        styles.push(val)
 
       // Pass non-style props on
       } else {
