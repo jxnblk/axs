@@ -13,7 +13,7 @@ const config = {
   colors: {
     black: '#000',
     white: '#fff',
-    blue: 'navy'
+    // blue: 'navy'
   }
 }
 

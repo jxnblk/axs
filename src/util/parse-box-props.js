@@ -52,6 +52,9 @@ const parseBoxProps = config => original => {
 
       const color = isColor(config)(key)
 
+      const margin = parseMargin(config)
+      const padding = parsePadding(config)
+
       if (key === 'css') {
         styles.push(val)
       } else if (isNum) {
@@ -68,9 +71,9 @@ const parseBoxProps = config => original => {
           return key
         }
       } else if (MARGIN_REG.test(key)) {
-        styles.push(parseMargin(key, val))
+        styles.push(margin(key, val))
       } else if (PADDING_REG.test(key)) {
-        styles.push(parsePadding(key, val))
+        styles.push(padding(key, val))
       } else if (val && DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
       } else if (BORDER_REG.test(key)) {

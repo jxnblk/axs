@@ -34,6 +34,8 @@ const parseTextProps = config => original => {
     { margin: 0 }
   ]
 
+  const margin = parseMargin(config)
+
   const props = Object.keys(original)
     .map(key => {
       const val = original[key]
@@ -52,7 +54,7 @@ const parseTextProps = config => original => {
         if (TYPE_REG.test(key)) {
           styles.push(getTypeStyles(key, val))
         } else if (MARGIN_REG.test(key)) {
-          styles.push(parseMargin(key, val))
+          styles.push(margin(key, val))
         } else if (COLOR_REG.test(key)) {
           styles.push(getColor(config)(key, val))
         } else if (BG_REG.test(key)) {
