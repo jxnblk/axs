@@ -31,6 +31,10 @@ import {
   BORDER_REG,
   getBorder
 } from './get-border'
+import {
+  RADIUS_REG,
+  getRadii
+} from './get-radii'
 
 const parseProps = original => {
   const styles = []
@@ -40,7 +44,13 @@ const parseProps = original => {
       const val = original[key]
       const num = parseFloat(val)
       const isNum = typeof num === 'number' && !isNaN(num)
-      // if (original[key] === true) {}
+
+      if (isNum) {
+        // Handle number values
+      } else if (val) {
+        // Handle truthy values
+      }
+
       // change to reducer function?
       if (val && MARGIN_REG.test(key)) {
         styles.push(parseMargin(key))
@@ -59,7 +69,7 @@ const parseProps = original => {
 
       } else if (val && DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
-      } else if (val && BORDER_REG.test(key)) {
+      } else if (BORDER_REG.test(key)) {
         styles.push(getBorder(val))
 
       } else if (val && COLOR_REG.test(key)) {
@@ -68,6 +78,9 @@ const parseProps = original => {
         styles.push(getBgColor(key))
       } else if (val && BORDER_COLOR_REG.test(key)) {
         styles.push(getBorderColor(key))
+
+      } else if (RADIUS_REG.test(key)) {
+        styles.push(getRadii(val))
 
       } else if (key === 'css') {
         styles.push(val)

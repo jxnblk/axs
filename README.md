@@ -62,6 +62,8 @@ import {
 
 ## Props
 
+- `css` - style object for cxs - will be converted into a unique className and inject styles into the head of the document
+
 ### Booleans
 - `m0` - `m4` - margin from a scale from 0 to 4
 - `mt0` - `mt4` - margin top
@@ -122,6 +124,10 @@ Includes all colors from [open-color](https://github.com/yeun/open-color)
 
 - `border` - one of `true`, `false`, Number, `'top'`, `'right'`, `'bottom'`, or `'left'`
 - `borderColor`
+
+### Border Radii
+
+- `rounded` - one of `true`, `false`, `'top'`, `'right'`, `'bottom'`, or `'left'`
 
 ## Server Side Rendering
 

@@ -1,6 +1,6 @@
 {
   "name": "bocxs",
-  "version": "1.0.0-b4",
+  "version": "1.0.0-b5",
   "description": "React component primitives built with cxs and inspired by Basscss",
   "main": "dist/index.js",
   "scripts": {
