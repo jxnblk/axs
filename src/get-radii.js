@@ -1,7 +1,7 @@
 
 export const RADIUS_REG = /^rounded$/
 
-const R = 4
+const R = 2
 const sh = (...args) => args
   .map(n => n === 0 ? 0 : n + 'px')
   .join(' ')
