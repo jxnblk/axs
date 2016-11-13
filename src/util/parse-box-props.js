@@ -1,7 +1,7 @@
 
 import cxs from 'cxs'
 import classnames from 'classnames'
-import defaultConfig, { breakpoints } from './default-config'
+import defaultConfig from './default-config'
 import {
   MARGIN_REG,
   PADDING_REG,
@@ -19,7 +19,6 @@ import {
   DISPLAY_REG,
   getDisplay
 } from './display'
-
 import {
   COLOR_REG,
   BG_REG,
@@ -29,7 +28,6 @@ import {
   getBgColor,
   getBorderColor
 } from './color'
-
 import {
   BORDER_REG,
   getBorder
@@ -41,6 +39,10 @@ import {
 
 const parseBoxProps = config => original => {
   const styles = []
+  const breakpoints = {
+    ...defaultConfig.breakpoints,
+    ...config.breakpoints
+  }
 
   const props = Object.keys(original)
     .map(key => {

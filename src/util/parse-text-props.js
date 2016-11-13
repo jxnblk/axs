@@ -1,7 +1,7 @@
 
 import cxs from 'cxs'
 import classnames from 'classnames'
-import { breakpoints } from './default-config'
+import defaultConfig from './default-config'
 import {
   MARGIN_REG,
   parseMargin,
@@ -26,6 +26,10 @@ import {
 
 // Pass context config
 const parseTextProps = config => original => {
+  const breakpoints = {
+    ...defaultConfig.breakpoints,
+    ...config.breakpoints
+  }
   const styles = [
     { margin: 0 }
   ]
@@ -35,13 +39,13 @@ const parseTextProps = config => original => {
       const val = original[key]
 
       if (F_REG.test(key)) {
-        styles.push(getFontSize()(key, val))
+        styles.push(getFontSize(config)(key, val))
       } else if (SF_REG.test(key)) {
-        styles.push(getFontSize(breakpoints[0])(key, val))
+        styles.push(getFontSize(config)(breakpoints[0])(key, val))
       } else if (MF_REG.test(key)) {
-        styles.push(getFontSize(breakpoints[1])(key, val))
+        styles.push(getFontSize(config)(breakpoints[1])(key, val))
       } else if (LF_REG.test(key)) {
-        styles.push(getFontSize(breakpoints[2])(key, val))
+        styles.push(getFontSize(config)(breakpoints[2])(key, val))
       } else if (val) {
         // Handle truthy values
         // - bold, center, caps

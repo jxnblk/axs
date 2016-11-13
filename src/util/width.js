@@ -1,7 +1,4 @@
 
-// Replace with configurable function
-import { breakpoints } from './default-config'
-
 export const WREG = /^width$/
 export const SWREG = /^sm$/
 export const MWREG = /^md$/

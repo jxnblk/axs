@@ -163,6 +163,19 @@ The following props are available only on Box components.
 
 ## Configuration
 
+```js
+const config = {
+  breakpoints: [
+    '(min-width:40em)',
+    '(min-width:48em)',
+    '(min-width:56em)'
+  ].map(w => `@media screen and ${w}`),
+  typeScale: [
+    72, 48, 36, 24, 18, 16, 12
+  ]
+}
+```
+
 - context
 - ThemeProvider
 
