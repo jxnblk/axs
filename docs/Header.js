@@ -1,19 +1,15 @@
 
 import React from 'react'
-import { Base, Box, Text } from '../src'
+import { Box, Heading, Text } from '../src'
 
 export default () => (
-  <Base is='header'
-    px3 py4 yellow bgBlue>
-    <Text is='h1'
-      size2
-      sm1
-      md0>
+  <Box is='header' px3 py4 bgBlue>
+    <Heading size2 sm1 md0>
         Axs
-    </Text>
+    </Heading>
     <Text is='p' size={3}>
       React UI component primitive toolkit
-  </Text>
-  </Base>
+    </Text>
+  </Box>
 )
 

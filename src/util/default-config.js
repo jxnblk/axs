@@ -27,11 +27,12 @@ export const createColors = colors => Object.keys(colors)
     }
 
     if (Array.isArray(value)) {
-      const mid = Math.ceil(value.length / 2)
+      const mid = Math.ceil(value.length / 2) - 1
+      const val = value[6] || valeu[mid]
       return [
         {
           key,
-          value: value[mid]
+          value: val
         },
         ...value.map((v, i) => ({
           key: key + i,

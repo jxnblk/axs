@@ -2,7 +2,12 @@
 import React from 'react'
 import withBox from './withBox'
 
-const Box = withBox('div')
+const Box = ({
+  is = 'div',
+  ...props
+}) => (
+  React.createElement(is, props)
+)
 
-export default Box
+export default withBox(Box)
 

@@ -18,7 +18,7 @@ import { Box, Text } from 'axs'
 
 const App = () => (
   <Box p2 mb2 white bgBlue>
-    <Text is='h1' size={2}>
+    <Text is='h1' size2>
       Box with padding, margin bottom, white text, and blue background
     </Text>
   </Box>
@@ -28,7 +28,6 @@ const App = () => (
 ```js
 // Primitives
 import {
-  Base,
   Box,
   Text,
 } from 'axs'
@@ -36,10 +35,7 @@ import {
 
 ```js
 <Box>Generic Axs div</Box>
-```
-
-```js
-<Base is='button'>Base box element</Base>
+<Box is='button'>Box with custom tag</Box>
 ```
 
 ```js
@@ -52,6 +48,7 @@ import {
 The following props are available on both Box and Text components.
 
 - `css` - style object for cxs - will be converted into a unique className and inject styles into the head of the document. Supports pseudoclasses, media queries, keyframes, and nesting.
+- `is` - sets a custom tag or component
 
 #### Margin
 
@@ -161,10 +158,39 @@ The following props are available only on Box components.
 - `justify` - justifies text
 - `caps` - sets text-transform uppercase and adds tracking (letter-spacing)
 
+## Component Primitives
+
+In addition to Box and Text, the following components can be imported.
+
+### Text Components
+
+- Heading - h1–h6 elements - use the `level` prop to set the headings's rank
+
+### Box Components
+
+- Block - Box with display block
+- InlineBlock - Box with display inline-block
+- Inline - Box with display inline
+- Flex - Box with display inline
+
 ## Configuration
 
+Custom configurations can be set with React context
+
 ```js
-const config = {
+class App extends React.Component {
+  getChildContext () {
+    return {
+      axs: axsConfig
+    }
+  }
+}
+
+App.childContextTypes = {
+  axs: React.PropTypes.object
+}
+
+const axsConfig = {
   breakpoints: [
     '(min-width:40em)',
     '(min-width:48em)',
@@ -179,9 +205,6 @@ const config = {
   radius: 3
 }
 ```
-
-- context
-- ThemeProvider
 
 ## Server Side Rendering
 
