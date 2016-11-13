@@ -1,25 +1,26 @@
 
-# Bocxs
+# axs
 
-React component primitives built with
-[cxs](https://github.com/jxnblk/cxs)
-and inspired by
-[Basscss](http://basscss.com)
-and
+React UI component primitive toolkit
+
+Built with [cxs](https://github.com/jxnblk/cxs)
+and inspired by [Basscss](http://basscss.com) and
 [jsxstyle](https://github.com/smyte/jsxstyle)
 
 ```sh
-npm i bocxs
+npm i axs
 ```
 
 ```js
 // Basic example
 import React from 'react'
-import { Box } from 'bocxs'
+import { Box, Text } from 'axs'
 
 const App = () => (
   <Box p2 mb2 white bgBlue>
-    <h1>Box with padding, margin bottom, white text, and blue background</h1>
+    <Text is='h1' size={2}>
+      Box with padding, margin bottom, white text, and blue background
+    </Text>
   </Box>
 )
 ```
@@ -33,7 +34,7 @@ import {
   InlineBlock,
   Inline,
   Flex
-} from 'bocxs'
+} from 'axs'
 ```
 
 ```js
@@ -156,13 +157,13 @@ Bocxs style props can be added to any component using the higher order component
 ```js
 import React from 'react'
 import { Link } from 'react-router'
-import { withBocxs } from 'bocxs'
+import { withBox } from 'axs'
 
 const CustomLink = (props) => (
   <Link {...props} />
 )
 
-export default withBocxs(CustomLink)
+export default withBox(CustomLink)
 ```
 
 ## Related

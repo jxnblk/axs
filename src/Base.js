@@ -1,6 +1,6 @@
 
 import React from 'react'
-import withBocxs from './withBocxs'
+import withBox from './withBox'
 
 const Base = ({
   is = 'div',
@@ -9,5 +9,5 @@ const Base = ({
   React.createElement(is, props)
 )
 
-export default withBocxs(Base)
+export default withBox(Base)
 

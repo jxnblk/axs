@@ -1,8 +1,8 @@
 
 import React from 'react'
-import withBocxs from './withBocxs'
+import withBox from './withBox'
 
-const Box = withBocxs('div')
+const Box = withBox('div')
 
 export default Box
 

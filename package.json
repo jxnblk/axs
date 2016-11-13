@@ -1,13 +1,19 @@
 {
-  "name": "bocxs",
-  "version": "1.0.0-b5",
-  "description": "React component primitives built with cxs and inspired by Basscss",
+  "name": "axs",
+  "version": "1.0.0-b0",
+  "description": "React UI component primitive toolkit",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "css",
+    "css-in-js"
+  ],
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {

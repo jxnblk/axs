@@ -1,9 +1,5 @@
 
-export const breakpoints = [
-  '(min-width:40em)',
-  '(min-width:52em)',
-  '(min-width:64em)'
-].map(mw => `@media screen and ${mw}`)
+import breakpoints from './breakpoints'
 
 export const WREG = /^w$/
 export const SWREG = /^sw$/

@@ -1,11 +1,18 @@
 
 import React from 'react'
-import { Base, Box } from '../src'
+import { Base, Box, Text } from '../src'
 
 export default () => (
-  <Base is='header' px3 py4 cyan2 bgBlue9>
-    <h1>Bocxs</h1>
-    <p>React component primitives built with cxs and inspired by Basscss and jsxstyle</p>
+  <Base is='header' px3 py4 white bgBlue>
+    <Text is='h1'
+      size2
+      sm1
+      md0>
+        Axs
+    </Text>
+    <Text is='p' size={3}>
+      React UI component primitive toolkit
+  </Text>
   </Base>
 )
 

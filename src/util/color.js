@@ -1,5 +1,6 @@
 
 import openColor from 'open-color/open-color.json'
+
 const cap = str => str.charAt(0).toUpperCase() + str.slice(1)
 
 const strip = str => str
@@ -7,7 +8,7 @@ const strip = str => str
   .replace(/^border/, '')
   .toLowerCase()
 
-export const colors = Object.keys(openColor)
+export const createColors = colors => Object.keys(colors)
   .map(key => {
     const value = openColor[key]
     if (typeof value === 'string') {
@@ -18,10 +19,11 @@ export const colors = Object.keys(openColor)
     }
 
     if (Array.isArray(value)) {
+      const mid = Math.ceil(value.length / 2)
       return [
         {
           key,
-          value: value[6]
+          value: value[mid]
         },
         ...value.map((v, i) => ({
           key: key + i,
@@ -42,22 +44,24 @@ export const colors = Object.keys(openColor)
     return a
   }, {})
 
-export const COLOR_REG = new RegExp('^(' + Object.keys(colors).join('|') + ')$')
+export const colors = createColors(openColor)
+
+export const COLOR_REG = new RegExp('^(color|' + Object.keys(colors).join('|') + ')$')
 
 export const BG_REG = new RegExp(
-`^(${Object.keys(colors)
+`^(bg|${Object.keys(colors)
   .map(c => 'bg' + cap(c))
   .join('|')})$`
 )
 
 export const BORDER_COLOR_REG = new RegExp(
-`^(${Object.keys(colors)
+`^(borderColor|${Object.keys(colors)
   .map(c => 'border' + cap(c))
   .join('|')})$`
 )
 
-export const getColorProp = prop => key => ({
-  [prop]: colors[strip(key)]
+export const getColorProp = prop => (key, val) => ({
+  [prop]: colors[strip(key)] || val
 })
 
 export const getColor = getColorProp('color')

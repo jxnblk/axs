@@ -1,6 +1,7 @@
 
-import cxs from 'cxs/optimized'
+import cxs from 'cxs'
 import classnames from 'classnames'
+import breakpoints from './breakpoints'
 import {
   MARGIN_REG,
   PADDING_REG,
@@ -12,13 +13,12 @@ import {
   SWREG,
   MWREG,
   LWREG,
-  breakpoints,
   getWidth
-} from './get-width'
+} from './width'
 import {
   DISPLAY_REG,
   getDisplay
-} from './get-display'
+} from './display'
 import {
   COLOR_REG,
   BG_REG,
@@ -26,17 +26,17 @@ import {
   getColor,
   getBgColor,
   getBorderColor
-} from './get-color'
+} from './color'
 import {
   BORDER_REG,
   getBorder
-} from './get-border'
+} from './border'
 import {
   RADIUS_REG,
   getRadii
-} from './get-radii'
+} from './radii'
 
-const parseProps = original => {
+const parseBoxProps = original => {
   const styles = []
 
   const props = Object.keys(original)
@@ -53,9 +53,9 @@ const parseProps = original => {
 
       // change to reducer function?
       if (val && MARGIN_REG.test(key)) {
-        styles.push(parseMargin(key))
+        styles.push(parseMargin(key, val))
       } else if (val && PADDING_REG.test(key)) {
-        styles.push(parsePadding(key))
+        styles.push(parsePadding(key, val))
 
       // if (isNum(original[key]))
       } else if (isNum && WREG.test(key)) {
@@ -73,11 +73,11 @@ const parseProps = original => {
         styles.push(getBorder(val))
 
       } else if (val && COLOR_REG.test(key)) {
-        styles.push(getColor(key))
+        styles.push(getColor(key, val))
       } else if (val && BG_REG.test(key)) {
-        styles.push(getBgColor(key))
+        styles.push(getBgColor(key, val))
       } else if (val && BORDER_COLOR_REG.test(key)) {
-        styles.push(getBorderColor(key))
+        styles.push(getBorderColor(key, val))
 
       } else if (RADIUS_REG.test(key)) {
         styles.push(getRadii(val))
@@ -105,5 +105,5 @@ const parseProps = original => {
   return { props, className }
 }
 
-export default parseProps
+export default parseBoxProps
 
