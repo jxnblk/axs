@@ -1,10 +1,11 @@
 
-import breakpoints from './breakpoints'
+// Replace with configurable function
+import { breakpoints } from './default-config'
 
-export const WREG = /^w$/
-export const SWREG = /^sw$/
-export const MWREG = /^mw$/
-export const LWREG = /^lw$/
+export const WREG = /^width$/
+export const SWREG = /^sm$/
+export const MWREG = /^md$/
+export const LWREG = /^lg$/
 
 export const getWidth = breakpoint => val => {
   const width = (val * 100) + '%'

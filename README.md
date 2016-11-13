@@ -30,42 +30,34 @@ const App = () => (
 import {
   Base,
   Box,
-  Block,
-  InlineBlock,
-  Inline,
-  Flex
+  Text,
 } from 'axs'
 ```
 
 ```js
-<Block>Display block div</Block>
+<Box>Generic Axs div</Box>
 ```
 
 ```js
-<InlineBlock>Display inline block div</InlineBlock>
+<Base is='button'>Base box element</Base>
 ```
 
 ```js
-<Inline>Display inline div</Inline>
-```
-
-```js
-<Flex>Display flex div</Flex>
-```
-
-```js
-<Box>Generic Bocxs div</Box>
-```
-
-```js
-<Base is='button'>Base element</Base>
+<Text>Paragraph element</Text>
+<Text is='h1'>h1 element</Text>
 ```
 
 ## Props
 
-- `css` - style object for cxs - will be converted into a unique className and inject styles into the head of the document
+The following props are available on both Box and Text components.
 
-### Booleans
+- `css` - style object for cxs - will be converted into a unique className and inject styles into the head of the document. Supports pseudoclasses, media queries, keyframes, and nesting.
+
+#### Margin
+
+Sets margin based on the spacing scale (0–4).
+Scalar props can also be set using numbers – e.g. `m={2}`.
+
 - `m0` - `m4` - margin from a scale from 0 to 4
 - `mt0` - `mt4` - margin top
 - `mr0` - `mr4` - margin right
@@ -82,26 +74,7 @@ import {
 - `mx-1` - `mx-4` - negative margin left and right
 - `my-1` - `my-4` - negative margin left and right
 
-- `p0` - `p4` - padding from a scale from 0 to 4
-- `pt0` - `pt4` - padding top
-- `pr0` - `pr4` - padding right
-- `pb0` - `pb4` - padding bottom
-- `pl0` - `pl4` - padding left
-- `px0` - `px4` - padding left and right
-- `py0` - `py4` - padding left and right
-
-### Numbers
-
-- `w` - percentage width as a number from 0 - 1
-- `sw` - percentage width as a number from 0 - 1 from the small breakpoint and up
-- `mw` - percentage width as a number from 0 - 1 from the medium breakpoint and up
-- `lw` - percentage width as a number from 0 - 1 from the large breakpoint and up
-
-### Strings
-
-- `display` - sets display
-
-### Colors
+#### Colors
 
 Includes all colors from [open-color](https://github.com/yeun/open-color)
 
@@ -120,15 +93,78 @@ Includes all colors from [open-color](https://github.com/yeun/open-color)
 - `lime` - `lime0` - `lime9`
 - `yellow` - `yellow0` - `yellow9`
 - `orange` - `orange0` - `orange9`
+- `color` - pass either a key to one of the colors or a custom value
 
-### Borders
+#### Background Colors
+
+- `bgWhite`
+- `bgBlack`
+- `bgGray` - `bgGray0` - `bgGray9`
+- `bgRed` - `bgRed0` - `bgRed9`
+- `bgPink` - `bgPink0` - `bgPink9`
+- `bgGrape` - `bgGrape0` - `bgGrape9`
+- `bgViolet` - `bgViolet0` - `bgViolet9`
+- `bgIndigo` - `bgIndigo0` - `bgIndigo9`
+- `bgBlue` - `bgBlue0` - `bgBlue9`
+- `bgCyan` - `bgCyan0` - `bgCyan9`
+- `bgTeal` - `bgTeal0` - `bgTeal9`
+- `bgGreen` - `bgGreen0` - `bgGreen9`
+- `bgLime` - `bgLime0` - `bgLime9`
+- `bgYellow` - `bgYellow0` - `bgYellow9`
+- `bgOrange` - `bgOrange0` - `bgOrange9`
+- `bg` - pass either a key to one of the colors or a custom value
+
+### Box-specific Props
+
+The following props are available only on Box components.
+
+#### Padding
+
+- `p0` - `p4` - padding from a scale from 0 to 4
+- `pt0` - `pt4` - padding top
+- `pr0` - `pr4` - padding right
+- `pb0` - `pb4` - padding bottom
+- `pl0` - `pl4` - padding left
+- `px0` - `px4` - padding left and right
+- `py0` - `py4` - padding left and right
+
+#### Width
+
+- `width` - percentage width as a number from 0 - 1
+- `sm` - percentage width as a number from 0 - 1 from the small breakpoint and up
+- `md` - percentage width as a number from 0 - 1 from the medium breakpoint and up
+- `lg` - percentage width as a number from 0 - 1 from the large breakpoint and up
+
+#### Display
+
+- `display` - sets display
+
+#### Borders
 
 - `border` - one of `true`, `false`, Number, `'top'`, `'right'`, `'bottom'`, or `'left'`
 - `borderColor`
 
-### Border Radii
+#### Border Radii
 
 - `rounded` - one of `true`, `false`, `'top'`, `'right'`, `'bottom'`, or `'left'`
+
+### Text-Specific Props
+
+- `size0` – `size6` - sets font size based on the typographic scale (0–6)
+- `sm0` – `sm6` - sets font size for the small breakpoint and up
+- `md0` – `md6` - sets font size for the medium breakpoint and up
+- `lg0` – `lg6` - sets font size for the large breakpoint and up
+- `bold` - sets font weight bold
+- `center` - center aligns text
+- `left` - left align
+- `right` - right align
+- `justify` - justifies text
+- `caps` - sets text-transform uppercase and adds tracking (letter-spacing)
+
+## Configuration
+
+- context
+- ThemeProvider
 
 ## Server Side Rendering
 
@@ -152,18 +188,16 @@ module.exports = (req, res) => {
 
 ## Higher Order Component
 
-Bocxs style props can be added to any component using the higher order component.
+Axs style props can be added to any component using the higher order components.
 
 ```js
 import React from 'react'
 import { Link } from 'react-router'
-import { withBox } from 'axs'
+import { withBox, withText } from 'axs'
 
-const CustomLink = (props) => (
-  <Link {...props} />
-)
+const CustomLink = withText(Link)
+const CustomBox = withBox('div')
 
-export default withBox(CustomLink)
 ```
 
 ## Related

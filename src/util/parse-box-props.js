@@ -1,7 +1,7 @@
 
 import cxs from 'cxs'
 import classnames from 'classnames'
-import breakpoints from './breakpoints'
+import defaultConfig, { breakpoints } from './default-config'
 import {
   MARGIN_REG,
   PADDING_REG,
@@ -19,14 +19,17 @@ import {
   DISPLAY_REG,
   getDisplay
 } from './display'
+
 import {
   COLOR_REG,
   BG_REG,
   BORDER_COLOR_REG,
+  isColor,
   getColor,
   getBgColor,
   getBorderColor
 } from './color'
+
 import {
   BORDER_REG,
   getBorder
@@ -36,7 +39,7 @@ import {
   getRadii
 } from './radii'
 
-const parseBoxProps = original => {
+const parseBoxProps = config => original => {
   const styles = []
 
   const props = Object.keys(original)
@@ -45,51 +48,42 @@ const parseBoxProps = original => {
       const num = parseFloat(val)
       const isNum = typeof num === 'number' && !isNaN(num)
 
-      if (isNum) {
+      const color = isColor(config)(key)
+
+      if (key === 'css') {
+        styles.push(val)
+      } else if (isNum) {
         // Handle number values
-      } else if (val) {
-        // Handle truthy values
-      }
-
-      // change to reducer function?
-      if (val && MARGIN_REG.test(key)) {
+        if (WREG.test(key)) {
+          styles.push(getWidth()(val))
+        } else if (SWREG.test(key)) {
+          styles.push(getWidth(breakpoints[0])(val))
+        } else if (MWREG.test(key)) {
+          styles.push(getWidth(breakpoints[1])(val))
+        } else if (LWREG.test(key)) {
+          styles.push(getWidth(breakpoints[2])(val))
+        } else {
+          return key
+        }
+      } else if (MARGIN_REG.test(key)) {
         styles.push(parseMargin(key, val))
-      } else if (val && PADDING_REG.test(key)) {
+      } else if (PADDING_REG.test(key)) {
         styles.push(parsePadding(key, val))
-
-      // if (isNum(original[key]))
-      } else if (isNum && WREG.test(key)) {
-        styles.push(getWidth()(val))
-      } else if (isNum && SWREG.test(key)) {
-        styles.push(getWidth(breakpoints[0])(val))
-      } else if (isNum && MWREG.test(key)) {
-        styles.push(getWidth(breakpoints[1])(val))
-      } else if (isNum && LWREG.test(key)) {
-        styles.push(getWidth(breakpoints[2])(val))
-
       } else if (val && DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
       } else if (BORDER_REG.test(key)) {
         styles.push(getBorder(val))
-
-      } else if (val && COLOR_REG.test(key)) {
-        styles.push(getColor(key, val))
-      } else if (val && BG_REG.test(key)) {
-        styles.push(getBgColor(key, val))
-      } else if (val && BORDER_COLOR_REG.test(key)) {
-        styles.push(getBorderColor(key, val))
-
       } else if (RADIUS_REG.test(key)) {
         styles.push(getRadii(val))
-
-      } else if (key === 'css') {
-        styles.push(val)
-
-      // Pass non-style props on
+      } else if (color && BG_REG.test(key)) {
+        styles.push(getBgColor(config)(key, val))
+      } else if (color && BORDER_COLOR_REG.test(key)) {
+        styles.push(getBorderColor(config)(key, val))
+      } else if (color || COLOR_REG.test(key)) {
+        styles.push(getColor(config)(key, val))
       } else {
         return key
       }
-      return null
     }).reduce((a, key) => {
       if (key) {
         a[key] = original[key]

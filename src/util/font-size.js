@@ -1,18 +1,6 @@
 
-import breakpoints from './breakpoints'
-
-// Move to config module
-const typeScale = [
-  64,
-  48,
-  32,
-  24,
-  16,
-  14,
-  12
-]
-
-// size={2} size1 sm1 md0 sm={1} md={0}
+// Replace with configurable function
+import { breakpoints, typeScale } from './default-config'
 
 export const F_REG = /^(size|size\d)$/
 export const SF_REG = /^(sm|sm\d)$/

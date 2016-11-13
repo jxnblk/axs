@@ -1,8 +1,9 @@
 
+// Replace with configurable function
+import { scale } from './default-config'
+
 export const MARGIN_REG = /^m[a-z]?-?\d$/
 export const PADDING_REG = /^p[a-z]?\d$/
-
-const scale = [ 0, 8, 16, 32, 64 ]
 
 const getScale = n => {
   const multiplier = isNeg(n) ? -1 : 1

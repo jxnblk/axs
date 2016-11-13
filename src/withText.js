@@ -3,8 +3,8 @@ import React from 'react'
 import parseTextProps from './util/parse-text-props'
 
 const withText = Comp => {
-  const TextComponent = originalProps => {
-    const { props, className } = parseTextProps(originalProps)
+  const TextComponent = (originalProps, context) => {
+    const { props, className } = parseTextProps(context.axs)(originalProps)
 
     return (
       <Comp
@@ -12,6 +12,10 @@ const withText = Comp => {
         className={className}
       />
     )
+  }
+
+  TextComponent.contextTypes = {
+    axs: React.PropTypes.object
   }
 
   return TextComponent

@@ -1,6 +1,7 @@
 
 import cxs from 'cxs'
 import classnames from 'classnames'
+import { breakpoints } from './default-config'
 import {
   MARGIN_REG,
   parseMargin,
@@ -16,7 +17,6 @@ import {
   TYPE_REG,
   getTypeStyles
 } from './typography'
-import breakpoints from './breakpoints'
 import {
   COLOR_REG,
   BG_REG,
@@ -25,7 +25,7 @@ import {
 } from './color'
 
 // Pass context config
-const parseTextProps = original => {
+const parseTextProps = config => original => {
   const styles = [
     { margin: 0 }
   ]
@@ -50,9 +50,9 @@ const parseTextProps = original => {
         } else if (MARGIN_REG.test(key)) {
           styles.push(parseMargin(key, val))
         } else if (COLOR_REG.test(key)) {
-          styles.push(getColor(key, val))
+          styles.push(getColor(config)(key, val))
         } else if (BG_REG.test(key)) {
-          styles.push(getBgColor(key, val))
+          styles.push(getBgColor(config)(key, val))
         } else if (key === 'css') {
           styles.push(val)
         } else {
