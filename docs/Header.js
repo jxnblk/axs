@@ -3,7 +3,8 @@ import React from 'react'
 import { Base, Box, Text } from '../src'
 
 export default () => (
-  <Base is='header' px3 py4 yellow bgBlue>
+  <Base is='header'
+    px3 py4 yellow bgBlue>
     <Text is='h1'
       size2
       sm1

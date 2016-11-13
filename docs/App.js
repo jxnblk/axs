@@ -10,6 +10,7 @@ const App = () => (
 )
 
 const config = {
+  // radius: 20,
   colors: {
     black: '#000',
     white: '#fff',

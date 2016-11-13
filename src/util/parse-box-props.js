@@ -79,7 +79,7 @@ const parseBoxProps = config => original => {
       } else if (BORDER_REG.test(key)) {
         styles.push(getBorder(val))
       } else if (RADIUS_REG.test(key)) {
-        styles.push(getRadii(val))
+        styles.push(getRadii(config.radius)(val))
       } else if (color && BG_REG.test(key)) {
         styles.push(getBgColor(config)(key, val))
       } else if (color && BORDER_COLOR_REG.test(key)) {
