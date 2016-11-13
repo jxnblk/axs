@@ -7,6 +7,7 @@ import Block from './Block'
 import Inline from './Inline'
 import InlineBlock from './InlineBlock'
 import Flex from './Flex'
+import { colors } from './get-color'
 
 export { default as cxs } from 'cxs'
 export { default as withBocxs } from './withBocxs'
@@ -16,6 +17,7 @@ export { default as Block } from './Block'
 export { default as Inline } from './Inline'
 export { default as InlineBlock } from './InlineBlock'
 export { default as Flex } from './Flex'
+export { colors } from './get-color'
 
 export default {
   cxs,
@@ -25,6 +27,7 @@ export default {
   Block,
   Inline,
   InlineBlock,
-  Flex
+  Flex,
+  colors
 }
 
