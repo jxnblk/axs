@@ -16,7 +16,7 @@ export const scale = [
 ]
 
 // Parses color object with nested arrays
-export const createColors = colors => Object.keys(colors)
+export const flattenColors = colors => Object.keys(colors)
   .map(key => {
     const value = openColor[key]
     if (typeof value === 'string') {
@@ -53,7 +53,7 @@ export const createColors = colors => Object.keys(colors)
     return a
   }, {})
 
-export const colors = createColors(openColor)
+export const colors = flattenColors(openColor)
 
 export const config = {
   breakpoints,
