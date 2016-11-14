@@ -9,8 +9,10 @@ import Footer from './Footer'
 
 const App = () => (
   <div>
+    {/*
     <Nav />
     <Header />
+    */}
     <Examples />
     <Footer />
   </div>

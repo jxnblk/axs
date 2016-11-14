@@ -1,8 +1,7 @@
 
 export const TYPE_REG = /^(center|left|right|justify|bold|caps)$/
 
-export const getTypeStyles = (key, val) => {
-
+export const getTypeStyles = config => (key, val) => {
   switch (key) {
     case 'center':
       return { textAlign: 'center' }
@@ -13,7 +12,7 @@ export const getTypeStyles = (key, val) => {
     case 'justify':
       return { textAlign: 'justify' }
     case 'bold':
-      return { fontWeight: 'bold' }
+      return { fontWeight: config.bold }
     case 'caps':
       return {
         textTransform: 'uppercase',

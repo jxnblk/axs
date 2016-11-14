@@ -1,7 +1,9 @@
 
-# axs
+# Axs
 
-React UI component primitive toolkit
+~~React UI component primitive toolkit~~
+
+Responsive typography and layout system for React
 
 Built with [cxs](https://github.com/jxnblk/cxs)
 and inspired by [Basscss](http://basscss.com) and
@@ -28,17 +30,36 @@ const App = () => (
 ```
 
 ```js
-<Box>Generic Axs div</Box>
-<Box is='button'>Box with custom tag</Box>
+<Box>Generic div</Box>
+<Text>Paragraph element</Text>
 ```
 
+The rendered element can be changed with the `is` prop.
+
 ```js
-<Text>Paragraph element</Text>
+<Box is='button'>Box with custom tag</Box>
 <Text is='h1'>h1 element</Text>
+```
+
+Control padding, margin, color and other styles with shorthand styling props.
+
+```js
+<Box p2 white bgBlue>
+  <Text bold>Box</Text>
+</Box>
+```
+
+Set responsive styles for margin, padding, font-size, and width with array values.
+
+```js
+<Box p={[2, null, 3, 4]}>
+  Padding changes across different breakpoints
+</Box>
 ```
 
 ## Features
 
+- Fully responsive styles
 - Handles many common styling concerns
 - Encapsulates styles with hashed classnames
 - Supports pseudoclasses, media queries, and keyframes
@@ -86,13 +107,13 @@ The following props are available only on Box components.
 
 #### Padding
 
-- `p0` - `p4` - padding from a scale from 0 to 4
-- `pt0` - `pt4` - padding top
-- `pr0` - `pr4` - padding right
-- `pb0` - `pb4` - padding bottom
-- `pl0` - `pl4` - padding left
-- `px0` - `px4` - padding left and right
-- `py0` - `py4` - padding left and right
+- `p`  - number or array) padding from a scale from 0 to 4
+- `pt` - number or array) padding top
+- `pr` - number or array) padding right
+- `pb` - number or array) padding bottom
+- `pl` - number or array) padding left
+- `px` - number or array) padding left and right
+- `py` - number or array) padding left and right
 
 #### Width
 
@@ -117,10 +138,7 @@ The following props are available only on Box components.
 
 ### Text-Specific Props
 
-- `size0` – `size6` - sets font size based on the typographic scale (0–6)
-- `sm0` – `sm6` - sets font size for the small breakpoint and up
-- `md0` – `md6` - sets font size for the medium breakpoint and up
-- `lg0` – `lg6` - sets font size for the large breakpoint and up
+- `size` - (number or array) sets font size based on the typographic scale (0–6)
 - `bold` - sets font weight bold
 - `center` - center aligns text
 - `left` - left align
@@ -178,6 +196,17 @@ In addition to Box and Text, the following components can be imported.
 - `<Inline />` - Box with display inline
 - `<Flex />` - Box with display flex
 
+## Higher Order Components
+
+Axs style props can be added to any component using the higher order components.
+
+```js
+import { Link } from 'react-router'
+import { withBox, withText } from 'axs'
+
+const SuperLink = withText(Link)
+```
+
 ## Configuration
 
 Custom configurations can be set with React context
@@ -207,7 +236,8 @@ const axsConfig = {
   scale: [
     0, 6, 12, 24, 48
   ],
-  radius: 3
+  radius: 3,
+  bold: 600
 }
 ```
 
@@ -225,29 +255,21 @@ module.exports = (req, res) => {
   const html = renderToString(React.createElement(App))
   const css = cxs.css
 
+  // Reset the cache for other page renders
+  cxs.clear()
+  cxs.sheet.flush()
+
   return `<!DOCTYPE html>
   <style>${css}</style>
   ${html}`
 }
 ```
 
-## Higher Order Component
-
-Axs style props can be added to any component using the higher order components.
-
-```js
-import React from 'react'
-import { Link } from 'react-router'
-import { withBox, withText } from 'axs'
-
-const CustomLink = withText(Link)
-const CustomBox = withBox('div')
-
-```
-
 ## Related
 
 - [cxs](https://github.com/jxnblk/cxs)
+- [Rebass](http://jxnblk.com/rebass)
+- [Reflexbox](http://jxnblk.com/reflexbox)
 - [cxs-components](https://github.com/jxnblk/cxs-components)
 - [Basscss](http://basscss.com)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
@@ -255,3 +277,10 @@ const CustomBox = withBox('div')
 - [open-color](https://yeun.github.io/open-color/)
 
 [MIT License](LICENSE.md)
+
+---
+
+## Notes
+
+- [ ] Add support for pixel values in width, padding, etc?
+

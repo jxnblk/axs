@@ -10,11 +10,11 @@ const ExamplePre = ({
   const code = toJsxString(example)
 
   return (
-    <Box>
+    <Box border rounded borderGray3>
       <Box p2>
         {example}
       </Box>
-      <Pre size6 bgGray2 p2 children={code} />
+      <Pre bgGray2 p2 mb0 children={code} />
     </Box>
   )
 }

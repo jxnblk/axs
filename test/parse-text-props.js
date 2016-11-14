@@ -55,7 +55,7 @@ test('creates css', t => {
   t.regex(css, new RegExp(cxsClass))
   t.regex(css, /margin:8px/)
   t.regex(css, /font-size:32px/)
-  t.regex(css, /font-weight:bold/)
+  t.regex(css, /font-weight:700/)
   t.regex(css, /;color:/)
   t.regex(css, /background-color:/)
 })

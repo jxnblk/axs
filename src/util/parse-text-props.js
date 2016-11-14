@@ -6,7 +6,9 @@ import convertShorthandProps from './convert-shorthand-props'
 
 import {
   MARGIN_REG,
+  PADDING_REG,
   parseMargin,
+  parsePadding,
 } from './scale-prop'
 import {
   F_REG,
@@ -30,6 +32,9 @@ const parseTextProps = (customConfig = {}) => original => {
   }
   const { breakpoints } = config
   const margin = parseMargin(config)
+  const padding = parsePadding(config)
+  const color = getColor(config)
+  const bg = getBgColor(config)
   const styleProps = convertShorthandProps(config)(original)
 
   const styles = [
@@ -38,18 +43,20 @@ const parseTextProps = (customConfig = {}) => original => {
 
   const props = Object.keys(styleProps)
     .map(key => {
-      const val = original[key]
+      const val = styleProps[key]
 
       if (F_REG.test(key)) {
         styles.push(getFontSize(config)(key, val))
       } else if (TYPE_REG.test(key)) {
-        styles.push(getTypeStyles(key, val))
+        styles.push(getTypeStyles(config)(key, val))
       } else if (MARGIN_REG.test(key)) {
         styles.push(margin(key, val))
+      } else if (PADDING_REG.test(key)) {
+        styles.push(padding(key, val))
       } else if (BG_REG.test(key)) {
-        styles.push(getBgColor(config)(key, val))
+        styles.push(bg(key, val))
       } else if (COLOR_REG.test(key)) {
-        styles.push(getColor(config)(key, val))
+        styles.push(color(key, val))
       } else if (key === 'css') {
         styles.push(val)
       } else {

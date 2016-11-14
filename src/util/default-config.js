@@ -55,11 +55,14 @@ export const flattenColors = colors => Object.keys(colors)
 
 export const colors = flattenColors(openColor)
 
+export const bold = 700
+
 export const config = {
   breakpoints,
   typeScale,
   scale,
-  colors
+  colors,
+  bold
 }
 
 export default config

@@ -1,11 +1,10 @@
 
 import React from 'react'
-import { Text } from '../src'
+import { Box } from '../src'
 
 const Pre = props => (
-  <Text
+  <Box
     is='pre'
-    size5
     grape
     {...props}
     css={cx}
@@ -14,6 +13,7 @@ const Pre = props => (
 
 const cx = {
   fontFamily: 'Menlo, monospace',
+  fontSize: 12,
   maxWidth: '100%',
   overflow: 'auto',
   padding: 16

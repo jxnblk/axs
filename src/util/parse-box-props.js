@@ -49,11 +49,14 @@ const parseBoxProps = (customConfig = {}) => original => {
   const styleProps = convertShorthandProps(config)(original)
   const margin = parseMargin(config)
   const padding = parsePadding(config)
+  const color = getColor(config)
+  const bg = getBgColor(config)
+  const border = getBorderColor(config)
 
 
   const props = Object.keys(styleProps)
     .map(key => {
-      const val = original[key]
+      const val = styleProps[key]
 
       if (key === 'css') {
         styles.push(val)
@@ -76,11 +79,11 @@ const parseBoxProps = (customConfig = {}) => original => {
       } else if (RADIUS_REG.test(key)) {
         styles.push(getRadii(config.radius)(val))
       } else if (BG_REG.test(key)) {
-        styles.push(getBgColor(config)(key, val))
+        styles.push(bg(key, val))
       } else if (BORDER_COLOR_REG.test(key)) {
-        styles.push(getBorderColor(config)(key, val))
+        styles.push(border(key, val))
       } else if (COLOR_REG.test(key)) {
-        styles.push(getColor(config)(key, val))
+        styles.push(color(key, val))
       } else {
         return key
       }
