@@ -3,13 +3,14 @@ import React from 'react'
 import { Flex, Box, Text } from '../src'
 import Container from './Container'
 import Pre from './Pre'
+import FormExample from './FormExample'
 
 const example = `<Box p3 mb3 rounded white bgGrape>
   <Text size3 bold>Demo Box</Text>
 </Box>
 `
 
-const Example = () => (
+const Examples = () => (
   <Box is='section' px3 py4>
     <Container>
       <Flex mx-3 css={cx.row}>
@@ -22,6 +23,7 @@ const Example = () => (
           <Pre bgGray1 children={example} />
         </Box>
       </Flex>
+      <FormExample />
     </Container>
   </Box>
 )
@@ -32,5 +34,5 @@ const cx = {
   }
 }
 
-export default Example
+export default Examples
 

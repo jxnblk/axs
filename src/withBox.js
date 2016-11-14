@@ -3,7 +3,7 @@ import React from 'react'
 import parseBoxProps from './util/parse-box-props'
 
 const withBox = Comp => {
-  const BoxComponent = (originalProps, context) => {
+  const Box = (originalProps, context) => {
     const { props, className } = parseBoxProps(context.axs)(originalProps)
 
     return (
@@ -14,11 +14,11 @@ const withBox = Comp => {
     )
   }
 
-  BoxComponent.contextTypes = {
+  Box.contextTypes = {
     axs: React.PropTypes.object
   }
 
-  return BoxComponent
+  return Box
 }
 
 export default withBox
