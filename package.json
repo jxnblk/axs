@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src --out-dir dist",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack -p",
+    "deploy": "gh-pages -d docs"
   },
   "keywords": [
     "react",
@@ -23,6 +25,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.24.1",
     "json-loader": "^0.5.4",
     "react": "^15.3.2",
