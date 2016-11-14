@@ -9,18 +9,13 @@ const App = () => (
   </div>
 )
 
-const config = {
-  // radius: 20,
-  colors: {
-    black: '#000',
-    white: '#fff',
-    // blue: 'navy'
-  }
-}
+export default App
 
+/*
 export default withContext({
   axs: React.PropTypes.object
 }, () => ({
   axs: config
 }))(App)
+*/
 

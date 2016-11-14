@@ -24,7 +24,6 @@ import {
   getBgColor,
 } from './color'
 
-// Pass context config
 const parseTextProps = config => original => {
   const breakpoints = {
     ...defaultConfig.breakpoints,

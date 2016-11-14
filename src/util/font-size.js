@@ -1,5 +1,4 @@
 
-// Replace with configurable function
 import defaultConfig from './default-config'
 
 export const F_REG = /^(size|size\d)$/

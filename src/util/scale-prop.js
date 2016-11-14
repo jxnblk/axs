@@ -1,5 +1,4 @@
 
-// Replace with configurable function
 import defaultConfig from './default-config'
 
 export const MARGIN_REG = /^m[a-z]?-?\d$/
