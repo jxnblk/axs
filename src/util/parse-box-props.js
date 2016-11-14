@@ -37,7 +37,7 @@ import {
   getRadii
 } from './radii'
 
-const parseBoxProps = config => original => {
+const parseBoxProps = (config = {}) => original => {
   const styles = []
   const breakpoints = {
     ...defaultConfig.breakpoints,
@@ -57,6 +57,10 @@ const parseBoxProps = config => original => {
 
       if (key === 'css') {
         styles.push(val)
+      } else if (MARGIN_REG.test(key)) {
+        styles.push(margin(key, val))
+      } else if (PADDING_REG.test(key)) {
+        styles.push(padding(key, val))
       } else if (isNum) {
         // Handle number values
         if (WREG.test(key)) {
@@ -70,10 +74,6 @@ const parseBoxProps = config => original => {
         } else {
           return key
         }
-      } else if (MARGIN_REG.test(key)) {
-        styles.push(margin(key, val))
-      } else if (PADDING_REG.test(key)) {
-        styles.push(padding(key, val))
       } else if (val && DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
       } else if (BORDER_REG.test(key)) {

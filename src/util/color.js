@@ -9,8 +9,8 @@ const strip = str => str
   .toLowerCase()
 
 export const COLOR_REG = /^color$/
-export const BG_REG = /^(bg|bg[A-Z][a-z]+)$/
-export const BORDER_COLOR_REG = /^(border|border[A-Z][a-z]+)$/
+export const BG_REG = /^(bg|bg[A-Z][a-z0-9]+)$/
+export const BORDER_COLOR_REG = /^(border|border[A-Z][a-z0-9]+)$/
 
 export const isColor = config => key => {
   const colors = {

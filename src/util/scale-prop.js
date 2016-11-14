@@ -1,10 +1,13 @@
 
 import defaultConfig from './default-config'
 
-export const MARGIN_REG = /^m[a-z]?-?\d$/
+export const MARGIN_REG = /^(m|m[trblxy]?|m[a-z]?-?\d)$/
 export const PADDING_REG = /^p[a-z]?\d$/
 
 const getScale = scale => n => {
+  if (typeof n === 'string') {
+    return n
+  }
   const multiplier = isNeg(n) ? -1 : 1
   const i = Math.abs(n)
   return scale[i] * multiplier
@@ -34,15 +37,20 @@ const createDirectionalStyle = scale => prop => i => direction => {
   return { [key]: value }
 }
 
-const parseScaleProp = prop => config => key => {
+const parseScaleProp = prop => config => (key, val) => {
   const scale = config.scale || defaultConfig.scale
   const [, d, n, n2 ] = key.split('')
-  if (isNum(d)) {
-    return { [prop]: getScale(scale)(int(d)) }
+  if (isNum(d) || isNum(val)) {
+    const i = isNum(val) ? val : int(d)
+    return { [prop]: getScale(scale)(i) }
   }
 
   const dirs = directions[d] || []
-  const i = n2 && n === '-' ? - int(n2) : int(n)
+  const i = isNum(val)
+    ? val
+    : typeof val === 'string'
+    ? val
+    : n2 && n === '-' ? - int(n2) : int(n)
 
   const style = Object.assign({},
     ...dirs.map(createDirectionalStyle(scale)(prop)(i))

@@ -11,6 +11,8 @@ and inspired by [Basscss](http://basscss.com) and
 npm i axs
 ```
 
+Axs consists of two core primitive components, Box and Text.
+
 ```js
 // Basic example
 import React from 'react'
@@ -34,6 +36,15 @@ const App = () => (
 <Text>Paragraph element</Text>
 <Text is='h1'>h1 element</Text>
 ```
+
+## Features
+
+- Handles many common styling concerns
+- Encapsulates styles with hashed classnames
+- Supports pseudoclasses, media queries, and keyframes
+- Works with server-side rendering
+- Consistent styles with a type scale, spacing scale, and default color palette
+- No need to maintain separate stylesheets - components become the base unit of measurement for UI concerns
 
 ## Props
 

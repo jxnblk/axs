@@ -16,6 +16,7 @@ export const getFontSize = ({
   const i = isNumKey(key)
     ? getNumberFromKey(key)
     : val
+
   const fontSize = typeScale[i]
 
   if (!fontSize) {
