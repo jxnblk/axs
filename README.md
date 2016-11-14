@@ -205,7 +205,7 @@ When rendering client-side, cxs will automatically insert a style tag into the h
 ```js
 const React = require('react')
 const { renderToString } = require('react-dom/server')
-const { cxs } = require('cxs')
+const { cxs } = require('axs')
 const App = require('./App')
 
 module.exports = (req, res) => {
@@ -241,4 +241,4 @@ const CustomBox = withBox('div')
 - [glamor](https://github.com/smyte/jsxstyl://github.com/threepointone/glamor)
 - [open-color](https://yeun.github.io/open-color/)
 
-MIT License
+[MIT License](LICENSE.md)
