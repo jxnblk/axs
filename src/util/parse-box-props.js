@@ -2,6 +2,8 @@
 import cxs from 'cxs'
 import classnames from 'classnames'
 import defaultConfig from './default-config'
+import convertShorthandProps from './convert-shorthand-props'
+
 import {
   MARGIN_REG,
   PADDING_REG,
@@ -23,7 +25,6 @@ import {
   COLOR_REG,
   BG_REG,
   BORDER_COLOR_REG,
-  isColor,
   getColor,
   getBgColor,
   getBorderColor
@@ -37,28 +38,22 @@ import {
   getRadii
 } from './radii'
 
-const parseBoxProps = (config = {}) => original => {
+const parseBoxProps = (customConfig = {}) => original => {
   const styles = []
-  const breakpoints = [
-    ...defaultConfig.breakpoints,
-    ...(config.breakpoints || [])
-  ]
-  const options = {
+  const config = {
     ...defaultConfig,
-    ...config,
-    breakpoints
+    ...customConfig,
   }
+  const { breakpoints } = config
 
-  const props = Object.keys(original)
+  const styleProps = convertShorthandProps(config)(original)
+  const margin = parseMargin(config)
+  const padding = parsePadding(config)
+
+
+  const props = Object.keys(styleProps)
     .map(key => {
       const val = original[key]
-      const num = parseFloat(val)
-      const isNum = typeof num === 'number' && !isNaN(num)
-
-      const color = isColor(config)(key)
-
-      const margin = parseMargin(options)
-      const padding = parsePadding(options)
 
       if (key === 'css') {
         styles.push(val)
@@ -74,17 +69,17 @@ const parseBoxProps = (config = {}) => original => {
         styles.push(getWidth(breakpoints, 1)(val))
       } else if (LWREG.test(key)) {
         styles.push(getWidth(breakpoints, 2)(val))
-      } else if (val && DISPLAY_REG.test(key)) {
+      } else if (DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
       } else if (BORDER_REG.test(key)) {
         styles.push(getBorder(val))
       } else if (RADIUS_REG.test(key)) {
         styles.push(getRadii(config.radius)(val))
-      } else if (color && BG_REG.test(key)) {
+      } else if (BG_REG.test(key)) {
         styles.push(getBgColor(config)(key, val))
-      } else if (color && BORDER_COLOR_REG.test(key)) {
+      } else if (BORDER_COLOR_REG.test(key)) {
         styles.push(getBorderColor(config)(key, val))
-      } else if (color || COLOR_REG.test(key)) {
+      } else if (COLOR_REG.test(key)) {
         styles.push(getColor(config)(key, val))
       } else {
         return key

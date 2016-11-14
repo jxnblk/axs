@@ -1,36 +1,24 @@
 
-import defaultConfig from './default-config'
+import parseArrayValue from './parse-array-value'
 
-export const F_REG = /^(size|size\d)$/
-export const SF_REG = /^(sm|sm\d)$/
-export const MF_REG = /^(md|md\d)$/
-export const LF_REG = /^(lg|lg\d)$/
+// To do: remove other shorthand prop regexes
+export const F_REG = /^size$/
 
-const isNumKey = key => /\d$/.test(key)
+const createFontSize = typeScale => val => val !== null ? ({
+  fontSize: typeScale[val] || val
+}) : null
 
-const getNumberFromKey = key => parseInt(key.replace(/[a-z]/g, ''))
+export const getFontSize = config => (key, val) => {
+  const { breakpoints, typeScale } = config
 
-export const getFontSize = ({
-  typeScale = defaultConfig.typeScale
-} = {}) => breakpoint => (key, val) => {
-  const i = isNumKey(key)
-    ? getNumberFromKey(key)
-    : val
-
-  const fontSize = typeScale[i]
-
-  if (!fontSize) {
+  if (val === null) {
     return null
   }
 
-  if (!breakpoint) {
-    return { fontSize }
+  if (Array.isArray(val)) {
+    return parseArrayValue(breakpoints)(val)(createFontSize(typeScale))
   }
 
-  return {
-    [breakpoint]: {
-      fontSize
-    }
-  }
+  return createFontSize(typeScale)(val)
 }
 

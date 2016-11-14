@@ -56,63 +56,29 @@ The following props are available on both Box and Text components.
 #### Margin
 
 Sets margin based on the spacing scale (0–4).
-Scalar props can also be set using numbers – e.g. `m={2}`.
+Number values set a margin for all breakpoints.
+Use an array for responsive margin styles,
+starting from no media query, then setting each breakpoint above.
+E.g. `m={[0, 1, 2, 3]}` will set margin 0 then 1, 2, and 3 for the breakpoints from small to large.
 
-- `m0` - `m4` - margin from a scale from 0 to 4
-- `mt0` - `mt4` - margin top
-- `mr0` - `mr4` - margin right
-- `mb0` - `mb4` - margin bottom
-- `ml0` - `ml4` - margin left
-- `mx0` - `mx4` - margin left and right
-- `my0` - `my4` - margin left and right
+- `m`  - (number or array) margin from a scale from 0 to 4
+- `mt` - (number or array) margin top
+- `mr` - (number or array) margin right
+- `mb` - (number or array) margin bottom
+- `ml` - (number or array) margin left
+- `mx` - (number or array) margin left and right
+- `my` - (number or array) margin left and right
 
-- `m-1` - `m-4` - negative margin from a scale from 0 to 4
-- `mt-1` - `mt-4` - negative margin top
-- `mr-1` - `mr-4` - negative margin right
-- `mb-1` - `mb-4` - negative margin bottom
-- `ml-1` - `ml-4` - negative margin left
-- `mx-1` - `mx-4` - negative margin left and right
-- `my-1` - `my-4` - negative margin left and right
+Negative values are also supported for margin.
+E.g. `m={-1}`
 
 #### Colors
 
 Includes all colors from [open-color](https://github.com/yeun/open-color)
 
-- `white`
-- `black`
-- `gray` - `gray0` - `gray9`
-- `red` - `red0` - `red9`
-- `pink` - `pink0` - `pink9`
-- `grape` - `grape0` - `grape9`
-- `violet` - `violet0` - `violet9`
-- `indigo` - `indigo0` - `indigo9`
-- `blue` - `blue0` - `blue9`
-- `cyan` - `cyan0` - `cyan9`
-- `teal` - `teal0` - `teal9`
-- `green` - `green0` - `green9`
-- `lime` - `lime0` - `lime9`
-- `yellow` - `yellow0` - `yellow9`
-- `orange` - `orange0` - `orange9`
-- `color` - pass either a key to one of the colors or a custom value
-
-#### Background Colors
-
-- `bgWhite`
-- `bgBlack`
-- `bgGray` - `bgGray0` - `bgGray9`
-- `bgRed` - `bgRed0` - `bgRed9`
-- `bgPink` - `bgPink0` - `bgPink9`
-- `bgGrape` - `bgGrape0` - `bgGrape9`
-- `bgViolet` - `bgViolet0` - `bgViolet9`
-- `bgIndigo` - `bgIndigo0` - `bgIndigo9`
-- `bgBlue` - `bgBlue0` - `bgBlue9`
-- `bgCyan` - `bgCyan0` - `bgCyan9`
-- `bgTeal` - `bgTeal0` - `bgTeal9`
-- `bgGreen` - `bgGreen0` - `bgGreen9`
-- `bgLime` - `bgLime0` - `bgLime9`
-- `bgYellow` - `bgYellow0` - `bgYellow9`
-- `bgOrange` - `bgOrange0` - `bgOrange9`
-- `bg` - pass either a key to one of the colors or a custom value
+- `color` - (string) sets foreground color either by a key from the color object or a valid color value
+- `bg` - (string) sets background color
+- `borderColor` - (string) sets border color
 
 ### Box-specific Props
 
@@ -161,6 +127,41 @@ The following props are available only on Box components.
 - `right` - right align
 - `justify` - justifies text
 - `caps` - sets text-transform uppercase and adds tracking (letter-spacing)
+
+### Shorthand Props
+
+Scaled-based props (margin and padding) and color props
+can be set using a shorthand boolean prop.
+For example, `m1` is equivalent to `m={1}`
+and `px3` is equivalent to `px={3}`.
+
+#### Shorthand Color Props
+
+The following boolean props are shorthands for setting the `color` prop. E.g. `white` is equivalent to `color='white'`.
+
+- `white`
+- `black`
+- `gray` - `gray0` - `gray9`
+- `red` - `red0` - `red9`
+- `pink` - `pink0` - `pink9`
+- `grape` - `grape0` - `grape9`
+- `violet` - `violet0` - `violet9`
+- `indigo` - `indigo0` - `indigo9`
+- `blue` - `blue0` - `blue9`
+- `cyan` - `cyan0` - `cyan9`
+- `teal` - `teal0` - `teal9`
+- `green` - `green0` - `green9`
+- `lime` - `lime0` - `lime9`
+- `yellow` - `yellow0` - `yellow9`
+- `orange` - `orange0` - `orange9`
+
+#### Shorthand Background and Border Color Props
+
+Prefix the color name with `bg` to set background color.
+E.g. `bgBlack`
+
+Prefix the color name with `border` to set border color.
+E.g. `borderBlue`
 
 ## Component Primitives
 

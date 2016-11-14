@@ -1,4 +1,6 @@
 
+import parseArrayValue from './parse-array-value'
+
 export const WREG = /^width$/
 export const SWREG = /^sm$/
 export const MWREG = /^md$/
@@ -6,25 +8,13 @@ export const LWREG = /^lg$/
 
 const w = n => (n * 100) + '%'
 
-const parseArray = breakpoints => values => {
-  const bp = [ null, ...breakpoints ]
-  const styles = values.map((val, i) => {
-    const breakpoint = bp[i]
-    const width = w(val)
-    if (!breakpoint) {
-      return { width }
-    }
-    return {
-      [breakpoint]: { width }
-    }
-  })
-
-  return Object.assign({}, ...styles)
-}
+const createWidth = n => n ? ({
+  width: w(n)
+}) : null
 
 export const getWidth = (breakpoints, i) => val => {
   if (Array.isArray(val)) {
-    const widths = parseArray(breakpoints)(val)
+    const widths = parseArrayValue(breakpoints)(val)(createWidth)
     return widths
   }
 

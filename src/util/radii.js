@@ -1,6 +1,8 @@
 
 export const RADIUS_REG = /^rounded$/
 
+// - 'circle'
+
 const sh = (...args) => args
   .map(n => n === 0 ? 0 : n + 'px')
   .join(' ')
@@ -26,6 +28,10 @@ export const getRadii = (R = 2) => val => {
     case 'left':
       return {
         borderRadius: sh(R, 0, 0, R)
+      }
+    case 'circle':
+      return {
+        borderRadius: 99999
       }
     default:
       return null

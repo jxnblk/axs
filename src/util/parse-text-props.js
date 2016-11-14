@@ -2,15 +2,14 @@
 import cxs from 'cxs'
 import classnames from 'classnames'
 import defaultConfig from './default-config'
+import convertShorthandProps from './convert-shorthand-props'
+
 import {
   MARGIN_REG,
   parseMargin,
 } from './scale-prop'
 import {
   F_REG,
-  SF_REG,
-  MF_REG,
-  LF_REG,
   getFontSize
 } from './font-size'
 import {
@@ -20,51 +19,39 @@ import {
 import {
   COLOR_REG,
   BG_REG,
-  isColor,
   getColor,
   getBgColor,
 } from './color'
 
-const parseTextProps = (config = {}) => original => {
-  const options = {
+const parseTextProps = (customConfig = {}) => original => {
+  const config = {
     ...defaultConfig,
-    ...config,
+    ...customConfig,
   }
-  const { breakpoints } = options
+  const { breakpoints } = config
+  const margin = parseMargin(config)
+  const styleProps = convertShorthandProps(config)(original)
 
   const styles = [
     { margin: 0 }
   ]
 
-  const margin = parseMargin(options)
-
-  const props = Object.keys(original)
+  const props = Object.keys(styleProps)
     .map(key => {
       const val = original[key]
-      const color = isColor(config)(key)
 
       if (F_REG.test(key)) {
-        styles.push(getFontSize(config)()(key, val))
-      } else if (SF_REG.test(key)) {
-        styles.push(getFontSize(config)(breakpoints[0])(key, val))
-      } else if (MF_REG.test(key)) {
-        styles.push(getFontSize(config)(breakpoints[1])(key, val))
-      } else if (LF_REG.test(key)) {
-        styles.push(getFontSize(config)(breakpoints[2])(key, val))
+        styles.push(getFontSize(config)(key, val))
       } else if (TYPE_REG.test(key)) {
         styles.push(getTypeStyles(key, val))
       } else if (MARGIN_REG.test(key)) {
         styles.push(margin(key, val))
-      } else if (val) {
-        if (color && BG_REG.test(key)) {
-          styles.push(getBgColor(config)(key, val))
-        } else if (color || COLOR_REG.test(key)) {
-          styles.push(getColor(config)(key, val))
-        } else if (key === 'css') {
-          styles.push(val)
-        } else {
-          return key
-        }
+      } else if (BG_REG.test(key)) {
+        styles.push(getBgColor(config)(key, val))
+      } else if (COLOR_REG.test(key)) {
+        styles.push(getColor(config)(key, val))
+      } else if (key === 'css') {
+        styles.push(val)
       } else {
         return key
       }

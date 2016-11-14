@@ -1,8 +1,13 @@
 
-import defaultConfig from './default-config'
+// To do:
+// - change to not work with shorthand props
+// - map directional props
 
-export const MARGIN_REG = /^(m|m[trblxy]?|m[a-z]?-?\d)$/
-export const PADDING_REG = /^p[a-z]?\d$/
+import defaultConfig from './default-config'
+import parseArrayValue from './parse-array-value'
+
+export const MARGIN_REG = /^(m[trblxy]?)$/
+export const PADDING_REG = /^p[trblxy]?$/
 
 const getScale = scale => n => {
   if (typeof n === 'string') {
@@ -14,7 +19,7 @@ const getScale = scale => n => {
   return val
 }
 
-const directions = {
+const directionKeys = {
   t: [ 'top' ],
   r: [ 'right' ],
   b: [ 'bottom' ],
@@ -32,12 +37,8 @@ const isNum = str => {
 
 const isNeg = n => n < 0
 
-const createDirectionalStyle = scale => prop => i => direction => {
-  const key = prop + '-' + direction
-  const value = getScale(scale)(i)
-  return { [key]: value }
-}
-
+// ~~ Need to map directions
+// Replace with array util
 const parseArray = prop => config => dirs => values => {
   const breakpoints = [ null, ...config.breakpoints ]
   const styles = values.map((val, i) => {
@@ -54,27 +55,33 @@ const parseArray = prop => config => dirs => values => {
   return Object.assign({}, ...styles)
 }
 
-const parseScaleProp = prop => config => (key, val) => {
-  const { scale } = config
-  const [, d, n, n2 ] = key.split('')
-  if (isNum(d) || isNum(val)) {
-    const i = isNum(val) ? val : int(d)
-    return { [prop]: getScale(scale)(i) }
-  }
+const createStyle = (prop, config, directions) => (val) => {
+  const value = getScale(config.scale)(val)
+  const style = Object.assign({},
+    ...directions.map(createDirectionStyle(prop, value))
+  )
+  return style
+}
 
-  const dirs = directions[d] || []
-  const i = isNum(val)
-    ? val
-    : typeof val === 'string'
-    ? val
-    : n2 && n === '-' ? - int(n2) : int(n)
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
+
+const createDirectionStyle = (prop, value) => direction => {
+  const key = direction ? prop + capitalize(direction) : prop
+  return { [key]: value }
+}
+
+const parseScaleProp = prop => config => (key, val) => {
+  const d = key.charAt(1)
+
+  const dirs = directionKeys[d] || [null]
 
   if (Array.isArray(val)) {
-    return parseArray(prop)(config)(dirs)(val)
+    return parseArrayValue(config.breakpoints)(val)(createStyle(prop, config, dirs))
   }
 
+  const value = getScale(config.scale)(val)
   const style = Object.assign({},
-    ...dirs.map(createDirectionalStyle(scale)(prop)(i))
+    ...dirs.map(createDirectionStyle(prop, value))
   )
 
   return style
