@@ -131,9 +131,10 @@ The following props are available only on Box components.
 #### Width
 
 - `width` - percentage width as a number from 0 - 1
-- `sm` - percentage width as a number from 0 - 1 from the small breakpoint and up
-- `md` - percentage width as a number from 0 - 1 from the medium breakpoint and up
-- `lg` - percentage width as a number from 0 - 1 from the large breakpoint and up
+  - The `width` prop also accepts an array of numbers to map to the breakpoints - e.g. `w={[1, 1/2, 1/3]}` will set base width and widths for the first and second breakpoints.
+  - `sm` - percentage width as a number from 0 - 1 from the small breakpoint and up
+  - `md` - percentage width as a number from 0 - 1 from the medium breakpoint and up
+  - `lg` - percentage width as a number from 0 - 1 from the large breakpoint and up
 
 #### Display
 

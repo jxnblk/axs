@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, Text, colors } from '../src'
 import ExamplePre from './ExamplePre'
 
-const example = (
+const eg = (
   <Box>
     <Text
       is='label'
@@ -36,7 +36,7 @@ const example = (
 )
 const FormExample = () => {
   return (
-    <ExamplePre example={example} />
+    <ExamplePre example={eg} />
   )
 }
 

@@ -10,7 +10,8 @@ const getScale = scale => n => {
   }
   const multiplier = isNeg(n) ? -1 : 1
   const i = Math.abs(n)
-  return scale[i] * multiplier
+  const val = (scale[i] || i) * multiplier
+  return val
 }
 
 const directions = {
@@ -37,8 +38,24 @@ const createDirectionalStyle = scale => prop => i => direction => {
   return { [key]: value }
 }
 
+const parseArray = prop => config => dirs => values => {
+  const breakpoints = [ null, ...config.breakpoints ]
+  const styles = values.map((val, i) => {
+    const breakpoint = breakpoints[i]
+    const value = getScale(config.scale)(val)
+    if (!breakpoint) {
+      return { [prop]: value }
+    }
+    return {
+      [breakpoint]: { [prop]: value }
+    }
+  })
+
+  return Object.assign({}, ...styles)
+}
+
 const parseScaleProp = prop => config => (key, val) => {
-  const scale = config.scale || defaultConfig.scale
+  const { scale } = config
   const [, d, n, n2 ] = key.split('')
   if (isNum(d) || isNum(val)) {
     const i = isNum(val) ? val : int(d)
@@ -51,6 +68,10 @@ const parseScaleProp = prop => config => (key, val) => {
     : typeof val === 'string'
     ? val
     : n2 && n === '-' ? - int(n2) : int(n)
+
+  if (Array.isArray(val)) {
+    return parseArray(prop)(config)(dirs)(val)
+  }
 
   const style = Object.assign({},
     ...dirs.map(createDirectionalStyle(scale)(prop)(i))

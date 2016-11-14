@@ -39,9 +39,14 @@ import {
 
 const parseBoxProps = (config = {}) => original => {
   const styles = []
-  const breakpoints = {
+  const breakpoints = [
     ...defaultConfig.breakpoints,
-    ...config.breakpoints
+    ...(config.breakpoints || [])
+  ]
+  const options = {
+    ...defaultConfig,
+    ...config,
+    breakpoints
   }
 
   const props = Object.keys(original)
@@ -52,8 +57,8 @@ const parseBoxProps = (config = {}) => original => {
 
       const color = isColor(config)(key)
 
-      const margin = parseMargin(config)
-      const padding = parsePadding(config)
+      const margin = parseMargin(options)
+      const padding = parsePadding(options)
 
       if (key === 'css') {
         styles.push(val)
@@ -61,19 +66,14 @@ const parseBoxProps = (config = {}) => original => {
         styles.push(margin(key, val))
       } else if (PADDING_REG.test(key)) {
         styles.push(padding(key, val))
-      } else if (isNum) {
-        // Handle number values
-        if (WREG.test(key)) {
-          styles.push(getWidth()(val))
-        } else if (SWREG.test(key)) {
-          styles.push(getWidth(breakpoints[0])(val))
-        } else if (MWREG.test(key)) {
-          styles.push(getWidth(breakpoints[1])(val))
-        } else if (LWREG.test(key)) {
-          styles.push(getWidth(breakpoints[2])(val))
-        } else {
-          return key
-        }
+      } else if (WREG.test(key)) {
+        styles.push(getWidth(breakpoints)(val))
+      } else if (SWREG.test(key)) {
+        styles.push(getWidth(breakpoints, 0)(val))
+      } else if (MWREG.test(key)) {
+        styles.push(getWidth(breakpoints, 1)(val))
+      } else if (LWREG.test(key)) {
+        styles.push(getWidth(breakpoints, 2)(val))
       } else if (val && DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
       } else if (BORDER_REG.test(key)) {

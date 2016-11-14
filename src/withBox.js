@@ -4,6 +4,7 @@ import parseBoxProps from './util/parse-box-props'
 
 const withBox = Comp => {
   const Box = (originalProps, context) => {
+    // Pass all configuration here
     const { props, className } = parseBoxProps(context.axs)(originalProps)
 
     return (

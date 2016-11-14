@@ -26,15 +26,17 @@ import {
 } from './color'
 
 const parseTextProps = (config = {}) => original => {
-  const breakpoints = {
-    ...defaultConfig.breakpoints,
-    ...config.breakpoints
+  const options = {
+    ...defaultConfig,
+    ...config,
   }
+  const { breakpoints } = options
+
   const styles = [
     { margin: 0 }
   ]
 
-  const margin = parseMargin(config)
+  const margin = parseMargin(options)
 
   const props = Object.keys(original)
     .map(key => {
