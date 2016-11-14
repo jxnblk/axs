@@ -12,7 +12,7 @@ const Space = props =>
     }} />
 
 const Nav = () => (
-  <Flex px3>
+  <Flex px3 py2>
     <Link
       mr2
       href='https://github.com/jxnblk/axs'
