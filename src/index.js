@@ -9,7 +9,7 @@ import Block from './Block'
 import Inline from './Inline'
 import InlineBlock from './InlineBlock'
 import Flex from './Flex'
-import { colors } from './util/color'
+import { colors } from './util/default-config'
 
 export { default as cxs } from 'cxs'
 export { default as withBox } from './withBox'
@@ -21,7 +21,7 @@ export { default as Block } from './Block'
 export { default as Inline } from './Inline'
 export { default as InlineBlock } from './InlineBlock'
 export { default as Flex } from './Flex'
-export { colors } from './util/color'
+export { colors } from './util/default-config'
 
 export default {
   cxs,

@@ -26,14 +26,6 @@ const App = () => (
 ```
 
 ```js
-// Primitives
-import {
-  Box,
-  Text,
-} from 'axs'
-```
-
-```js
 <Box>Generic Axs div</Box>
 <Box is='button'>Box with custom tag</Box>
 ```
@@ -164,14 +156,14 @@ In addition to Box and Text, the following components can be imported.
 
 ### Text Components
 
-- Heading - h1–h6 elements - use the `level` prop to set the headings's rank
+- `<Heading />` - h1–h6 elements - use the `level` prop to set the headings's rank
 
 ### Box Components
 
-- Block - Box with display block
-- InlineBlock - Box with display inline-block
-- Inline - Box with display inline
-- Flex - Box with display inline
+- `<Block />` - Box with display block
+- `<InlineBlock />` - Box with display inline-block
+- `<Inline />` - Box with display inline
+- `<Flex />` - Box with display flex
 
 ## Configuration
 
