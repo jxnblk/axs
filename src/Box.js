@@ -1,8 +1,13 @@
 
 import React from 'react'
-import withBocxs from './withBocxs'
+import withBox from './withBox'
 
-const Box = withBocxs('div')
+const Box = ({
+  is = 'div',
+  ...props
+}) => (
+  React.createElement(is, props)
+)
 
-export default Box
+export default withBox(Box)
 

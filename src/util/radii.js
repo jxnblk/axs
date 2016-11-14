@@ -1,12 +1,11 @@
 
 export const RADIUS_REG = /^rounded$/
 
-const R = 2
 const sh = (...args) => args
   .map(n => n === 0 ? 0 : n + 'px')
   .join(' ')
 
-export const getRadii = val => {
+export const getRadii = (R = 2) => val => {
   switch (val) {
     case true:
       return { borderRadius: R }
