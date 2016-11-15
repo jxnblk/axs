@@ -9,7 +9,7 @@ import Pre from './Pre'
 
 export default () => (
   <Box is='header' px3 mb4>
-    <Box px3 py4 mb4 grape bgGray3>
+    <Box px3 py4 mb4 grape8 bgGray3>
       <Container py4>
         <Flex css={cx.flex}>
           <Box border='right' css={cx.pipe} pr3 mr3>
@@ -18,20 +18,14 @@ export default () => (
             </Heading>
           </Box>
           <Box width={[1, 1/2]}>
-            <Text is='p' bold size={[4, 3 ]} my3>
+            <Text is='p' bold size={[4, 3 ]} mt2>
               A build-your-own responsive typography and layout UI toolkit for React
             </Text>
+            <Pre size={4} p0 my2 children='npm i axs' />
           </Box>
         </Flex>
       </Container>
     </Box>
-    <Container>
-      <Flex mx-2 css={cx.flex}>
-        <Box px2 width={[1, 1/2]}>
-          <Pre size={4} bgGray1 children='npm i axs' />
-        </Box>
-      </Flex>
-    </Container>
     <Carbon />
   </Box>
 )
