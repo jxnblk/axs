@@ -11,7 +11,7 @@ import {
   parsePadding,
 } from './scale-prop'
 import {
-  F_REG,
+  FONTSIZE_REG,
   getFontSize
 } from './font-size'
 import {
@@ -45,7 +45,7 @@ const parseTextProps = (customConfig = {}) => original => {
     .map(key => {
       const val = styleProps[key]
 
-      if (F_REG.test(key)) {
+      if (FONTSIZE_REG.test(key)) {
         styles.push(getFontSize(config)(key, val))
       } else if (TYPE_REG.test(key)) {
         styles.push(getTypeStyles(config)(key, val))

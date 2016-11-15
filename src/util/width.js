@@ -1,10 +1,7 @@
 
 import parseArrayValue from './parse-array-value'
 
-export const WREG = /^width$/
-export const SWREG = /^sm$/
-export const MWREG = /^md$/
-export const LWREG = /^lg$/
+export const WIDTH_REG = /^width$/
 
 const w = n => (n * 100) + '%'
 

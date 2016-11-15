@@ -22,7 +22,6 @@ const parseNumberValue = key => {
   const isNeg = /-/.test(key)
   const [ prop ] = key.match(/^[a-z]+/)
   const value = isNeg ? -int(num) : int(num)
-  // console.log(prop, num, isNeg)
 
   return {
     key: prop,

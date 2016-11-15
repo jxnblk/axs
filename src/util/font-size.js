@@ -1,8 +1,7 @@
 
 import parseArrayValue from './parse-array-value'
 
-// To do: remove other shorthand prop regexes
-export const F_REG = /^size$/
+export const FONTSIZE_REG = /^size$/
 
 const createFontSize = typeScale => val => val !== null ? ({
   fontSize: typeScale[val] || val

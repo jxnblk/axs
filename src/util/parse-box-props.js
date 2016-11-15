@@ -11,10 +11,7 @@ import {
   parsePadding,
 } from './scale-prop'
 import {
-  WREG,
-  SWREG,
-  MWREG,
-  LWREG,
+  WIDTH_REG,
   getWidth
 } from './width'
 import {
@@ -64,14 +61,8 @@ const parseBoxProps = (customConfig = {}) => original => {
         styles.push(margin(key, val))
       } else if (PADDING_REG.test(key)) {
         styles.push(padding(key, val))
-      } else if (WREG.test(key)) {
+      } else if (WIDTH_REG.test(key)) {
         styles.push(getWidth(breakpoints)(val))
-      } else if (SWREG.test(key)) {
-        styles.push(getWidth(breakpoints, 0)(val))
-      } else if (MWREG.test(key)) {
-        styles.push(getWidth(breakpoints, 1)(val))
-      } else if (LWREG.test(key)) {
-        styles.push(getWidth(breakpoints, 2)(val))
       } else if (DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
       } else if (BORDER_REG.test(key)) {

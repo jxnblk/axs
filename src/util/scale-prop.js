@@ -1,8 +1,4 @@
 
-// To do:
-// - change to not work with shorthand props
-// - map directional props
-
 import defaultConfig from './default-config'
 import parseArrayValue from './parse-array-value'
 
@@ -36,24 +32,6 @@ const isNum = str => {
 }
 
 const isNeg = n => n < 0
-
-// ~~ Need to map directions
-// Replace with array util
-const parseArray = prop => config => dirs => values => {
-  const breakpoints = [ null, ...config.breakpoints ]
-  const styles = values.map((val, i) => {
-    const breakpoint = breakpoints[i]
-    const value = getScale(config.scale)(val)
-    if (!breakpoint) {
-      return { [prop]: value }
-    }
-    return {
-      [breakpoint]: { [prop]: value }
-    }
-  })
-
-  return Object.assign({}, ...styles)
-}
 
 const createStyle = (prop, config, directions) => (val) => {
   const value = getScale(config.scale)(val)
