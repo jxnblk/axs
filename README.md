@@ -3,6 +3,8 @@
 
 A build-your-own responsive typography and layout UI toolkit for React
 
+[![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
+
 Built with [cxs](https://github.com/jxnblk/cxs)
 and inspired by [Basscss](http://basscss.com) and
 [jsxstyle](https://github.com/smyte/jsxstyle)
@@ -39,7 +41,7 @@ Each Axs component also supports CSS-in-JS via the `css` prop to allow for any f
 
 ## Features
 
-- Encapsulated styles using Cxs
+- Encapsulated styles using [Cxs](https://github.com/jxnblk/cxs)
   - Media queries support
   - Pseudoclasses support
   - Server-side rendering support
@@ -66,12 +68,16 @@ Use the Text component for headings, labels, and any other UI typography.
 <Text>Paragraph element</Text>
 ```
 
+#### Elements
+
 The rendered element can be changed with the `is` prop.
 
 ```js
 <Box is='button'>Box with custom tag</Box>
 <Text is='h1'>h1 element</Text>
 ```
+
+#### Margin and Padding
 
 Control margin and padding with the `m` and `p` props.
 
@@ -105,6 +111,8 @@ pl | padding-left
 px | padding-left and right (x-axis)
 py | padding-top and bottom (y-axis)
 
+#### Width
+
 Percentage widths can be set with the `width` props using a number from 0 to 1.
 
 ```js
@@ -117,6 +125,8 @@ Any number above 1 will be treated as a fixed pixel width.
 <Box width={256}>256px Wide Box</Box>
 ```
 
+#### Borders
+
 Border and border radius can be set using the `border` and `rounded` props.
 
 ```js
@@ -124,6 +134,8 @@ Border and border radius can be set using the `border` and `rounded` props.
 <Box p2 border='top' rounded='bottom'>Box</Box>
 <Box p2 border rounded='circle'>Box</Box>
 ```
+
+#### Color
 
 Color can be set using the `color`, `bg`, and `borderColor` props.
 The default color scheme is from [Open Color](https://yeun.github.io/open-color/).
@@ -135,6 +147,8 @@ If the value is not found, the raw color value will be passed on.
 <Box color='#f0f'>Magenta Box</Box>
 <Box bg='red'>Red Background Box</Box>
 ```
+
+#### Font Size
 
 Font size can be set on the Text component using the size prop.
 Numbers from 0 to 6 will use values from the global type scale,
@@ -150,6 +164,8 @@ Larger numbers will use the number as a raw pixel value.
 <Text size={72}>72px Text</Text>
 ```
 
+#### Typography
+
 Other typographic style can be set with the following props.
 
 ```js
@@ -160,6 +176,8 @@ Other typographic style can be set with the following props.
 <Text justify>Justified Text</Text>
 <Text caps>Capitalized Text</Text>
 ```
+
+#### Responsive Widths
 
 Responsive widths can be set by passing an array instead of a number.
 The first value will be used across all breakpoints - i.e. no media query.
@@ -177,6 +195,8 @@ The second, third, and fourth values correspond to the small, medium, and large 
 </Box>
 ```
 
+#### Responsive Margin and Padding
+
 Responsive margin and padding can also be set using arrays.
 
 ```js
@@ -185,6 +205,8 @@ Responsive margin and padding can also be set using arrays.
   m={[ 0, 2 ]}
 />
 ```
+
+#### Responsive Font Sizes
 
 Responsive font sizes work the same.
 
@@ -201,10 +223,17 @@ Responsive font sizes work the same.
 </Text>
 ```
 
-    (shorthand props example??)
+#### Shorthand Props
 
+Margin, padding, and color props support shorthand boolean props.
 
-## Props
+```js
+<Box p2 mb3 white bgBlue>
+  Padded blue box
+</Box>
+```
+
+## Props API
 
 The following props are available on both Box and Text components.
 
