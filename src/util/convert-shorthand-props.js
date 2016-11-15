@@ -1,11 +1,9 @@
 
-const MPR = /^[mp][trblxy]?-?\d$/
-const FSR = /^size\d$/
+const MARGIN_PADDING_REGEX = /^[mp][trblxy]?-?\d$/
+const FONTSIZE_REGEX = /^size\d$/
 
-// Color shorthand - needs to be combined with isColor function
-// const CR = /^[a-z0-9]$/
-const BGR = /^bg[A-Z][a-z0-9]+$/
-const BDR = /^border[A-Z][a-z0-9]+$/
+const BACKGROUND_REGEX = /^bg[A-Z][a-z0-9]+$/
+const BORDER_REGEX = /^border[A-Z][a-z0-9]+$/
 
 const isColor = colors => key => {
   const name = key.replace(/^(bg|border)/, '').toLowerCase()
@@ -42,21 +40,21 @@ const convertProps = config => original => {
         return { key, value }
       }
 
-      if (MPR.test(key)) {
+      if (MARGIN_PADDING_REGEX.test(key)) {
         return parseNumberValue(key)
       }
 
-      if (FSR.test(key)) {
+      if (FONTSIZE_REGEX.test(key)) {
         const value = int(key.replace(/^size/, ''))
         return { key: 'size', value }
       }
 
       if (isColor(colors)(key)) {
         const value = key.replace(/^(bg|border)/, '').toLowerCase()
-        if (BGR.test(key)) {
+        if (BACKGROUND_REGEX.test(key)) {
           return { key: 'bg', value }
         }
-        if (BDR.test(key)) {
+        if (BORDER_REGEX.test(key)) {
           return { key: 'borderColor', value }
         }
         return { key: 'color', value }
