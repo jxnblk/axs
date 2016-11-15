@@ -7,7 +7,7 @@ export default props => (
     <Box
       is='a'
       className='twitter-share-button'
-      href={`https://twitter.com/intent/tweet?text=${encodeURI('Axs: React UI component primitive toolkit')}`}
+      href={`https://twitter.com/intent/tweet?text=${encodeURI('Axs: A build-your-own responsive typography and layout UI toolkit for React ')}`}
       data-via='jxnblk'
       children='Tweet' />
   </Flex>
