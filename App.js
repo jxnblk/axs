@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Header from './Header'
 import Features from './Features'
 import Examples from './Examples'
+import Cta from './Cta'
 import Footer from './Footer'
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
     <Header />
     <Features />
     <Examples />
+    <Cta />
     <Footer />
   </div>
 )
