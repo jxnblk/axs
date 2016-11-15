@@ -7,8 +7,6 @@ import Star from './Star'
 import Carbon from './Carbon'
 import Pre from './Pre'
 
-// grape8 bgGray3
-
 export default () => (
   <Box is='header' px3 mb4>
     <Box px3 py4 mb4 white bgGrape>

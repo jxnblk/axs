@@ -19,8 +19,6 @@ const App = () => (
   </div>
 )
 
-// export default App
-
 export default withContext({
   axs: React.PropTypes.object
 }, () => ({
@@ -33,7 +31,8 @@ export default withContext({
       16,
       14,
       12,
-    ]
+    ],
+    bold: 600
   }
 }))(App)
 

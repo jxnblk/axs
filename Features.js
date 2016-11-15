@@ -8,9 +8,9 @@ const Features = () => (
     <Container>
       <Flex mx-3 css={cx.flex}>
         <Box p3 width={[1, 1/2]}>
-          <Heading size={3} mb2 children='Responsive Layout and Typography' />
+          <Heading size={3} mb2 children='Responsive Typography and Layout' />
           <Text>
-            Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of two UI component primitives.
+            Axs is an abstraction of the most common responsive typographic and layout styling concerns in the form of two UI component primitives.
           </Text>
         </Box>
         <Box p3 width={[1, 1/2]}>
