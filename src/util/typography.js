@@ -12,7 +12,9 @@ export const getTypeStyles = config => (key, val) => {
     case 'justify':
       return { textAlign: 'justify' }
     case 'bold':
-      return { fontWeight: config.bold }
+      return { fontWeight: val ? config.bold : 'normal' }
+    case 'regular':
+      return { fontWeight: 'normal' }
     case 'caps':
       return {
         textTransform: 'uppercase',

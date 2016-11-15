@@ -12,9 +12,11 @@ const Heading = ({
   size = size || level
 
   return (
-    <Text {...props}
-      is={comp}
+    <Text
       size={size}
+      bold
+      {...props}
+      is={comp}
       css={{
         lineHeight: 1.25,
         ...css
