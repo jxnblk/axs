@@ -6,5 +6,7 @@ const Block = props => (
   <Box {...props} />
 )
 
+Block.displayName = 'Block'
+
 export default Block
 

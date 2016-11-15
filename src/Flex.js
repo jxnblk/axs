@@ -9,5 +9,7 @@ const Flex = props => (
   />
 )
 
+Flex.displayName = 'Flex'
+
 export default Flex
 

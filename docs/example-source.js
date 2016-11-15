@@ -27,15 +27,17 @@ const NavLink = props => (
     }} />
 )
 
+NavLink.displayName = 'NavLink'
+
 const examples = [
   {
     name: 'Grid',
     comp: (
       <Flex css={{ flexWrap: 'wrap' }}>
         <Box width={[1, 1/2, 1/4]} p2 bgGray1>Box</Box>
-        <Box width={1} sm={1/2} md={1/4} p2 bgGray2>Box</Box>
-        <Box width={1} sm={1/2} md={1/4} p2 bgGray1>Box</Box>
-        <Box width={1} sm={1/2} md={1/4} p2 bgGray2>Box</Box>
+        <Box width={[1, 1/2, 1/4]}  p2 bgGray3>Box</Box>
+        <Box width={[1, 1/2, 1/4]}  p2 bgGray1>Box</Box>
+        <Box width={[1, 1/2, 1/4]}  p2 bgGray3>Box</Box>
       </Flex>
     )
   },
@@ -76,8 +78,8 @@ const examples = [
   {
     name: 'Box',
     comp: (
-      <Box p3 mb2 rounded white bgBlue>
-        Blue Box
+      <Box p3 mb2 rounded white bgGrape>
+        Box
       </Box>
     )
   },
@@ -87,7 +89,7 @@ const examples = [
       <Box
         m={[0, 1, 2, 3]}
         p={[2, null, 3]}
-        white bgBlue>
+        white bgGrape>
         Responsive Box
       </Box>
     )
@@ -147,10 +149,10 @@ const examples = [
     name: 'Bar Chart',
     comp: (
       <Box white>
-        <Box py1 mb1 width={1/4} bgBlue>
+        <Box py1 mb1 width={1/4} bgGrape>
           <Text mx2 bold>25%</Text>
         </Box>
-        <Box py1 width={3/4} bgRed>
+        <Box py1 width={3/4} bgGrape8>
           <Text mx2 bold>75%</Text>
         </Box>
       </Box>
@@ -159,8 +161,8 @@ const examples = [
   {
     name: 'Panel',
     comp: (
-      <Box border rounded borderGreen>
-        <Box p2 white bgGreen>
+      <Box border rounded borderGrape>
+        <Box p2 white bgGrape>
           <Text bold>Panel</Text>
         </Box>
         <Box p2>
@@ -168,7 +170,7 @@ const examples = [
             A panel is great for drawing attention and grouping related content together.
           </Text>
         </Box>
-        <Box p2 border='top' borderGreen>
+        <Box p2 border='top' grape borderGrape>
           <Text size={6}>
             Panel footer
           </Text>
@@ -213,16 +215,22 @@ const examples = [
   {
     name: 'Grid Footer',
     comp: (
-      <Box py3 white bgGray8>
-        <InlineBlock px3 width={[1/2, 1/3, 1/4]}>
+      <Box py3 white bgGrape9>
+        <InlineBlock px3 width={[1/2, 1/3, 1/4]} css={{ verticalAlign: 'top' }}>
           <NavLink href='#!' children='Home' />
           <NavLink href='#!' children='Categories' />
+          <NavLink href='#!' children='Profile' />
           <NavLink href='#!' children='About' />
         </InlineBlock>
-        <InlineBlock px3 width={[1/2, 1/3, 1/4]}>
+        <InlineBlock px3 width={[1/2, 1/3, 1/4]} css={{ verticalAlign: 'top' }}>
           <NavLink href='#!' children='Blog' />
           <NavLink href='#!' children='Contact' />
           <NavLink href='#!' children='Careers' />
+        </InlineBlock>
+        <InlineBlock px3 width={[1/2, 1/3, 1/4]} css={{ verticalAlign: 'top' }}>
+          <NavLink href='#!' children='Even More' />
+          <NavLink href='#!' children='Links' />
+          <NavLink href='#!' children='Omfg' />
         </InlineBlock>
       </Box>
     )

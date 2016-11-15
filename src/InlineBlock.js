@@ -9,5 +9,7 @@ const InlineBlock = props => (
   />
 )
 
+InlineBlock.displayName = 'InlineBlock'
+
 export default InlineBlock
 

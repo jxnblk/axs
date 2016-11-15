@@ -1,12 +1,14 @@
 
 import React from 'react'
-import { Box } from '../src'
+import { Text } from '../src'
 
 const Pre = props => (
-  <Box
+  <Text
     is='pre'
     m0
-    grape
+    p2
+    size={6}
+    grape8
     {...props}
     css={cx}
   />
@@ -14,10 +16,8 @@ const Pre = props => (
 
 const cx = {
   fontFamily: 'Menlo, monospace',
-  fontSize: 12,
   maxWidth: '100%',
   overflow: 'auto',
-  padding: 16
 }
 
 export default Pre

@@ -19,6 +19,8 @@ const withBox = Comp => {
     axs: React.PropTypes.object
   }
 
+  Box.displayName = Comp.displayName
+
   return Box
 }
 

@@ -31,7 +31,7 @@ const App = () => (
 
 ## About
 
-Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of two primitive UI components.
+Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of two UI component primitives.
 Axs is intended as a way to quickly prototype new UI, handle one-off styles, and serve as a foundation for creating your own custom UI library.
 Use Axs out-of-the-box or as the basis of a highly-customized, application-specific UI component library.
 

@@ -9,5 +9,7 @@ const Inline = props => (
   />
 )
 
+Inline.displayName = 'Inline'
+
 export default Inline
 

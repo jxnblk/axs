@@ -18,6 +18,8 @@ const withText = Comp => {
     axs: React.PropTypes.object
   }
 
+  Text.displayName = Comp.displayName
+
   return Text
 }
 

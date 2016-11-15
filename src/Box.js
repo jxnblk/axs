@@ -9,5 +9,7 @@ const Box = ({
   React.createElement(is, props)
 )
 
+Box.displayName = 'Box'
+
 export default withBox(Box)
 

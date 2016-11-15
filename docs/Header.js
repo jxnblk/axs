@@ -7,32 +7,38 @@ import Star from './Star'
 import Carbon from './Carbon'
 import Pre from './Pre'
 
+// grape8 bgGray3
+
 export default () => (
   <Box is='header' px3 mb4>
-    <Box px3 py4 mb4 grape bgGray3>
-      <Container>
-        <Heading level={1} size={[1, null, 0]} my4>
-          Axs
-        </Heading>
+    <Box px3 py4 mb4 white bgGrape>
+      <Container py4>
+        <Flex css={cx.flex}>
+          <Box border='right' css={cx.pipe} pr3 mr3>
+            <Heading level={1} size={[1, null, 0]}>
+              Axs
+            </Heading>
+          </Box>
+          <Box width={[1, 1/2]}>
+            <Text is='p' bold size={[4, 3 ]} mt2>
+              A build-your-own responsive typography and layout UI toolkit for React
+            </Text>
+            <Pre size={4} p0 my2 grape1 children='npm i axs' />
+          </Box>
+        </Flex>
       </Container>
     </Box>
-    <Container>
-      <Flex mx-2 css={cx.flex}>
-        <Box px2 width={[1, 1/2]}>
-          <Text is='p' bold size={[4, 3 ]} mb2>
-            A build-your-own responsive typography and layout UI toolkit for React
-          </Text>
-        </Box>
-        <Box px2 width={[1, 1/2]}>
-          <Pre bgGray1 children='npm i axs' />
-        </Box>
-      </Flex>
-    </Container>
     <Carbon />
   </Box>
 )
 
 const cx = {
+  pipe: {
+    borderWidth: 4,
+    '@media screen and (max-width:40em)': {
+      border: 0
+    }
+  },
   flex: {
     flexWrap: 'wrap',
     alignItems: 'center'
