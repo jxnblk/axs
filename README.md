@@ -15,7 +15,7 @@ npm i axs
 
 Axs consists of two core primitive components, Box and Text.
 
-```js
+```jsx
 // Basic example
 import React from 'react'
 import { Box, Text } from 'axs'
@@ -58,13 +58,13 @@ Each Axs component also supports CSS-in-JS via the `css` prop to allow for any f
 
 Use the Box component for visual containers and grids.
 
-```js
+```jsx
 <Box>Generic div</Box>
 ```
 
 Use the Text component for headings, labels, and any other UI typography.
 
-```js
+```jsx
 <Text>Paragraph element</Text>
 ```
 
@@ -72,7 +72,7 @@ Use the Text component for headings, labels, and any other UI typography.
 
 The rendered element can be changed with the `is` prop.
 
-```js
+```jsx
 <Box is='button'>Box with custom tag</Box>
 <Text is='h1'>h1 element</Text>
 ```
@@ -81,13 +81,13 @@ The rendered element can be changed with the `is` prop.
 
 Control margin and padding with the `m` and `p` props.
 
-```js
+```jsx
 <Box p={2} mb={2}>Padded Box</Box>
 ```
 
 Margin and padding also work with shorthand props.
 
-```js
+```jsx
 <Box p2 mb2>Padded Box</Box>
 ```
 
@@ -115,13 +115,13 @@ py | padding-top and bottom (y-axis)
 
 Percentage widths can be set with the `width` props using a number from 0 to 1.
 
-```js
+```jsx
 <Box width={1/2}>50% Wide Box</Box>
 ```
 
 Any number above 1 will be treated as a fixed pixel width.
 
-```js
+```jsx
 <Box width={256}>256px Wide Box</Box>
 ```
 
@@ -129,7 +129,7 @@ Any number above 1 will be treated as a fixed pixel width.
 
 Border and border radius can be set using the `border` and `rounded` props.
 
-```js
+```jsx
 <Box p2 border rounded>Box</Box>
 <Box p2 border='top' rounded='bottom'>Box</Box>
 <Box p2 border rounded='circle'>Box</Box>
@@ -142,7 +142,7 @@ The default color scheme is from [Open Color](https://yeun.github.io/open-color/
 The color prop will look for a color based on the key in the color scheme.
 If the value is not found, the raw color value will be passed on.
 
-```js
+```jsx
 <Box color='red'>Red Box</Box>
 <Box color='#f0f'>Magenta Box</Box>
 <Box bg='red'>Red Background Box</Box>
@@ -154,13 +154,13 @@ Font size can be set on the Text component using the size prop.
 Numbers from 0 to 6 will use values from the global type scale,
 where 0 is the largest value and 6 is the smallest.
 
-```js
+```jsx
 <Text size={3}>Text</Text>
 ```
 
 Larger numbers will use the number as a raw pixel value.
 
-```js
+```jsx
 <Text size={72}>72px Text</Text>
 ```
 
@@ -168,7 +168,7 @@ Larger numbers will use the number as a raw pixel value.
 
 Other typographic style can be set with the following props.
 
-```js
+```jsx
 <Text bold>Bold Text</Text>
 <Text center>Centered Text</Text>
 <Text left>Left-Aligned Text</Text>
@@ -183,7 +183,7 @@ Responsive widths can be set by passing an array instead of a number.
 The first value will be used across all breakpoints - i.e. no media query.
 The second, third, and fourth values correspond to the small, medium, and large min-width breakpoints.
 
-```js
+```jsx
 <Box
   width={[
     1,    // 100% width at the smallest viewport width
@@ -199,7 +199,7 @@ The second, third, and fourth values correspond to the small, medium, and large 
 
 Responsive margin and padding can also be set using arrays.
 
-```js
+```jsx
 <Box
   p={[ 1, 2, 3, 4 ]}
   m={[ 0, 2 ]}
@@ -210,7 +210,7 @@ Responsive margin and padding can also be set using arrays.
 
 Responsive font sizes work the same.
 
-```js
+```jsx
 <Text
   is='h2'
   size={[
@@ -227,7 +227,7 @@ Responsive font sizes work the same.
 
 Margin, padding, and color props support shorthand boolean props.
 
-```js
+```jsx
 <Box p2 mb3 white bgBlue>
   Padded blue box
 </Box>
@@ -368,7 +368,7 @@ In addition to Box and Text, the following primitive components can be imported.
 
 Axs style props can be added to any component using the higher order components.
 
-```js
+```jsx
 import { Link } from 'react-router'
 import { withBox, withText } from 'axs'
 
@@ -379,7 +379,7 @@ const SuperLink = withText(Link)
 
 Custom configurations can be set with React context
 
-```js
+```jsx
 class App extends React.Component {
   getChildContext () {
     return {
