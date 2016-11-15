@@ -1,25 +1,40 @@
 {
-  "name": "bocxs",
-  "version": "1.0.0-b5",
-  "description": "React component primitives built with cxs and inspired by Basscss",
+  "name": "axs",
+  "version": "1.0.0-b0",
+  "description": "A build-your-own responsive typography and layout UI toolkit for React",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src --out-dir dist",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack -p",
+    "deploy": "gh-pages -d docs",
+    "test": "ava"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "css",
+    "css-in-js"
+  ],
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "gh-pages": "^0.11.0",
+    "html-webpack-plugin": "^2.24.1",
     "json-loader": "^0.5.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-element-to-jsx-string": "^5.0.0",
+    "recompose": "^0.20.2",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },
@@ -27,5 +42,11 @@
     "classnames": "^2.2.5",
     "cxs": "^2.0.0",
     "open-color": "^1.4.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   }
 }

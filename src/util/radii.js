@@ -1,12 +1,17 @@
 
 export const RADIUS_REG = /^rounded$/
 
-const R = 2
 const sh = (...args) => args
   .map(n => n === 0 ? 0 : n + 'px')
   .join(' ')
 
-export const getRadii = val => {
+const isNum = n => typeof n === 'number' && !isNaN(n)
+
+export const getRadii = (R = 2) => val => {
+  if (isNum(val)) {
+    return { borderRadius: val }
+  }
+
   switch (val) {
     case true:
       return { borderRadius: R }
@@ -27,6 +32,10 @@ export const getRadii = val => {
     case 'left':
       return {
         borderRadius: sh(R, 0, 0, R)
+      }
+    case 'circle':
+      return {
+        borderRadius: 99999
       }
     default:
       return null
