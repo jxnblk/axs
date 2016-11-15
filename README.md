@@ -68,7 +68,7 @@ Use the Text component for headings, labels, and any other UI typography.
 <Text>Paragraph element</Text>
 ```
 
-#### Elements
+### Elements
 
 The rendered element can be changed with the `is` prop.
 
@@ -77,7 +77,7 @@ The rendered element can be changed with the `is` prop.
 <Text is='h1'>h1 element</Text>
 ```
 
-#### Margin and Padding
+### Margin and Padding
 
 Control margin and padding with the `m` and `p` props.
 
@@ -111,7 +111,7 @@ pl | padding-left
 px | padding-left and right (x-axis)
 py | padding-top and bottom (y-axis)
 
-#### Width
+### Width
 
 Percentage widths can be set with the `width` props using a number from 0 to 1.
 
@@ -125,7 +125,7 @@ Any number above 1 will be treated as a fixed pixel width.
 <Box width={256}>256px Wide Box</Box>
 ```
 
-#### Borders
+### Borders
 
 Border and border radius can be set using the `border` and `rounded` props.
 
@@ -135,7 +135,7 @@ Border and border radius can be set using the `border` and `rounded` props.
 <Box p2 border rounded='circle'>Box</Box>
 ```
 
-#### Color
+### Color
 
 Color can be set using the `color`, `bg`, and `borderColor` props.
 The default color scheme is from [Open Color](https://yeun.github.io/open-color/).
@@ -148,7 +148,7 @@ If the value is not found, the raw color value will be passed on.
 <Box bg='red'>Red Background Box</Box>
 ```
 
-#### Font Size
+### Font Size
 
 Font size can be set on the Text component using the size prop.
 Numbers from 0 to 6 will use values from the global type scale,
@@ -164,7 +164,7 @@ Larger numbers will use the number as a raw pixel value.
 <Text size={72}>72px Text</Text>
 ```
 
-#### Typography
+### Typography
 
 Other typographic style can be set with the following props.
 
@@ -177,7 +177,7 @@ Other typographic style can be set with the following props.
 <Text caps>Capitalized Text</Text>
 ```
 
-#### Responsive Widths
+### Responsive Widths
 
 Responsive widths can be set by passing an array instead of a number.
 The first value will be used across all breakpoints - i.e. no media query.
@@ -195,7 +195,7 @@ The second, third, and fourth values correspond to the small, medium, and large 
 </Box>
 ```
 
-#### Responsive Margin and Padding
+### Responsive Margin and Padding
 
 Responsive margin and padding can also be set using arrays.
 
@@ -206,7 +206,7 @@ Responsive margin and padding can also be set using arrays.
 />
 ```
 
-#### Responsive Font Sizes
+### Responsive Font Sizes
 
 Responsive font sizes work the same.
 
@@ -223,7 +223,7 @@ Responsive font sizes work the same.
 </Text>
 ```
 
-#### Shorthand Props
+### Shorthand Props
 
 Margin, padding, and color props support shorthand boolean props.
 
@@ -231,6 +231,50 @@ Margin, padding, and color props support shorthand boolean props.
 <Box p2 mb3 white bgBlue>
   Padded blue box
 </Box>
+```
+
+### Creating Custom Components
+
+While the Text and Box components can be used on their own, they are intended to be used as base components for creating application-specific UI components.
+
+```jsx
+import { Box, Text, colors } from 'axs'
+
+const Label = props => (
+  <Text
+    mb1
+    is='label'
+    size={5}
+    gray6
+    {...props}
+  />
+)
+
+const Input = props => (
+  <Box
+    is='input'
+    type='text'
+    p1
+    rounded
+    borderColor='gray3'
+    {...props}
+    css={{
+      display: 'block',
+      width: '100%',
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      color: 'inherit',
+      backgroundColor: 'transparent',
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      ':focus': {
+        outline: 'none',
+        borderColor: colors.blue
+      },
+      ...props.css
+    }}
+  />
+)
 ```
 
 ## Props API
