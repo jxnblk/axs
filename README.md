@@ -305,13 +305,13 @@ E.g. `m={[0, 1, 2, 3]}` will set margin 0 then 1, 2, and 3 for the breakpoints f
 
 #### Padding
 
-- `p`  - number or array) padding from a scale from 0 to 4
-- `pt` - number or array) padding top
-- `pr` - number or array) padding right
-- `pb` - number or array) padding bottom
-- `pl` - number or array) padding left
-- `px` - number or array) padding left and right
-- `py` - number or array) padding left and right
+- `p`  - (number or array) padding from a scale from 0 to 4
+- `pt` - (number or array) padding top
+- `pr` - (number or array) padding right
+- `pb` - (number or array) padding bottom
+- `pl` - (number or array) padding left
+- `px` - (number or array) padding left and right
+- `py` - (number or array) padding left and right
 
 #### Colors
 
@@ -327,36 +327,34 @@ The following props are available only on Box components.
 
 #### Width
 
-- `width` - percentage width as a number from 0 - 1
-  - The `width` prop also accepts an array of numbers to map to the breakpoints - e.g. `w={[1, 1/2, 1/3]}` will set base width and widths for the first and second breakpoints.
-  - `sm` - percentage width as a number from 0 - 1 from the small breakpoint and up
-  - `md` - percentage width as a number from 0 - 1 from the medium breakpoint and up
-  - `lg` - percentage width as a number from 0 - 1 from the large breakpoint and up
+- `width` - (number or array) percentage width as a number from 0 - 1
+- The `width` prop also accepts an array of numbers to map to the breakpoints - e.g. `w={[1, 1/2, 1/3]}` will set base width and widths for the first and second breakpoints.
+- Setting a number value above 1 will use the raw pixel value of that number
 
 #### Display
 
-- `display` - sets display
+- `display` - (string) sets display
 
 #### Borders
 
-- `border` - one of `true`, `false`, Number, `'top'`, `'right'`, `'bottom'`, or `'left'`
-- `borderColor`
+- `border` - (string or boolean) sets a 1px border - one of `true`, `false`, Number, `'top'`, `'right'`, `'bottom'`, or `'left'`
+- `borderColor` - (string) sets border color based on a color scheme key or raw value
 
 #### Border Radii
 
-- `rounded` - one of `true`, `false`, `'top'`, `'right'`, `'bottom'`, or `'left'`
+- `rounded` - (string or boolean) sets border radius - one of `true`, `false`, `'top'`, `'right'`, `'bottom'`, or `'left'`
 
 ### Text-Specific Props
 
 The following props only work on Text components.
 
 - `size` - (number or array) sets font size based on the typographic scale (0–6)
-- `bold` - sets font weight bold
-- `center` - center aligns text
-- `left` - left align
-- `right` - right align
-- `justify` - justifies text
-- `caps` - sets text-transform uppercase and adds tracking (letter-spacing)
+- `bold` - (boolean) sets font weight bold
+- `center` - (boolean) center aligns text
+- `left` - (boolean) left align
+- `right` - (boolean) right align
+- `justify` - (boolean) justifies text
+- `caps` - (boolean) sets text-transform uppercase and adds tracking (letter-spacing)
 
 ### Shorthand Props
 
@@ -492,9 +490,12 @@ Axs also offers several shorthand styling props for faster development.
 
 ## Future Development Considerations
 
-- [ ] Look into using CSS custom properties for configuration
+- [ ] Look into alternatives to React context for config
+  - [ ] CSS custom properties
+  - [ ] Config store
 - [ ] Element reset style objects
-- [ ] Theme/Context provider component
+- [ ] Theme/Config/Context provider component
+- [ ] Flexbox props
 
 ## Related
 
