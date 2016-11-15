@@ -7,9 +7,11 @@ import Star from './Star'
 import Carbon from './Carbon'
 import Pre from './Pre'
 
+// grape8 bgGray3
+
 export default () => (
   <Box is='header' px3 mb4>
-    <Box px3 py4 mb4 grape8 bgGray3>
+    <Box px3 py4 mb4 white bgGrape>
       <Container py4>
         <Flex css={cx.flex}>
           <Box border='right' css={cx.pipe} pr3 mr3>
@@ -21,7 +23,7 @@ export default () => (
             <Text is='p' bold size={[4, 3 ]} mt2>
               A build-your-own responsive typography and layout UI toolkit for React
             </Text>
-            <Pre size={4} p0 my2 children='npm i axs' />
+            <Pre size={4} p0 my2 grape1 children='npm i axs' />
           </Box>
         </Flex>
       </Container>

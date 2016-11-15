@@ -10,6 +10,7 @@ const sx = {
   text: {
     fontFamily: '"San Francisco", "Roboto Mono", -apple-system, BlinkMacSystemFont, sans-serif',
     fontSize: 20,
+    letterSpacing: '.1em',
     fontWeight: 600
   }
 }
@@ -23,6 +24,15 @@ const Icon = () => (
       style={sx.root}
     >
       <rect width='64' height='64' fill='#be4bdb' />
+      <g id='lumberjack' opacity='0'>
+        <rect width='64' height='64' fill='#f40' />
+        <g>
+          <rect width='64' height='16' y='8' fill='#003' opacity={1/2} />
+          <rect width='64' height='16' y='40' fill='#003' opacity={1/2} />
+          <rect width='16' height='64' x='8' fill='#003' opacity={1/2} />
+          <rect width='16' height='64' x='40' fill='#003' opacity={1/2} />
+        </g>
+      </g>
       <text
         x='32'
         y='38'
