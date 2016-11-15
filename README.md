@@ -30,26 +30,27 @@ const App = () => (
 ## About
 
 Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of two primitive UI components.
-Axs is intended as a way to quickly prototype new UI, handle one-off styles, and serve as a foundation for creating your own custom UI pattern library.
-
+Axs is intended as a way to quickly prototype new UI, handle one-off styles, and serve as a foundation for creating your own custom UI library.
 Use Axs out-of-the-box or as the basis of a highly-customized, application-specific UI component library.
 
 Use the Box component as a starting point for any visual containers or grid system in your app.
 Use the Text component for headings, labels, paragraphs or any other UI typography.
-
-Each Axs component also supports CSS-in-JS via the `css` prop to allow for any fine-tuned styles you may need.
+Each Axs component also supports CSS-in-JS via the `css` prop to allow for any fine-tuning you may need.
 
 ## Features
 
-    !!Rewrite this
-
-- Fully responsive styles
-- Handles many common styling concerns
-- Encapsulates styles with hashed classnames
-- Supports pseudoclasses, media queries, and keyframes
-- Works with server-side rendering
-- Consistent styles with a type scale, spacing scale, and default color palette
-- No need to maintain separate stylesheets - components become the base unit of measurement for UI concerns
+- Encapsulated styles using Cxs
+  - Media queries support
+  - Pseudoclasses support
+  - Server-side rendering support
+  - No leaky global styles
+  - No need to maintain separate stylesheets
+  - Use plain JS objects
+  - No tagged template literals
+- Handles common layout, typography, and color styles
+- Encourages the use and creation of UI components
+- Separation of business logic and styling concerns
+- Encourages consistency with a type scale, spacing scale, and color palette
 
 ## Usage
 
@@ -226,8 +227,18 @@ E.g. `m={[0, 1, 2, 3]}` will set margin 0 then 1, 2, and 3 for the breakpoints f
 - `mx` - (number or array) margin left and right
 - `my` - (number or array) margin left and right
 
-Negative values are also supported for margin.
-E.g. `m={-1}`
+- Negative values are also supported for margin.  E.g. `m={-1}`
+- Numbers greater than 4 will be converted to their pixel equivalent.
+
+#### Padding
+
+- `p`  - number or array) padding from a scale from 0 to 4
+- `pt` - number or array) padding top
+- `pr` - number or array) padding right
+- `pb` - number or array) padding bottom
+- `pl` - number or array) padding left
+- `px` - number or array) padding left and right
+- `py` - number or array) padding left and right
 
 #### Colors
 
@@ -240,16 +251,6 @@ Includes all colors from [open-color](https://github.com/yeun/open-color)
 ### Box-specific Props
 
 The following props are available only on Box components.
-
-#### Padding
-
-- `p`  - number or array) padding from a scale from 0 to 4
-- `pt` - number or array) padding top
-- `pr` - number or array) padding right
-- `pb` - number or array) padding bottom
-- `pl` - number or array) padding left
-- `px` - number or array) padding left and right
-- `py` - number or array) padding left and right
 
 #### Width
 
@@ -273,6 +274,8 @@ The following props are available only on Box components.
 - `rounded` - one of `true`, `false`, `'top'`, `'right'`, `'bottom'`, or `'left'`
 
 ### Text-Specific Props
+
+The following props only work on Text components.
 
 - `size` - (number or array) sets font size based on the typographic scale (0–6)
 - `bold` - sets font weight bold
