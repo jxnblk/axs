@@ -27,6 +27,8 @@ const NavLink = props => (
     }} />
 )
 
+NavLink.displayName = 'NavLink'
+
 const examples = [
   {
     name: 'Grid',

@@ -16,7 +16,7 @@ const Features = () => (
         <Box p3 width={[1, 1/2]}>
           <Heading size={3} mb2 children='From Prototype to UI Library' />
           <Text>
-            Axs in intended as a way to quickly prototype new UI, handle one-off styles,
+            Axs is intended as a way to quickly prototype new UI, handle one-off styles,
             and serve as a foundation for creating your own custom UI component libraries.
           </Text>
         </Box>
