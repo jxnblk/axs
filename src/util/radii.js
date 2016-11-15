@@ -1,13 +1,17 @@
 
 export const RADIUS_REG = /^rounded$/
 
-// - 'circle'
-
 const sh = (...args) => args
   .map(n => n === 0 ? 0 : n + 'px')
   .join(' ')
 
+const isNum = n => typeof n === 'number' && !isNaN(n)
+
 export const getRadii = (R = 2) => val => {
+  if (isNum(val)) {
+    return { borderRadius: val }
+  }
+
   switch (val) {
     case true:
       return { borderRadius: R }

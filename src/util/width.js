@@ -8,8 +8,8 @@ export const LWREG = /^lg$/
 
 const w = n => (n * 100) + '%'
 
-const createWidth = n => n ? ({
-  width: w(n)
+const createWidth = n => n !== null ? ({
+  width: w > 1 ? w : w(n)
 }) : null
 
 export const getWidth = (breakpoints, i) => val => {

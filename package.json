@@ -1,7 +1,7 @@
 {
   "name": "axs",
   "version": "1.0.0-b0",
-  "description": "React UI component primitive toolkit",
+  "description": "A build-your-own responsive typography and layout UI toolkit for React",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src --out-dir dist",

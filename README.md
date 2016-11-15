@@ -1,9 +1,7 @@
 
 # Axs
 
-~~React UI component primitive toolkit~~
-
-Responsive typography and layout system for React
+A build-your-own responsive typography and layout UI toolkit for React
 
 Built with [cxs](https://github.com/jxnblk/cxs)
 and inspired by [Basscss](http://basscss.com) and
@@ -29,8 +27,41 @@ const App = () => (
 )
 ```
 
+## About
+
+Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of two primitive UI components.
+Axs is intended as a way to quickly prototype new UI, handle one-off styles, and serve as a foundation for creating your own custom UI pattern library.
+
+Use Axs out-of-the-box or as the basis of a highly-customized, application-specific UI component library.
+
+Use the Box component as a starting point for any visual containers or grid system in your app.
+Use the Text component for headings, labels, paragraphs or any other UI typography.
+
+Each Axs component also supports CSS-in-JS via the `css` prop to allow for any fine-tuned styles you may need.
+
+## Features
+
+    !!Rewrite this
+
+- Fully responsive styles
+- Handles many common styling concerns
+- Encapsulates styles with hashed classnames
+- Supports pseudoclasses, media queries, and keyframes
+- Works with server-side rendering
+- Consistent styles with a type scale, spacing scale, and default color palette
+- No need to maintain separate stylesheets - components become the base unit of measurement for UI concerns
+
+## Usage
+
+Use the Box component for visual containers and grids.
+
 ```js
 <Box>Generic div</Box>
+```
+
+Use the Text component for headings, labels, and any other UI typography.
+
+```js
 <Text>Paragraph element</Text>
 ```
 
@@ -41,31 +72,136 @@ The rendered element can be changed with the `is` prop.
 <Text is='h1'>h1 element</Text>
 ```
 
-Control padding, margin, color and other styles with shorthand styling props.
+Control margin and padding with the `m` and `p` props.
 
 ```js
-<Box p2 white bgBlue>
-  <Text bold>Box</Text>
+<Box p={2} mb={2}>Padded Box</Box>
+```
+
+Margin and padding also work with shorthand props.
+
+```js
+<Box p2 mb2>Padded Box</Box>
+```
+
+Margin and padding props follow the same shorthand convention as
+[Basscss](http://basscss.com) and [Rebass](http://jxnblk.com/rebass).
+
+Props | Meaning
+---|---
+m  | margin
+mt | margin-top
+mr | margin-right
+mb | margin-bottom
+ml | margin-left
+mx | margin-left and right (x-axis)
+my | margin-top and bottom (y-axis)
+p  | padding
+pt | padding-top
+pr | padding-right
+pb | padding-bottom
+pl | padding-left
+px | padding-left and right (x-axis)
+py | padding-top and bottom (y-axis)
+
+Percentage widths can be set with the `width` props using a number from 0 to 1.
+
+```js
+<Box width={1/2}>50% Wide Box</Box>
+```
+
+Any number above 1 will be treated as a fixed pixel width.
+
+```js
+<Box width={256}>256px Wide Box</Box>
+```
+
+Border and border radius can be set using the `border` and `rounded` props.
+
+```js
+<Box p2 border rounded>Box</Box>
+<Box p2 border='top' rounded='bottom'>Box</Box>
+<Box p2 border rounded='circle'>Box</Box>
+```
+
+Color can be set using the `color`, `bg`, and `borderColor` props.
+The default color scheme is from [Open Color](https://yeun.github.io/open-color/).
+The color prop will look for a color based on the key in the color scheme.
+If the value is not found, the raw color value will be passed on.
+
+```js
+<Box color='red'>Red Box</Box>
+<Box color='#f0f'>Magenta Box</Box>
+<Box bg='red'>Red Background Box</Box>
+```
+
+Font size can be set on the Text component using the size prop.
+Numbers from 0 to 6 will use values from the global type scale,
+where 0 is the largest value and 6 is the smallest.
+
+```js
+<Text size={3}>Text</Text>
+```
+
+Larger numbers will use the number as a raw pixel value.
+
+```js
+<Text size={72}>72px Text</Text>
+```
+
+Other typographic style can be set with the following props.
+
+```js
+<Text bold>Bold Text</Text>
+<Text center>Centered Text</Text>
+<Text left>Left-Aligned Text</Text>
+<Text right>Right-Aligned Text</Text>
+<Text justify>Justified Text</Text>
+<Text caps>Capitalized Text</Text>
+```
+
+Responsive widths can be set by passing an array instead of a number.
+The first value will be used across all breakpoints - i.e. no media query.
+The second, third, and fourth values correspond to the small, medium, and large min-width breakpoints.
+
+```js
+<Box
+  width={[
+    1,    // 100% width at the smallest viewport width
+    1/2,  // 50% width at the small breakpoint and up
+    null, // Null values avoid adding a media query style
+    1/4   // 25% width at the large breakpoint
+  ]}>
+  Responsive Widths
 </Box>
 ```
 
-Set responsive styles for margin, padding, font-size, and width with array values.
+Responsive margin and padding can also be set using arrays.
 
 ```js
-<Box p={[2, null, 3, 4]}>
-  Padding changes across different breakpoints
-</Box>
+<Box
+  p={[ 1, 2, 3, 4 ]}
+  m={[ 0, 2 ]}
+/>
 ```
 
-## Features
+Responsive font sizes work the same.
 
-- Fully responsive styles
-- Handles many common styling concerns
-- Encapsulates styles with hashed classnames
-- Supports pseudoclasses, media queries, and keyframes
-- Works with server-side rendering
-- Consistent styles with a type scale, spacing scale, and default color palette
-- No need to maintain separate stylesheets - components become the base unit of measurement for UI concerns
+```js
+<Text
+  is='h2'
+  size={[
+    3, // 24px for all screens
+    2, // 32px at the small breakpoin
+    1, // 48px at the medium breakpoint
+    96 // Set raw pixel values for one-one styling situations
+  ]}>
+  Responsive Heading
+</Text>
+```
+
+    (shorthand props example??)
+
 
 ## Props
 
@@ -183,7 +319,7 @@ E.g. `borderBlue`
 
 ## Component Primitives
 
-In addition to Box and Text, the following components can be imported.
+In addition to Box and Text, the following primitive components can be imported.
 
 ### Text Components
 
@@ -243,7 +379,8 @@ const axsConfig = {
 
 ## Server Side Rendering
 
-When rendering client-side, cxs will automatically insert a style tag into the head. For server-side rendering, get the CSS string from cxs after render.
+When rendering client-side, cxs will automatically insert a style tag into the head.
+For server-side rendering, get the CSS string from cxs after render.
 
 ```js
 const React = require('react')
@@ -265,6 +402,24 @@ module.exports = (req, res) => {
 }
 ```
 
+## Differences from Rebass
+
+While Rebass aims to be a configurable one-size-fits-all approach to UI development, Axs is intended as a base starting point for building highly-customized, application-specific component libraries.
+Unlike Rebass, which uses inline styles, Axs is built on top of cxs to allow the use of encapsulated CSS to handle things like media queries and pseudoclasses.
+
+## Differences from jsxstyle
+
+While Asx's API is similar to jsxstyle,
+Axs aims to help in creating consistent layout,
+typographic, and color systems through the use of scales and color palettes.
+Axs also offers several shorthand styling props for faster development.
+
+## Future Development Considerations
+
+- [ ] Look into using CSS custom properties for configuration
+- [ ] Element reset style objects
+- [ ] Theme/Context provider component
+
 ## Related
 
 - [cxs](https://github.com/jxnblk/cxs)
@@ -277,10 +432,4 @@ module.exports = (req, res) => {
 - [open-color](https://yeun.github.io/open-color/)
 
 [MIT License](LICENSE.md)
-
----
-
-## Notes
-
-- [ ] Add support for pixel values in width, padding, etc?
 

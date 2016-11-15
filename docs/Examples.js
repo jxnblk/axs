@@ -8,8 +8,8 @@ import examples from './example-source'
 
 const Examples = () => (
   <Box is='section' px3 py4>
-    <Heading mb2 children='Examples' />
     <Container>
+      <Heading mb2 children='Examples' />
       {examples.map((eg, i) => (
         <Box py3 key={i}>
           <Heading level={3} mb2 children={eg.name} />

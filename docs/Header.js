@@ -7,8 +7,6 @@ import Star from './Star'
 import Carbon from './Carbon'
 import Pre from './Pre'
 
-const Space = () => <Box css={cx.space} />
-
 export default () => (
   <Box is='header' px3 mb4>
     <Box px3 py4 mb4 grape bgGray3>
@@ -19,10 +17,16 @@ export default () => (
       </Container>
     </Box>
     <Container>
-      <Text is='p' bold size={[4, 3 ]} mb2>
-        React UI component primitive toolkit
-      </Text>
-      <Pre bgGray1 children='npm i axs' />
+      <Flex mx-2 css={cx.flex}>
+        <Box px2 width={[1, 1/2]}>
+          <Text is='p' bold size={[4, 3 ]} mb2>
+            A build-your-own responsive typography and layout UI toolkit for React
+          </Text>
+        </Box>
+        <Box px2 width={[1, 1/2]}>
+          <Pre bgGray1 children='npm i axs' />
+        </Box>
+      </Flex>
     </Container>
     <Carbon />
   </Box>
@@ -32,8 +36,5 @@ const cx = {
   flex: {
     flexWrap: 'wrap',
     alignItems: 'center'
-  },
-  space: {
-    flex: '1 1 auto'
   }
 }

@@ -5,6 +5,7 @@ import { Box } from '../src'
 const Pre = props => (
   <Box
     is='pre'
+    m0
     grape
     {...props}
     css={cx}

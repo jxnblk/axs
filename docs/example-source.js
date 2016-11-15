@@ -159,7 +159,7 @@ const examples = [
   {
     name: 'Panel',
     comp: (
-      <Box border mb2 borderGreen>
+      <Box border rounded borderGreen>
         <Box p2 white bgGreen>
           <Text bold>Panel</Text>
         </Box>
@@ -200,8 +200,8 @@ const examples = [
   {
     name: 'Blockquote',
     comp: (
-      <Box is='blockquote'>
-        <Text size={[4, null, 3 ]}>
+      <Box is='blockquote' m0>
+        <Text bold size={[4, null, 2 ]}>
           “In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years
           ...
           ”
