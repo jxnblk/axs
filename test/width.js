@@ -10,9 +10,10 @@ test('returns a style object', t => {
 })
 
 test('returns a breakpoint style object', t => {
-  const style = getWidth(config.breakpoints, 1)(1)
+  const style = getWidth(config.breakpoints)([1, null, 1/2])
   t.deepEqual(style, {
-    [config.breakpoints[1]]: { width: '100%' }
+    width: '100%',
+    [config.breakpoints[1]]: { width: '50%' }
   })
 })
 
