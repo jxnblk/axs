@@ -3,6 +3,8 @@
 
 A build-your-own responsive typography and layout UI toolkit for React
 
+![Axs](/docs/tricard.png?raw=true)
+
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
 
 Built with [cxs](https://github.com/jxnblk/cxs)
