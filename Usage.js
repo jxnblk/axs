@@ -19,7 +19,7 @@ const Usage = () => (
       <Heading children='Usage' />
       <Flex mx-2 py3 css={{ alignItems: 'center' }}>
         <Box px2 width={[1, 1/2]}>
-          <Pre bgGray2 children={toJsxString(example)} />
+          <Pre bgGray0 children={toJsxString(example)} />
         </Box>
         <Box px2 width={[1, 1/2]}>
           {example}

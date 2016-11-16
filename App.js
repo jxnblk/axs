@@ -26,7 +26,7 @@ export default withContext({
 }, () => ({
   axs: {
     typeScale: [
-      96,
+      72,
       64,
       32,
       24,
