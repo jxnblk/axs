@@ -29,6 +29,31 @@ const NavLink = props => (
 
 NavLink.displayName = 'NavLink'
 
+const Button = props => (
+  <Text
+    is='button'
+    p1
+    bold
+    white
+    bgBlue
+    css={{
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      border: '1px solid transparent',
+      borderRadius: 3,
+      appearance: 'none',
+      WebkitAppearance: 'none',
+      ':hover': {
+        boxShadow: 'inset 0 0 0 64px rgba(0, 0, 0, .125)'
+      },
+      ...props.css
+    }}
+    {...props}
+  />
+)
+
+Button.displayName = 'Button'
+
 const examples = [
   {
     name: 'Grid',
@@ -39,6 +64,38 @@ const examples = [
         <Box width={[1, 1/2, 1/4]}  p2 bgGray1>Box</Box>
         <Box width={[1, 1/2, 1/4]}  p2 bgGray3>Box</Box>
       </Flex>
+    )
+  },
+  {
+    name: 'Button',
+    comp: (
+      <Text
+        is='button'
+        p1
+        bold
+        white
+        bgBlue
+        css={{
+          fontFamily: 'inherit',
+          fontSize: 'inherit',
+          border: '1px solid transparent',
+          borderRadius: 3,
+          appearance: 'none',
+          WebkitAppearance: 'none',
+          ':hover': {
+            boxShadow: 'inset 0 0 0 64px rgba(0, 0, 0, .125)'
+          }
+        }}>
+        Button
+      </Text>
+    )
+  },
+  {
+    name: 'Red Button',
+    comp: (
+      <Button size={6} caps bgRed>
+        Red Button
+      </Button>
     )
   },
   {
