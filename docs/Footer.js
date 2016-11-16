@@ -1,8 +1,9 @@
 
 import React from 'react'
-import { Box, Text } from '../src'
+import { Flex, Box, Text } from '../src'
 import Link from './Link'
 import Container from './Container'
+import Logo from './Logo'
 
 const Footer = () => (
   <Box is='footer'
@@ -21,6 +22,9 @@ const Footer = () => (
         href='http://jxnblk.com'
         children='Made by Jxnblk' />
     </Container>
+    <Flex py4 my4 grape css={{ justifyContent: 'space-around' }}>
+      <Logo size={48} />
+    </Flex>
   </Box>
 )
 
