@@ -46,6 +46,9 @@ const Logo = ({
     viewBox='0 0 16 16'
     width={size}
     height={size}
+    style={{
+      overflow: 'visible'
+    }}
     fill='none'
     stroke={color}>
     <path d={tri} />
