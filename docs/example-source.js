@@ -159,6 +159,25 @@ const examples = [
     )
   },
   {
+    name: 'Percentage Bar',
+    comp: (
+      <Flex white>
+        <Box py1 width={3/8} bgGrape8>
+          <Text size={6} bold center>37.5%</Text>
+        </Box>
+        <Box py1 width={1/4} bgGrape6>
+          <Text size={6} bold center>25%</Text>
+        </Box>
+        <Box py1 width={1/4} bgGrape4>
+          <Text size={6} bold center>25%</Text>
+        </Box>
+        <Box py1 width={1/8} bgGrape2>
+          <Text size={6} bold center>12.5%</Text>
+        </Box>
+      </Flex>
+    )
+  },
+  {
     name: 'Panel',
     comp: (
       <Box border rounded borderGrape>
