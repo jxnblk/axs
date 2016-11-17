@@ -106,7 +106,7 @@ const examples = [
           is='label'
           size6
           display='block'
-          gray6>
+          gray8>
           Email
         </Text>
         <Box is='input'
