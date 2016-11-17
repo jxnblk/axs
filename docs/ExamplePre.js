@@ -14,7 +14,7 @@ const ExamplePre = ({
       <Box p2>
         {example}
       </Box>
-      <Pre bgGray2 p2 mb0 children={code} />
+      <Pre bgGray0 p2 mb0 children={code} />
     </Box>
   )
 }

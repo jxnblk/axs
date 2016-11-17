@@ -1,4 +1,6 @@
 
+![Axs](/docs/miniaxs.png?raw=true)
+
 # Axs
 
 A build-your-own responsive typography and layout UI toolkit for React

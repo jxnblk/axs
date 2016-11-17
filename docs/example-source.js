@@ -29,6 +29,31 @@ const NavLink = props => (
 
 NavLink.displayName = 'NavLink'
 
+const Button = props => (
+  <Text
+    is='button'
+    p1
+    bold
+    white
+    bgBlue
+    css={{
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      border: '1px solid transparent',
+      borderRadius: 3,
+      appearance: 'none',
+      WebkitAppearance: 'none',
+      ':hover': {
+        boxShadow: 'inset 0 0 0 64px rgba(0, 0, 0, .125)'
+      },
+      ...props.css
+    }}
+    {...props}
+  />
+)
+
+Button.displayName = 'Button'
+
 const examples = [
   {
     name: 'Grid',
@@ -42,6 +67,38 @@ const examples = [
     )
   },
   {
+    name: 'Button',
+    comp: (
+      <Text
+        is='button'
+        p1
+        bold
+        white
+        bgBlue
+        css={{
+          fontFamily: 'inherit',
+          fontSize: 'inherit',
+          border: '1px solid transparent',
+          borderRadius: 3,
+          appearance: 'none',
+          WebkitAppearance: 'none',
+          ':hover': {
+            boxShadow: 'inset 0 0 0 64px rgba(0, 0, 0, .125)'
+          }
+        }}>
+        Button
+      </Text>
+    )
+  },
+  {
+    name: 'Red Button',
+    comp: (
+      <Button size={6} caps bgRed>
+        Red Button
+      </Button>
+    )
+  },
+  {
     name: 'Form',
     comp: (
       <Box>
@@ -49,7 +106,7 @@ const examples = [
           is='label'
           size6
           display='block'
-          gray6>
+          gray8>
           Email
         </Text>
         <Box is='input'
@@ -137,10 +194,11 @@ const examples = [
     comp: (
       <Flex css={{ alignItems: 'center' }}>
         <Box mr2>
-          <img src='http://placehold.it/128' />
+          <img src='http://placehold.it/128/cc5de8/fff' />
         </Box>
         <Box css={{ flex: '1 1 auto' }}>
           <Text bold>Media Object</Text>
+          <Text>Vertically aligned</Text>
         </Box>
       </Flex>
     )
@@ -202,9 +260,9 @@ const examples = [
     comp: (
       <Box width={[ 1, 1/2, 1/3 ]} border borderGray3 rounded>
         <Box is='img'
-          src='http://placehold.it/320'
-          width={320}
-          height={320}
+          src='http://placehold.it/512/cc5de8/fff'
+          width={512}
+          height={512}
           css={{
             display: 'block',
             maxWidth: '100%',
@@ -221,7 +279,7 @@ const examples = [
   {
     name: 'Blockquote',
     comp: (
-      <Box is='blockquote' m0>
+      <Box is='blockquote' m0 px2 grape>
         <Text bold size={[4, null, 2 ]}>
           “In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years
           ...

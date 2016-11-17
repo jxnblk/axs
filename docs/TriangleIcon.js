@@ -7,33 +7,27 @@ const sx = {
   root: {
     display: 'block',
     margin: 0,
-    color: '#fff'
+    color: '#fff',
+    // overflow: 'visible'
   }
 }
 
+const css = `body{margin:0}`
+
 const TriangleIcon = () => (
-  <div>
-    <svg
-      viewBox='0 0 32 32'
+  <Box>
+    <style dangerouslySetInnerHTML={{ __html: css }} />
+    <Box is='svg'
+      viewBox='0 0 32 16'
       width='512'
-      height='512'
-      style={sx.root}
-    >
-      <rect width='64' height='64' fill='#be4bdb' />
-      <g id='lumberjack' opacity='0'>
-        <rect width='64' height='64' fill='#f40' opacity='.0' />
-        <g transform='scale(.5)'>
-          <rect width='64' height='16' y='8' fill='#003' opacity={1/2} />
-          <rect width='64' height='16' y='40' fill='#003' opacity={1/2} />
-          <rect width='16' height='64' x='8' fill='#003' opacity={1/2} />
-          <rect width='16' height='64' x='40' fill='#003' opacity={1/2} />
-        </g>
+      height='256'
+      style={sx.root}>
+      <rect width='32' height='16' fill='#be4bdb' />
+      <g transform='translate(0 2)'>
+        <Logo size={12} />
       </g>
-      <g transform='translate(0 8)'>
-        <Logo size={16} />
-      </g>
-    </svg>
-  </div>
+    </Box>
+  </Box>
 )
 
 export default TriangleIcon

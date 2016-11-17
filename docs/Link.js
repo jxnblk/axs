@@ -14,7 +14,7 @@ const Link = props => (
       paddingBottom: 16,
       color: 'inherit',
       textDecoration: 'none',
-      color: colors.gray,
+      color: colors.gray8,
       ':hover': {
         color: colors.grape
       },
