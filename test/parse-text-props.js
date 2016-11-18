@@ -1,7 +1,6 @@
 
 import test from 'ava'
 import parseProps from '../src/util/parse-text-props'
-import config from '../src/util/default-config'
 import { cxs } from '../src'
 
 const props = {
@@ -20,14 +19,14 @@ test.afterEach(() => {
 })
 
 test('returns props and className', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   t.is(typeof result, 'object')
   t.is(typeof result.props, 'object')
   t.is(typeof result.className, 'string')
 })
 
 test('strips style props', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   t.deepEqual(result.props, {
     className: 'Foo',
     id: 'pass-through'
@@ -35,13 +34,13 @@ test('strips style props', t => {
 })
 
 test('combines classNames', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   t.regex(result.className, /Foo/)
   t.regex(result.className, /cxs/)
 })
 
 test('converts shorthand props', t => {
-  const result = parseProps()({
+  const result = parseProps({
     'm0': true,
     'blue': true
   })
@@ -49,7 +48,7 @@ test('converts shorthand props', t => {
 })
 
 test('creates css', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   const css = cxs.css
   const cxsClass = result.className.split(' ')[1]
   t.regex(css, new RegExp(cxsClass))
