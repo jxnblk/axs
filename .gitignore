@@ -1,5 +1,5 @@
 
 dist
-docs/bundle.js
-docs/index.html
+demo/bundle.js
+demo/index.html
 
