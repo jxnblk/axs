@@ -257,10 +257,10 @@ const Input = props => (
     p1
     rounded
     borderColor='gray3'
+    display='block'
+    width={1}
     {...props}
     css={{
-      display: 'block',
-      width: '100%',
       fontFamily: 'inherit',
       fontSize: 'inherit',
       color: 'inherit',
