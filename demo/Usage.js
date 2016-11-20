@@ -1,7 +1,8 @@
 
 import React from 'react'
 import toJsxString from 'react-element-to-jsx-string'
-import { Flex, Box, Heading, Text } from '../src'
+import { Box, Text } from '../src'
+import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
 import Pre from './Pre'
 

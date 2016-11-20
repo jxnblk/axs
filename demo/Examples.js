@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Flex, Box, Heading, Text } from '../src'
+import { Box, Text } from '../src'
+import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
 import Pre from './Pre'
 import ExamplePre from './ExamplePre'

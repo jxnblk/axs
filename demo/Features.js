@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Flex, Box, Text, Heading } from '../src'
+import { Box, Text } from '../src'
+import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
 import Dit from './Dit'
 

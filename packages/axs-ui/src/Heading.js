@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Text from './Text'
+import { Text } from 'axs'
 
 const Heading = ({
   level = 2,

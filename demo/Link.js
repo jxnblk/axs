@@ -14,13 +14,14 @@ const Link = props => (
       paddingBottom: 16,
       color: 'inherit',
       textDecoration: 'none',
-      color: colors.gray8,
+      color: colors.grape,
       ':hover': {
-        color: colors.grape
+        color: colors.grape9
       },
       ':focus': {
         outline: 'none',
-        color: colors.grape
+        color: colors.grape9,
+        boxShadow: `0 0 0 2px ${colors.grape1}`
       }
     }}
   />

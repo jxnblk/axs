@@ -11,6 +11,13 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  resolve: {
+    alias: {
+      'axs': path.join(__dirname, './src'),
+      'axs-ui': path.join(__dirname, './packages/axs-ui/src')
+    }
+  },
+
   module: {
     loaders: [
       {

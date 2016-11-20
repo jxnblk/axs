@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Box, Flex, Heading, Text } from '../src'
+import { Box, Text } from '../src'
+import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
 import Tweet from './Tweet'
 import Star from './Star'

@@ -1,13 +1,15 @@
 
 import React from 'react'
 import {
-  Flex,
   Box,
-  InlineBlock,
   Text,
-  Heading,
   colors,
 } from '../src'
+import {
+  Heading,
+  Flex,
+  InlineBlock,
+} from 'axs-ui'
 
 const NavLink = props => (
   <Text is='a'

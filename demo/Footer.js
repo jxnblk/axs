@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Flex, Box, Text } from '../src'
+import { Box, Text } from '../src'
+import { Flex } from 'axs-ui'
 import Link from './Link'
 import Container from './Container'
 import Logo from './Logo'
