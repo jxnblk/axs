@@ -17,6 +17,8 @@ class App extends React.Component {
   }
 
   componentDidMount () {
+    const { pathname } = history.location
+    this.setState({ path: pathname })
     history.listen(({ pathname }) => {
       this.setState({ path: pathname })
     })

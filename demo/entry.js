@@ -41,7 +41,7 @@ module.exports = (locals) => {
   }
   const { renderToString, renderToStaticMarkup } = require('react-dom/server')
 
-  const app = renderToStaticMarkup(<App {...locals} />)
+  const app = renderToString(<App {...locals} />)
   const css = cxs.css
   cxs.reset()
 

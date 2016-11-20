@@ -15,13 +15,12 @@ const Link = ({ to, ...props }) => {
       size6
       bold
       grape
+      display='inline-block'
+      py2
       {...props}
       is='a'
       onClick={e => to ? onClick(e, to) : null}
       css={{
-        display: 'inline-block',
-        paddingTop: 16,
-        paddingBottom: 16,
         textDecoration: 'none',
         ':hover': {
           color: colors.grape9

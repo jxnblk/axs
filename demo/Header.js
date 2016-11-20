@@ -10,7 +10,7 @@ import Pre from './Pre'
 
 export default () => (
   <Box is='header' px3 mb4>
-    <Box px3 py4 mb4 white bgGrape>
+    <Box py4 mb4 white bgGrape>
       <Container py4>
         <Flex css={cx.flex}>
           <Box border='right' css={cx.pipe} pr3 mr3>

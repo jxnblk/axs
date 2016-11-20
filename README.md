@@ -321,6 +321,7 @@ Axs also offers several shorthand styling props for faster development.
 - [ ] axs-ui library
   - [ ] Flexbox props
   - [ ] Element reset style objects
+- [ ] Replace open color with palx
 - [ ] Plugin architecture for style props
 
 ## Related

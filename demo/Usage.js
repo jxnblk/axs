@@ -15,19 +15,17 @@ const example = (
 )
 
 const Usage = () => (
-  <Box px3>
-    <Container>
-      <Heading children='Usage' />
-      <Flex mx-2 py3 css={{ alignItems: 'center' }}>
-        <Box px2 width={[1, 1/2]}>
-          <Pre bgGray0 children={toJsxString(example)} />
-        </Box>
-        <Box px2 width={[1, 1/2]}>
-          {example}
-        </Box>
-      </Flex>
-    </Container>
-  </Box>
+  <Container>
+    <Heading children='Usage' />
+    <Flex mx-2 py3 css={{ alignItems: 'center' }}>
+      <Box px2 width={[1, 1/2]}>
+        <Pre bgGray0 children={toJsxString(example)} />
+      </Box>
+      <Box px2 width={[1, 1/2]}>
+        {example}
+      </Box>
+    </Flex>
+  </Container>
 )
 
 export default Usage

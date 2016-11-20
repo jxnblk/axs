@@ -3,7 +3,10 @@ import React from 'react'
 import { Box } from '../src'
 
 const Container = props => (
-  <Box {...props} mx='auto' css={cx} />
+  <Box {...props}
+    mx='auto'
+    px3
+    css={cx} />
 )
 
 const cx = {

@@ -43,7 +43,8 @@ const Nav = () => (
 
 const cx = {
   root: {
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    alignItems: 'center'
   },
   space: {
     flex: '1 1 auto'

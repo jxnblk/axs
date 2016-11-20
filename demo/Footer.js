@@ -7,8 +7,7 @@ import Container from './Container'
 import Logo from './Logo'
 
 const Footer = () => (
-  <Box is='footer'
-    px3 py4>
+  <Box is='footer' py4>
     <Container>
       <Link
         mr2
