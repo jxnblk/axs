@@ -20,10 +20,10 @@ import {
 ---
 
 - [ ] style-resets
-- [ ] Label
-- [ ] Input
-- [ ] Select
-- [ ] Textarea
+- [x] Label
+- [x] Input
+- [x] Select
+- [x] Textarea
 - [ ] Button
 
 - [ ] Radio
@@ -33,6 +33,7 @@ import {
 - [ ] Link
 
 - [ ] Pre
+- [ ] Code
 - [ ] Blockquote
 - [ ] List
 
