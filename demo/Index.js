@@ -7,6 +7,7 @@ import Features from './Features'
 import Usage from './Usage'
 import Examples from './Examples'
 import Cta from './Cta'
+import Footer from './Footer'
 
 const Index = () => (
   <div>
@@ -15,6 +16,7 @@ const Index = () => (
     <Features />
     <Examples />
     <Cta />
+    <Footer />
   </div>
 )
 

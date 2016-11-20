@@ -16,9 +16,6 @@ export {
 import Heading from './Heading'
 import Flex from './Flex'
 import Button from './Button'
-import Block from './Block'
-import InlineBlock from './InlineBlock'
-import Inline from './Inline'
 import Label from './Label'
 import Input from './Input'
 import Select from './Select'
@@ -27,13 +24,12 @@ import Radio from './Radio'
 import Checkbox from './Checkbox'
 import Slider from './Slider'
 import Progress from './Progress'
+import InlineBlock from './InlineBlock'
+import Span from './Span'
 
 export { default as Heading } from './Heading'
 export { default as Flex } from './Flex'
 export { default as Button } from './Button'
-export { default as Block } from './Block'
-export { default as InlineBlock } from './InlineBlock'
-export { default as Inline } from './Inline'
 export { default as Label } from './Label'
 export { default as Input } from './Input'
 export { default as Select } from './Select'
@@ -42,6 +38,8 @@ export { default as Radio } from './Radio'
 export { default as Checkbox } from './Checkbox'
 export { default as Slider } from './Slider'
 export { default as Progress } from './Progress'
+export { default as InlineBlock } from './InlineBlock'
+export { default as Span } from './Span'
 
 export default {
   Box,
@@ -51,9 +49,8 @@ export default {
   Heading,
   Flex,
   Button,
-  Block,
   InlineBlock,
-  Inline,
+  Span,
   Label,
   Input,
   Select,

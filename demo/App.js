@@ -33,7 +33,6 @@ class App extends React.Component {
       <div>
         <Nav />
         {view}
-        <Footer />
       </div>
     )
   }

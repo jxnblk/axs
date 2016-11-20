@@ -8,7 +8,7 @@ import {
   Button,
   Block,
   InlineBlock,
-  Inline,
+  Span,
   Label,
   Input,
   Select,
@@ -31,9 +31,11 @@ const components = [
   {
     name: 'Flex',
     example: (
-      <Flex>
-        <Box width={1/2} p1 bgGray1>Box</Box>
-        <Box width={1/2} p1 bgGray2>Box</Box>
+      <Flex
+        align='center'
+        direction={[ 'column', 'row' ]}>
+        <Box width={[ 1, 1/2 ]} px1 py2 bgGray1>Box</Box>
+        <Box width={[ 1, 1/2 ]} p1 bgGray2>Box</Box>
       </Flex>
     )
   },
@@ -169,14 +171,6 @@ const components = [
     )
   },
   {
-    name: 'Block',
-    example: (
-      <Block p1 bgGray1>
-        Display Block
-      </Block>
-    )
-  },
-  {
     name: 'InlineBlock',
     example: (
       <InlineBlock p1 bgGray1>
@@ -185,11 +179,11 @@ const components = [
     )
   },
   {
-    name: 'Inline',
+    name: 'Span',
     example: (
-      <Inline bold bgGray1>
-        Inline
-      </Inline>
+      <Span bold grape>
+        Span
+      </Span>
     )
   },
 ]

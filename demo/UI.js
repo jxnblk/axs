@@ -6,6 +6,7 @@ import Container from './Container'
 import UiHeader from './UiHeader'
 import UiNav from './UiNav'
 import UiComponents from './UiComponents'
+import Footer from './Footer'
 
 const UI = () => {
   return (
@@ -17,6 +18,7 @@ const UI = () => {
           css={cx.nav} />
         <UiComponents />
       </Container>
+      <Footer />
     </Box>
   )
 }
@@ -29,14 +31,13 @@ const cx = {
   nav: {
     [breakpoints[1]]: {
       position: 'fixed',
-      top: 100,
+      top: 0,
       left: 0,
       bottom: 0,
+      marginTop: 100,
       overflow: 'auto',
       width: 192,
-      paddingLeft: 32,
-      paddingRight: 32,
-      backgroundColor: '#fff'
+      padding: 32,
     }
   },
   main: {

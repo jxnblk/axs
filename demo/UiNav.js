@@ -9,7 +9,12 @@ const UiNav = (props) => (
     {components.map((comp, i) => (
       <Link
         key={i}
-        display='block'
+        display='inline-block'
+        width={[
+          1/3,
+          1/4,
+          1,
+        ]}
         py0
         mb1
         href={`#${comp.name}`}>
