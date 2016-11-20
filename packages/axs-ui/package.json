@@ -23,6 +23,7 @@
     "babel-preset-stage-0": "^6.16.0"
   },
   "dependencies": {
-    "axs": "^1.0.0-b3"
+    "axs": "^1.0.0-b3",
+    "reline": "^1.0.0-beta.3"
   }
 }

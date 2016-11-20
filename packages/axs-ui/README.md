@@ -29,7 +29,7 @@ import {
 - [ ] Radio
 - [ ] Checkbox
 - [x] Slider
-- [ ] Progress
+- [x] Progress
 - [ ] Link
 
 - [ ] Pre

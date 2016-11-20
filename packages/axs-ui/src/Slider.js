@@ -2,19 +2,25 @@
 import React from 'react'
 import { Box, colors } from 'axs'
 
-const Slider = ({ css, ...props }) => (
-  <Box
-    is='input'
-    type='range'
-    css={{ ...cx, ...css }}
-    display='block'
-    width={1}
-    m0
-    bgGray3
-    rounded='circle'
-    {...props}
-  />
-)
+class Slider extends React.Component {
+  render () {
+    const { css, ...props } = this.props
+
+    return (
+      <Box
+        is='input'
+        type='range'
+        css={{ ...cx, ...css }}
+        display='block'
+        width={1}
+        m0
+        bgGray3
+        rounded='circle'
+        {...props}
+      />
+    )
+  }
+}
 
 const thumbStyles = {
   width: 24,

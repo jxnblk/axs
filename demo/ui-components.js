@@ -13,6 +13,8 @@ import {
   Input,
   Select,
   Textarea,
+  Radio,
+  Checkbox,
   Slider,
   Progress,
 } from 'axs-ui'
@@ -98,6 +100,44 @@ const components = [
           rows={4}
           defaultValue='Hello' />
       </Box>
+    )
+  },
+  {
+    name: 'Radio',
+    example: (
+      <Box>
+        <Flex is='label' bold size={4}>
+          <Radio
+            id='radio-1'
+            name='radio-1'
+            checked
+            mr1
+          />
+          Radio One
+        </Flex>
+        <Flex is='label' bold size={4}>
+          <Radio
+            id='radio-2'
+            name='radio-2'
+            mr1
+          />
+          Radio Two
+        </Flex>
+      </Box>
+    )
+  },
+  {
+    name: 'Checkbox',
+    example: (
+      <Flex is='label' bold size={4}>
+        <Checkbox
+          id='checkbox'
+          name='checkbox'
+          checked
+          mr1
+        />
+        Check it
+      </Flex>
     )
   },
   {
