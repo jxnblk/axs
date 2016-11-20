@@ -68,6 +68,9 @@ const cx = {
     position: 'absolute',
     zIndex: -1,
     opacity: 0,
+    ':focus ~ div': {
+      boxShadow: `0 0 0 2px ${colors.blue}`
+    }
   },
   box: {
     boxSizing: 'border-box',
