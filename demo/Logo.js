@@ -5,30 +5,23 @@ import { Box } from '../src'
 const M = 'M'
 const L = 'L'
 
-/* Reference Reline Triangle source
- * Shape
- * 0 a    8    c 16
- *
-  const a = strokeWidth / 2
-  const b = 8 - a
-  const c = 16 - a
-  [a, 13],
-  [c, 13],
-  [8, 13 - b * Math.sqrt(3)],
-  ['z']
-*/
-
-const a = 1 // edge offset
+const a = 2 // edge offset
 const b = 8 - a
 const c = 16 - a // outer edge offset
-const base = 13
+const base = 12.5
 const tri = [
   M, a, base, L, c, base,
   L, 8, base - b * Math.sqrt(3),
   'z'
 ].join(' ')
-const shiftx = n => n + 6
-const shifty = n => n + 3
+
+const rad = deg => Math.PI * deg / 180
+const H = (c - a) * 2/4
+const A = Math.cos(rad(30)) * H
+const B = Math.sin(rad(30)) * H
+
+const shiftx = n => n + A
+const shifty = n => n + B
 const handle = [
   M, shiftx(a), shifty(base),
   L, shiftx(8), shifty(base) - b * Math.sqrt(3)

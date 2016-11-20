@@ -1,6 +1,6 @@
 
 import React from 'react'
-import withBox from './withBox'
+import withAxs from './withAxs'
 
 const Box = ({
   is = 'div',
@@ -11,5 +11,5 @@ const Box = ({
 
 Box.displayName = 'Box'
 
-export default withBox(Box)
+export default withAxs(Box)
 

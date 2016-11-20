@@ -7,7 +7,9 @@ const sh = (...args) => args
 
 const isNum = n => typeof n === 'number' && !isNaN(n)
 
-export const getRadii = (R = 2) => val => {
+export const getRadii = ({ radius = 2 }) => val => {
+  const R = radius
+
   if (isNum(val)) {
     return { borderRadius: val }
   }

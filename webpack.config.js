@@ -4,10 +4,10 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './docs/entry.js',
+  entry: './demo/entry.js',
 
   output: {
-    path: path.join(__dirname, 'docs'),
+    path: path.join(__dirname, 'demo'),
     filename: 'bundle.js'
   },
 
@@ -32,12 +32,12 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'docs/template.ejs'
+      template: 'demo/template.ejs'
     })
   ],
 
   devServer: {
-    contentBase: 'docs/'
+    contentBase: 'demo/'
   }
 }
 
