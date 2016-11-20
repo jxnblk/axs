@@ -1,14 +1,22 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const StaticSite = require('static-site-generator-webpack-plugin')
+
+const paths = [
+  '/',
+  '/ui'
+]
 
 module.exports = {
-  entry: './demo/entry.js',
+  entry: {
+    main: './demo/entry.js'
+  },
 
   output: {
     path: path.join(__dirname, 'demo'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    libraryTarget: 'umd'
   },
 
   resolve: {
@@ -38,9 +46,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new HtmlWebpackPlugin({
-      template: 'demo/template.ejs'
-    })
+    new StaticSite('main', paths, {})
   ],
 
   devServer: {
