@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { withContext } from 'recompose'
+import { config } from '../src'
+import { withContext  } from 'recompose'
 import Nav from './Nav'
 import Header from './Header'
 import Features from './Features'
@@ -21,20 +22,5 @@ const App = () => (
   </div>
 )
 
-export default withContext({
-  axs: React.PropTypes.object
-}, () => ({
-  axs: {
-    typeScale: [
-      72,
-      64,
-      32,
-      24,
-      16,
-      14,
-      12,
-    ],
-    bold: 600
-  }
-}))(App)
+export default App
 

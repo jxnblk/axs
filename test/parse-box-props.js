@@ -1,7 +1,6 @@
 
 import test from 'ava'
 import parseProps from '../src/util/parse-box-props'
-import config from '../src/util/default-config'
 import { cxs } from '../src'
 
 const props = {
@@ -30,21 +29,21 @@ test.afterEach(() => {
 })
 
 test('returns props and className object', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   t.is(typeof result, 'object')
   t.is(typeof result.props, 'object')
   t.is(typeof result.className, 'string')
 })
 
 test('strips style props', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   t.deepEqual(result.props, {
     id: 'pass-through'
   })
 })
 
 test('creates css', t => {
-  const result = parseProps()(props)
+  const result = parseProps(props)
   const css = cxs.css
   t.regex(css, new RegExp(result.className))
   t.regex(css, /margin:16px/)
@@ -59,7 +58,7 @@ test('creates css', t => {
 })
 
 test('converts shorthand props', t => {
-  const result = parseProps()(shortProps)
+  const result = parseProps(shortProps)
   t.deepEqual(result.props, {})
 })
 

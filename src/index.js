@@ -2,6 +2,7 @@
 import cxs from 'cxs'
 import withBox from './withBox'
 import withText from './withText'
+import config from './config'
 import Box from './Box'
 import Text from './Text'
 import Heading from './Heading'
@@ -19,6 +20,7 @@ import {
 export { default as cxs } from 'cxs'
 export { default as withBox } from './withBox'
 export { default as withText } from './withText'
+export { default as config } from './config'
 export { default as Box } from './Box'
 export { default as Text } from './Text'
 export { default as Heading } from './Heading'
@@ -37,6 +39,7 @@ export default {
   cxs,
   withBox,
   withText,
+  config,
   Box,
   Text,
   Heading,

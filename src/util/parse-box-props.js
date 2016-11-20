@@ -1,7 +1,7 @@
 
 import cxs from 'cxs'
 import classnames from 'classnames'
-import defaultConfig from './default-config'
+import config from '../config'
 import convertShorthandProps from './convert-shorthand-props'
 
 import {
@@ -35,20 +35,17 @@ import {
   getRadii
 } from './radii'
 
-const parseBoxProps = (customConfig = {}) => original => {
+const parseBoxProps = original => {
   const styles = []
-  const config = {
-    ...defaultConfig,
-    ...customConfig,
-  }
-  const { breakpoints } = config
+  const options = config.get()
+  const { breakpoints } = options
 
-  const styleProps = convertShorthandProps(config)(original)
-  const margin = parseMargin(config)
-  const padding = parsePadding(config)
-  const color = getColor(config)
-  const bg = getBgColor(config)
-  const border = getBorderColor(config)
+  const styleProps = convertShorthandProps(options)(original)
+  const margin = parseMargin(options)
+  const padding = parsePadding(options)
+  const color = getColor(options)
+  const bg = getBgColor(options)
+  const border = getBorderColor(options)
 
 
   const props = Object.keys(styleProps)
@@ -68,7 +65,7 @@ const parseBoxProps = (customConfig = {}) => original => {
       } else if (BORDER_REG.test(key)) {
         styles.push(getBorder(val))
       } else if (RADIUS_REG.test(key)) {
-        styles.push(getRadii(config.radius)(val))
+        styles.push(getRadii(options.radius)(val))
       } else if (BG_REG.test(key)) {
         styles.push(bg(key, val))
       } else if (BORDER_COLOR_REG.test(key)) {

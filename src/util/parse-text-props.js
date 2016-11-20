@@ -1,7 +1,7 @@
 
 import cxs from 'cxs'
 import classnames from 'classnames'
-import defaultConfig from './default-config'
+import config from '../config'
 import convertShorthandProps from './convert-shorthand-props'
 
 import {
@@ -25,17 +25,14 @@ import {
   getBgColor,
 } from './color'
 
-const parseTextProps = (customConfig = {}) => original => {
-  const config = {
-    ...defaultConfig,
-    ...customConfig,
-  }
-  const { breakpoints } = config
-  const margin = parseMargin(config)
-  const padding = parsePadding(config)
-  const color = getColor(config)
-  const bg = getBgColor(config)
-  const styleProps = convertShorthandProps(config)(original)
+const parseTextProps = original => {
+  const options = config.get()
+  const { breakpoints } = options
+  const margin = parseMargin(options)
+  const padding = parsePadding(options)
+  const color = getColor(options)
+  const bg = getBgColor(options)
+  const styleProps = convertShorthandProps(options)(original)
 
   const styles = [
     { margin: 0 }
@@ -46,9 +43,9 @@ const parseTextProps = (customConfig = {}) => original => {
       const val = styleProps[key]
 
       if (FONTSIZE_REG.test(key)) {
-        styles.push(getFontSize(config)(key, val))
+        styles.push(getFontSize(options)(key, val))
       } else if (TYPE_REG.test(key)) {
-        styles.push(getTypeStyles(config)(key, val))
+        styles.push(getTypeStyles(options)(key, val))
       } else if (MARGIN_REG.test(key)) {
         styles.push(margin(key, val))
       } else if (PADDING_REG.test(key)) {

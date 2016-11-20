@@ -421,22 +421,13 @@ const SuperLink = withText(Link)
 
 ## Configuration
 
-Custom configurations can be set with React context
+Custom configurations can be set with the Config class instance.
+Be sure to set configuration before rendering.
 
-```jsx
-class App extends React.Component {
-  getChildContext () {
-    return {
-      axs: axsConfig
-    }
-  }
-}
+```js
+import { config } from 'axs'
 
-App.childContextTypes = {
-  axs: React.PropTypes.object
-}
-
-const axsConfig = {
+config.set({
   breakpoints: [
     '(min-width:40em)',
     '(min-width:48em)',
@@ -450,7 +441,7 @@ const axsConfig = {
   ],
   radius: 3,
   bold: 600
-}
+})
 ```
 
 ## Server Side Rendering
@@ -469,8 +460,7 @@ module.exports = (req, res) => {
   const css = cxs.css
 
   // Reset the cache for other page renders
-  cxs.clear()
-  cxs.sheet.flush()
+  cxs.reset()
 
   return `<!DOCTYPE html>
   <style>${css}</style>
@@ -492,12 +482,10 @@ Axs also offers several shorthand styling props for faster development.
 
 ## Future Development Considerations
 
-- [ ] Look into alternatives to React context for config
-  - [ ] CSS custom properties
-  - [ ] Config store
-- [ ] Element reset style objects
-- [ ] Theme/Config/Context provider component
+- [ ] Test CSS custom properties configurations
 - [ ] Flexbox props
+- [ ] Element reset style objects
+- [ ] axs-ui library
 
 ## Related
 
