@@ -3,12 +3,10 @@ import React from 'react'
 import { Box, colors } from '../src'
 import Logo from './Logo'
 
-const css = `body{margin:0}`
+const css = `body{margin:0}svg{overflow:visible}`
 
 const MiniIcon = () => (
-  <div style={{
-    padding: 32
-  }}>
+  <div style={{ padding: 32 }}>
     <style dangerouslySetInnerHTML={{ __html: css }} />
     <Logo
       color={colors.grape}

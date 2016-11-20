@@ -1,5 +1,5 @@
 
-![Axs](/docs/miniaxs.png?raw=true)
+![Axs](/demo/miniaxs.png?raw=true)
 
 # Axs
 
