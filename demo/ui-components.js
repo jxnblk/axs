@@ -5,6 +5,7 @@ import {
   Text,
   Heading,
   Flex,
+  Button,
   Block,
   InlineBlock,
   Inline,
@@ -12,6 +13,8 @@ import {
   Input,
   Select,
   Textarea,
+  Slider,
+  Progress,
 } from 'axs-ui'
 
 const components = [
@@ -30,6 +33,15 @@ const components = [
         <Box width={1/2} p1 bgGray1>Box</Box>
         <Box width={1/2} p1 bgGray2>Box</Box>
       </Flex>
+    )
+  },
+  {
+    name: 'Button',
+    example: (
+      <Button
+        href='#Button'
+        children='Button'
+      />
     )
   },
   {
@@ -86,6 +98,31 @@ const components = [
           rows={4}
           defaultValue='Hello' />
       </Box>
+    )
+  },
+  {
+    name: 'Slider',
+    example: (
+      <Box>
+        <Label htmlFor='slider'>
+          Slider
+        </Label>
+        <Slider
+          id='slider'
+          name='slider'
+          grape
+          defaultValue={100/8} />
+      </Box>
+    )
+  },
+  {
+    name: 'Progress',
+    example: (
+      <Progress
+        grape
+        value={1/4}>
+        25%
+      </Progress>
     )
   },
   {

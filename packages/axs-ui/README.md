@@ -19,16 +19,16 @@ import {
 
 ---
 
-- [ ] style-resets
+- [-] style-resets
 - [x] Label
 - [x] Input
 - [x] Select
 - [x] Textarea
-- [ ] Button
+- [x] Button
 
 - [ ] Radio
 - [ ] Checkbox
-- [ ] Slider
+- [x] Slider
 - [ ] Progress
 - [ ] Link
 
