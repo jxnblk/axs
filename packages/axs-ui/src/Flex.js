@@ -2,6 +2,12 @@
 import React from 'react'
 import { Box } from 'axs'
 
+// Flex props (parse array)
+// - wrap
+// - direction
+// - align (items)
+// - justify (content)
+
 const Flex = props => (
   <Box
     {...props}
