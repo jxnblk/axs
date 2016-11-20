@@ -460,8 +460,7 @@ module.exports = (req, res) => {
   const css = cxs.css
 
   // Reset the cache for other page renders
-  cxs.clear()
-  cxs.sheet.flush()
+  cxs.reset()
 
   return `<!DOCTYPE html>
   <style>${css}</style>
@@ -484,9 +483,9 @@ Axs also offers several shorthand styling props for faster development.
 ## Future Development Considerations
 
 - [ ] Test CSS custom properties configurations
-- [ ] Element reset style objects
-- [ ] Theme/Config/Context provider component
 - [ ] Flexbox props
+- [ ] Element reset style objects
+- [ ] axs-ui library
 
 ## Related
 
