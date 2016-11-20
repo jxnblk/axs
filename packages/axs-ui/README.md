@@ -28,7 +28,13 @@ import {
 
 - [ ] Radio
 - [ ] Checkbox
+- [ ] Slider
+- [ ] Progress
 - [ ] Link
+
+- [ ] Pre
+- [ ] Blockquote
+- [ ] List
 
 MIT License
 
