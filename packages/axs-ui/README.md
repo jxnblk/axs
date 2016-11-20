@@ -27,19 +27,19 @@ const Header = () => (
 
 ## Components
 
-- [Heading](#Heading)
-- [Flex](#Flex)
-- [Button](#Button)
-- [Label](#Label)
-- [Input](#Input)
-- [Select](#Select)
-- [Textarea](#Textarea)
-- [Radio](#Radio)
-- [Checkbox](#Checkbox)
-- [Slider](#Slider)
-- [Progress](#Progress)
-- [InlineBlock](#InlineBlock)
-- [Span](#Span)
+- [Heading](#heading)
+- [Flex](#flex)
+- [Button](#button)
+- [Label](#label)
+- [Input](#input)
+- [Select](#select)
+- [Textarea](#textarea)
+- [Radio](#radio)
+- [Checkbox](#checkbox)
+- [Slider](#slider)
+- [Progress](#progress)
+- [InlineBlock](#inlineblock)
+- [Span](#span)
 
 ### Heading
 
