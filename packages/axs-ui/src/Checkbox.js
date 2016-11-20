@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Box, colors } from 'axs'
-import { X } from 'reline'
+import { Line, X } from 'reline'
 
 class Checkbox extends React.Component {
   render () {
@@ -47,16 +47,9 @@ class Checkbox extends React.Component {
           rounded
           css={{
             ...cx.box,
-            backgroundColor: checked ? 'currentcolor' : colors.gray5,
-            // borderStyle: checked ? 'solid' : null,
-            // borderColor: checked ? 'currentcolor' : null,
-            opacity: checked ? null : 1/4
+            backgroundColor: checked ? 'currentcolor' : colors.gray3
           }}>
-          {checked && (
-            <Box is={X}
-              css={cx.check}
-            />
-          )}
+          {checked && check}
         </Box>
       </Box>
     )
@@ -78,19 +71,29 @@ const cx = {
   },
   box: {
     boxSizing: 'border-box',
+    display: 'flex',
+    alignItems: 'center',
     width: 16,
     height: 16,
     color: 'currentcolor',
-    // borderWidth: 2,
-    transition: 'border .1s ease-out'
+    transition: 'background-color .1s ease-out'
   },
   check: {
+    margin: 2,
     display: 'block',
-    width: 12,
-    height: 12,
     color: colors.white
   }
 }
+
+const check = <Line
+  size={12}
+  style={cx.check}
+  path={[
+    [2, 7],
+    [8, 12],
+    [16, 3]
+  ]}
+/>
 
 export default Checkbox
 

@@ -43,6 +43,7 @@ const components = [
       <Button
         href='#Button'
         children='Button'
+        bgGrape
       />
     )
   },
@@ -111,6 +112,7 @@ const components = [
             id='radio-1'
             name='radio-1'
             checked
+            grape
             mr1
           />
           Radio One
@@ -134,6 +136,7 @@ const components = [
           id='checkbox'
           name='checkbox'
           checked
+          grape
           mr1
         />
         Check it
