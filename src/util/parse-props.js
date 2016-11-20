@@ -11,6 +11,14 @@ import {
   parsePadding,
 } from './scale-prop'
 import {
+  FONTSIZE_REG,
+  getFontSize
+} from './font-size'
+import {
+  TYPE_REG,
+  getTypeStyles
+} from './typography'
+import {
   WIDTH_REG,
   getWidth
 } from './width'
@@ -35,18 +43,22 @@ import {
   getRadii
 } from './radii'
 
-const parseBoxProps = original => {
-  const styles = []
+const parseProps = original => {
+  const styles = [
+    { margin: 0 }
+  ]
   const options = config.get()
   const { breakpoints } = options
 
-  const styleProps = convertShorthandProps(options)(original)
   const margin = parseMargin(options)
   const padding = parsePadding(options)
+  const fontSize = getFontSize(options)
+  const typography = getTypeStyles(options)
   const color = getColor(options)
   const bg = getBgColor(options)
   const border = getBorderColor(options)
-
+  const radii = getRadii(options)
+  const styleProps = convertShorthandProps(options)(original)
 
   const props = Object.keys(styleProps)
     .map(key => {
@@ -62,10 +74,14 @@ const parseBoxProps = original => {
         styles.push(getWidth(breakpoints)(val))
       } else if (DISPLAY_REG.test(key)) {
         styles.push(getDisplay(val))
+      } else if (FONTSIZE_REG.test(key)) {
+        styles.push(fontSize(key, val))
+      } else if (TYPE_REG.test(key)) {
+        styles.push(typography(key, val))
       } else if (BORDER_REG.test(key)) {
         styles.push(getBorder(val))
       } else if (RADIUS_REG.test(key)) {
-        styles.push(getRadii(options.radius)(val))
+        styles.push(radii(val))
       } else if (BG_REG.test(key)) {
         styles.push(bg(key, val))
       } else if (BORDER_COLOR_REG.test(key)) {
@@ -90,5 +106,5 @@ const parseBoxProps = original => {
   return { props, className }
 }
 
-export default parseBoxProps
+export default parseProps
 

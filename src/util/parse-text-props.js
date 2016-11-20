@@ -44,6 +44,7 @@ const parseTextProps = original => {
 
       if (FONTSIZE_REG.test(key)) {
         styles.push(getFontSize(options)(key, val))
+
       } else if (TYPE_REG.test(key)) {
         styles.push(getTypeStyles(options)(key, val))
       } else if (MARGIN_REG.test(key)) {

@@ -1,7 +1,6 @@
 
 import cxs from 'cxs'
-import withBox from './withBox'
-import withText from './withText'
+import withAxs from './withAxs'
 import config from './config'
 import Box from './Box'
 import Text from './Text'
@@ -18,8 +17,7 @@ import {
 } from './util/default-config'
 
 export { default as cxs } from 'cxs'
-export { default as withBox } from './withBox'
-export { default as withText } from './withText'
+export { default as withAxs } from './withAxs'
 export { default as config } from './config'
 export { default as Box } from './Box'
 export { default as Text } from './Text'
@@ -37,8 +35,7 @@ export {
 
 export default {
   cxs,
-  withBox,
-  withText,
+  withAxs,
   config,
   Box,
   Text,

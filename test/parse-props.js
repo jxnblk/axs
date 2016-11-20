@@ -1,12 +1,14 @@
 
 import test from 'ava'
-import parseProps from '../src/util/parse-box-props'
+import parseProps from '../src/util/parse-props'
 import { cxs } from '../src'
 
 const props = {
   m: 2,
   px: 3,
   width: 1/2,
+  size: 3,
+  bold: true,
   display: 'inline-block',
   border: true,
   rounded: true,
@@ -24,8 +26,7 @@ const shortProps = {
 }
 
 test.afterEach(() => {
-  cxs.clear()
-  cxs.sheet.flush()
+  cxs.reset()
 })
 
 test('returns props and className object', t => {
@@ -49,6 +50,8 @@ test('creates css', t => {
   t.regex(css, /margin:16px/)
   t.regex(css, /padding-left:32px/)
   t.regex(css, /width:50%/)
+  t.regex(css, /font-size:24px/)
+  t.regex(css, /font-weight:700/)
   t.regex(css, /display:inline-block/)
   t.regex(css, /border:1px solid/)
   t.regex(css, /border-radius:2px/)

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import withText from './withText'
+import withAxs from './withAxs'
 
 const Text = ({
   is = 'p',
@@ -11,5 +11,5 @@ const Text = ({
 
 Text.displayName = 'Text'
 
-export default withText(Text)
+export default withAxs(Text)
 
