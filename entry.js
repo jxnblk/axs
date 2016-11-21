@@ -6,6 +6,7 @@ const html = require('./html')
 const App = require('./App').default
 
 const basehref = process.env.NODE_ENV === 'production' ? '/axs/' : '/'
+console.log('basehref', process.env.NODE_ENV, basehref)
 
 config.set({
   typeScale: [
