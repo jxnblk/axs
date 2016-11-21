@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Axs</title>
+<meta name='description' content='A build-your-own responsive typography and layout UI toolkit for React'>
+<meta name='twitter:card' content='summary_large_image'>
+<meta name='twitter:site' content='@jxnblk'>
+<meta name='og:title' content='Axs'>
+<meta name='og:description' content='A build-your-own responsive typography and layout UI toolkit for React'>
+<meta name='og:image' content='http://jxnblk.com/axs/tricard2.png'>
+<style>*{box-sizing:border-box}body{ font-family:-apple-sytem,BlinkMacSystemFont,sans-serif; line-height:1.5; margin:0 }code{font-family:Menlo,monospace;font-size:87.5%}</style>
+<style>.cxs-745620931{}.cxs-2366814858{margin:0px;padding-left:32px;padding-right:32px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap;align-items:center;display:flex}.cxs-2587995513{margin:0px;width:100%;align-items:center;display:flex}@media screen and (min-width:40em) { .cxs-2587995513{width:50%} }.cxs-1259608807{margin:0px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#be4bdb;display:inline-block;padding-top:16px;padding-bottom:16px;padding:0px;text-decoration:none}.cxs-1259608807:hover{color:#862e9c}.cxs-1259608807:focus{outline:none;color:#862e9c;box-shadow:0 0 0 2px #f3d9fa}.cxs-3936273984{margin:0px;display:inline-block;margin-right:16px;width:32px}.cxs-1486016183{margin:0px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#be4bdb;display:inline-block;padding-top:16px;padding-bottom:16px;margin-right:16px;text-decoration:none}.cxs-1486016183:hover{color:#862e9c}.cxs-1486016183:focus{outline:none;color:#862e9c;box-shadow:0 0 0 2px #f3d9fa}.cxs-3461551192{margin:0px;flex:1 1 auto}.cxs-654468667{margin:0px;width:auto;display:flex}.cxs-769895239{margin:0px;display:inline-block;margin-top:16px;margin-bottom:16px;margin-right:16px}.cxs-1312766641{margin:0px;display:block}.cxs-3617776299{margin:0px;width:96px;height:20px;margin-top:16px;margin-bottom:16px}.cxs-3875062785{margin:0px;margin-top:16px;margin-bottom:16px;display:flex}.cxs-3423123151{margin:0px}.cxs-3982491854{margin:0px;padding-left:32px;padding-right:32px;margin-bottom:64px}.cxs-2529589162{margin:0px;padding-top:64px;padding-bottom:64px;margin-bottom:64px;color:#ffffff;background-color:#be4bdb}.cxs-2219803478{margin:0px;padding-top:64px;padding-bottom:64px;margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px;max-width:1024px}.cxs-98487320{margin:0px;flex-wrap:wrap;align-items:center;display:flex}.cxs-399826389{margin:0px;border-right:1px solid;border-width:4px;padding-right:32px;margin-right:32px}@media screen and (max-width:40em) { .cxs-399826389{border:0px} }.cxs-4156968522{margin:0px;font-size:64px;font-weight:600;line-height:1.25}@media screen and (min-width:52em) { .cxs-4156968522{font-size:72px} }.cxs-2534323242{margin:0px;width:100%}@media screen and (min-width:40em) { .cxs-2534323242{width:50%} }.cxs-645491070{margin:0px;font-weight:600;font-size:16px;margin-top:16px}@media screen and (min-width:40em) { .cxs-645491070{font-size:24px} }.cxs-3553271540{margin:0px;padding:0px;font-size:16px;color:#f3d9fa;margin-top:16px;margin-bottom:16px;font-family:Menlo, monospace;max-width:100%;overflow:auto}.cxs-765525679{flex-wrap:wrap;align-items:center}.cxs-1113090545{margin:0px;display:flex}.cxs-47390218{margin:0px;width:100%}@media screen and (min-width:52em) { .cxs-47390218{width:50%} }.cxs-3835025811{margin:0px;background-color:#be4bdb;width:64px;margin-top:16px;margin-bottom:16px;height:4px}.cxs-2818548644{margin:0px;font-size:24px}.cxs-1135931965{margin:0px;margin-top:16px;margin-bottom:16px;padding:8px;border-radius:2px;border:1px solid;border-color:#f1f3f5;background-color:#ffffff;max-width:320px}@media screen and (min-width:52em) { .cxs-1135931965{margin-left:auto} }.cxs-1135931965 #carbonads{display:inline-block;font-size:14px;line-height:1.25;text-align:left;max-width:320px;background-color:white}.cxs-1135931965 #carbonads a{text-decoration:none;color:inherit}.cxs-1135931965 #carbonads a:hover{}.cxs-1135931965 #carbonads > span{display:block}.cxs-1135931965 #carbonads > span:before{content:"";display:table}.cxs-1135931965 #carbonads > span:after{content:"";display:table;clear:both}.cxs-1135931965 #carbonads .carbon-img{float:left;margin-right:8px}.cxs-1135931965 #carbonads .carbon-img > img{display:block}.cxs-1135931965 #carbonads .carbon-text{overflow:hidden}.cxs-1135931965 #carbonads .carbon-poweredby{float:left;margin-top:4px;opacity:0.5}.cxs-2620575068{margin:0px;margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px;max-width:1024px}.cxs-3316184639{margin:0px;font-size:32px;font-weight:600;line-height:1.25}.cxs-1203953694{margin:0px;text-decoration:none;color:inherit}.cxs-1203953694:hover{text-decoration:underline}.cxs-1203953694:focus{outline:none;text-decoration:underline;color:#be4bdb}.cxs-732586545{margin:0px;margin-left:-16px;margin-right:-16px;padding-top:32px;padding-bottom:32px;align-items:center;display:flex}.cxs-4265654155{margin:0px;padding-left:16px;padding-right:16px;width:100%}@media screen and (min-width:40em) { .cxs-4265654155{width:50%} }.cxs-1486307700{margin:0px;padding:16px;font-size:12px;color:#9c36b5;background-color:#f8f9fa;font-family:Menlo, monospace;max-width:100%;overflow:auto}.cxs-2154718565{margin:0px;padding:16px;margin-bottom:16px;color:#ffffff;background-color:#be4bdb}.cxs-2650026528{margin:0px;font-size:32px}.cxs-2126061408{margin:0px;margin-left:-32px;margin-right:-32px;flex-wrap:wrap;display:flex}.cxs-272491877{margin:0px;padding:32px;width:100%}@media screen and (min-width:40em) { .cxs-272491877{width:50%} }.cxs-3050190439{margin:0px;font-size:24px;font-weight:600;margin-bottom:16px;line-height:1.25}.cxs-572095924{margin:0px;font-size:32px;font-weight:600;margin-bottom:16px;line-height:1.25}.cxs-3622712328{margin:0px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#be4bdb;display:inline-block;padding-top:16px;padding-bottom:16px;text-decoration:none}.cxs-3622712328:hover{color:#862e9c}.cxs-3622712328:focus{outline:none;color:#862e9c;box-shadow:0 0 0 2px #f3d9fa}.cxs-4250752890{margin:0px;padding-top:32px;padding-bottom:32px}.cxs-1563559277{margin:0px;border:1px solid;border-radius:2px;border-color:#dee2e6}.cxs-1081973795{margin:0px;padding:16px}.cxs-3797940103{flex-wrap:wrap}.cxs-934473871{margin:0px;width:100%;padding:16px;background-color:#f1f3f5}@media screen and (min-width:40em) { .cxs-934473871{width:50%} }@media screen and (min-width:52em) { .cxs-934473871{width:25%} }.cxs-1871491258{margin:0px;width:100%;padding:16px;background-color:#dee2e6}@media screen and (min-width:40em) { .cxs-1871491258{width:50%} }@media screen and (min-width:52em) { .cxs-1871491258{width:25%} }.cxs-2274319537{margin:0px;padding:16px;font-size:12px;color:#9c36b5;background-color:#f8f9fa;margin-bottom:0px;font-family:Menlo, monospace;max-width:100%;overflow:auto}.cxs-1062261304{margin:0px;padding:8px;font-weight:600;color:#ffffff;background-color:#228ae6;font-family:inherit;font-size:inherit;border:1px solid transparent;border-radius:3px;appearance:none;-webkit-appearance:none}.cxs-1062261304:hover{box-shadow:inset 0 0 0 64px rgba(0, 0, 0, .125)}.cxs-134662589{margin:0px;padding:8px;font-weight:600;color:#ffffff;background-color:#fa5252;font-family:inherit;font-size:12px;border:1px solid transparent;border-radius:3px;appearance:none;-webkit-appearance:none;text-transform:uppercase;letter-spacing:.1em}.cxs-134662589:hover{box-shadow:inset 0 0 0 64px rgba(0, 0, 0, .125)}.cxs-992593794{margin:0px;font-size:12px;display:block;color:#343a40}.cxs-3487122629{margin:0px;display:block;width:100%;padding:8px;border-radius:2px;border:1px solid;border-color:#ced4da;font-family:inherit;font-size:inherit;color:inherit;background-color:transparent}.cxs-3487122629:focus{outline:none;border-color:#228ae6}.cxs-2616343502{margin:0px;padding:32px;margin-bottom:16px;border-radius:2px;color:#ffffff;background-color:#be4bdb}.cxs-3488657247{margin:0px;padding:16px;color:#ffffff;background-color:#be4bdb}@media screen and (min-width:40em) { .cxs-3488657247{margin:8px} }@media screen and (min-width:52em) { .cxs-3488657247{padding:32px} }@media screen and (min-width:64em) { .cxs-3488657247{margin:32px} }.cxs-2098788222{margin:0px;font-size:24px;font-weight:600;line-height:1.25}@media screen and (min-width:40em) { .cxs-2098788222{font-size:32px} }@media screen and (min-width:52em) { .cxs-2098788222{font-size:64px} }@media screen and (min-width:64em) { .cxs-2098788222{font-size:72px} }.cxs-1422046449{margin:0px;font-size:14px;font-weight:600;color:inherit;display:block;text-decoration:none;opacity:0.5}.cxs-1422046449:hover{opacity:1}.cxs-1073974205{margin:0px;background-color:#f1f3f5;display:flex}.cxs-1271923597{margin:0px;font-size:14px;font-weight:600;color:inherit;padding:16px;display:block;text-decoration:none;opacity:0.5}.cxs-1271923597:hover{opacity:1}.cxs-2732756344{align-items:center}.cxs-549792040{margin:0px;margin-right:16px}.cxs-1410316838{margin:0px;font-weight:600}.cxs-3250630458{margin:0px;color:#ffffff}.cxs-792526040{margin:0px;padding-top:8px;padding-bottom:8px;margin-bottom:8px;width:25%;background-color:#be4bdb}.cxs-404108475{margin:0px;margin-left:16px;margin-right:16px;font-weight:600}.cxs-281388622{margin:0px;padding-top:8px;padding-bottom:8px;width:75%;background-color:#9c36b5}.cxs-1047762469{margin:0px;color:#ffffff;display:flex}.cxs-473949484{margin:0px;padding-top:8px;padding-bottom:8px;width:37.5%;background-color:#9c36b5}.cxs-1045143546{margin:0px;font-size:12px;font-weight:600;text-align:center}.cxs-4156576721{margin:0px;padding-top:8px;padding-bottom:8px;width:25%;background-color:#be4bdb}.cxs-3298055457{margin:0px;padding-top:8px;padding-bottom:8px;width:25%;background-color:#da77f2}.cxs-3879676299{margin:0px;padding-top:8px;padding-bottom:8px;width:12.5%;background-color:#eebefa}.cxs-4198454676{margin:0px;border:1px solid;border-radius:2px;border-color:#be4bdb}.cxs-1506894828{margin:0px;padding:16px;color:#ffffff;background-color:#be4bdb}.cxs-3197897448{margin:0px;padding:16px;border-top:1px solid;color:#be4bdb;border-color:#be4bdb}.cxs-3264424628{margin:0px;font-size:12px}.cxs-1430877625{margin:0px;width:100%;border:1px solid;border-color:#dee2e6;border-radius:2px}@media screen and (min-width:40em) { .cxs-1430877625{width:50%} }@media screen and (min-width:52em) { .cxs-1430877625{width:33.33333333333333%} }.cxs-3188073699{margin:0px;width:512px;display:block;max-width:100%;height:auto}.cxs-1327038189{margin:0px;padding-left:16px;padding-right:16px;padding-top:8px;padding-bottom:8px}.cxs-1108517706{margin:0px;font-weight:600;font-size:24px}.cxs-1491752186{margin:0px;padding-left:16px;padding-right:16px;color:#be4bdb}.cxs-3259245370{margin:0px;font-weight:600;font-size:16px}@media screen and (min-width:52em) { .cxs-3259245370{font-size:32px} }.cxs-2578638112{margin:0px;font-size:14px}.cxs-4274390762{margin:0px;padding-top:32px;padding-bottom:32px;color:#ffffff;background-color:#862e9c}.cxs-2127861817{margin:0px;padding-left:32px;padding-right:32px;width:50%;vertical-align:top;display:inline-block}@media screen and (min-width:40em) { .cxs-2127861817{width:33.33333333333333%} }@media screen and (min-width:52em) { .cxs-2127861817{width:25%} }.cxs-178212168{margin:0px;position:relative;height:0px;padding:0px;padding-bottom:56.25%;overflow:hidden}.cxs-285186136{margin:0px;position:absolute;width:100%;height:100%;top:0px;bottom:0px;left:0px;border:0px}.cxs-3434381204{margin:0px;font-size:24px;font-weight:600}.cxs-780918126{margin:0px;font-size:32px;font-weight:600;color:#be4bdb}.cxs-907154868{margin:0px;padding-top:64px;padding-bottom:64px}.cxs-2547090685{flex-direction:column}@media screen and (min-width:40em) { .cxs-2547090685{flex-direction:row} }.cxs-2970010734{margin:0px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#be4bdb;display:inline-block;padding-top:16px;padding-bottom:16px;margin-left:auto;text-decoration:none}.cxs-2970010734:hover{color:#862e9c}.cxs-2970010734:focus{outline:none;color:#862e9c;box-shadow:0 0 0 2px #f3d9fa}.cxs-3932802627{margin:0px;padding-top:64px;padding-bottom:64px;margin-top:64px;margin-bottom:64px;color:#be4bdb;justify-content:space-around;display:flex}.cxs-1005594324{margin:0px;display:inline-block;width:48px}</style>
+<div id='app'><div data-reactroot="" data-reactid="1" data-react-checksum="-1810657471"><div class="cxs-745620931 cxs-2366814858" data-reactid="2"><div class="cxs-745620931 cxs-2587995513" data-reactid="3"><a href="/" title="Home" class="cxs-1259608807" data-reactid="4"><svg viewBox="0 0 16 16" height="32" style="overflow:visible;" fill="none" stroke="#be4bdb" class="cxs-3936273984" data-reactid="5"><path d="M 2 12.5 L 14 12.5 L 8 2.107695154586736 z" data-reactid="6"></path><path d="M 7.196152422706632 15.5 L 13.196152422706632 5.107695154586736" data-reactid="7"></path></svg></a><a href="/ui" class="cxs-1486016183" data-reactid="8">Axs UI</a><a href="https://github.com/jxnblk/axs" class="cxs-1486016183" data-reactid="9">GitHub</a><a href="https://npmjs.com/package/axs" class="cxs-1486016183" data-reactid="10">npm</a></div><div class="cxs-3461551192" data-reactid="11"></div><div class="cxs-745620931 cxs-654468667" data-reactid="12"><a href="https://travis-ci.org/jxnblk/axs" class="cxs-769895239" data-reactid="13"><img src="https://travis-ci.org/jxnblk/axs.svg?branch=master" class="cxs-1312766641" data-reactid="14"/></a><iframe src="//ghbtns.com/github-btn.html?user=jxnblk&amp;repo=axs&amp;type=star&amp;count=true" frameborder="0" scrolling="0" height="20px" class="cxs-3617776299" data-reactid="15"></iframe><div class="cxs-745620931 cxs-3875062785" data-reactid="16"><a class="twitter-share-button cxs-3423123151" href="https://twitter.com/intent/tweet?text=Axs:%20A%20build-your-own%20responsive%20typography%20and%20layout%20UI%20toolkit%20for%20React%20" data-via="jxnblk" data-reactid="17">Tweet</a></div></div></div><div data-reactid="18"><header class="cxs-3982491854" data-reactid="19"><div class="cxs-2529589162" data-reactid="20"><div class="cxs-2219803478" data-reactid="21"><div class="cxs-745620931 cxs-98487320" data-reactid="22"><div class="cxs-399826389" data-reactid="23"><h1 class="cxs-4156968522" data-reactid="24">Axs</h1></div><div class="cxs-2534323242" data-reactid="25"><p class="cxs-645491070" data-reactid="26">A build-your-own responsive typography and layout UI toolkit for React</p><pre class="cxs-3553271540" data-reactid="27">npm i axs</pre></div></div></div></div><div class="cxs-765525679 cxs-1113090545" data-reactid="28"><div class="cxs-47390218" data-reactid="29"><div class="cxs-3835025811" data-reactid="30"></div><p class="cxs-2818548644" data-reactid="31">Axs is a React UI component library that serves as a foundation for highly customized UI as well as a utility belt for prototyping.</p></div><div class="cxs-1135931965" data-reactid="32"><div data-reactid="33"></div></div></div></header><div id="usage" class="cxs-2620575068" data-reactid="34"><h2 class="cxs-3316184639" data-reactid="35"><a href="#usage" class="cxs-1203953694" data-reactid="36">Usage</a></h2><div class="cxs-745620931 cxs-732586545" data-reactid="37"><div class="cxs-4265654155" data-reactid="38"><pre class="cxs-1486307700" data-reactid="39">&lt;Box
+  bgGrape
+  mb2
+  p2
+  white
+&gt;
+  &lt;Text
+    is=&quot;h2&quot;
+    size2
+  &gt;
+    Box
+  &lt;/Text&gt;
+&lt;/Box&gt;</pre></div><div class="cxs-4265654155" data-reactid="40"><div class="cxs-2154718565" data-reactid="41"><h2 class="cxs-2650026528" data-reactid="42">Box</h2></div></div></div></div><section class="cxs-2620575068" data-reactid="43"><div class="cxs-745620931 cxs-2126061408" data-reactid="44"><div class="cxs-272491877" data-reactid="45"><div class="cxs-3835025811" data-reactid="46"></div><h2 class="cxs-3050190439" data-reactid="47">Responsive Typography and Layout</h2><p class="cxs-3423123151" data-reactid="48">Axs is an abstraction of the most common responsive typographic and layout styling concerns in the form of two UI component primitives.</p></div><div class="cxs-272491877" data-reactid="49"><div class="cxs-3835025811" data-reactid="50"></div><h2 class="cxs-3050190439" data-reactid="51">From Prototype to UI Library</h2><p class="cxs-3423123151" data-reactid="52">Axs is intended as a way to quickly prototype new UI, handle one-off styles, and serve as a foundation for creating your own custom UI component libraries.</p></div><div class="cxs-272491877" data-reactid="53"><div class="cxs-3835025811" data-reactid="54"></div><h2 class="cxs-3050190439" data-reactid="55">UI Component Primitives</h2><p class="cxs-3423123151" data-reactid="56">Use the Box component as a starting point for any visual containers or grid systems in your app. Use the Text component for headings, labels, messages, or any other UI typography.</p></div><div class="cxs-272491877" data-reactid="57"><div class="cxs-3835025811" data-reactid="58"></div><h2 class="cxs-3050190439" data-reactid="59">The Power of CSS in JavaScript</h2><p class="cxs-3423123151" data-reactid="60"><!-- react-text: 61 -->Each Axs component handles CSS-in-JS with the <!-- /react-text --><code data-reactid="62">css</code><!-- react-text: 63 --> prop, with support for media queries and pseudoclasses, to allow for any fine-tuned styling needs.<!-- /react-text --></p></div></div></section><section id="examples" class="cxs-2219803478" data-reactid="64"><h2 class="cxs-572095924" data-reactid="65"><a href="#examples" class="cxs-1203953694" data-reactid="66">Examples</a></h2><p class="cxs-3423123151" data-reactid="67"><!-- react-text: 68 -->Some of the examples below use components from the optional <!-- /react-text --><a href="/ui" class="cxs-3622712328" data-reactid="69">axs-ui</a><!-- react-text: 70 --> package.<!-- /react-text --></p><div id="Grid" class="cxs-4250752890" data-reactid="71"><h3 class="cxs-3050190439" data-reactid="72"><a href="#Grid" class="cxs-1203953694" data-reactid="73">Grid</a></h3><div class="cxs-1563559277" data-reactid="74"><div class="cxs-1081973795" data-reactid="75"><div class="cxs-3797940103 cxs-1113090545" data-reactid="76"><div class="cxs-934473871" data-reactid="77">Box</div><div class="cxs-1871491258" data-reactid="78">Box</div><div class="cxs-934473871" data-reactid="79">Box</div><div class="cxs-1871491258" data-reactid="80">Box</div></div></div><pre class="cxs-2274319537" data-reactid="81">&lt;Flex wrap&gt;
+  &lt;Box
+    bgGray1
+    p2
+    width={[
+      1,
+      0.5,
+      0.25
+    ]}
+  &gt;
+    Box
+  &lt;/Box&gt;
+  &lt;Box
+    bgGray3
+    p2
+    width={[
+      1,
+      0.5,
+      0.25
+    ]}
+  &gt;
+    Box
+  &lt;/Box&gt;
+  &lt;Box
+    bgGray1
+    p2
+    width={[
+      1,
+      0.5,
+      0.25
+    ]}
+  &gt;
+    Box
+  &lt;/Box&gt;
+  &lt;Box
+    bgGray3
+    p2
+    width={[
+      1,
+      0.5,
+      0.25
+    ]}
+  &gt;
+    Box
+  &lt;/Box&gt;
+&lt;/Flex&gt;</pre></div></div><div id="Button" class="cxs-4250752890" data-reactid="82"><h3 class="cxs-3050190439" data-reactid="83"><a href="#Button" class="cxs-1203953694" data-reactid="84">Button</a></h3><div class="cxs-1563559277" data-reactid="85"><div class="cxs-1081973795" data-reactid="86"><button class="cxs-1062261304" data-reactid="87">Button</button></div><pre class="cxs-2274319537" data-reactid="88">&lt;Text
+  bgBlue
+  bold
+  css={{
+    &#x27;:hover&#x27;: {
+      boxShadow: &#x27;inset 0 0 0 64px rgba(0, 0, 0, .125)&#x27;
+    },
+    WebkitAppearance: &#x27;none&#x27;,
+    appearance: &#x27;none&#x27;,
+    border: &#x27;1px solid transparent&#x27;,
+    borderRadius: 3,
+    fontFamily: &#x27;inherit&#x27;,
+    fontSize: &#x27;inherit&#x27;
+  }}
+  is=&quot;button&quot;
+  p1
+  white
+&gt;
+  Button
+&lt;/Text&gt;</pre></div></div><div id="Red Button" class="cxs-4250752890" data-reactid="89"><h3 class="cxs-3050190439" data-reactid="90"><a href="#Red Button" class="cxs-1203953694" data-reactid="91">Red Button</a></h3><div class="cxs-1563559277" data-reactid="92"><div class="cxs-1081973795" data-reactid="93"><button class="cxs-134662589" data-reactid="94">Red Button</button></div><pre class="cxs-2274319537" data-reactid="95">&lt;Button
+  bgRed
+  caps
+  size={6}
+&gt;
+  Red Button
+&lt;/Button&gt;</pre></div></div><div id="Form" class="cxs-4250752890" data-reactid="96"><h3 class="cxs-3050190439" data-reactid="97"><a href="#Form" class="cxs-1203953694" data-reactid="98">Form</a></h3><div class="cxs-1563559277" data-reactid="99"><div class="cxs-1081973795" data-reactid="100"><div class="cxs-3423123151" data-reactid="101"><label class="cxs-992593794" data-reactid="102">Email</label><input type="text" name="email" class="cxs-3487122629" data-reactid="103"/></div></div><pre class="cxs-2274319537" data-reactid="104">&lt;Box&gt;
+  &lt;Text
+    display=&quot;block&quot;
+    gray8
+    is=&quot;label&quot;
+    size6
+  &gt;
+    Email
+  &lt;/Text&gt;
+  &lt;Box
+    border
+    borderGray4
+    css={{
+      &#x27;:focus&#x27;: {
+        borderColor: &#x27;#228ae6&#x27;,
+        outline: &#x27;none&#x27;
+      },
+      backgroundColor: &#x27;transparent&#x27;,
+      color: &#x27;inherit&#x27;,
+      fontFamily: &#x27;inherit&#x27;,
+      fontSize: &#x27;inherit&#x27;
+    }}
+    display=&quot;block&quot;
+    is=&quot;input&quot;
+    name=&quot;email&quot;
+    p1
+    rounded
+    type=&quot;text&quot;
+    width={1}
+  /&gt;
+&lt;/Box&gt;</pre></div></div><div id="Box" class="cxs-4250752890" data-reactid="105"><h3 class="cxs-3050190439" data-reactid="106"><a href="#Box" class="cxs-1203953694" data-reactid="107">Box</a></h3><div class="cxs-1563559277" data-reactid="108"><div class="cxs-1081973795" data-reactid="109"><div class="cxs-2616343502" data-reactid="110">Box</div></div><pre class="cxs-2274319537" data-reactid="111">&lt;Box
+  bgGrape
+  mb2
+  p3
+  rounded
+  white
+&gt;
+  Box
+&lt;/Box&gt;</pre></div></div><div id="Responsive Box" class="cxs-4250752890" data-reactid="112"><h3 class="cxs-3050190439" data-reactid="113"><a href="#Responsive Box" class="cxs-1203953694" data-reactid="114">Responsive Box</a></h3><div class="cxs-1563559277" data-reactid="115"><div class="cxs-1081973795" data-reactid="116"><div class="cxs-3488657247" data-reactid="117">Responsive Box</div></div><pre class="cxs-2274319537" data-reactid="118">&lt;Box
+  bgGrape
+  m={[
+    0,
+    1,
+    2,
+    3
+  ]}
+  p={[
+    2,
+    null,
+    3
+  ]}
+  white
+&gt;
+  Responsive Box
+&lt;/Box&gt;</pre></div></div><div id="Reponsive Heading" class="cxs-4250752890" data-reactid="119"><h3 class="cxs-3050190439" data-reactid="120"><a href="#Reponsive Heading" class="cxs-1203953694" data-reactid="121">Reponsive Heading</a></h3><div class="cxs-1563559277" data-reactid="122"><div class="cxs-1081973795" data-reactid="123"><h2 class="cxs-2098788222" data-reactid="124">Responsive Heading</h2></div><pre class="cxs-2274319537" data-reactid="125">&lt;Heading
+  size={[
+    3,
+    2,
+    1,
+    0
+  ]}
+&gt;
+  Responsive Heading
+&lt;/Heading&gt;</pre></div></div><div id="NavLink" class="cxs-4250752890" data-reactid="126"><h3 class="cxs-3050190439" data-reactid="127"><a href="#NavLink" class="cxs-1203953694" data-reactid="128">NavLink</a></h3><div class="cxs-1563559277" data-reactid="129"><div class="cxs-1081973795" data-reactid="130"><a class="cxs-1422046449" data-reactid="131">NavLink</a></div><pre class="cxs-2274319537" data-reactid="132">&lt;Text
+  bold
+  css={{
+    &#x27;:hover&#x27;: {
+      opacity: 1
+    },
+    color: &#x27;inherit&#x27;,
+    display: &#x27;block&#x27;,
+    opacity: 0.5,
+    textDecoration: &#x27;none&#x27;
+  }}
+  gray8
+  is=&quot;a&quot;
+  size={5}
+&gt;
+  NavLink
+&lt;/Text&gt;</pre></div></div><div id="Navbar" class="cxs-4250752890" data-reactid="133"><h3 class="cxs-3050190439" data-reactid="134"><a href="#Navbar" class="cxs-1203953694" data-reactid="135">Navbar</a></h3><div class="cxs-1563559277" data-reactid="136"><div class="cxs-1081973795" data-reactid="137"><div class="cxs-745620931 cxs-1073974205" data-reactid="138"><a href="#!" class="cxs-1271923597" data-reactid="139">Home</a><a href="#!" class="cxs-1271923597" data-reactid="140">Categories</a><a href="#!" class="cxs-1271923597" data-reactid="141">About</a></div></div><pre class="cxs-2274319537" data-reactid="142">&lt;Flex bgGray1&gt;
+  &lt;NavLink
+    href=&quot;#!&quot;
+    p2
+  &gt;
+    Home
+  &lt;/NavLink&gt;
+  &lt;NavLink
+    href=&quot;#!&quot;
+    p2
+  &gt;
+    Categories
+  &lt;/NavLink&gt;
+  &lt;NavLink
+    href=&quot;#!&quot;
+    p2
+  &gt;
+    About
+  &lt;/NavLink&gt;
+&lt;/Flex&gt;</pre></div></div><div id="Media Object" class="cxs-4250752890" data-reactid="143"><h3 class="cxs-3050190439" data-reactid="144"><a href="#Media Object" class="cxs-1203953694" data-reactid="145">Media Object</a></h3><div class="cxs-1563559277" data-reactid="146"><div class="cxs-1081973795" data-reactid="147"><div class="cxs-2732756344 cxs-1113090545" data-reactid="148"><div class="cxs-549792040" data-reactid="149"><img src="http://placehold.it/128/cc5de8/fff" data-reactid="150"/></div><div class="cxs-3461551192" data-reactid="151"><p class="cxs-1410316838" data-reactid="152">Media Object</p><p class="cxs-3423123151" data-reactid="153">Vertically aligned</p></div></div></div><pre class="cxs-2274319537" data-reactid="154">&lt;Flex align=&quot;center&quot;&gt;
+  &lt;Box mr2&gt;
+    &lt;img src=&quot;http://placehold.it/128/cc5de8/fff&quot; /&gt;
+  &lt;/Box&gt;
+  &lt;Box
+    css={{
+      flex: &#x27;1 1 auto&#x27;
+    }}
+  &gt;
+    &lt;Text bold&gt;
+      Media Object
+    &lt;/Text&gt;
+    &lt;Text&gt;
+      Vertically aligned
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+&lt;/Flex&gt;</pre></div></div><div id="Bar Chart" class="cxs-4250752890" data-reactid="155"><h3 class="cxs-3050190439" data-reactid="156"><a href="#Bar Chart" class="cxs-1203953694" data-reactid="157">Bar Chart</a></h3><div class="cxs-1563559277" data-reactid="158"><div class="cxs-1081973795" data-reactid="159"><div class="cxs-3250630458" data-reactid="160"><div class="cxs-792526040" data-reactid="161"><p class="cxs-404108475" data-reactid="162">25%</p></div><div class="cxs-281388622" data-reactid="163"><p class="cxs-404108475" data-reactid="164">75%</p></div></div></div><pre class="cxs-2274319537" data-reactid="165">&lt;Box white&gt;
+  &lt;Box
+    bgGrape
+    mb1
+    py1
+    width={0.25}
+  &gt;
+    &lt;Text
+      bold
+      mx2
+    &gt;
+      25%
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  &lt;Box
+    bgGrape8
+    py1
+    width={0.75}
+  &gt;
+    &lt;Text
+      bold
+      mx2
+    &gt;
+      75%
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+&lt;/Box&gt;</pre></div></div><div id="Percentage Bar" class="cxs-4250752890" data-reactid="166"><h3 class="cxs-3050190439" data-reactid="167"><a href="#Percentage Bar" class="cxs-1203953694" data-reactid="168">Percentage Bar</a></h3><div class="cxs-1563559277" data-reactid="169"><div class="cxs-1081973795" data-reactid="170"><div class="cxs-745620931 cxs-1047762469" data-reactid="171"><div class="cxs-473949484" data-reactid="172"><p class="cxs-1045143546" data-reactid="173">37.5%</p></div><div class="cxs-4156576721" data-reactid="174"><p class="cxs-1045143546" data-reactid="175">25%</p></div><div class="cxs-3298055457" data-reactid="176"><p class="cxs-1045143546" data-reactid="177">25%</p></div><div class="cxs-3879676299" data-reactid="178"><p class="cxs-1045143546" data-reactid="179">12.5%</p></div></div></div><pre class="cxs-2274319537" data-reactid="180">&lt;Flex white&gt;
+  &lt;Box
+    bgGrape8
+    py1
+    width={0.375}
+  &gt;
+    &lt;Text
+      bold
+      center
+      size={6}
+    &gt;
+      37.5%
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  &lt;Box
+    bgGrape6
+    py1
+    width={0.25}
+  &gt;
+    &lt;Text
+      bold
+      center
+      size={6}
+    &gt;
+      25%
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  &lt;Box
+    bgGrape4
+    py1
+    width={0.25}
+  &gt;
+    &lt;Text
+      bold
+      center
+      size={6}
+    &gt;
+      25%
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  &lt;Box
+    bgGrape2
+    py1
+    width={0.125}
+  &gt;
+    &lt;Text
+      bold
+      center
+      size={6}
+    &gt;
+      12.5%
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+&lt;/Flex&gt;</pre></div></div><div id="Panel" class="cxs-4250752890" data-reactid="181"><h3 class="cxs-3050190439" data-reactid="182"><a href="#Panel" class="cxs-1203953694" data-reactid="183">Panel</a></h3><div class="cxs-1563559277" data-reactid="184"><div class="cxs-1081973795" data-reactid="185"><div class="cxs-4198454676" data-reactid="186"><div class="cxs-1506894828" data-reactid="187"><p class="cxs-1410316838" data-reactid="188">Panel</p></div><div class="cxs-1081973795" data-reactid="189"><p class="cxs-3423123151" data-reactid="190">A panel is great for drawing attention and grouping related content together.</p></div><div class="cxs-3197897448" data-reactid="191"><p class="cxs-3264424628" data-reactid="192">Panel footer</p></div></div></div><pre class="cxs-2274319537" data-reactid="193">&lt;Box
+  border
+  borderGrape
+  rounded
+&gt;
+  &lt;Box
+    bgGrape
+    p2
+    white
+  &gt;
+    &lt;Text bold&gt;
+      Panel
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  &lt;Box p2&gt;
+    &lt;Text&gt;
+      A panel is great for drawing attention and grouping related content together.
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  &lt;Box
+    border=&quot;top&quot;
+    borderGrape
+    grape
+    p2
+  &gt;
+    &lt;Text size={6}&gt;
+      Panel footer
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+&lt;/Box&gt;</pre></div></div><div id="Card" class="cxs-4250752890" data-reactid="194"><h3 class="cxs-3050190439" data-reactid="195"><a href="#Card" class="cxs-1203953694" data-reactid="196">Card</a></h3><div class="cxs-1563559277" data-reactid="197"><div class="cxs-1081973795" data-reactid="198"><div class="cxs-1430877625" data-reactid="199"><img src="http://placehold.it/512/cc5de8/fff" height="512" class="cxs-3188073699" data-reactid="200"/><div class="cxs-1327038189" data-reactid="201"><p class="cxs-1108517706" data-reactid="202">Card</p><p class="cxs-3423123151" data-reactid="203">Card</p></div></div></div><pre class="cxs-2274319537" data-reactid="204">&lt;Box
+  border
+  borderGray3
+  rounded
+  width={[
+    1,
+    0.5,
+    0.3333333333333333
+  ]}
+&gt;
+  &lt;Box
+    css={{
+      display: &#x27;block&#x27;,
+      height: &#x27;auto&#x27;,
+      maxWidth: &#x27;100%&#x27;
+    }}
+    height={512}
+    is=&quot;img&quot;
+    src=&quot;http://placehold.it/512/cc5de8/fff&quot;
+    width={512}
+  /&gt;
+  &lt;Box
+    px2
+    py1
+  &gt;
+    &lt;Text
+      bold
+      size={3}
+    &gt;
+      Card
+    &lt;/Text&gt;
+    &lt;Text&gt;
+      Card
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+&lt;/Box&gt;</pre></div></div><div id="Blockquote" class="cxs-4250752890" data-reactid="205"><h3 class="cxs-3050190439" data-reactid="206"><a href="#Blockquote" class="cxs-1203953694" data-reactid="207">Blockquote</a></h3><div class="cxs-1563559277" data-reactid="208"><div class="cxs-1081973795" data-reactid="209"><blockquote class="cxs-1491752186" data-reactid="210"><p class="cxs-3259245370" data-reactid="211">“In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years ... ”</p><cite class="cxs-2578638112" data-reactid="212">—Robert Bringhurst</cite></blockquote></div><pre class="cxs-2274319537" data-reactid="213">&lt;Box
+  grape
+  is=&quot;blockquote&quot;
+  m0
+  px2
+&gt;
+  &lt;Text
+    bold
+    size={[
+      4,
+      null,
+      2
+    ]}
+  &gt;
+    “In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years ... ”
+  &lt;/Text&gt;
+  &lt;Text
+    is=&quot;cite&quot;
+    size={5}
+  &gt;
+    —Robert Bringhurst
+  &lt;/Text&gt;
+&lt;/Box&gt;</pre></div></div><div id="Grid Footer" class="cxs-4250752890" data-reactid="214"><h3 class="cxs-3050190439" data-reactid="215"><a href="#Grid Footer" class="cxs-1203953694" data-reactid="216">Grid Footer</a></h3><div class="cxs-1563559277" data-reactid="217"><div class="cxs-1081973795" data-reactid="218"><div class="cxs-4274390762" data-reactid="219"><div class="cxs-2127861817" data-reactid="220"><a href="#!" class="cxs-1422046449" data-reactid="221">Home</a><a href="#!" class="cxs-1422046449" data-reactid="222">Categories</a><a href="#!" class="cxs-1422046449" data-reactid="223">Profile</a><a href="#!" class="cxs-1422046449" data-reactid="224">About</a></div><div class="cxs-2127861817" data-reactid="225"><a href="#!" class="cxs-1422046449" data-reactid="226">Blog</a><a href="#!" class="cxs-1422046449" data-reactid="227">Contact</a><a href="#!" class="cxs-1422046449" data-reactid="228">Careers</a></div><div class="cxs-2127861817" data-reactid="229"><a href="#!" class="cxs-1422046449" data-reactid="230">Even More</a><a href="#!" class="cxs-1422046449" data-reactid="231">Links</a><a href="#!" class="cxs-1422046449" data-reactid="232">Omfg</a></div></div></div><pre class="cxs-2274319537" data-reactid="233">&lt;Box
+  bgGrape9
+  py3
+  white
+&gt;
+  &lt;InlineBlock
+    css={{
+      verticalAlign: &#x27;top&#x27;
+    }}
+    px3
+    width={[
+      0.5,
+      0.3333333333333333,
+      0.25
+    ]}
+  &gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Home
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Categories
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Profile
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      About
+    &lt;/NavLink&gt;
+  &lt;/InlineBlock&gt;
+  &lt;InlineBlock
+    css={{
+      verticalAlign: &#x27;top&#x27;
+    }}
+    px3
+    width={[
+      0.5,
+      0.3333333333333333,
+      0.25
+    ]}
+  &gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Blog
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Contact
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Careers
+    &lt;/NavLink&gt;
+  &lt;/InlineBlock&gt;
+  &lt;InlineBlock
+    css={{
+      verticalAlign: &#x27;top&#x27;
+    }}
+    px3
+    width={[
+      0.5,
+      0.3333333333333333,
+      0.25
+    ]}
+  &gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Even More
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Links
+    &lt;/NavLink&gt;
+    &lt;NavLink href=&quot;#!&quot;&gt;
+      Omfg
+    &lt;/NavLink&gt;
+  &lt;/InlineBlock&gt;
+&lt;/Box&gt;</pre></div></div><div id="Responsive Embed" class="cxs-4250752890" data-reactid="234"><h3 class="cxs-3050190439" data-reactid="235"><a href="#Responsive Embed" class="cxs-1203953694" data-reactid="236">Responsive Embed</a></h3><div class="cxs-1563559277" data-reactid="237"><div class="cxs-1081973795" data-reactid="238"><div class="cxs-178212168" data-reactid="239"><iframe src="https://www.youtube.com/embed/BoEKWtgJQAU" class="cxs-285186136" data-reactid="240"></iframe></div></div><pre class="cxs-2274319537" data-reactid="241">&lt;Box
+  css={{
+    height: 0,
+    overflow: &#x27;hidden&#x27;,
+    padding: 0,
+    paddingBottom: &#x27;56.25%&#x27;,
+    position: &#x27;relative&#x27;
+  }}
+&gt;
+  &lt;Box
+    css={{
+      border: 0,
+      bottom: 0,
+      height: &#x27;100%&#x27;,
+      left: 0,
+      position: &#x27;absolute&#x27;,
+      top: 0,
+      width: &#x27;100%&#x27;
+    }}
+    is=&quot;iframe&quot;
+    src=&quot;https://www.youtube.com/embed/BoEKWtgJQAU&quot;
+  /&gt;
+&lt;/Box&gt;</pre></div></div></section><section class="cxs-2219803478" data-reactid="242"><div class="cxs-3835025811" data-reactid="243"></div><p class="cxs-3434381204" data-reactid="244">Read the docs and get started</p><a href="https://github.com/jxnblk/axs" class="cxs-780918126" data-reactid="245">View on GitHub</a></section><footer class="cxs-907154868" data-reactid="246"><div class="cxs-2620575068" data-reactid="247"><div class="cxs-2547090685 cxs-1113090545" data-reactid="248"><a href="/" class="cxs-1486016183" data-reactid="249">Home</a><a href="/ui" class="cxs-1486016183" data-reactid="250">Axs UI</a><a href="https://github.com/jxnblk/axs" class="cxs-1486016183" data-reactid="251">GitHub</a><a href="https://npmjs.com/package/axs" class="cxs-1486016183" data-reactid="252">npm</a><a href="http://jxnblk.com" class="cxs-2970010734" data-reactid="253">Made by Jxnblk</a></div></div><div class="cxs-745620931 cxs-3932802627" data-reactid="254"><svg viewBox="0 0 16 16" height="48" style="overflow:visible;" fill="none" stroke="currentcolor" class="cxs-1005594324" data-reactid="255"><path d="M 2 12.5 L 14 12.5 L 8 2.107695154586736 z" data-reactid="256"></path><path d="M 7.196152422706632 15.5 L 13.196152422706632 5.107695154586736" data-reactid="257"></path></svg></div></footer></div></div></div>
+<script src='/axs/bundle.js'></script>
+<script id='twitter-wjs' src='https://platform.twitter.com/widgets.js' async></script>
+<script>
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-4603832-6", "auto");ga("send", "pageview");
+</script>
