@@ -16,6 +16,13 @@ class App extends React.Component {
     }
   }
 
+  getChildContextTypes = () => {
+    const { basehref } = this.props
+    return {
+      basehref
+    }
+  }
+
   componentDidMount () {
     const { pathname } = history.location
     this.setState({ path: pathname })
@@ -36,6 +43,10 @@ class App extends React.Component {
       </div>
     )
   }
+}
+
+App.childContextTypes = {
+  basehref: React.PropTypes.string
 }
 
 export default App

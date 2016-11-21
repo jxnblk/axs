@@ -14,6 +14,7 @@ module.exports = ({
 <meta name='og:title' content='Axs'>
 <meta name='og:description' content='A build-your-own responsive typography and layout UI toolkit for React'>
 <meta name='og:image' content='http://jxnblk.com/axs/tricard2.png'>
+<style>*{box-sizing:border-box}body{ font-family:-apple-sytem,BlinkMacSystemFont,sans-serif; line-height:1.5; margin:0 }code{font-family:Menlo,monospace;font-size:87.5%}</style>
 <style>${css}</style>
 <div id='app'>${app}</div>
 <script src='${basehref}bundle.js'></script>

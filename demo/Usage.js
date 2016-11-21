@@ -5,6 +5,7 @@ import { Box, Text } from '../src'
 import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
 import Pre from './Pre'
+import BasicLink from './BasicLink'
 
 const example = (
   <Box p2 mb2 white bgGrape>
@@ -15,8 +16,12 @@ const example = (
 )
 
 const Usage = () => (
-  <Container>
-    <Heading children='Usage' />
+  <Container id='usage'>
+    <Heading>
+      <BasicLink href='#usage'>
+        Usage
+      </BasicLink>
+    </Heading>
     <Flex mx-2 py3 css={{ alignItems: 'center' }}>
       <Box px2 width={[1, 1/2]}>
         <Pre bgGray0 children={toJsxString(example)} />

@@ -7,21 +7,6 @@ const App = require('./App').default
 
 const basehref = process.env.NODE_ENV === 'production' ? '/axs/' : '/'
 
-cxs('*', {
-  boxSizing: 'border-box'
-})
-
-cxs('body', {
-  fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-  lineHeight: 1.5,
-  margin: 0
-})
-
-cxs('code', {
-  fontFamily: 'Menlo, monospace',
-  fontSize: '87.5%'
-})
-
 config.set({
   typeScale: [
     72,
