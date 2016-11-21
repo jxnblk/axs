@@ -8,13 +8,9 @@ import Tweet from './Tweet'
 import Star from './Star'
 import Logo from './Logo'
 
-const Space = props =>
-  <Box {...props}
-    css={cx.space} />
-
 const Nav = () => (
-  <Flex px3 py2 css={cx.root}>
-    <Flex width={[ 1, 1/2 ]} css={{ alignItems: 'center' }}>
+  <Flex px3 py2 wrap align='center'>
+    <Flex width={[ 1, 1/2 ]} align='center'>
       <Link p0
         title='Home'
         to='/'>
@@ -33,24 +29,13 @@ const Nav = () => (
         href='https://npmjs.com/package/axs'
         children='npm' />
     </Flex>
-    <Space />
-    <Flex css={{ width: 'auto' }}>
+    <Flex ml={[ null, 'auto' ]}>
       <Travis />
       <Star />
       <Tweet />
     </Flex>
   </Flex>
 )
-
-const cx = {
-  root: {
-    flexWrap: 'wrap',
-    alignItems: 'center'
-  },
-  space: {
-    flex: '1 1 auto'
-  }
-}
 
 export default Nav
 

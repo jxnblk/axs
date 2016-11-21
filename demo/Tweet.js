@@ -4,7 +4,11 @@ import { Box } from '../src'
 import { Flex } from 'axs-ui'
 
 export default props => (
-  <Flex my2 {...props}>
+  <Flex
+    size={6}
+    width={61}
+    my2
+    {...props}>
     <Box
       is='a'
       className='twitter-share-button'

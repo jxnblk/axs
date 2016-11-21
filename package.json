@@ -7,7 +7,7 @@
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack -p",
-    "deploy": "gh-pages -d docs",
+    "deploy": "gh-pages -d demo",
     "test": "ava"
   },
   "keywords": [

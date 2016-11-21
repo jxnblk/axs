@@ -13,7 +13,7 @@ export default () => (
   <Box is='header' px3 mb4>
     <Box py4 mb4 white bgGrape>
       <Container py4>
-        <Flex css={cx.flex}>
+        <Flex wrap align='center'>
           <Box border='right' css={cx.pipe} pr3 mr3>
             <Heading level={1} size={[1, null, 0]}>
               Axs
@@ -48,9 +48,5 @@ const cx = {
     '@media screen and (max-width:40em)': {
       border: 0
     }
-  },
-  flex: {
-    flexWrap: 'wrap',
-    alignItems: 'center'
   }
 }

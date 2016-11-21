@@ -3,7 +3,7 @@ import React from 'react'
 import { Text, colors } from '../src'
 import history from './history'
 
-const onClick = (e, to, basehref = '/') => {
+const onClick = (e, to, basehref = '') => {
   e.preventDefault()
   if (!to) return
   history.push(basehref + to)

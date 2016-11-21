@@ -16,7 +16,7 @@ class App extends React.Component {
     }
   }
 
-  getChildContextTypes = () => {
+  getChildContext = () => {
     const { basehref } = this.props
     return {
       basehref
@@ -34,7 +34,7 @@ class App extends React.Component {
   render () {
     const { path } = this.state
 
-    const view = path === '/ui' ? <UI /> : <Index />
+    const view = /ui/.test(path) ? <UI /> : <Index />
 
     return (
       <div>

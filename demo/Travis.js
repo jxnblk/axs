@@ -7,6 +7,7 @@ export default props => (
     {...props}
     is='a'
     display='inline-block'
+    width={90}
     my2
     mr2
     href='https://travis-ci.org/jxnblk/axs'>
