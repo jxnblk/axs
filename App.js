@@ -18,6 +18,7 @@ class App extends React.Component {
 
   getChildContextTypes = () => {
     const { basehref } = this.props
+    console.log('App basehref', basehref)
     return {
       basehref
     }
