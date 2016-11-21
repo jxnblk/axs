@@ -1,6 +1,6 @@
 {
   "name": "axs-ui",
-  "version": "1.0.0-b4",
+  "version": "1.0.0-b5",
   "description": "UI component primitives built with Axs",
   "main": "dist/index.js",
   "scripts": {
