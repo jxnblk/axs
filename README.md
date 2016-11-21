@@ -310,9 +310,6 @@ Axs also offers several shorthand styling props for faster development.
 ## Future Development Considerations
 
 - [ ] Test CSS custom properties configurations
-- [ ] axs-ui library
-  - [ ] Flexbox props
-  - [ ] Element reset style objects
 - [ ] Replace open color with palx
 - [ ] Plugin architecture for style props
 

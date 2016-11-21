@@ -176,8 +176,6 @@ Uses array prop types for responsive styles.
 
 ---
 
-- [-] Select
-
 - [ ] Link
 - [ ] Pre
 - [ ] Code
