@@ -3,23 +3,26 @@ import React from 'react'
 import { Text, colors } from '../src'
 import history from './history'
 
-const onClick = (e, to) => {
+const onClick = (e, to, basehref = '/') => {
   e.preventDefault()
   if (!to) return
-  history.push(to)
+  history.push(basehref + to)
+  window.scrollTo(0, 0)
 }
 
-const Link = ({ to, ...props }) => {
+const Link = ({ to, href, ...props }, { basehref = '' }) => {
   return (
     <Text
+      href={href || basehref + to}
       size6
       bold
+      caps
       grape
       display='inline-block'
       py2
       {...props}
       is='a'
-      onClick={e => to ? onClick(e, to) : null}
+      onClick={e => to ? onClick(e, to, basehref) : null}
       css={{
         textDecoration: 'none',
         ':hover': {
@@ -33,6 +36,10 @@ const Link = ({ to, ...props }) => {
       }}
     />
   )
+}
+
+Link.contextTypes = {
+  basehref: React.PropTypes.string
 }
 
 export default Link

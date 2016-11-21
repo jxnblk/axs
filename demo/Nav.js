@@ -15,14 +15,15 @@ const Space = props =>
 const Nav = () => (
   <Flex px3 py2 css={cx.root}>
     <Flex width={[ 1, 1/2 ]} css={{ alignItems: 'center' }}>
-      <Link p0 href='/' to='/'>
+      <Link p0
+        title='Home'
+        to='/'>
         <Logo color={colors.grape} size={32} mr2 />
       </Link>
       <Link
         mr2
-        href='/ui'
         to='/ui'
-        children='UI' />
+        children='Axs UI' />
       <Link
         mr2
         href='https://github.com/jxnblk/axs'

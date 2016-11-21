@@ -7,6 +7,7 @@ import Tweet from './Tweet'
 import Star from './Star'
 import Carbon from './Carbon'
 import Pre from './Pre'
+import Dit from './Dit'
 
 export default () => (
   <Box is='header' px3 mb4>
@@ -27,7 +28,17 @@ export default () => (
         </Flex>
       </Container>
     </Box>
-    <Carbon />
+    <Flex wrap align='center'>
+      <Box width={[1, null, 4/8 ]}>
+        <Dit />
+        <Text size={3}>
+          Axs is a React UI component library
+          that serves as a foundation for highly customized UI
+          as well as a utility belt for prototyping.
+        </Text>
+      </Box>
+      <Carbon ml={[ null, null, 'auto' ]} />
+    </Flex>
   </Box>
 )
 

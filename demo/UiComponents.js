@@ -1,29 +1,10 @@
 
 import React from 'react'
-import { colors } from 'axs'
 import { Box, Heading } from 'axs-ui'
 
 import components from './ui-components'
 import ExamplePre from './ExamplePre'
-
-const Link = props => (
-  <Box
-    is='a'
-    css={{
-      textDecoration: 'none',
-      color: 'inherit',
-      ':hover': {
-        textDecoration: 'underline'
-      },
-      ':focus': {
-        outline: 'none',
-        textDecoration: 'underline',
-        color: colors.grape
-      }
-    }}
-    {...props}
-  />
-)
+import Link from './BasicLink'
 
 const UiComponents = () => (
   <Box>

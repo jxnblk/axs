@@ -17,6 +17,11 @@ cxs('body', {
   margin: 0
 })
 
+cxs('code', {
+  fontFamily: 'Menlo, monospace',
+  fontSize: '87.5%'
+})
+
 config.set({
   typeScale: [
     72,
@@ -32,7 +37,7 @@ config.set({
 
 if (typeof document !== 'undefined') {
   const path = window.location.pathname
-  ReactDOM.render(<App path={path} />, app)
+  ReactDOM.render(<App path={path} basehref={basehref} />, app)
 }
 
 module.exports = (locals) => {
@@ -41,7 +46,7 @@ module.exports = (locals) => {
   }
   const { renderToString, renderToStaticMarkup } = require('react-dom/server')
 
-  const app = renderToString(<App {...locals} />)
+  const app = renderToString(<App {...locals} basehref={basehref} />)
   const css = cxs.css
   cxs.reset()
 

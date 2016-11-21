@@ -60,7 +60,7 @@ const examples = [
   {
     name: 'Grid',
     comp: (
-      <Flex css={{ flexWrap: 'wrap' }}>
+      <Flex wrap>
         <Box width={[1, 1/2, 1/4]} p2 bgGray1>Box</Box>
         <Box width={[1, 1/2, 1/4]}  p2 bgGray3>Box</Box>
         <Box width={[1, 1/2, 1/4]}  p2 bgGray1>Box</Box>
@@ -194,7 +194,7 @@ const examples = [
   {
     name: 'Media Object',
     comp: (
-      <Flex css={{ alignItems: 'center' }}>
+      <Flex align='center'>
         <Box mr2>
           <img src='http://placehold.it/128/cc5de8/fff' />
         </Box>
