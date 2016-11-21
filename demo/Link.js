@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Text, colors } from '../src'
+import { Text, config } from '../src'
 import history from './history'
 
 const onClick = (e, to, basehref = '') => {
@@ -26,12 +26,12 @@ const Link = ({ to, href, ...props }, { basehref = '' }) => {
       css={{
         textDecoration: 'none',
         ':hover': {
-          color: colors.grape9
+          color: config.colors.grape9
         },
         ':focus': {
           outline: 'none',
-          color: colors.grape9,
-          boxShadow: `0 0 0 2px ${colors.grape1}`
+          color: config.colors.grape9,
+          boxShadow: `0 0 0 2px ${config.colors.grape1}`
         }
       }}
     />

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 
 const Progress = ({ css, ...props }) => (
   <Box
@@ -22,7 +22,7 @@ const cx = {
   MozAppearance: 'none',
   appearance: 'none',
   '::-webkit-progress-bar': {
-    backgroundColor: colors.gray3
+    backgroundColor: config.colors.gray3
   },
   '::-webkit-progress-value': {
     backgroundColor: 'currentcolor'

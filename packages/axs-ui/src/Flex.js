@@ -1,10 +1,10 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import { Box, cxs, breakpoints } from 'axs'
+import { Box, cxs, config } from 'axs'
 import { parseArrayValue } from 'axs/util'
 
-const parseArr = parseArrayValue(breakpoints)
+const parseArr = parseArrayValue(config.breakpoints)
 
 const createStyle = (prop) => (value) => {
   if (Array.isArray(value)) {

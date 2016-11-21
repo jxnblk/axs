@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 import { Line, X } from 'reline'
 
 class Checkbox extends React.Component {
@@ -47,7 +47,7 @@ class Checkbox extends React.Component {
           rounded
           css={{
             ...cx.box,
-            backgroundColor: checked ? 'currentcolor' : colors.gray3
+            backgroundColor: checked ? 'currentcolor' : config.colors.gray3
           }}>
           {checked && check}
         </Box>
@@ -69,7 +69,7 @@ const cx = {
     zIndex: -1,
     opacity: 0,
     ':focus ~ div': {
-      boxShadow: `0 0 0 2px ${colors.blue}`
+      boxShadow: `0 0 0 2px ${config.colors.blue}`
     }
   },
   box: {
@@ -84,7 +84,7 @@ const cx = {
   check: {
     margin: 2,
     display: 'block',
-    color: colors.white
+    color: config.colors.white
   }
 }
 

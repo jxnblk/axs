@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 import resets from './resets'
 
 class Textarea extends React.Component {
@@ -28,7 +28,7 @@ const cx = {
   ...resets.textarea,
   ':focus': {
     outline: 'none',
-    borderColor: colors.blue
+    borderColor: config.colors.blue
   }
 }
 

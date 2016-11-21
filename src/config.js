@@ -27,5 +27,35 @@ class Config {
 
 const config = new Config()
 
+Object.defineProperty(config, 'breakpoints', {
+  get () {
+    return config.get().breakpoints
+  }
+})
+
+Object.defineProperty(config, 'typeScale', {
+  get () {
+    return config.get().typeScale
+  }
+})
+
+Object.defineProperty(config, 'scale', {
+  get () {
+    return config.get().scale
+  }
+})
+
+Object.defineProperty(config, 'colors', {
+  get () {
+    return config.get().colors
+  }
+})
+
+Object.defineProperty(config, 'bold', {
+  get () {
+    return config.get().bold
+  }
+})
+
 export default config
 

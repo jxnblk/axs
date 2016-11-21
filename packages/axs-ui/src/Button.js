@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 import resets from './resets'
 
 const Button = ({ href, css, ...props }) => (
@@ -22,12 +22,12 @@ const Button = ({ href, css, ...props }) => (
 const cx = {
   ...resets.button,
   ':hover': {
-    backgroundColor: colors.blue7
+    backgroundColor: config.colors.blue7
   },
   ':focus': {
     outline: 'none',
-    backgroundColor: colors.blue7,
-    boxShadow: `0 0 0 2px ${colors.blue3}`
+    backgroundColor: config.colors.blue7,
+    boxShadow: `0 0 0 2px ${config.colors.blue3}`
   }
 }
 

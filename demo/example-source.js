@@ -3,7 +3,7 @@ import React from 'react'
 import {
   Box,
   Text,
-  colors,
+  config,
 } from '../src'
 import {
   Heading,
@@ -127,7 +127,7 @@ const examples = [
             backgroundColor: 'transparent',
             ':focus': {
               outline: 'none',
-              borderColor: colors.blue
+              borderColor: config.colors.blue
             }
           }}
         />

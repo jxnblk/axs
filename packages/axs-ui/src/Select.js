@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 import { Chevron } from 'reline'
 import resets from './resets'
 
@@ -37,7 +37,7 @@ const cx = {
     paddingRight: 24,
     ':focus': {
       outline: 'none',
-      borderColor: colors.blue
+      borderColor: config.colors.blue
     }
   },
   chevron: {

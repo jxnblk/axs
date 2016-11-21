@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 
 class Slider extends React.Component {
   render () {
@@ -25,7 +25,7 @@ class Slider extends React.Component {
 const thumbStyles = {
   width: 24,
   height: 24,
-  backgroundColor: colors.black,
+  backgroundColor: config.colors.black,
   border: 0,
   borderRadius: 9999,
   WebkitAppearance: 'none'

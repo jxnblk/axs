@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from '../src'
+import { Box, config } from '../src'
 import { Flex } from 'axs-ui'
 import Link from './Link'
 import Travis from './Travis'
@@ -14,7 +14,7 @@ const Nav = () => (
       <Link p0
         title='Home'
         to='/'>
-        <Logo color={colors.grape} size={32} mr2 />
+        <Logo color={config.colors.grape} size={32} mr2 />
       </Link>
       <Link
         mr2

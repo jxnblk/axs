@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, colors } from 'axs'
+import { Box, config } from 'axs'
 
 const BasicLink = props => (
   <Box
@@ -14,7 +14,7 @@ const BasicLink = props => (
       ':focus': {
         outline: 'none',
         textDecoration: 'underline',
-        color: colors.grape
+        color: config.colors.grape
       }
     }}
     {...props}
