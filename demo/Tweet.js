@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Flex, Box } from '../src'
+import { Box } from '../src'
+import { Flex } from 'axs-ui'
 
 export default props => (
   <Flex my2 {...props}>

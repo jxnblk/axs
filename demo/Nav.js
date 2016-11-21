@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Flex, Box, colors } from '../src'
+import { Box, colors } from '../src'
+import { Flex } from 'axs-ui'
 import Link from './Link'
 import Travis from './Travis'
 import Tweet from './Tweet'
@@ -14,7 +15,15 @@ const Space = props =>
 const Nav = () => (
   <Flex px3 py2 css={cx.root}>
     <Flex width={[ 1, 1/2 ]} css={{ alignItems: 'center' }}>
-      <Logo color={colors.grape} size={16} mr2 />
+      <Link p0
+        title='Home'
+        to='/'>
+        <Logo color={colors.grape} size={32} mr2 />
+      </Link>
+      <Link
+        mr2
+        to='/ui'
+        children='Axs UI' />
       <Link
         mr2
         href='https://github.com/jxnblk/axs'
@@ -35,7 +44,8 @@ const Nav = () => (
 
 const cx = {
   root: {
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    alignItems: 'center'
   },
   space: {
     flex: '1 1 auto'

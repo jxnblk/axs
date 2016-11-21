@@ -1,15 +1,17 @@
 
 import React from 'react'
-import { Box, Flex, Heading, Text } from '../src'
+import { Box, Text } from '../src'
+import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
 import Tweet from './Tweet'
 import Star from './Star'
 import Carbon from './Carbon'
 import Pre from './Pre'
+import Dit from './Dit'
 
 export default () => (
   <Box is='header' px3 mb4>
-    <Box px3 py4 mb4 white bgGrape>
+    <Box py4 mb4 white bgGrape>
       <Container py4>
         <Flex css={cx.flex}>
           <Box border='right' css={cx.pipe} pr3 mr3>
@@ -26,7 +28,17 @@ export default () => (
         </Flex>
       </Container>
     </Box>
-    <Carbon />
+    <Flex wrap align='center'>
+      <Box width={[1, null, 4/8 ]}>
+        <Dit />
+        <Text size={3}>
+          Axs is a React UI component library
+          that serves as a foundation for highly customized UI
+          as well as a utility belt for prototyping.
+        </Text>
+      </Box>
+      <Carbon ml={[ null, null, 'auto' ]} />
+    </Flex>
   </Box>
 )
 

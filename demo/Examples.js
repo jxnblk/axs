@@ -1,23 +1,34 @@
 
 import React from 'react'
-import { Flex, Box, Heading, Text } from '../src'
+import { Box, Text } from '../src'
+import { Flex, Heading } from 'axs-ui'
 import Container from './Container'
-import Pre from './Pre'
 import ExamplePre from './ExamplePre'
+import Link from './Link'
+import BasicLink from './BasicLink'
 import examples from './example-source'
 
 const Examples = () => (
-  <Box is='section' px3 py4>
-    <Container>
-      <Heading mb2 children='Examples' />
-      {examples.map((eg, i) => (
-        <Box py3 key={i}>
-          <Heading level={3} mb2 children={eg.name} />
-          <ExamplePre example={eg.comp} />
-        </Box>
-      ))}
-    </Container>
-  </Box>
+  <Container is='section' id='examples' py4>
+    <Heading mb2>
+      <BasicLink href='#examples'>
+        Examples
+      </BasicLink>
+    </Heading>
+    <Text>
+      Some of the examples below use components from the optional <Link to='/ui'>axs-ui</Link> package.
+    </Text>
+    {examples.map((eg, i) => (
+      <Box id={eg.name} py3 key={i}>
+        <Heading level={3} mb2>
+          <BasicLink href={`#${eg.name}`}>
+            {eg.name}
+          </BasicLink>
+        </Heading>
+        <ExamplePre example={eg.comp} />
+      </Box>
+    ))}
+  </Container>
 )
 
 export default Examples

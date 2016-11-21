@@ -18,7 +18,7 @@ export const getTypeStyles = config => (key, val) => {
     case 'caps':
       return {
         textTransform: 'uppercase',
-        letterSpacing: '.2em'
+        letterSpacing: '.1em'
       }
     default:
       return null

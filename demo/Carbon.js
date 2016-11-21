@@ -13,7 +13,8 @@ class Carbon extends React.Component {
   render () {
     return (
       <Box {...this.props}
-        my2 mr2 p1
+        my2
+        p1
         rounded
         border borderGray1
         bgWhite
@@ -25,16 +26,6 @@ class Carbon extends React.Component {
 }
 
 const cx = {
-  '@media screen and (min-width:48em) and (min-height:40em)': {
-    position: 'fixed',
-    right: 0,
-    bottom: 0,
-    maxWidth: 146,
-    '.carbon-img': {
-      float: 'none',
-      marginRight: 0,
-    }
-  },
   maxWidth: 320,
   '#carbonads': {
     display: 'inline-block',

@@ -287,20 +287,12 @@ For more detailed documentation see:
 - [Server Side Rendering](docs/server.md)
 
 
-## Component Primitives
+## Axs UI Component Primitives
 
-In addition to Box and Text, the following primitive components can be imported.
+In addition to Box and Text, the `axs-ui` package includes several other UI components,
+including Flex, Heading, Button, Input, Select components.
 
-### Text Components
-
-- `<Heading />` - h1–h6 elements - use the `level` prop to set the headings's rank
-
-### Box Components
-
-- `<Block />` - Box with display block
-- `<InlineBlock />` - Box with display inline-block
-- `<Inline />` - Box with display inline
-- `<Flex />` - Box with display flex
+See [axs-ui](packages/axs-ui) for more.
 
 
 ## Differences from Rebass
@@ -318,9 +310,7 @@ Axs also offers several shorthand styling props for faster development.
 ## Future Development Considerations
 
 - [ ] Test CSS custom properties configurations
-- [ ] axs-ui library
-  - [ ] Flexbox props
-  - [ ] Element reset style objects
+- [ ] Replace open color with palx
 - [ ] Plugin architecture for style props
 
 ## Related

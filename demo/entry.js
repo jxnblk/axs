@@ -1,18 +1,11 @@
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { cxs, config } from '../src'
-import App from './App'
+const React = require('react')
+const ReactDOM = require('react-dom')
+const { cxs, config } = require('../src')
+const html = require('./html')
+const App = require('./App').default
 
-cxs('*', {
-  boxSizing: 'border-box'
-})
-
-cxs('body', {
-  fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-  lineHeight: 1.5,
-  margin: 0
-})
+const basehref = process.env.NODE_ENV === 'production' ? '/axs/' : '/'
 
 config.set({
   typeScale: [
@@ -27,5 +20,21 @@ config.set({
   bold: 600
 })
 
-ReactDOM.render(<App />, app)
+if (typeof document !== 'undefined') {
+  const path = window.location.pathname
+  ReactDOM.render(<App path={path} basehref={basehref} />, app)
+}
+
+module.exports = (locals) => {
+  if (typeof document !== 'undefined') {
+    return
+  }
+  const { renderToString, renderToStaticMarkup } = require('react-dom/server')
+
+  const app = renderToString(<App {...locals} basehref={basehref} />)
+  const css = cxs.css
+  cxs.reset()
+
+  return html({ app, css, basehref })
+}
 
