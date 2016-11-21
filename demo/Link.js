@@ -17,7 +17,7 @@ const Link = ({ to, href, ...props }, { basehref = '' }) => {
       size6
       bold
       caps
-      grape
+      violet
       display='inline-block'
       py2
       {...props}
@@ -26,12 +26,12 @@ const Link = ({ to, href, ...props }, { basehref = '' }) => {
       css={{
         textDecoration: 'none',
         ':hover': {
-          color: config.colors.grape9
+          color: config.colors.violet9
         },
         ':focus': {
           outline: 'none',
-          color: config.colors.grape9,
-          boxShadow: `0 0 0 2px ${config.colors.grape1}`
+          color: config.colors.violet9,
+          boxShadow: `0 0 0 2px ${config.colors.violet1}`
         }
       }}
     />

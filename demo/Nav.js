@@ -14,7 +14,7 @@ const Nav = () => (
       <Link p0
         title='Home'
         to='/'>
-        <Logo color={config.colors.grape} size={32} mr2 />
+        <Logo color={config.colors.violet} size={32} mr2 />
       </Link>
       <Link
         mr2

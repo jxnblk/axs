@@ -8,7 +8,7 @@ const Pre = props => (
     m0
     p2
     size={6}
-    grape8
+    violet8
     {...props}
     css={cx}
   />

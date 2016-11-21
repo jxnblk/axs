@@ -1,5 +1,5 @@
 
-import openColor from 'open-color/open-color.json'
+import palx from 'palx'
 
 export const breakpoints = [
   '(min-width:40em)',
@@ -18,7 +18,7 @@ export const scale = [
 // Parses color object with nested arrays
 export const flattenColors = colors => Object.keys(colors)
   .map(key => {
-    const value = openColor[key]
+    const value = colors[key]
     if (typeof value === 'string') {
       return {
         key,
@@ -28,7 +28,7 @@ export const flattenColors = colors => Object.keys(colors)
 
     if (Array.isArray(value)) {
       const mid = Math.ceil(value.length / 2) - 1
-      const val = value[6] || valeu[mid]
+      const val = value[7] || valeu[mid]
       return [
         {
           key,
@@ -53,7 +53,10 @@ export const flattenColors = colors => Object.keys(colors)
     return a
   }, {})
 
-export const colors = flattenColors(openColor)
+export const colors = {
+  white: '#fff',
+  ...flattenColors(palx('#00a7fb'))
+}
 
 export const bold = 700
 

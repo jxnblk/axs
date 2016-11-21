@@ -9,7 +9,7 @@ const MiniIcon = () => (
   <div style={{ padding: 32 }}>
     <style dangerouslySetInnerHTML={{ __html: css }} />
     <Logo
-      color={config.colors.grape}
+      color={config.colors.violet}
       size={128} />
   </div>
 )

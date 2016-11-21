@@ -114,7 +114,7 @@ const components = [
             id='radio-1'
             name='radio-1'
             checked
-            grape
+            violet
             mr1
           />
           Radio One
@@ -138,7 +138,7 @@ const components = [
           id='checkbox'
           name='checkbox'
           checked
-          grape
+          violet
           mr1
         />
         Check it
@@ -155,7 +155,7 @@ const components = [
         <Slider
           id='slider'
           name='slider'
-          grape
+          violet
           defaultValue={100/8} />
       </Box>
     )
@@ -164,7 +164,7 @@ const components = [
     name: 'Progress',
     example: (
       <Progress
-        grape
+        violet
         value={1/4}>
         25%
       </Progress>
@@ -181,7 +181,7 @@ const components = [
   {
     name: 'Span',
     example: (
-      <Span bold grape>
+      <Span bold violet>
         Span
       </Span>
     )

@@ -43,7 +43,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "cxs": "^2.1.0",
-    "open-color": "^1.4.0"
+    "open-color": "^1.4.0",
+    "palx": "^1.0.1"
   },
   "ava": {
     "require": [

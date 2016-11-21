@@ -249,7 +249,7 @@ const examples = [
             A panel is great for drawing attention and grouping related content together.
           </Text>
         </Box>
-        <Box p2 border='top' grape borderGrape>
+        <Box p2 border='top' violet borderViolet>
           <Text size={6}>
             Panel footer
           </Text>
@@ -281,7 +281,7 @@ const examples = [
   {
     name: 'Blockquote',
     comp: (
-      <Box is='blockquote' m0 px2 grape>
+      <Box is='blockquote' m0 px2 violet>
         <Text bold size={[4, null, 2 ]}>
           “In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years
           ...

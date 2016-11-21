@@ -11,10 +11,10 @@ import Dit from './Dit'
 const UiHeader = () => (
   <Box py3>
     <Dit />
-    <Heading level={1} grape>
+    <Heading level={1} violet>
       Axs UI
     </Heading>
-    <Text bold size={3} grape>
+    <Text bold size={3} violet>
       UI Component Primitives
     </Text>
     <Pre size={4} p0 py2>npm i axs-ui</Pre>

@@ -11,7 +11,7 @@ import Dit from './Dit'
 
 export default () => (
   <Box is='header' px3 mb4>
-    <Box py4 mb4 white bgGrape>
+    <Box py4 mb4 white bgViolet>
       <Container py4>
         <Flex wrap align='center'>
           <Box border='right' css={cx.pipe} pr3 mr3>
@@ -23,7 +23,7 @@ export default () => (
             <Text is='p' bold size={[4, 3 ]} mt2>
               A build-your-own responsive typography and layout UI toolkit for React
             </Text>
-            <Pre size={4} p0 my2 grape1 children='npm i axs' />
+            <Pre size={4} p0 my2 violet children='npm i axs' />
           </Box>
         </Flex>
       </Container>
