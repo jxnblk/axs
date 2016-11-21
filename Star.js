@@ -13,6 +13,7 @@ export default props => (
     height='20px'
     css={cx}
     my2
+    width={96}
   />
 )
 

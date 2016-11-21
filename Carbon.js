@@ -27,6 +27,7 @@ class Carbon extends React.Component {
 
 const cx = {
   maxWidth: 320,
+  height: 118,
   '#carbonads': {
     display: 'inline-block',
     fontSize: 14,

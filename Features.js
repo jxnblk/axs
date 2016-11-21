@@ -7,7 +7,7 @@ import Dit from './Dit'
 
 const Features = () => (
   <Container is='section'>
-    <Flex mx-3 css={cx.flex}>
+    <Flex mx-3 wrap>
       <Box p3 width={[1, 1/2]}>
         <Dit />
         <Heading size={3} mb2 children='Responsive Typography and Layout' />
@@ -43,12 +43,6 @@ const Features = () => (
     </Flex>
   </Container>
 )
-
-const cx = {
-  flex: {
-    flexWrap: 'wrap'
-  }
-}
 
 export default Features
 
