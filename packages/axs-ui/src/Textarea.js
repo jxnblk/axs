@@ -26,7 +26,7 @@ class Textarea extends React.Component {
 
 const cx = {
   ...resets.textarea,
-  ':focus': {
+  '&:focus': {
     outline: 'none',
     borderColor: config.colors.blue
   }

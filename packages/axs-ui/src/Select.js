@@ -35,7 +35,7 @@ const cx = {
   select: {
     ...resets.select,
     paddingRight: 24,
-    ':focus': {
+    '&:focus': {
       outline: 'none',
       borderColor: config.colors.blue
     }

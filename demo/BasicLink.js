@@ -8,10 +8,10 @@ const BasicLink = props => (
     css={{
       textDecoration: 'none',
       color: 'inherit',
-      ':hover': {
+      '&:hover': {
         textDecoration: 'underline'
       },
-      ':focus': {
+      '&:focus': {
         outline: 'none',
         textDecoration: 'underline',
         color: config.colors.grape

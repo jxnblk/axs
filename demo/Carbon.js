@@ -28,19 +28,19 @@ class Carbon extends React.Component {
 const cx = {
   maxWidth: 320,
   height: 118,
-  '#carbonads': {
+  '& #carbonads': {
     display: 'inline-block',
     fontSize: 14,
     lineHeight: 1.25,
     textAlign: 'left',
     maxWidth: 320,
     backgroundColor: 'white',
-    a: {
+    '& a': {
       textDecoration: 'none',
       color: 'inherit',
       ':hover': {}
     },
-    '> span': {
+    '& > span': {
       display: 'block',
       ':before': {
         content: '""',
@@ -52,17 +52,17 @@ const cx = {
         clear: 'both'
       },
     },
-    '.carbon-img': {
+    '& .carbon-img': {
       float: 'left',
       marginRight: 8,
-      '> img': {
+      '& > img': {
         display: 'block'
       }
     },
-    '.carbon-text': {
+    '& .carbon-text': {
       overflow: 'hidden'
     },
-    '.carbon-poweredby': {
+    '& .carbon-poweredby': {
       float: 'left',
       marginTop: 4,
       opacity: .5

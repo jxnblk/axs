@@ -1,6 +1,6 @@
 
 import React from 'react'
-import css from '../../san-francisco/sf-css'
+// import css from '../../san-francisco/sf-css'
 
 const sx = {
   root: {
@@ -16,7 +16,6 @@ const sx = {
 }
 const Icon = () => (
   <div>
-    <style dangerouslySetInnerHTML={{ __html: css }} />
     <svg
       viewBox='0 0 64 64'
       width='512'

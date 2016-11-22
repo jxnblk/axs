@@ -21,13 +21,13 @@ const cx = {
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',
-  '::-webkit-progress-bar': {
+  '&::-webkit-progress-bar': {
     backgroundColor: config.colors.gray3
   },
-  '::-webkit-progress-value': {
+  '&::-webkit-progress-value': {
     backgroundColor: 'currentcolor'
   },
-  '::-moz-progress-bar': {
+  '&::-moz-progress-bar': {
     backgroundColor: 'currentcolor'
   },
 }

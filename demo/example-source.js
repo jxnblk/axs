@@ -23,7 +23,7 @@ const NavLink = props => (
       textDecoration: 'none',
       // Maybe Text should handle padding props
       opacity: .5,
-      ':hover': {
+      '&:hover': {
         opacity: 1
       }
     }} />
@@ -45,7 +45,7 @@ const Button = props => (
       borderRadius: 3,
       appearance: 'none',
       WebkitAppearance: 'none',
-      ':hover': {
+      '& :hover': {
         boxShadow: 'inset 0 0 0 64px rgba(0, 0, 0, .125)'
       },
       ...props.css
@@ -84,7 +84,7 @@ const examples = [
           borderRadius: 3,
           appearance: 'none',
           WebkitAppearance: 'none',
-          ':hover': {
+          '&:hover': {
             boxShadow: 'inset 0 0 0 64px rgba(0, 0, 0, .125)'
           }
         }}>
@@ -125,7 +125,7 @@ const examples = [
             fontSize: 'inherit',
             color: 'inherit',
             backgroundColor: 'transparent',
-            ':focus': {
+            '&:focus': {
               outline: 'none',
               borderColor: config.colors.blue
             }
@@ -173,7 +173,7 @@ const examples = [
           color: 'inherit',
           textDecoration: 'none',
           opacity: .5,
-          ':hover': {
+          '&:hover': {
             opacity: 1
           }
         }}

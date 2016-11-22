@@ -41,18 +41,18 @@ const cx = {
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',
-  '::-webkit-slider-thumb': {
+  '&::-webkit-slider-thumb': {
     ...thumbStyles
   },
-  '::-moz-range-thumb': {
+  '&::-moz-range-thumb': {
     ...thumbStyles
   },
-  ':focus': {
+  '&:focus': {
     outline: 'none',
-    '::-webkit-slider-thumb': {
+    '&::-webkit-slider-thumb': {
       backgroundColor: 'currentcolor'
     },
-    '::-moz-range-thumb': {
+    '&::-moz-range-thumb': {
       backgroundColor: 'currentcolor'
     }
   }

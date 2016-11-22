@@ -1,5 +1,6 @@
 
-import cxs from 'cxs'
+// import cxs from 'cxs'
+import { style } from 'typestyle'
 import classnames from 'classnames'
 import config from '../config'
 import convertShorthandProps from './convert-shorthand-props'
@@ -100,7 +101,8 @@ const parseProps = original => {
 
   const className = classnames(
     original.className,
-    cxs(Object.assign({}, ...styles))
+    // cxs(Object.assign({}, ...styles))
+    style(Object.assign({}, ...styles))
   )
 
   return { props, className }

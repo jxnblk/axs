@@ -26,7 +26,7 @@ class Input extends React.Component {
 
 const cx = {
   ...resets.input,
-  ':focus': {
+  '&:focus': {
     outline: 'none',
     borderColor: config.colors.blue
   }

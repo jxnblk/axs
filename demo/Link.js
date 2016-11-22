@@ -25,10 +25,10 @@ const Link = ({ to, href, ...props }, { basehref = '' }) => {
       onClick={e => to ? onClick(e, to, basehref) : null}
       css={{
         textDecoration: 'none',
-        ':hover': {
+        '&:hover': {
           color: config.colors.grape9
         },
-        ':focus': {
+        '&:focus': {
           outline: 'none',
           color: config.colors.grape9,
           boxShadow: `0 0 0 2px ${config.colors.grape1}`

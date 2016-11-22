@@ -46,10 +46,18 @@ class Radio extends React.Component {
           css={{
             ...cx.dot,
             backgroundColor: checked ? config.colors.white : 'currentcolor',
+            // typestyle does not work with null values...
+            // borderStyle: checked ? 'solid' : null,
+            // borderColor: checked ? 'currentcolor' : null,
+            // opacity: checked ? null : 1/4
+          }}
+          style={{
+            // Make typestyle work with null values
             borderStyle: checked ? 'solid' : null,
             borderColor: checked ? 'currentcolor' : null,
             opacity: checked ? null : 1/4
-          }} />
+          }}
+        />
       </Box>
     )
   }
@@ -67,9 +75,9 @@ const cx = {
     position: 'absolute',
     zIndex: -1,
     opacity: 0,
-    ':focus ~ div': {
-      boxShadow: `0 0 0 2px ${config.colors.blue}`
-    }
+    // '&:focus ~ div': {
+    //   boxShadow: `0 0 0 2px ${config.colors.blue}`
+    // }
   },
   dot: {
     boxSizing: 'border-box',
