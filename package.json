@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "cxs": "^2.1.0",
+    "fela": "^4.1.0",
     "open-color": "^1.4.0"
   },
   "ava": {

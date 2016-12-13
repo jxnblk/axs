@@ -5,7 +5,7 @@
 
 All Axs components have the following style props.
 
-- `css` - style object for cxs - will be converted into a unique className and inject styles into the head of the document. Supports pseudoclasses, media queries, keyframes, and nesting.
+- `css` - style object for fela - will be converted into a unique className and inject styles into the head of the document. Supports pseudoclasses, media queries, keyframes, and nesting.
 - `is` - sets a custom tag or component
 
 #### Margin

@@ -315,10 +315,10 @@ Axs also offers several shorthand styling props for faster development.
 
 ## Related
 
+// To do: link to fela
 - [cxs](https://github.com/jxnblk/cxs)
 - [Rebass](http://jxnblk.com/rebass)
 - [Reflexbox](http://jxnblk.com/reflexbox)
-- [cxs-components](https://github.com/jxnblk/cxs-components)
 - [Basscss](http://basscss.com)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
 - [glamor](https://github.com/smyte/jsxstyl://github.com/threepointone/glamor)

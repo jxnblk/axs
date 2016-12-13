@@ -1,7 +1,7 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import { Box, cxs, config } from 'axs'
+import { Box, cx, config } from 'axs'
 import { parseArrayValue } from 'axs/util'
 
 const parseArr = parseArrayValue(config.breakpoints)
@@ -49,7 +49,7 @@ const parseProps = (original) => {
 
   const className = classnames(
     original.className,
-    cxs(Object.assign({}, ...styles))
+    cx(Object.assign({}, ...styles))
   )
 
   return { props, className }

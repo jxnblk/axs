@@ -1,7 +1,7 @@
 
 const React = require('react')
 const ReactDOM = require('react-dom')
-const { cxs, config } = require('../src')
+const { cx, config } = require('../src')
 const html = require('./html')
 const App = require('./App').default
 
@@ -32,8 +32,8 @@ module.exports = (locals) => {
   const { renderToString, renderToStaticMarkup } = require('react-dom/server')
 
   const app = renderToString(<App {...locals} basehref={basehref} />)
-  const css = cxs.css
-  cxs.reset()
+  const css = cx.getCss()
+  // cxs.reset()
 
   return html({ app, css, basehref })
 }

@@ -1,7 +1,7 @@
 
 import test from 'ava'
 import parseProps from '../src/util/parse-props'
-import { cxs } from '../src'
+import cx from '../src/cx'
 
 const props = {
   m: 2,
@@ -26,7 +26,8 @@ const shortProps = {
 }
 
 test.afterEach(() => {
-  cxs.reset()
+  // To do: reset fela cache
+  // cxs.reset()
 })
 
 test('returns props and className object', t => {
@@ -45,8 +46,8 @@ test('strips style props', t => {
 
 test('creates css', t => {
   const result = parseProps(props)
-  const css = cxs.css
-  t.regex(css, new RegExp(result.className))
+  const css = cx.getCss()
+  // t.regex(css, new RegExp(result.className))
   t.regex(css, /margin:16px/)
   t.regex(css, /padding-left:32px/)
   t.regex(css, /width:50%/)
@@ -55,9 +56,9 @@ test('creates css', t => {
   t.regex(css, /display:inline-block/)
   t.regex(css, /border:1px solid/)
   t.regex(css, /border-radius:2px/)
-  t.regex(css, /;color/)
-  t.regex(css, /;background-color/)
-  t.regex(css, /;border-color/)
+  t.regex(css, /color/)
+  t.regex(css, /background-color/)
+  t.regex(css, /border-color/)
 })
 
 test('converts shorthand props', t => {

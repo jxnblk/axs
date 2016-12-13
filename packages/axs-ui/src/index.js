@@ -3,14 +3,14 @@ import {
   Box,
   Text,
   config,
-  cxs
+  cx
 } from 'axs'
 
 export {
   Box,
   Text,
   config,
-  cxs
+  cx
 } from 'axs'
 
 import Heading from './Heading'
@@ -45,7 +45,7 @@ export default {
   Box,
   Text,
   config,
-  cxs,
+  cx,
   Heading,
   Flex,
   Button,
