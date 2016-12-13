@@ -69,3 +69,10 @@ test('returns multi-directional padding styles', t => {
   })
 })
 
+test('handles non-scalar values', t => {
+  const style = margin('m', 30)
+  t.deepEqual(style, {
+    margin: 30
+  })
+})
+
