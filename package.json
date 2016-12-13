@@ -43,7 +43,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "fela": "^4.1.0",
-    "open-color": "^1.4.0"
+    "open-color": "^1.4.0",
+    "styletron": "^2.2.0"
   },
   "ava": {
     "require": [
