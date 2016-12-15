@@ -46,7 +46,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new StaticSite('main', paths, {})
+    // new StaticSite('main', paths, {})
   ],
 
   devServer: {

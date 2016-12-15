@@ -23,6 +23,8 @@ config.set({
 if (typeof document !== 'undefined') {
   const path = window.location.pathname
   ReactDOM.render(<App path={path} basehref={basehref} />, app)
+
+  console.log('css', cx.getCss())
 }
 
 module.exports = (locals) => {
