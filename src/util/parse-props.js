@@ -1,5 +1,5 @@
 
-import cxs from 'cxs/monolithic'
+import cxs from 'cxs'
 import { createUnderstyle, filterProps } from 'understyle'
 import classnames from 'classnames'
 import merge from 'deepmerge'
