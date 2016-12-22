@@ -23,7 +23,7 @@ const components = [
   {
     name: 'Heading',
     example: (
-      <Heading level={3} size={2}>
+      <Heading level={3} fontSize={2}>
         Hello
       </Heading>
     )
@@ -32,8 +32,8 @@ const components = [
     name: 'Flex',
     example: (
       <Flex
-        align='center'
-        direction={[ 'column', 'row' ]}>
+        alignItems='center'
+        flexDirection={[ 'column', 'row' ]}>
         <Box width={[ 1, 1/2 ]} px1 py2 bgGray1>Box</Box>
         <Box width={[ 1, 1/2 ]} p1 bgGray2>Box</Box>
       </Flex>
@@ -45,7 +45,7 @@ const components = [
       <Button
         href='#Button'
         children='Button'
-        bgGrape
+        bg='fuschia'
       />
     )
   },
@@ -109,17 +109,17 @@ const components = [
     name: 'Radio',
     example: (
       <Box>
-        <Flex is='label' bold size={4}>
+        <Flex is='label' bold fontSize={4}>
           <Radio
             id='radio-1'
             name='radio-1'
             checked
-            grape
+            fuschia
             mr1
           />
           Radio One
         </Flex>
-        <Flex is='label' bold size={4}>
+        <Flex is='label' bold fontSize={4}>
           <Radio
             id='radio-2'
             name='radio-2'
@@ -133,12 +133,12 @@ const components = [
   {
     name: 'Checkbox',
     example: (
-      <Flex is='label' bold size={4}>
+      <Flex is='label' bold fontSize={4}>
         <Checkbox
           id='checkbox'
           name='checkbox'
           checked
-          grape
+          fuschia
           mr1
         />
         Check it
@@ -155,7 +155,7 @@ const components = [
         <Slider
           id='slider'
           name='slider'
-          grape
+          fuschia
           defaultValue={100/8} />
       </Box>
     )
@@ -164,7 +164,7 @@ const components = [
     name: 'Progress',
     example: (
       <Progress
-        grape
+        fuschia
         value={1/4}>
         25%
       </Progress>
@@ -181,7 +181,7 @@ const components = [
   {
     name: 'Span',
     example: (
-      <Span bold grape>
+      <Span bold fuschia>
         Span
       </Span>
     )

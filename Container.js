@@ -5,7 +5,7 @@ import { Box } from '../src'
 const Container = props => (
   <Box {...props}
     mx='auto'
-    px3
+    px={[ 2, 3 ]}
     css={cx} />
 )
 
