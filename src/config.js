@@ -1,10 +1,10 @@
 
-import defaults from './util/default-config'
+import { defaultConfig } from 'understyle'
 
 class Config {
   constructor (obj) {
     this._value = {
-      ...defaults,
+      ...defaultConfig,
       ...obj
     }
   }
@@ -21,7 +21,7 @@ class Config {
   }
 
   reset () {
-    this._value = defaults
+    this._value = defaultConfig
   }
 }
 
@@ -56,6 +56,8 @@ Object.defineProperty(config, 'bold', {
     return config.get().bold
   }
 })
+
+export { defaultConfig as defaultConfig } from 'understyle'
 
 export default config
 

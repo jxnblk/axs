@@ -3,7 +3,7 @@ import cxs from 'cxs'
 import { createUnderstyle, filterProps } from 'understyle'
 import classnames from 'classnames'
 import merge from 'deepmerge'
-import config from '../config'
+import config from './config'
 
 const AXS_PROPS = /^(css)$/
 
