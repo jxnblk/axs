@@ -37,7 +37,7 @@ const cx = {
     paddingRight: 24,
     ':focus': {
       outline: 'none',
-      // borderColor: config.colors.blue
+      borderColor: config.colors.blue
     }
   },
   chevron: {

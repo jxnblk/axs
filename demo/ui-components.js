@@ -67,7 +67,6 @@ const components = [
         <Input
           id='input'
           name='input'
-          bgRed
           defaultValue='Hello' />
       </Box>
     )

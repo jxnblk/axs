@@ -44,7 +44,7 @@ class Radio extends React.Component {
         <Box
           css={{
             ...cx.dot,
-            // backgroundColor: checked ? config.colors.white : 'currentcolor',
+            backgroundColor: checked ? config.colors.white : 'currentcolor',
             borderStyle: checked ? 'solid' : null,
             borderColor: checked ? 'currentcolor' : null,
             opacity: checked ? null : 1/4
@@ -67,7 +67,7 @@ const cx = {
     zIndex: -1,
     opacity: 0,
     ':focus ~ div': {
-      // boxShadow: `0 0 0 2px ${config.colors.blue}`
+      boxShadow: `0 0 0 2px ${config.colors.blue}`
     }
   },
   dot: {

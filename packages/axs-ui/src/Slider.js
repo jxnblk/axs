@@ -24,7 +24,7 @@ class Slider extends React.Component {
 const thumbStyles = {
   width: 24,
   height: 24,
-  // backgroundColor: config.colors.black,
+  backgroundColor: config.colors.black,
   border: 0,
   borderRadius: 99999,
   WebkitAppearance: 'none'

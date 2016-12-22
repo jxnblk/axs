@@ -32,8 +32,8 @@ const resets = {
     fontSize: 'inherit',
     margin: 0,
     padding: 8,
-    // color: 'inherit',
-    // backgroundColor: 'transparent',
+    color: 'inherit',
+    backgroundColor: 'transparent',
     border: '1px solid transparent',
     textDecoration: 'none'
   },

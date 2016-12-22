@@ -22,7 +22,7 @@ const cx = {
   appearance: 'none',
   borderRadius: 99999,
   '::-webkit-progress-bar': {
-    // backgroundColor: config.colors.gray3
+    backgroundColor: config.colors.gray3
   },
   '::-webkit-progress-value': {
     backgroundColor: 'currentcolor'

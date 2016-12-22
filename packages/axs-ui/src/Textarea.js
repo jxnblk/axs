@@ -28,7 +28,7 @@ const cx = {
   ...resets.textarea,
   ':focus': {
     outline: 'none',
-    // borderColor: config.colors.blue
+    borderColor: config.colors.blue
   }
 }
 

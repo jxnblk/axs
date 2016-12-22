@@ -25,8 +25,8 @@ const parseProps = (original = {}) => {
 
   const styles = merge.all([
     { margin: 0 },
-    propStyles,
-    (original.css || {})
+    (original.css || {}),
+    propStyles
   ])
 
   const cxsClassName = cxs(styles)
