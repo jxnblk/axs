@@ -8,7 +8,6 @@ const Progress = ({ css, ...props }) => (
     display='block'
     width={1}
     blue
-    rounded='circle'
     border={false}
     css={{ ...cx, ...css }}
     {...props}
@@ -21,6 +20,7 @@ const cx = {
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',
+  borderRadius: 99999,
   '::-webkit-progress-bar': {
     backgroundColor: config.colors.gray3
   },

@@ -14,7 +14,7 @@ const UI = () => {
       <Container>
         <UiHeader />
         <UiNav py1
-          px={[ null, null, 2 ]}
+          px={[ null, null, 3 ]}
           css={cx.nav} />
         <UiComponents />
       </Container>

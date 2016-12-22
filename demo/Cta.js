@@ -13,9 +13,9 @@ const Cta = () => (
     <Text
       is='a'
       href='https://github.com/jxnblk/axs'
-      size={2}
+      fontSize={2}
       bold
-      grape
+      fuschia
       children='View on GitHub'
     />
   </Container>

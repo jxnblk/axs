@@ -7,8 +7,8 @@ const Pre = props => (
     is='pre'
     m0
     p2
-    size={6}
-    grape8
+    fontSize={6}
+    fuschia8
     {...props}
     css={cx}
   />

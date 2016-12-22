@@ -4,7 +4,7 @@ import { Box } from '../src'
 
 const Dit = (props) => (
   <Box
-    bgGrape
+    bgFuschia
     width={64}
     my2
     css={{

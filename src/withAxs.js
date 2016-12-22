@@ -1,6 +1,6 @@
 
 import React from 'react'
-import parseProps from './util/parse-props'
+import parseProps from './parse-props'
 
 const withAxs = Comp => {
   const AxsComponent = (originalProps) => {

@@ -1,7 +1,6 @@
 
 import test from 'ava'
-import config from '../src/config'
-import defaults from '../src/util/default-config'
+import config, { defaultConfig } from '../src/config'
 
 test('returns a config object', t => {
   const styles = config.get()
@@ -15,7 +14,7 @@ test('returns a config object', t => {
 
 test('returns the default config', t => {
   const styles = config.get()
-  t.deepEqual(styles, defaults)
+  t.deepEqual(styles, defaultConfig)
 })
 
 test('set method changes config', t => {
@@ -28,6 +27,6 @@ test('set method changes config', t => {
 test('reset method sets default', t => {
   config.reset()
   const styles = config.get()
-  t.deepEqual(styles.scale, defaults.scale)
+  t.deepEqual(styles.scale, defaultConfig.scale)
 })
 

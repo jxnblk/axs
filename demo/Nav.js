@@ -9,12 +9,16 @@ import Star from './Star'
 import Logo from './Logo'
 
 const Nav = () => (
-  <Flex px3 py2 wrap align='center'>
-    <Flex width={[ 1, 1/2 ]} align='center'>
+  <Flex px={[ 2, 3 ]} py2 flexWrap='wrap' alignItems='center'>
+    <Flex width={[ 1, 1/2 ]} alignItems='center'>
       <Link p0
         title='Home'
         to='/'>
-        <Logo color={config.colors.grape} size={32} mr2 />
+        <Logo
+          size={32}
+          mr2
+          color={config.colors.fuschia}
+        />
       </Link>
       <Link
         mr2

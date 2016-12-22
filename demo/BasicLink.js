@@ -14,7 +14,7 @@ const BasicLink = props => (
       ':focus': {
         outline: 'none',
         textDecoration: 'underline',
-        color: config.colors.grape
+        color: config.colors.fuschia
       }
     }}
     {...props}

@@ -14,10 +14,10 @@ const Link = ({ to, href, ...props }, { basehref = '' }) => {
   return (
     <Text
       href={href || basehref + to}
-      size6
+      fontSize={6}
       bold
       caps
-      grape
+      fuschia
       display='inline-block'
       py2
       {...props}
@@ -26,12 +26,12 @@ const Link = ({ to, href, ...props }, { basehref = '' }) => {
       css={{
         textDecoration: 'none',
         ':hover': {
-          color: config.colors.grape9
+          color: config.colors.fuschia9
         },
         ':focus': {
           outline: 'none',
-          color: config.colors.grape9,
-          boxShadow: `0 0 0 2px ${config.colors.grape1}`
+          color: config.colors.fuschia9,
+          boxShadow: `0 0 0 2px ${config.colors.fuschia1}`
         }
       }}
     />

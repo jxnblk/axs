@@ -4,16 +4,16 @@ import { Text } from 'axs'
 
 const Heading = ({
   level = 2,
-  size,
+  fontSize,
   css,
   ...props
 }) => {
   const comp = 'h' + level
-  size = size || level
+  fontSize = fontSize || level
 
   return (
     <Text
-      size={size}
+      fontSize={fontSize}
       bold
       {...props}
       is={comp}

@@ -8,8 +8,8 @@ import Pre from './Pre'
 import BasicLink from './BasicLink'
 
 const example = (
-  <Box p2 mb2 white bgGrape>
-    <Text is='h2' size2>
+  <Box p2 mb2 white bgFuschia>
+    <Text is='h2' fontSize={2}>
       Box
     </Text>
   </Box>
@@ -22,7 +22,7 @@ const Usage = () => (
         Usage
       </BasicLink>
     </Heading>
-    <Flex mx-2 py3 css={{ alignItems: 'center' }}>
+    <Flex mx-2 py3 flexWrap='wrap' alignItems='center'>
       <Box px2 width={[1, 1/2]}>
         <Pre bgGray0 children={toJsxString(example)} />
       </Box>
