@@ -1,6 +1,6 @@
 {
   "name": "axs",
-  "version": "1.0.0-b5",
+  "version": "1.0.0-b6",
   "description": "A build-your-own responsive typography and layout UI toolkit for React",
   "main": "dist/index.js",
   "scripts": {
