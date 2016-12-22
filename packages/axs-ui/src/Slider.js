@@ -15,7 +15,6 @@ class Slider extends React.Component {
         width={1}
         m0
         bgGray3
-        rounded='circle'
         {...props}
       />
     )
@@ -25,9 +24,9 @@ class Slider extends React.Component {
 const thumbStyles = {
   width: 24,
   height: 24,
-  backgroundColor: config.colors.black,
+  // backgroundColor: config.colors.black,
   border: 0,
-  borderRadius: 9999,
+  borderRadius: 99999,
   WebkitAppearance: 'none'
 }
 
@@ -38,6 +37,7 @@ const cx = {
   marginBottom: 6,
   cursor: 'pointer',
   color: 'inherit',
+  borderRadius: 99999,
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',

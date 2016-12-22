@@ -1,5 +1,6 @@
 
-import openColor from 'open-color/open-color.json'
+// import openColor from 'open-color/open-color.json'
+import { defaultConfig as _config } from 'understyle'
 
 export const breakpoints = [
   '(min-width:40em)',
@@ -16,6 +17,7 @@ export const scale = [
 ]
 
 // Parses color object with nested arrays
+/*
 export const flattenColors = colors => Object.keys(colors)
   .map(key => {
     const value = openColor[key]
@@ -52,16 +54,18 @@ export const flattenColors = colors => Object.keys(colors)
     a[color.key] = color.value
     return a
   }, {})
+*/
 
-export const colors = flattenColors(openColor)
+// export const colors = flattenColors(openColor)
 
 export const bold = 700
 
 export const config = {
+  ..._config,
   breakpoints,
   typeScale,
   scale,
-  colors,
+  // colors,
   bold
 }
 

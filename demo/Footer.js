@@ -32,8 +32,8 @@ const Footer = () => (
           children='Made by Jxnblk' />
       </Flex>
     </Container>
-    <Flex py4 my4 grape justifyContent='space-around'>
-      <Logo size={48} />
+    <Flex py4 my4 fuschia justifyContent='space-around'>
+      <Logo fontSize={48} />
     </Flex>
   </Box>
 )

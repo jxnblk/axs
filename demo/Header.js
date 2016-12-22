@@ -11,19 +11,19 @@ import Dit from './Dit'
 
 export default () => (
   <Box is='header' px3 mb4>
-    <Box py4 mb4 white bgGrape>
+    <Box py4 mb4 white bgFuschia>
       <Container py4>
         <Flex wrap align='center'>
-          <Box border='right' css={cx.pipe} pr3 mr3>
-            <Heading level={1} size={[1, null, 0]}>
+          <Box borderRight={4} css={cx.pipe} pr3 mr3>
+            <Heading level={1} fontSize={[1, null, 0]}>
               Axs
             </Heading>
           </Box>
           <Box width={[1, 1/2]}>
-            <Text is='p' bold size={[4, 3 ]} mt2>
+            <Text is='p' bold fontSize={[4, 3 ]} mt2>
               A build-your-own responsive typography and layout UI toolkit for React
             </Text>
-            <Pre size={4} p0 my2 grape1 children='npm i axs' />
+            <Pre fontSize={4} p0 my2 fuschia1 children='npm i axs' />
           </Box>
         </Flex>
       </Container>
@@ -31,7 +31,7 @@ export default () => (
     <Flex wrap align='center'>
       <Box width={[1, null, 4/8 ]}>
         <Dit />
-        <Text size={3}>
+        <Text fontSize={3}>
           Axs is a React UI component library
           that serves as a foundation for highly customized UI
           as well as a utility belt for prototyping.

@@ -5,7 +5,7 @@ import { Flex } from 'axs-ui'
 
 export default props => (
   <Flex
-    size={6}
+    fontSize={6}
     width={61}
     my2
     {...props}>

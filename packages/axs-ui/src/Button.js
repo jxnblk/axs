@@ -22,12 +22,12 @@ const Button = ({ href, css, ...props }) => (
 const cx = {
   ...resets.button,
   ':hover': {
-    backgroundColor: config.colors.blue7
+    // backgroundColor: config.colors.blue7
   },
   ':focus': {
     outline: 'none',
-    backgroundColor: config.colors.blue7,
-    boxShadow: `0 0 0 2px ${config.colors.blue3}`
+    // backgroundColor: config.colors.blue7,
+    // boxShadow: `0 0 0 2px ${config.colors.blue3}`
   }
 }
 

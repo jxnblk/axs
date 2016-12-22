@@ -13,7 +13,7 @@ import {
 
 const NavLink = props => (
   <Text is='a'
-    size={5}
+    fontSize={5}
     bold
     gray8
     {...props}
@@ -95,7 +95,7 @@ const examples = [
   {
     name: 'Red Button',
     comp: (
-      <Button size={6} caps bgRed>
+      <Button fontSize={6} caps bgRed>
         Red Button
       </Button>
     )
@@ -106,7 +106,7 @@ const examples = [
       <Box>
         <Text
           is='label'
-          size6
+          fontSize={6}
           display='block'
           gray8>
           Email
@@ -127,7 +127,7 @@ const examples = [
             backgroundColor: 'transparent',
             ':focus': {
               outline: 'none',
-              borderColor: config.colors.blue
+              // borderColor: config.colors.blue
             }
           }}
         />
@@ -137,7 +137,7 @@ const examples = [
   {
     name: 'Box',
     comp: (
-      <Box p3 mb2 rounded white bgGrape>
+      <Box p3 mb2 rounded white bgFuschia>
         Box
       </Box>
     )
@@ -148,7 +148,7 @@ const examples = [
       <Box
         m={[0, 1, 2, 3]}
         p={[2, null, 3]}
-        white bgGrape>
+        white bgFuschia>
         Responsive Box
       </Box>
     )
@@ -156,7 +156,7 @@ const examples = [
   {
     name: 'Reponsive Heading',
     comp: (
-      <Heading size={[3, 2, 1, 0]}>
+      <Heading fontSize={[3, 2, 1, 0]}>
         Responsive Heading
       </Heading>
     )
@@ -165,7 +165,7 @@ const examples = [
     name: 'NavLink',
     comp: (
       <Text is='a'
-        size={5}
+        fontSize={5}
         bold
         gray8
         css={{
@@ -209,10 +209,10 @@ const examples = [
     name: 'Bar Chart',
     comp: (
       <Box white>
-        <Box py1 mb1 width={1/4} bgGrape>
+        <Box py1 mb1 width={1/4} bgFuschia>
           <Text mx2 bold>25%</Text>
         </Box>
-        <Box py1 width={3/4} bgGrape8>
+        <Box py1 width={3/4} bgFuschia8>
           <Text mx2 bold>75%</Text>
         </Box>
       </Box>
@@ -222,17 +222,17 @@ const examples = [
     name: 'Percentage Bar',
     comp: (
       <Flex white>
-        <Box py1 width={3/8} bgGrape8>
-          <Text size={6} bold center>37.5%</Text>
+        <Box py1 width={3/8} bgFuschia8>
+          <Text fontSize={6} bold center>37.5%</Text>
         </Box>
-        <Box py1 width={1/4} bgGrape6>
-          <Text size={6} bold center>25%</Text>
+        <Box py1 width={1/4} bgFuschia6>
+          <Text fontSize={6} bold center>25%</Text>
         </Box>
-        <Box py1 width={1/4} bgGrape4>
-          <Text size={6} bold center>25%</Text>
+        <Box py1 width={1/4} bgFuschia4>
+          <Text fontSize={6} bold center>25%</Text>
         </Box>
-        <Box py1 width={1/8} bgGrape2>
-          <Text size={6} bold center>12.5%</Text>
+        <Box py1 width={1/8} bgFuschia2>
+          <Text fontSize={6} bold center>12.5%</Text>
         </Box>
       </Flex>
     )
@@ -240,8 +240,8 @@ const examples = [
   {
     name: 'Panel',
     comp: (
-      <Box border rounded borderGrape>
-        <Box p2 white bgGrape>
+      <Box border rounded borderFuschia>
+        <Box p2 white bgFuschia>
           <Text bold>Panel</Text>
         </Box>
         <Box p2>
@@ -249,8 +249,8 @@ const examples = [
             A panel is great for drawing attention and grouping related content together.
           </Text>
         </Box>
-        <Box p2 border='top' grape borderGrape>
-          <Text size={6}>
+        <Box p2 border='top' fuschia borderFuschia>
+          <Text fontSize={6}>
             Panel footer
           </Text>
         </Box>
@@ -272,7 +272,7 @@ const examples = [
           }}
         />
         <Box px2 py1>
-          <Text bold size={3}>Card</Text>
+          <Text bold fontSize={3}>Card</Text>
           <Text>Card</Text>
         </Box>
       </Box>
@@ -281,20 +281,20 @@ const examples = [
   {
     name: 'Blockquote',
     comp: (
-      <Box is='blockquote' m0 px2 grape>
-        <Text bold size={[4, null, 2 ]}>
+      <Box is='blockquote' m0 px2 fuschia>
+        <Text bold fontSize={[4, null, 2 ]}>
           “In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years
           ...
           ”
         </Text>
-        <Text is='cite' size={5}>—Robert Bringhurst</Text>
+        <Text is='cite' fontSize={5}>—Robert Bringhurst</Text>
       </Box>
     )
   },
   {
     name: 'Grid Footer',
     comp: (
-      <Box py3 white bgGrape9>
+      <Box py3 white bgFuschia9>
         <InlineBlock px3 width={[1/2, 1/3, 1/4]} css={{ verticalAlign: 'top' }}>
           <NavLink href='#!' children='Home' />
           <NavLink href='#!' children='Categories' />
