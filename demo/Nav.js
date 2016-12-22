@@ -9,8 +9,8 @@ import Star from './Star'
 import Logo from './Logo'
 
 const Nav = () => (
-  <Flex px={[ 2, 3 ]} py2 wrap align='center'>
-    <Flex width={[ 1, 1/2 ]} align='center'>
+  <Flex px={[ 2, 3 ]} py2 flexWrap='wrap' alignItems='center'>
+    <Flex width={[ 1, 1/2 ]} alignItems='center'>
       <Link p0
         title='Home'
         to='/'>

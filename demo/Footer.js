@@ -9,7 +9,7 @@ import Logo from './Logo'
 const Footer = () => (
   <Box is='footer' py4>
     <Container>
-      <Flex direction={[ 'column', 'row' ]}>
+      <Flex flexDirection={[ 'column', 'row' ]}>
         <Link
           mr2
           to='/'

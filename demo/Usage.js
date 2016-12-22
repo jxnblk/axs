@@ -22,7 +22,7 @@ const Usage = () => (
         Usage
       </BasicLink>
     </Heading>
-    <Flex mx-2 py3 css={{ alignItems: 'center' }}>
+    <Flex mx-2 py3 flexWrap='wrap' alignItems='center'>
       <Box px2 width={[1, 1/2]}>
         <Pre bgGray0 children={toJsxString(example)} />
       </Box>

@@ -15,8 +15,8 @@ export default () => (
     mb4>
     <Box py4 mb4 white bgFuschia>
       <Container py4>
-        <Flex wrap align='center'>
-          <Box borderRight={4} css={cx.pipe} pr3 mr3>
+        <Flex flexWrap='wrap' alignItems='center'>
+          <Box css={cx.pipe} pr3 mr3>
             <Heading level={1} fontSize={[1, null, 0]}>
               Axs
             </Heading>
@@ -30,7 +30,7 @@ export default () => (
         </Flex>
       </Container>
     </Box>
-    <Flex wrap align='center'>
+    <Flex flexWrap='wrap' alignItems='center'>
       <Box width={[1, null, 4/8 ]}>
         <Dit />
         <Text fontSize={3}>
@@ -46,9 +46,9 @@ export default () => (
 
 const cx = {
   pipe: {
-    borderWidth: 4,
-    '@media screen and (max-width:40em)': {
-      border: 0
+    '@media screen and (min-width:40em)': {
+      borderRightStyle: 'solid',
+      borderRightWidth: 4
     }
   }
 }

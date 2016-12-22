@@ -32,8 +32,8 @@ const components = [
     name: 'Flex',
     example: (
       <Flex
-        align='center'
-        direction={[ 'column', 'row' ]}>
+        alignItems='center'
+        flexDirection={[ 'column', 'row' ]}>
         <Box width={[ 1, 1/2 ]} px1 py2 bgGray1>Box</Box>
         <Box width={[ 1, 1/2 ]} p1 bgGray2>Box</Box>
       </Flex>

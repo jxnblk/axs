@@ -7,7 +7,7 @@ import Dit from './Dit'
 
 const Features = () => (
   <Container is='section'>
-    <Flex mx-3 wrap>
+    <Flex mx-3 flexWrap='wrap'>
       <Box p3 width={[1, 1/2]}>
         <Dit />
         <Heading fontSize={3} mb2 children='Responsive Typography and Layout' />
