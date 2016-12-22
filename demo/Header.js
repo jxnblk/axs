@@ -10,7 +10,9 @@ import Pre from './Pre'
 import Dit from './Dit'
 
 export default () => (
-  <Box is='header' px3 mb4>
+  <Box is='header'
+    px={[ 2, 3 ]}
+    mb4>
     <Box py4 mb4 white bgFuschia>
       <Container py4>
         <Flex wrap align='center'>

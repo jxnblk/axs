@@ -45,7 +45,7 @@ const components = [
       <Button
         href='#Button'
         children='Button'
-        bgFuschia
+        bg='fuschia'
       />
     )
   },
@@ -67,6 +67,7 @@ const components = [
         <Input
           id='input'
           name='input'
+          bgRed
           defaultValue='Hello' />
       </Box>
     )
