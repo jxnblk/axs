@@ -10,7 +10,8 @@ const Container = props => (
 )
 
 const cx = {
-  maxWidth: 1024
+  maxWidth: 1024,
+  overflow: 'hidden'
 }
 
 export default Container
