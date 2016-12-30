@@ -12,7 +12,7 @@ const App = require('./App')
 
 module.exports = (req, res) => {
   const html = renderToString(React.createElement(App))
-  const css = cxs.css()
+  const css = cxs.getCss()
 
   // Reset the cache for other page renders
   cxs.reset()
