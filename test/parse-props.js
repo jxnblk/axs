@@ -45,8 +45,7 @@ test('strips style props', t => {
 
 test('creates css', t => {
   const result = parseProps(props)
-  const css = cxs.css()
-  // t.regex(css, new RegExp(result.className))
+  const css = cxs.getCss()
   t.regex(css, /margin:16px/)
   t.regex(css, /padding-left:32px/)
   t.regex(css, /width:50%/)
