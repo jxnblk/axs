@@ -32,7 +32,7 @@ module.exports = (locals) => {
   const { renderToString, renderToStaticMarkup } = require('react-dom/server')
 
   const app = renderToString(<App {...locals} basehref={basehref} />)
-  const css = cxs.css()
+  const css = cxs.getCss()
   cxs.reset()
 
   return html({ app, css, basehref })
