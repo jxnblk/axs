@@ -77,6 +77,10 @@ The rendered element can be changed with the `is` prop.
 <Text is='h1'>h1 element</Text>
 ```
 
+### Props
+
+Axs components have all the responsive style props from [understyle](https://github.com/jxnblk/understyle).
+
 ### Margin and Padding
 
 Control margin and padding with the `m` and `p` props.
@@ -150,18 +154,18 @@ If the value is not found, the raw color value will be passed on.
 
 ### Font Size
 
-Font size can be set on the Text component using the size prop.
+Font size can be set on the Text component using the `fontSize` prop.
 Numbers from 0 to 6 will use values from the global type scale,
 where 0 is the largest value and 6 is the smallest.
 
 ```jsx
-<Text size={3}>Text</Text>
+<Text fontSize={3}>Text</Text>
 ```
 
 Larger numbers will use the number as a raw pixel value.
 
 ```jsx
-<Text size={72}>72px Text</Text>
+<Text fontSize={72}>72px Text</Text>
 ```
 
 ### Typography
@@ -213,7 +217,7 @@ Responsive font sizes work the same.
 ```jsx
 <Text
   is='h2'
-  size={[
+  fontSize={[
     3, // 24px for all screens
     2, // 32px at the small breakpoin
     1, // 48px at the medium breakpoint
@@ -244,7 +248,7 @@ const Label = props => (
   <Text
     mb1
     is='label'
-    size={5}
+    fontSize={5}
     gray6
     {...props}
   />
@@ -315,6 +319,7 @@ Axs also offers several shorthand styling props for faster development.
 ## Related
 
 - [cxs](https://github.com/jxnblk/cxs)
+- [understyle](https://github.com/jxnblk/understyle)
 - [Rebass](http://jxnblk.com/rebass)
 - [Reflexbox](http://jxnblk.com/reflexbox)
 - [Basscss](http://basscss.com)

@@ -3,7 +3,8 @@
 
 ## Props
 
-All Axs components have the following style props.
+All Axs components have the following style props,
+which come from the [understyle](https://github.com/jxnblk/understyle) library.
 
 - `css` - style object for cxs - will be converted into a unique className and inject styles into the head of the document. Supports pseudoclasses, media queries, keyframes, and nesting.
 - `is` - sets a custom tag or component
@@ -57,7 +58,11 @@ Uses [Palx](https://github.com/jxnblk/palx) to generate a full UI color palette.
 
 ### Borders
 
-- `border` - (string or boolean) sets a 1px border - one of `true`, `false`, Number, `'top'`, `'right'`, `'bottom'`, or `'left'`
+- `border` - (string, number, or boolean) sets a 1px border when true, border 0 when false, *n* pixel border when a number is given, or and custom string value
+- `borderTop` - (string, number, or boolean) same as the `border` prop but for border-top
+- `borderRight` - (string, number, or boolean) same as the `border` prop but for border-right
+- `borderBottom` - (string, number, or boolean) same as the `border` prop but for border-bottom
+- `borderLeft` - (string, number, or boolean) same as the `border` prop but for border-left
 - `borderColor` - (string) sets border color based on a color scheme key or raw value
 
 ### Border Radii
@@ -66,13 +71,22 @@ Uses [Palx](https://github.com/jxnblk/palx) to generate a full UI color palette.
 
 ### Typography
 
-- `size` - (number or array) sets font size based on the typographic scale (0–6)
+- `fontSize` - (number or array) sets font size based on the typographic scale (0–6)
 - `bold` - (boolean) sets font weight bold
 - `center` - (boolean) center aligns text
 - `left` - (boolean) left align
 - `right` - (boolean) right align
 - `justify` - (boolean) justifies text
 - `caps` - (boolean) sets text-transform uppercase and adds tracking (letter-spacing)
+
+### Flexbox
+
+- `flexWrap` - (string) sets flex-wrap
+- `alignItems` - (string) sets align-items
+- `justifyContent` - (string) sets justify-content
+- `flexDirection` - (string) sets flex-direction
+- `flexAuto` - (boolean) sets `flex: 1 1 auto`
+- `flexNone` - (boolean) sets `flex: none`
 
 ### Shorthand Props
 

@@ -56,20 +56,22 @@ Uses array prop types for responsive styles.
 
 ```jsx
 <Flex
-  align='center'
-  direction={[
+  alignItems='center'
+  flexDirection={[
     'column',
     'row'
   ]}
-  justify='space-between'
+  justifyContent='space-between'
 />
 ```
 
 **Flex props**
-- `wrap` (boolean or array) - sets `flex-wrap: wrap`
-- `direction` (string or array) - sets `flex-direction`
-- `align` (string or array) - sets `align-items`
-- `justify` (string or array) - sets `justify-content`
+- `flexWrap` (string or array) - sets `flex-wrap`
+- `flexDirection` (string or array) - sets `flex-direction`
+- `alignItems` (string or array) - sets `align-items`
+- `justifyContent` (string or array) - sets `justify-content`
+- `flexAuto` (boolean or array) - sets `flex: 1 1 auto`
+- `flexNone` (boolean or array) - sets `flex: none`
 
 ### Button
 
