@@ -39,7 +39,7 @@ E.g. `m={[0, 1, 2, 3]}` will set margin 0 then 1, 2, and 3 for the breakpoints f
 
 #### Colors
 
-Includes all colors from [open-color](https://github.com/yeun/open-color)
+Uses [Palx](https://github.com/jxnblk/palx) to generate a full UI color palette.
 
 - `color` - (string) sets foreground color either by a key from the color object or a valid color value
 - `bg` - (string) sets background color

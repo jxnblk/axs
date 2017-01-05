@@ -310,7 +310,6 @@ Axs also offers several shorthand styling props for faster development.
 ## Future Development Considerations
 
 - [ ] Test CSS custom properties configurations
-- [ ] Replace open color with palx
 - [ ] Plugin architecture for style props
 
 ## Related
