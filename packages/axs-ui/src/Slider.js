@@ -4,18 +4,16 @@ import { Box, config } from 'axs'
 
 class Slider extends React.Component {
   render () {
-    const { css, ...props } = this.props
-
     return (
       <Box
         is='input'
         type='range'
-        css={{ ...cx, ...css }}
+        _css={cx}
         display='block'
         width={1}
         m0
         bgGray3
-        {...props}
+        {...this.props}
       />
     )
   }

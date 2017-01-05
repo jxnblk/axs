@@ -2,14 +2,14 @@
 import React from 'react'
 import { Box, config } from 'axs'
 
-const Progress = ({ css, ...props }) => (
+const Progress = (props) => (
   <Box
     is='progress'
     display='block'
     width={1}
     blue
     border={false}
-    css={{ ...cx, ...css }}
+    _css={cx}
     {...props}
   />
 )
