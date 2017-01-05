@@ -5,7 +5,6 @@ import { Text } from 'axs'
 const Heading = ({
   level = 2,
   fontSize,
-  css,
   ...props
 }) => {
   const comp = 'h' + level
@@ -17,9 +16,8 @@ const Heading = ({
       bold
       {...props}
       is={comp}
-      css={{
-        lineHeight: 1.25,
-        ...css
+      _css={{
+        lineHeight: 1.25
       }}
     />
   )

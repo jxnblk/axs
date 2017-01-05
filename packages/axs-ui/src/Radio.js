@@ -5,7 +5,6 @@ import { Box, config } from 'axs'
 class Radio extends React.Component {
   render () {
     const {
-      css,
       id,
       name,
       checked,
@@ -34,15 +33,15 @@ class Radio extends React.Component {
       <Box
         display='inline-block'
         {...props}
-        css={{...cx.root, ...css}}>
+        _css={cx.root}>
         <Box
           is='input'
           type='radio'
           {...inputProps}
-          css={cx.input}
+          _css={cx.input}
         />
         <Box
-          css={{
+          _css={{
             ...cx.dot,
             backgroundColor: checked ? config.colors.white : 'currentcolor',
             borderStyle: checked ? 'solid' : null,

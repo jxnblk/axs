@@ -6,7 +6,6 @@ import { Line, X } from 'reline'
 class Checkbox extends React.Component {
   render () {
     const {
-      css,
       id,
       name,
       checked,
@@ -36,16 +35,16 @@ class Checkbox extends React.Component {
         display='inline-block'
         blue
         {...props}
-        css={{...cx.root, ...css}}>
+        _css={cx.root}>
         <Box
           is='input'
           type='checkbox'
           {...inputProps}
-          css={cx.input}
+          _css={cx.input}
         />
         <Box
           rounded
-          css={{
+          _css={{
             ...cx.box,
             backgroundColor: checked ? 'currentcolor' : config.colors.gray3
           }}>

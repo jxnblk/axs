@@ -5,20 +5,15 @@ import resets from './resets'
 
 class Input extends React.Component {
   render () {
-    const { css, ...props } = this.props
-
     return (
       <Box
         is='input'
-        css={{
-          ...cx,
-          ...css
-        }}
+        _css={cx}
         rounded
         border
         borderGray3
         width={1}
-        {...props}
+        {...this.props}
       />
     )
   }

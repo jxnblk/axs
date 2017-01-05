@@ -3,15 +3,12 @@ import React from 'react'
 import { Box, config } from 'axs'
 import resets from './resets'
 
-const Button = ({ href, css, ...props }) => {
+const Button = ({ href, ...props }) => {
   return (
     <Box
       is={href ? 'a' : 'button'}
       href={href}
-      css={{
-        ...cx,
-        ...css
-      }}
+      _css={cx}
       bold
       rounded
       white

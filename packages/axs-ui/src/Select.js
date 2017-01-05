@@ -6,21 +6,19 @@ import resets from './resets'
 
 class Select extends React.Component {
   render () {
-    const { css, ...props } = this.props
-
     return (
-      <Box css={{ ...cx.root, ...css }}>
+      <Box _css={cx.root}>
         <Box
           is='select'
-          css={cx.select}
+          _css={cx.select}
           width={1}
           rounded
           border
           borderGray3
-          {...props}
+          {...this.props}
         />
         <Box is={SmallChevron}
-          css={cx.chevron} />
+          _css={cx.chevron} />
       </Box>
     )
   }
