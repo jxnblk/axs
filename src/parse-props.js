@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import merge from 'deepmerge'
 import config from './config'
 
-const AXS_PROPS = /^(css)$/
+const AXS_PROPS = /^(css|_css)$/
 
 const parseProps = (original = {}) => {
   const options = config.get()
@@ -25,8 +25,9 @@ const parseProps = (original = {}) => {
 
   const styles = merge.all([
     { margin: 0 },
+    (original._css || {}),
+    propStyles,
     (original.css || {}),
-    propStyles
   ])
 
   const cxsClassName = cxs(styles)
