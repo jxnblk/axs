@@ -23,7 +23,7 @@ E.g. `m={[0, 1, 2, 3]}` will set margin 0 then 1, 2, and 3 for the breakpoints f
 - `mb` - (number or array) margin bottom
 - `ml` - (number or array) margin left
 - `mx` - (number or array) margin left and right
-- `my` - (number or array) margin left and right
+- `my` - (number or array) margin top and bottom
 
 - Negative values are also supported for margin.  E.g. `m={-1}`
 - Numbers greater than 4 will be converted to their pixel equivalent.
@@ -36,7 +36,7 @@ E.g. `m={[0, 1, 2, 3]}` will set margin 0 then 1, 2, and 3 for the breakpoints f
 - `pb` - (number or array) padding bottom
 - `pl` - (number or array) padding left
 - `px` - (number or array) padding left and right
-- `py` - (number or array) padding left and right
+- `py` - (number or array) padding top and bottom
 
 #### Colors
 
@@ -122,4 +122,3 @@ E.g. `bgBlack`
 
 Prefix the color name with `border` to set border color.
 E.g. `borderBlue`
-
