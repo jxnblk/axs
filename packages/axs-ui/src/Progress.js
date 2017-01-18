@@ -32,5 +32,7 @@ const cx = {
   },
 }
 
+Progress.displayName = 'Progress'
+
 export default Progress
 

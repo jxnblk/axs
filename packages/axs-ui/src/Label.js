@@ -13,5 +13,7 @@ const Label = (props) => (
   />
 )
 
+Label.displayName = 'Label'
+
 export default Label
 

@@ -56,5 +56,7 @@ const cx = {
   }
 }
 
+Slider.displayName = 'Slider'
+
 export default Slider
 

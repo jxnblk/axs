@@ -97,5 +97,7 @@ const check = <Line
   ]}
 />
 
+Checkbox.displayName = 'Checkbox'
+
 export default Checkbox
 

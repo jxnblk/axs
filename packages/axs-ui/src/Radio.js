@@ -80,5 +80,7 @@ const cx = {
   }
 }
 
+Radio.displayName = 'Radio'
+
 export default Radio
 

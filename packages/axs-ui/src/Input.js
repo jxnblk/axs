@@ -27,5 +27,7 @@ const cx = {
   }
 }
 
+Input.displayName = 'Input'
+
 export default Input
 

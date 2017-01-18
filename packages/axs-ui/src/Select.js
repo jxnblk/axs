@@ -47,5 +47,7 @@ const cx = {
   }
 }
 
+Select.displayName = 'Select'
+
 export default Select
 

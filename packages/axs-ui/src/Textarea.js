@@ -27,5 +27,7 @@ const cx = {
   }
 }
 
+Textarea.displayName = 'Textarea'
+
 export default Textarea
 
