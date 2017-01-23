@@ -324,7 +324,7 @@ Axs also offers several shorthand styling props for faster development.
 - [Reflexbox](http://jxnblk.com/reflexbox)
 - [Basscss](http://basscss.com)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
-- [glamor](https://github.com/smyte/jsxstyl://github.com/threepointone/glamor)
+- [glamor](https://github.com/threepointone/glamor)
 - [open-color](https://yeun.github.io/open-color/)
 
 [MIT License](LICENSE.md)
