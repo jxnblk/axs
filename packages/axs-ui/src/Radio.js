@@ -23,7 +23,6 @@ class Radio extends React.Component {
       checked,
       value,
       defaultValue,
-      onClick,
       onChange,
       onFocus,
       onBlur,
@@ -41,6 +40,7 @@ class Radio extends React.Component {
           _css={cx.input}
         />
         <Box
+          onClick={onClick}
           _css={{
             ...cx.dot,
             backgroundColor: checked ? config.colors.white : 'currentcolor',

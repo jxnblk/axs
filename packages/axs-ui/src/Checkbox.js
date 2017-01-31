@@ -24,7 +24,6 @@ class Checkbox extends React.Component {
       checked,
       value,
       defaultValue,
-      onClick,
       onChange,
       onFocus,
       onBlur,
@@ -43,6 +42,7 @@ class Checkbox extends React.Component {
           _css={cx.input}
         />
         <Box
+          onClick={onClick}
           rounded
           _css={{
             ...cx.box,
