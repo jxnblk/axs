@@ -1,9 +1,10 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const StaticSite = require('static-site-generator-webpack-plugin')
+// const StaticSite = require('static-site-generator-webpack-plugin')
+// const StaticSite = require('static-render-webpack-plugin')
 
-const paths = [
+const routes = [
   '/',
   '/ui'
 ]
@@ -27,15 +28,11 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules|understyle/,
-        loader: 'babel'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
+        use: 'babel-loader'
       }
     ]
   },
@@ -46,7 +43,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new StaticSite('main', paths, {})
+    // new StaticSite('bundle.js', routes)
   ],
 
   devServer: {
