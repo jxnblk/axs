@@ -1,7 +1,17 @@
 {
   "presets": [
-    "es2015",
-    "stage-0",
+    "latest",
+    "stage-3",
     "react"
+  ],
+  "plugins": [
+    [
+      "module-resolver", {
+        "alias": {
+          "axs": "./src",
+          "axs-ui": "./packages/axs-ui"
+        }
+      }
+    ]
   ]
 }
