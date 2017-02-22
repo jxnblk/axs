@@ -1,5 +1,7 @@
 
-import cxs from 'cxs'
+import cxsAtomic from 'cxs/atomic'
+import cxsLite from 'cxs/lite'
+import cxsMonolithic from 'cxs/monolithic'
 import { createUnderstyle, filterProps } from 'understyle'
 import classnames from 'classnames'
 import merge from 'deepmerge'
@@ -30,7 +32,17 @@ const parseProps = (original = {}) => {
     (original.css || {}),
   ])
 
-  const cxsClassName = cxs(styles)
+  let cxsClassName
+  switch (options.mode) {
+    case 'lite':
+      cxsClassName = cxsLite(styles)
+      break;
+    case 'monolithic':
+      cxsClassName = cxsMonolithic(styles)
+      break;
+    default:
+      cxsClassName = cxsAtomic(styles)
+  }
 
   const className = classnames(original.className, cxsClassName)
 

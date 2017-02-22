@@ -57,6 +57,12 @@ Object.defineProperty(config, 'bold', {
   }
 })
 
+Object.defineProperty(config, 'mode', {
+  get () {
+    return config.get().mode
+  }
+})
+
 export { defaultConfig as defaultConfig } from 'understyle'
 
 export default config

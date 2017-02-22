@@ -20,7 +20,8 @@ config.set({
     0, 6, 12, 24, 48
   ],
   radius: 3,
-  bold: 600
+  bold: 600,
+  mode: 'atomic'
 })
 ```
 
