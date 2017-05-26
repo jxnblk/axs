@@ -6,6 +6,7 @@
   "scripts": {
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server",
+    "dev": "relab examples/Basic.js -oP 8000",
     "build": "NODE_ENV=production webpack -p",
     "deploy": "gh-pages -d demo",
     "test": "ava"
@@ -34,11 +35,14 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-element-to-jsx-string": "^8.0.0",
+    "react-test-renderer": "^15.5.4",
+    "relab": "^1.0.0-beta.9",
     "static-site-generator-webpack-plugin": "^3.4.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "add-px-to-style": "^1.0.0",
     "object-assign": "^4.1.1",
     "styled-components": "^2.0.0"
   },

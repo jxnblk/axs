@@ -1,16 +1,19 @@
+// Doesn't work with styled-components API
 const assign = require('object-assign')
-const { compose, num } = require('./util')
+const { compose, width } = require('./util')
+
+const neg = n => n < 0
+const num = n => typeof n === 'number' && !isNaN(n)
 
 const parseWidth = props => {
   if (!num(props.w) && !num(props.width)) return props
-  const width = props.width || props.w
+  const n = props.width || props.w
   delete props.w
   return assign({}, props, {
-    width: w(width)
+    width: width(n)
   })
 }
 
-const w = n => n > 1 ? n : (n * 100) + '%'
 
 const SHRE = /^[mp][trblxy]?$/
 const parseShorthands = props => {
@@ -29,15 +32,18 @@ const parseShorthands = props => {
 
 const BRE = /^[mp][trblxy]?-?[0-9]/
 const parseBools = props => {
+  const next = {}
   for (let key in props) {
-    if (!BRE.test(key) || props[key] !== true) continue
+    if (!BRE.test(key) || props[key] !== true) {
+      next[key] = props[key]
+      continue
+    }
     getNumberValue(key)
       .forEach(style => {
-        props[style.key] = style.value
+        next[style.key] = style.value
       })
-    delete props[key]
   }
-  return props
+  return next
 }
 
 const getNumberValue = key => {
@@ -77,7 +83,6 @@ const scale = [
   32,
   64
 ]
-const neg = n => n < 0
 const sx = n => scale[n] || n
 const x = n => sx(Math.abs(n)) * (neg(n) ? -1 : 1)
 const parseSpace = props => {

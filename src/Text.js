@@ -1,15 +1,7 @@
+const Box = require('./Box')
 
-import React from 'react'
-import withAxs from './withAxs'
+const Text = Box.withComponent('p')
+Text.span = Box.withComponent('span')
+Text.div = Box.withComponent('div')
 
-const Text = ({
-  is = 'p',
-  ...props
-}) => (
-  React.createElement(is, props)
-)
-
-Text.displayName = 'Text'
-
-export default withAxs(Text)
-
+module.exports = Text

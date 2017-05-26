@@ -1,11 +1,51 @@
 const test = require('ava')
-const parse = require('./src/parse')
+const React = require('react')
+const render = require('react-test-renderer').create
+const { attr, Box } = require('./src')
 
-test('exports a function', t => {
+test('attr.width formats width', t => {
+  const a = attr.width({ width: 1/2 })
+  t.is(a, '50%')
+})
+
+test('attr.width formats w', t => {
+  const a = attr.width({ w: 1/4 })
+  t.is(a, '25%')
+})
+
+test('attr.margin formats margin', t => {
+  const a = attr.margin({ margin: 10 })
+  t.is(a, '10px')
+  const b = attr.margin({ margin: 2 })
+  t.is(b, '16px')
+  const c = attr.margin({ margin: -1 })
+  t.is(c, '-8px')
+})
+
+test('attr.margin formats m', t => {
+  const a = attr.margin({ m: 10 })
+  t.is(a, '10px')
+  const b = attr.margin({ m: 2 })
+  t.is(b, '16px')
+  const c = attr.margin({ m: -1 })
+  t.is(c, '-8px')
+})
+
+test.skip('attr.marginTop formats margin', t => {
+  const a = attr.marginTop({ marginTop: 10 })
+  t.is(a, '10px')
+  const b = attr.marginTop({ marginTop: 2 })
+  t.is(b, '16px')
+  const c = attr.marginTop({ marginTop: -1 })
+  t.is(c, '-8px')
+})
+
+/*
+test('parse exports a function', t => {
   t.is(typeof parse, 'function')
 })
 
-test('accepts props object and returns an object', t => {
+test('parse accepts props object and returns an object', t => {
   const props = {
     type: 'number',
     value: 32
@@ -20,12 +60,12 @@ test('parses width prop', t => {
   t.is(a.width, '100%')
 })
 
-test('returns a number for widths greater than 1', t => {
+test('parse returns a number for widths greater than 1', t => {
   const a = parse({ width: 12 })
   t.is(a.width, 12)
 })
 
-test('returns percentage widths for fractions', t => {
+test('parse returns percentage widths for fractions', t => {
   const a = parse({ width: 1/2 })
   t.is(a.width, '50%')
 })
@@ -110,4 +150,10 @@ test('parses negative boolean shorthands', t => {
     marginLeft: -32,
     marginRight: -32
   })
+})
+*/
+
+test.skip('Box renders', t => {
+  const json = render(<Box />).toJSON()
+  t.snapshot(json)
 })
