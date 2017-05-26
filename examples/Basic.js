@@ -38,6 +38,10 @@ module.exports = props => (
       </BlueBox>
     </Flex.center>
     <Text py={0}>Hello</Text>
+    <Flex.wrap>
+      <Box p2 w={[ 1, 1/2 ]} children='Box' />
+      <Box p2 w={[ 1, 1/2 ]} children='Box' />
+    </Flex.wrap>
   </Box>
 )
 

@@ -7,6 +7,7 @@ const {
   Box,
   Text,
   Flex,
+  x
 } = require('./src')
 
 test('util.px converts numbers to pixel values', t => {
@@ -99,6 +100,19 @@ test('util.val returns value or null', t => {
 test('attr.width formats width', t => {
   const a = attr.width({ width: 1/2 })
   t.is(a, '50%')
+})
+
+test('attr.width handles array values', t => {
+  const a = attr.width({
+    width: [
+      1, 1/2
+    ]
+  })
+  t.true(Array.isArray(a))
+  t.deepEqual(a, [
+    '100%',
+    '50%',
+  ])
 })
 
 test('attr.width formats w', t => {
@@ -254,6 +268,24 @@ test('attr.paddingLeft formats padding', t => {
   t.is(d, 'auto')
 })
 
+test.only('x returns a declaration', t => {
+  const a = x('width')({ width: '16px' })
+  t.is(typeof a, 'string')
+  t.is(a, 'width:16px;')
+})
+
+test.only('x handles array values', t => {
+  const a = x('width')({
+    width: [
+      '16px',
+      '24px'
+    ]
+  })
+  console.log(a)
+  t.is(typeof a, 'string')
+  t.is(a, 'width:16px;@media screen and (min-width:40em){width:24px;}')
+})
+
 // Snapshots
 test('Box renders', t => {
   const a = render(<Box />).toJSON()
@@ -287,7 +319,7 @@ test('Box has StyleComponent methods', t => {
   t.is(typeof Box.withComponent, 'function')
 })
 
-test.only('Box supports `is` prop', t => {
+test('Box supports `is` prop', t => {
   const a = render(<Box is='a' />).toJSON()
   const li = render(<Box is='li' />).toJSON()
   const button = render(<Box is='button' />).toJSON()

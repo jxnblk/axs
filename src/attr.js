@@ -1,13 +1,11 @@
-const {
-  compose,
-  val,
-  px,
-  w,
-  x,
-  k
-} = require('./util')
+const { compose, val, px, w, x, k } = require('./util')
 
-const width = compose(w, val, k('width', 'w'))
+const arr = sx => v => !Array.isArray(v)
+  ? sx(v)
+  : v.map(sx)
+
+const width = compose( arr(compose(w, val)), k('width', 'w')
+)
 
 const margin = compose(px('margin'), x, val, k('margin', 'm'))
 const marginTop = compose(px('marginTop'), x, val, k('marginTop', 'mt', 'my'))
