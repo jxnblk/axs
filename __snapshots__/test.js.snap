@@ -5,3 +5,95 @@ exports[`Box renders 1`] = `
   className="sc-bdVaJa fehjIY"
 />
 `;
+
+exports[`Box renders 2`] = `
+<div
+  className="sc-bdVaJa hUZPQn"
+/>
+`;
+
+exports[`Box renders 3`] = `
+<div
+  className="sc-bdVaJa hzsvFd"
+/>
+`;
+
+exports[`Box renders 4`] = `
+<div
+  className="sc-bdVaJa jIDTCR"
+/>
+`;
+
+exports[`Flex renders 1`] = `
+<div
+  className="sc-ifAKCX gqigVI sc-bdVaJa fehjIY"
+/>
+`;
+
+exports[`Text renders 1`] = `
+<p
+  className="sc-bwzfXH hHkdRp"
+  margin={null}
+  marginBottom={null}
+  marginLeft={null}
+  marginRight={null}
+  marginTop={null}
+  padding={null}
+  paddingBottom={null}
+  paddingLeft={null}
+  paddingRight={null}
+  paddingTop={null}
+  width={null}
+/>
+`;
+
+exports[`Text renders 2`] = `
+<p
+  className="sc-bwzfXH bnXNoi"
+  margin="8px"
+  marginBottom={null}
+  marginLeft={null}
+  marginRight={null}
+  marginTop={null}
+  padding={null}
+  paddingBottom={null}
+  paddingLeft={null}
+  paddingRight={null}
+  paddingTop={null}
+  width={null}
+/>
+`;
+
+exports[`Text renders 3`] = `
+<p
+  className="sc-bwzfXH hvgwcf"
+  margin={null}
+  marginBottom={null}
+  marginLeft={null}
+  marginRight={null}
+  marginTop={null}
+  padding="16px"
+  paddingBottom={null}
+  paddingLeft={null}
+  paddingRight={null}
+  paddingTop={null}
+  width={null}
+/>
+`;
+
+exports[`Text renders 4`] = `
+<p
+  className="sc-bwzfXH ceqbVI"
+  margin={null}
+  marginBottom={null}
+  marginLeft={null}
+  marginRight={null}
+  marginTop={null}
+  padding={null}
+  paddingBottom={null}
+  paddingLeft={null}
+  paddingRight={null}
+  paddingTop={null}
+  width="50%"
+/>
+`;

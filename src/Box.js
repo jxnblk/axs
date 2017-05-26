@@ -1,22 +1,11 @@
-const h = require('react').createElement
 const styled = require('styled-components').default
+const div = require('./div')
 const attr = require('./attr')
 
 const kebab = s => ('' + s).replace(/[A-Z]|^ms/g, '-$&').toLowerCase()
 const x = key => props => props[key] ? (kebab(key) + ':' + props[key] + ';') : null
 
-const clean = props => {
-  const next = {}
-  for (let key in props) {
-    if (/^[wmp][trblxy]?-?[0-9]?$/.test(key)) continue
-    if (/^(width|margin|padding)/.test(key)) continue
-    next[key] = props[key]
-  }
-  return next
-}
-const comp = p => h('div', clean(p))
-
-const base = styled(comp).attrs(attr)
+const base = styled(div).attrs(attr)
 
 const Box = base`
   ${x('width')}

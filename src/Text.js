@@ -1,7 +1,9 @@
+const styled = require('styled-components').default
 const Box = require('./Box')
 
-const Text = Box.withComponent('p')
-Text.span = Box.withComponent('span')
-Text.div = Box.withComponent('div')
+// const Text = styled(Box).attrs({ is: 'p' })([]) //.withComponent('p')
+const Text = styled(Box)([]).withComponent('p')
+Text.span = Text.withComponent('span')
+Text.div = Text.withComponent('div')
 
 module.exports = Text
