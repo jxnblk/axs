@@ -30,6 +30,67 @@ exports[`Flex renders 1`] = `
 />
 `;
 
+exports[`Input renders 1`] = `
+<input
+  className="sc-gzVnrw bQNeHM"
+  margin={
+    Array [
+      undefined,
+    ]
+  }
+  marginBottom={
+    Array [
+      undefined,
+    ]
+  }
+  marginLeft={
+    Array [
+      undefined,
+    ]
+  }
+  marginRight={
+    Array [
+      undefined,
+    ]
+  }
+  marginTop={
+    Array [
+      undefined,
+    ]
+  }
+  padding={
+    Array [
+      undefined,
+    ]
+  }
+  paddingBottom={
+    Array [
+      undefined,
+    ]
+  }
+  paddingLeft={
+    Array [
+      undefined,
+    ]
+  }
+  paddingRight={
+    Array [
+      undefined,
+    ]
+  }
+  paddingTop={
+    Array [
+      undefined,
+    ]
+  }
+  width={
+    Array [
+      undefined,
+    ]
+  }
+/>
+`;
+
 exports[`Text renders 1`] = `
 <p
   className="sc-bwzfXH hHkdRp"

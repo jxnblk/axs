@@ -4,10 +4,11 @@ const render = require('react-test-renderer').create
 const {
   util,
   attr,
+  sx,
   Box,
   Text,
   Flex,
-  sx
+  Input,
 } = require('./src')
 
 test('util.px converts numbers to pixel values', t => {
@@ -274,7 +275,6 @@ test('sx handles array values', t => {
   t.is(a, 'width:16px;@media screen and (min-width:40em){width:24px;}')
 })
 
-/*
 // Snapshots
 test('Box renders', t => {
   const a = render(<Box />).toJSON()
@@ -303,6 +303,11 @@ test('Flex renders', t => {
   t.snapshot(json)
 })
 
+test('Input renders', t => {
+  const json = render(<Input />).toJSON()
+  t.snapshot(json)
+})
+
 test('Box has StyleComponent methods', t => {
   t.is(typeof Box.extend, 'function')
   t.is(typeof Box.withComponent, 'function')
@@ -318,4 +323,3 @@ test('Box supports `is` prop', t => {
   t.is(button.type, 'button')
   t.is(h2.type, 'h2')
 })
-*/

@@ -42,6 +42,17 @@ module.exports = props => (
       <Box p2 w={[ 1, 1/2 ]} children='Box' />
       <Box p2 w={[ 1, 1/2 ]} children='Box' />
     </Flex.wrap>
+    <Box
+      p={[ 1, 2, 3, 4 ]}
+      style={{ backgroundColor: 'tomato' }}>
+      Responsive Padding
+    </Box>
+    <Box
+      style={{ backgroundColor: 'tomato' }}
+      m={[ 1, 2, 3, 4 ]}
+      w={[ 1/2, 1/3, 1/4, 1/5 ]}
+      children='Responsive Widths'
+    />
   </Box>
 )
 
