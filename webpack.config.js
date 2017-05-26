@@ -1,4 +1,3 @@
-
 const path = require('path')
 const webpack = require('webpack')
 const StaticSite = require('static-site-generator-webpack-plugin')
@@ -27,15 +26,11 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules|understyle/,
-        loader: 'babel'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }
     ]
   },
@@ -53,4 +48,3 @@ module.exports = {
     contentBase: 'demo/'
   }
 }
-
