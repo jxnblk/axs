@@ -1,15 +1,6 @@
+const styled = require('styled-components').default
+const Box = require('./Box')
+const Text = Box.extend`margin:0;`.withComponent('p')
+Text.span = Text.withComponent('span')
 
-import React from 'react'
-import withAxs from './withAxs'
-
-const Text = ({
-  is = 'p',
-  ...props
-}) => (
-  React.createElement(is, props)
-)
-
-Text.displayName = 'Text'
-
-export default withAxs(Text)
-
+module.exports = Text
