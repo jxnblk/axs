@@ -1,4 +1,3 @@
-const addpx = require('add-px-to-style')
 
 const compose = (...fns) => {
   if (fns.length === 0) return arg => arg
@@ -9,12 +8,10 @@ const compose = (...fns) => {
 const clone = obj => Object.assign({}, obj)
 
 const loop = (esc, mut) => obj => {
-  console.log(obj)
   for (let key in obj) {
     if (esc(key, obj[key])) continue
     mut(obj, key)
   }
-  console.log(obj)
   return obj
 }
 
@@ -65,29 +62,6 @@ const arr = loop(
   }
 )
 
-/*
-const breakpoints = [
-  40,
-  52,
-  64
-].map(n => `@media screen and (min-width:${n}em)`)
-const bp = loop(
-  (key, val) => !Array.isArray(val),
-  (obj, key) => {
-    const arr = obj[key]
-    arr.forEach((val, i) => {
-      if (i === 0) {
-        obj[key] = val
-      } else {
-        obj[breakpoints[i - 1]] = {
-          [key]: val
-        }
-      }
-    })
-  }
-)
-*/
-
 const num = n => typeof n === 'number' && !isNaN(n)
 const w = n => num(n) ? (n > 1 ? n : (n * 100) + '%') : n
 const width = loop(
@@ -117,17 +91,7 @@ const font = loop(
   }
 )
 
-const PR = /^(margin|padding|width|fontSize)/
-const px = key => val => addpx(key, val)
-const pixel = loop(
-  (key, val) => !PR.test(key),
-  (obj, key) => {
-    obj[key] = obj[key].map(px(key))
-  }
-)
-
 const parse = compose(
-  pixel,
   font,
   scale,
   width,
