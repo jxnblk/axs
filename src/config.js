@@ -1,63 +1,23 @@
 
-import { defaultConfig } from 'understyle'
+const breakpoints = [
+  40,
+  52,
+  64
+].map(n => `@media screen and (min-width:${n}em)`)
 
-class Config {
-  constructor (obj) {
-    this._value = {
-      ...defaultConfig,
-      ...obj
-    }
-  }
+const space = [
+  0, 8, 16, 32, 64
+]
 
-  set (obj) {
-    this._value = {
-      ...this._value,
-      ...obj
-    }
-  }
+const typeScale = [
+  64, 48, 32, 24, 16, 14, 12
+]
 
-  get () {
-    return {...this._value}
-  }
+const radius = 4
 
-  reset () {
-    this._value = defaultConfig
-  }
+module.exports = {
+  breakpoints,
+  space,
+  typeScale,
+  radius
 }
-
-const config = new Config()
-
-Object.defineProperty(config, 'breakpoints', {
-  get () {
-    return config.get().breakpoints
-  }
-})
-
-Object.defineProperty(config, 'typeScale', {
-  get () {
-    return config.get().typeScale
-  }
-})
-
-Object.defineProperty(config, 'scale', {
-  get () {
-    return config.get().scale
-  }
-})
-
-Object.defineProperty(config, 'colors', {
-  get () {
-    return config.get().colors
-  }
-})
-
-Object.defineProperty(config, 'bold', {
-  get () {
-    return config.get().bold
-  }
-})
-
-export { defaultConfig as defaultConfig } from 'understyle'
-
-export default config
-

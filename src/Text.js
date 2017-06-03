@@ -1,15 +1,20 @@
-
-import React from 'react'
-import withAxs from './withAxs'
+const h = require('react').createElement
+const Box = require('./Box')
+const { idx } = require('./util')
 
 const Text = ({
-  is = 'p',
+  bold,
+  center,
   ...props
-}) => (
-  React.createElement(is, props)
-)
+}, context) => h(Box, {
+  ...props,
+  css: {
+    ...props.css,
+    fontWeight: bold
+      ? (idx([ 'axs', 'bold' ], context) || 700)
+      : idx([ 'css', 'fontWeight' ], props),
+    textAlign: center ? 'center' : null
+  }
+})
 
-Text.displayName = 'Text'
-
-export default withAxs(Text)
-
+module.exports = Text
