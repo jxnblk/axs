@@ -4,7 +4,7 @@ const {
   Box,
   Heading,
   Text
-} = require('axs')
+} = require('../src')
 const Bar = require('./Bar')
 
 module.exports = props => x.section([

@@ -7,7 +7,7 @@ const {
   Text,
   Heading,
   Pre
-} = require('axs')
+} = require('../src')
 const Button = require('./Button')
 const { inc } = require('./updaters')
 

@@ -1,6 +1,6 @@
 const x = require('reaxe')
 const { connect } = require('funcup')
-const axs = require('axs')
+const axs = require('../src')
 const {
   LiveProvider,
   LiveEditor,

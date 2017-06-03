@@ -5,7 +5,8 @@ const {
   Box,
   Color,
   Pre
-} = require('axs')
+} = require('../src')
+const Logo = require('./Logo')
 const NavLink = require('./NavLink')
 const { nav } = x
 
@@ -14,6 +15,7 @@ module.exports = connect()(props => nav([
     color: props.color[5]
   }, ...[
     x(Flex.center)({ py: 3 }, ...[
+      x(Logo)({ mr: 2, size: 32 }),
       x(NavLink)({ mr: 2, href: 'http://jxnblk.com/axs' }, 'Axs'),
       x(NavLink)({ mr: 2, href: 'https://github.com/jxnblk/axs' }, 'GitHub'),
       x(NavLink)({ mr: 2, href: 'https://npmjs.com/package/axs' }, 'npm'),

@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack -p",
+    "build": "static-react site/App.js > site/index.html && NODE_ENV=production webpack -p",
     "deploy": "gh-pages -d demo",
     "test": "ava"
   },
@@ -51,5 +51,41 @@
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "static-react": {
+    "title": "Axs",
+    "meta": [
+      {
+        "name": "charset",
+        "content": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width,initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Responsive typography and layout toolkit for React"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@jxnblk"
+      },
+      {
+        "name": "og:title",
+        "content": "Axs"
+      },
+      {
+        "name": "og:image",
+        "content": "http://jxnblk.com/axs/tricard2.png"
+      }
+    ],
+    "scripts": [
+      "bundle.js"
+    ]
   }
 }

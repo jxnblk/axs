@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { Box } = require('axs')
+const { Box } = require('../src')
 
 module.exports = props => x(Box)({
   ...props,
