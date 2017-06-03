@@ -7,7 +7,8 @@ const {
   LiveError,
   LivePreview,
 } = require('react-live')
-const prismcss = require('css-loader!prismjs/themes/prism-funky.css')
+// const prismcss = require('css-loader!prismjs/themes/prism-funky.css')
+const prismcss = ''
 const {
   Box,
   Color,

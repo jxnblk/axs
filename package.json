@@ -7,7 +7,7 @@
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server",
     "build": "static-react site/App.js > site/index.html && NODE_ENV=production webpack -p",
-    "deploy": "gh-pages -d demo",
+    "deploy": "gh-pages -d site",
     "test": "ava"
   },
   "keywords": [
@@ -32,12 +32,13 @@
     "funcup": "^1.0.0-0",
     "gh-pages": "^0.12.0",
     "palx": "^1.0.2",
+    "prismjs": "^1.6.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-live": "^1.5.3",
     "react-test-renderer": "^15.5.4",
     "reaxe": "^1.0.0-1",
-    "static-react": "^4.0.0-0",
+    "static-react": "^4.0.0-1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
