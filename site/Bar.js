@@ -3,7 +3,8 @@ const { connect } = require('funcup')
 const { Box } = require('../src')
 
 const map = s => ({ color: s.color })
-module.exports = connect(map)(props => x(Box)({
+
+const Bar = connect(map)(props => x(Box)({
   my: 2,
   css: {
     width: 64,
@@ -11,3 +12,4 @@ module.exports = connect(map)(props => x(Box)({
     backgroundColor: props.color[5]
   }
 }))
+module.exports = Bar

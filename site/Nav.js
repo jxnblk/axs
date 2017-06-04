@@ -10,7 +10,7 @@ const Logo = require('./Logo')
 const NavLink = require('./NavLink')
 const { nav } = x
 
-module.exports = connect()(props => nav([
+const Nav = connect()(props => nav([
   x(Color)({
     color: props.color[5]
   }, ...[
@@ -23,3 +23,5 @@ module.exports = connect()(props => nav([
     ])
   ])
 ]))
+
+module.exports = Nav

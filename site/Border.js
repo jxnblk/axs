@@ -2,7 +2,7 @@ const x = require('reaxe')
 const { connect } = require('funcup')
 const { Box } = require('../src')
 
-module.exports = connect()(props => x(Box)({
+const Border = connect()(props => x(Box)({
   ...props,
   css: {
     borderWidth: 1,
@@ -10,3 +10,4 @@ module.exports = connect()(props => x(Box)({
     borderColor: props.color[5]
   }
 }))
+module.exports = Border

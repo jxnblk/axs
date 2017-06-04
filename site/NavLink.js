@@ -1,7 +1,7 @@
 const x = require('reaxe')
 const { Text } = require('../src')
 
-module.exports = props => x(Text)({
+const NavLink = props => x(Text)({
   ...props,
   is: 'a',
   css: {
@@ -17,3 +17,5 @@ module.exports = props => x(Text)({
     }
   }
 })
+
+module.exports = NavLink

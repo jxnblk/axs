@@ -17,7 +17,7 @@ const initialState = {
   color: colors[4]
 }
 
-module.exports = createProvider(initialState)(props => (
+const App = createProvider(initialState)(props => (
   x(Wrap)([
     x(Style)(),
     x(Nav)(),
@@ -29,3 +29,5 @@ module.exports = createProvider(initialState)(props => (
     ])
   ])
 ))
+
+module.exports = App

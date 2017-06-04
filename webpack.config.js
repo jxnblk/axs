@@ -1,6 +1,8 @@
 const path = require('path')
 
 module.exports = {
+  devtool: false,
+
   entry: './site/entry.js',
 
   output: {

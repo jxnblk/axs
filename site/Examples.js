@@ -19,7 +19,7 @@ const {
 } = axs
 const Style = require('./Style')
 
-module.exports = connect()(props => {
+const Examples = connect()(props => {
   const scope = Object.assign({}, axs, {
     color: props.color
   })
@@ -92,6 +92,8 @@ module.exports = connect()(props => {
     ])))
   ])
 })
+
+module.exports = Examples
 
 const grid = {
   name: 'Responsive Grid',

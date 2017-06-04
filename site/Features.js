@@ -7,7 +7,7 @@ const {
 } = require('../src')
 const Bar = require('./Bar')
 
-module.exports = props => x.section([
+const Features = props => x.section([
   x(Flex.wrap)({ mx: -2, my: 4 }, ...features.map(feature => (
     x(Box)({ px: 2, py: 3,  w: [ 1, 1/2 ] }, ...[
       x(Bar)(),
@@ -16,6 +16,8 @@ module.exports = props => x.section([
     ])
   )))
 ])
+
+module.exports = Features
 
 const features = [
   {

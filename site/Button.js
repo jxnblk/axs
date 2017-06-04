@@ -2,7 +2,7 @@ const x = require('reaxe')
 const { connect } = require('funcup')
 const { Button } = require('../src')
 
-module.exports = props => x(Button)({
+const Btn = props => x(Button)({
   ...props,
   css: {
     fontSize: 12,
@@ -20,3 +20,5 @@ module.exports = props => x(Button)({
     }
   }
 })
+
+module.exports = Btn

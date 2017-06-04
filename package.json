@@ -6,7 +6,8 @@
   "scripts": {
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server",
-    "build": "static-react site/App.js > site/index.html && NODE_ENV=production webpack -p",
+    "build": "NODE_ENV=production webpack -p --progress --colors",
+    "static": "static-react site/App.js > site/index.html",
     "deploy": "gh-pages -d site",
     "test": "ava"
   },

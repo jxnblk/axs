@@ -8,7 +8,7 @@ const NavLink = require('./NavLink')
 const Logo = require('./Logo')
 const { inc } = require('./updaters')
 
-module.exports = connect()(props => x(Color)({
+const Footer = connect()(props => x(Color)({
   is: 'footer',
   color: props.color[5]
 }, ...[
@@ -41,3 +41,5 @@ module.exports = connect()(props => x(Color)({
     }),
   ]),
 ]))
+
+module.exports = Footer

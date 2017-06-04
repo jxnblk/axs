@@ -11,7 +11,7 @@ const {
 const Button = require('./Button')
 const { inc } = require('./updaters')
 
-module.exports = connect()(props => (
+const Header = connect()(props => (
   x(Box)({
     py: 4,
     css: {
@@ -64,3 +64,5 @@ module.exports = connect()(props => (
     ])
   ])
 ))
+
+module.exports = Header
