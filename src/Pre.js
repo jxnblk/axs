@@ -5,5 +5,5 @@ const style = {
   overflow: 'auto',
   margin: 0
 }
-const Pre = axs(style)('div')
+const Pre = axs(style)('pre')
 module.exports = Pre

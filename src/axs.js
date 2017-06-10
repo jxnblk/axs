@@ -33,7 +33,7 @@ module.exports = _style => Component => {
   }
 
   AxsComponent.contextTypes = contextTypes
-  // AxsComponent.displayName = Component.displayName
+  AxsComponent.displayName = Component.displayName
 
   return AxsComponent
 }
