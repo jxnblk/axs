@@ -12,4 +12,10 @@ body{
   line-height: 1.5;
   margin: 0;
 }
+.prism-code {
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 14px;
+  tab-size: 2;
+  outline: none;
+}
 `

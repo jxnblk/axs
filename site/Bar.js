@@ -12,4 +12,5 @@ const Bar = connect(map)(props => x(Box)({
     backgroundColor: props.color[5]
   }
 }))
+
 module.exports = Bar

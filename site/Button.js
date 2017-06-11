@@ -13,11 +13,14 @@ const Btn = props => x(Button)({
     paddingBottom: 16,
     paddingLeft: 24,
     paddingRight: 24,
-    color: '#000',
-    backgroundColor: '#fff',
-    mixBlendMode: 'screen',
+    color: '#fff',
+    backgroundColor: props.color || '#000',
+    borderRadius: 6,
+    cursor: 'pointer',
     ':hover': {
-    }
+      // boxShadow: `inset 0 0 0 32px rgba(0, 0, 0, ${1/4})`
+    },
+    ...props.css
   }
 })
 

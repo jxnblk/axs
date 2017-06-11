@@ -6,8 +6,12 @@ const NavLink = props => x(Text)({
   is: 'a',
   css: {
     ...props.css,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    whiteSpace: 'nowrap',
     fontWeight: 700,
-    fontSize: 12,
+    fontSize: 10,
     textDecoration: 'none',
     textTransform: 'uppercase',
     letterSpacing: '.2em',

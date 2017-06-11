@@ -1,9 +1,6 @@
 const x = require('reaxe')
 const { Box } = require('../src')
 
-// import React from 'react'
-// import { Box } from '../src'
-
 const M = 'M'
 const L = 'L'
 
@@ -43,7 +40,7 @@ const Logo = ({
   stroke: color,
   css: {
     ...props.css,
-    display: 'inline-block',
+    display: 'block',
     margin: 0,
     overflow: 'visible',
   }

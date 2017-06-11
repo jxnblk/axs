@@ -9,6 +9,7 @@
     "build": "NODE_ENV=production webpack -p --progress --colors",
     "static": "static-react site/App.js > site/index.html",
     "deploy": "gh-pages -d site",
+    "icon": "repng site/Icon.js -w 1024 -h 512 -o site -f icon",
     "test": "ava"
   },
   "keywords": [
@@ -38,7 +39,10 @@
     "react-dom": "^15.4.1",
     "react-live": "^1.5.3",
     "react-test-renderer": "^15.5.4",
+    "react-x-ray": "^1.0.0-2",
     "reaxe": "^1.0.0-1",
+    "reline": "^1.0.0-beta.3",
+    "repng": "^2.0.0-alpha.1",
     "static-react": "^4.0.0-1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
@@ -83,7 +87,7 @@
       },
       {
         "name": "og:image",
-        "content": "http://jxnblk.com/axs/tricard2.png"
+        "content": "http://jxnblk.com/axs/icon.png"
       }
     ],
     "scripts": [

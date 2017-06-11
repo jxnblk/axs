@@ -1,14 +1,21 @@
 const colors = require('./colors')
 
-const inc = state => {
-  const i = state.count + 1
-  const color = colors[Math.abs(i) % colors.length]
+const dec = state => ({ index: state.index - 1 })
+const inc = state => ({ index: state.index + 1 })
+const setIndex = index => state => ({ index })
+const toggleXRay = state => ({ xray: !state.xray })
+
+const cycleColor = state => {
+  const i = (colors.indexOf(state.color) + 1) % colors.length
   return {
-    count: i,
-    color
+    color: colors[i]
   }
 }
 
 module.exports = {
-  inc
+  dec,
+  inc,
+  setIndex,
+  toggleXRay,
+  cycleColor,
 }
