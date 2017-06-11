@@ -264,31 +264,6 @@ For more detailed documentation see:
 - [Server Side Rendering](docs/server.md)
 
 
-## Axs UI Component Primitives
-
-In addition to Box and Text, the `axs-ui` package includes several other UI components,
-including Flex, Heading, Button, Input, Select components.
-
-See [axs-ui](packages/axs-ui) for more.
-
-
-## Differences from Rebass
-
-While Rebass aims to be a configurable one-size-fits-all approach to UI development, Axs is intended as a base starting point for building highly-customized, application-specific component libraries.
-Unlike Rebass, which uses inline styles, Axs is built on top of cxs to allow the use of encapsulated CSS to handle things like media queries and pseudoclasses.
-
-## Differences from jsxstyle
-
-While Asx's API is similar to jsxstyle,
-Axs aims to help in creating consistent layout,
-typographic, and color systems through the use of scales and color palettes.
-Axs also offers several shorthand styling props for faster development.
-
-## Future Development Considerations
-
-- [ ] Test CSS custom properties configurations
-- [ ] Plugin architecture for style props
-
 ## Related
 
 - [cxs](https://github.com/jxnblk/cxs)
