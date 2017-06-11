@@ -170,9 +170,25 @@ py | padding-top and bottom (y-axis)
 <Box mb2 px3 />
 ```
 
-### `is` prop
+### `css`
 
-The `is` prop allows the element's HTML tag to be changed on a per-instance basis. This is helpful for ensuring HTML semantics and expanding upon the core set of Axs primitive components.
+The `css` prop accepts a CSS style object to handle any other styles.
+This object is passed to [glamor](https://github.com/threepointone/glamor),
+which supports pseudoclasses, media queries, and more.
+
+```jsx
+<Text
+  css={{
+    textTransform: 'uppercase',
+    letterSpacing: '.2em'
+  }}
+/>
+```
+
+### `is`
+
+The `is` prop allows the element's HTML tag to be changed on a per-instance basis.
+This is helpful for ensuring HTML semantics and expanding upon the core set of Axs primitive components.
 
 ```jsx
 // documents should only have one <h1> tag
