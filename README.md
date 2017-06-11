@@ -1,9 +1,9 @@
 
-![Axs](/site/icon.png?raw=true)
-
 # Axs
 
 Responsive Typography & Layout for React
+
+![Axs](/site/icon.png?raw=true)
 
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
 
@@ -23,6 +23,13 @@ const App = () => (
   </Box>
 )
 ```
+
+- [About](#about)
+- [Features](#features)
+- [Components](#components)
+- [Core Props](#core-props)
+- [Creating Custom Components](#creating-custom-components)
+- [Higher Order Component](#higher-order-component)
 
 ## About
 
@@ -75,13 +82,16 @@ T/K
 
 ### Core Props
 
+All Axs components support the following props for handling
+responsive layout and typographic styles.
+
 ### Width
 
 The `width` prop accepts numbers, strings, and arrays.
 Percentage widths can be set using a number from 0 to 1.
 Any number above 1 will be treated as a fixed pixel width.
 String values can be used for other valid CSS lengths.
-Pass an array of values for mobile-first responsive styles.
+Pass an array of values for mobile-first [responsive styles](#responsive-props).
 
 ```jsx
 // width: 50%
@@ -106,8 +116,8 @@ The `fontSize` prop accepts numbers, strings, and arrays.
 Numbers from 0 to 6 will use values from the global typographic scale,
 where 0 is the largest value and 6 is the smallest.
 Numbers greater than 6 will be converted to pixel values.
-Strings can bu used for other valid CSS values.
-Pass an array of values for mobile-first responsive styles.
+Strings can be used for other valid CSS values.
+Pass an array of values for mobile-first [responsive styles](#responsive-props).
 
 ```jsx
 // 24px (step 3 on the typographic scale)
@@ -132,9 +142,23 @@ Pass an array of values for mobile-first responsive styles.
 ### Margin and Padding
 
 The margin and padding props accept numbers, strings, or arrays.
+Numbers from 0 – 4 correspond to the global spacing scale.
+Numbers greater than 4 are used as pixel values.
+Strings can be used for other valid CSS values.
+Pass an array of values for mobile-first [responsive styles](#responsive-props).
 
-Margin and padding props follow the same shorthand convention as
-[Basscss](http://basscss.com) and [Rebass](http://jxnblk.com/rebass).
+```jsx
+<Box
+  margin={8}
+  paddingLeft={12}
+  paddingRight={12}
+/>
+```
+
+Margin and padding props also have shorthands,
+which follow the same convention as
+[Basscss](http://basscss.com) and
+[Rebass](http://jxnblk.com/rebass).
 
 Props | Meaning
 ---|---
@@ -162,6 +186,9 @@ py | padding-top and bottom (y-axis)
 
 // 3em
 <Box m='3em' />
+
+// margin auto
+<Box mx='auto' />
 
 // responsive margin
 <Box m={[ 1, 2, 3 ]} />
@@ -223,9 +250,9 @@ Margin, padding, and font size props support shorthand boolean props.
 
 ```jsx
 <Box p2 mb3 f1>
-  padding 2
-  margin-bottom 3
-  font-size 1
+  16px padding
+  32px margin-bottom
+  32px font-size
 </Box>
 ```
 
@@ -270,26 +297,14 @@ const Input = props => (
 
 T/K
 
-## Docs
-
-For more detailed documentation see:
-
-- [Props API](docs/api.md)
-- [Configuration](docs/configuration.md)
-- [Higher Order Component](docs/hoc.md)
-- [Server Side Rendering](docs/server.md)
-
 
 ## Related
 
-- [cxs](https://github.com/jxnblk/cxs)
-- [understyle](https://github.com/jxnblk/understyle)
-- [Rebass](http://jxnblk.com/rebass)
+- [glamor](https://github.com/threepointone/glamor)
 - [Reflexbox](http://jxnblk.com/reflexbox)
+- [Grid Styled](http://jxnblk.com/grid-styled)
+- [Rebass](http://jxnblk.com/rebass)
 - [Basscss](http://basscss.com)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
-- [glamor](https://github.com/threepointone/glamor)
-- [open-color](https://yeun.github.io/open-color/)
 
 [MIT License](LICENSE.md)
-
