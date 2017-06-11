@@ -13,7 +13,7 @@ const Hide = require('./Hide')
 const Button = require('./Button')
 const { inc } = require('./updaters')
 
-module.exports = connect()(props => (
+const Hero = connect()(props => (
   x(Flex)({
     w: 1,
     p: [ 1, 3 ],
@@ -71,3 +71,5 @@ module.exports = connect()(props => (
     ])
   ])
 ))
+
+module.exports = Hero

@@ -12,10 +12,12 @@ const cycleColor = state => {
   }
 }
 
-module.exports = {
+const updaters = {
   dec,
   inc,
   setIndex,
   toggleXRay,
   cycleColor,
 }
+
+module.exports = updaters

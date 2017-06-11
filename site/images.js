@@ -13,3 +13,5 @@ const images = [
   'https://images.unsplash.com/photo-1445146484482-fb1e008bfedc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=2deec48a3a612392ad24d18ab8daf2a7',
 
 ]
+
+module.exports = images

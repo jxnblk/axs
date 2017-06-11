@@ -4,7 +4,7 @@ const { Box, Flex } = require('../src')
 const Controls = require('./Controls')
 const Hide = require('./Hide')
 
-module.exports = ({ index, children }) => {
+const Carousel = ({ index, children }) => {
   const slides = Children.map(children, (child, i) => {
     return x(Box)({
       w: '100vw',
@@ -41,3 +41,5 @@ module.exports = ({ index, children }) => {
     ])
   )
 }
+
+module.exports = Carousel

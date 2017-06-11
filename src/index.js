@@ -9,10 +9,9 @@ const Box = require('./Box')
 const Flex = require('./Flex')
 const Text = require('./Text')
 const Heading = require('./Heading')
-const Button = require('./Button')
 const Color = require('./Color')
 const Border = require('./Border')
-const Pre = require('./Pre')
+const Button = require('./Button')
 
 module.exports = {
   glamor,
@@ -25,8 +24,7 @@ module.exports = {
   Flex,
   Text,
   Heading,
-  Button,
   Color,
   Border,
-  Pre,
+  Button,
 }

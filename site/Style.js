@@ -1,6 +1,6 @@
 const { style } = require('reaxe')
 
-module.exports = ({ css = base }) => style({
+const Style = ({ css = base }) => style({
   dangerouslySetInnerHTML: {
     __html: css
   }
@@ -19,3 +19,5 @@ body{
   outline: none;
 }
 `
+
+module.exports = Style

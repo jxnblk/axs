@@ -1,9 +1,9 @@
 
-![Axs](/demo/miniaxs.png?raw=true)
+![Axs](/site/icon.png?raw=true)
 
 # Axs
 
-A build-your-own responsive typography and layout UI toolkit for React
+Responsive Typography & Layout for React
 
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
 
@@ -11,17 +11,14 @@ A build-your-own responsive typography and layout UI toolkit for React
 npm i axs
 ```
 
-Axs consists of two core primitive components, Box and Text.
-
 ```jsx
-// Basic example
 import React from 'react'
 import { Box, Text } from 'axs'
 
 const App = () => (
-  <Box p2 mb2 white bgBlue>
-    <Text is='h1' size2>
-      Box with padding, margin bottom, white text, and blue background
+  <Box p2 mb2>
+    <Text is='h1' fontSize={2}>
+      Box with padding and margin bottom
     </Text>
   </Box>
 )
@@ -29,19 +26,19 @@ const App = () => (
 
 ## About
 
-Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of two UI component primitives.
+Axs is an abstraction of the most common responsive layout and typographic styling concerns in the form of UI component primitives.
 Axs is intended as a way to quickly prototype new UI, handle one-off styles, and serve as a foundation for creating your own custom UI library.
 Use Axs out-of-the-box or as the basis of a highly-customized, application-specific UI component library.
 
-Use the Box component as a starting point for any visual containers or grid system in your app.
-Use the Text component for headings, labels, paragraphs or any other UI typography.
-Each Axs component also supports CSS-in-JS via the `css` prop to allow for any fine-tuning you may need.
-
-Axs is built with [cxs](https://github.com/jxnblk/cxs) and inspired by [Basscss](http://basscss.com) and [jsxstyle](https://github.com/smyte/jsxstyle).
+Use the Flex and Box components as a starting point for any visual containers or grid system in your app.
+Use the Heading and Text component for headings, labels, paragraphs or any other UI typography.
+Use the Color and Border components for thematic styles.
+Using [glamor](https://github.com/threepointone/glamor)
+under the hood, each Axs component also supports CSS-in-JS via the `css` prop to allow for any fine-tuning you may need.
 
 ## Features
 
-- Encapsulated styles using [Cxs](https://github.com/jxnblk/cxs)
+- Encapsulated styles using [glamor](https://github.com/threepointone/glamor)
   - Media queries support
   - Pseudoclasses support
   - Server-side rendering support
@@ -52,48 +49,89 @@ Axs is built with [cxs](https://github.com/jxnblk/cxs) and inspired by [Basscss]
 - Handles common layout, typography, and color styles
 - Encourages the use and creation of UI components
 - Separation of business logic and styling concerns
-- Encourages consistency with a type scale, spacing scale, and color palette
+- Encourages consistency with typographic and spacing scales
 
-## Usage
 
-Use the Box component for visual containers and grids.
+## Components
+
+### `<Box />`
+T/K
+
+### `<Flex />`
+T/K
+
+### `<Heading />`
+T/K
+
+### `<Text />`
+T/K
+
+### `<Color />`
+T/K
+
+### `<Border />`
+T/K
+
+
+### Core Props
+
+### Width
+
+The `width` prop accepts numbers, strings, and arrays.
+Percentage widths can be set using a number from 0 to 1.
+Any number above 1 will be treated as a fixed pixel width.
+String values can be used for other valid CSS lengths.
+Pass an array of values for mobile-first responsive styles.
 
 ```jsx
-<Box>Generic div</Box>
+// width: 50%
+<Box width={1/2} />
+
+// width: 256px
+<Box width={256} />
+
+// width: auto
+<Box width='auto' />
+
+// responsive widths
+<Box width={[ 1, 1/2, 1/4 ]} />
+
+// shorthand prop
+<Box w={1/2} />
 ```
 
-Use the Text component for headings, labels, and any other UI typography.
+### Font Size
+
+The `fontSize` prop accepts numbers, strings, and arrays.
+Numbers from 0 to 6 will use values from the global typographic scale,
+where 0 is the largest value and 6 is the smallest.
+Numbers greater than 6 will be converted to pixel values.
+Strings can bu used for other valid CSS values.
+Pass an array of values for mobile-first responsive styles.
 
 ```jsx
-<Text>Paragraph element</Text>
+// 24px (step 3 on the typographic scale)
+<Text fontSize={3} />
+
+// 72px
+<Text fontSize={72} />
+
+// 2em
+<Text fontSize='2em' />
+
+// responsive font size
+<Text fontSize={[ 3, 2, 1 ]} />
+
+// shorthand prop
+<Text f={2} />
+
+// boolean shorthand
+<Text f2 />
 ```
-
-### Elements
-
-The rendered element can be changed with the `is` prop.
-
-```jsx
-<Box is='button'>Box with custom tag</Box>
-<Text is='h1'>h1 element</Text>
-```
-
-### Props
-
-Axs components have all the responsive style props from [understyle](https://github.com/jxnblk/understyle).
 
 ### Margin and Padding
 
-Control margin and padding with the `m` and `p` props.
-
-```jsx
-<Box p={2} mb={2}>Padded Box</Box>
-```
-
-Margin and padding also work with shorthand props.
-
-```jsx
-<Box p2 mb2>Padded Box</Box>
-```
+The margin and padding props accept numbers, strings, or arrays.
 
 Margin and padding props follow the same shorthand convention as
 [Basscss](http://basscss.com) and [Rebass](http://jxnblk.com/rebass).
@@ -115,75 +153,38 @@ pl | padding-left
 px | padding-left and right (x-axis)
 py | padding-top and bottom (y-axis)
 
-### Width
-
-Percentage widths can be set with the `width` props using a number from 0 to 1.
-
 ```jsx
-<Box width={1/2}>50% Wide Box</Box>
+// 16px
+<Box m={2} />
+
+// 24px
+<Box m={24} />
+
+// 3em
+<Box m='3em' />
+
+// responsive margin
+<Box m={[ 1, 2, 3 ]} />
+
+// boolean shorthands
+<Box mb2 px3 />
 ```
 
-Any number above 1 will be treated as a fixed pixel width.
+### `is` prop
+
+The `is` prop allows the element's HTML tag to be changed on a per-instance basis. This is helpful for ensuring HTML semantics and expanding upon the core set of Axs primitive components.
 
 ```jsx
-<Box width={256}>256px Wide Box</Box>
+// documents should only have one <h1> tag
+<Heading is='h1' />
+
+// creating a custom input from the <Box /> component
+<Box is='input' css={css} />
 ```
 
-### Borders
+### Responsive Props
 
-Border and border radius can be set using the `border` and `rounded` props.
-
-```jsx
-<Box p2 border rounded>Box</Box>
-<Box p2 border='top' rounded='bottom'>Box</Box>
-<Box p2 border rounded='circle'>Box</Box>
-```
-
-### Color
-
-Color can be set using the `color`, `bg`, and `borderColor` props.
-The default color scheme is from [Open Color](https://yeun.github.io/open-color/).
-The color prop will look for a color based on the key in the color scheme.
-If the value is not found, the raw color value will be passed on.
-
-```jsx
-<Box color='red'>Red Box</Box>
-<Box color='#f0f'>Magenta Box</Box>
-<Box bg='red'>Red Background Box</Box>
-```
-
-### Font Size
-
-Font size can be set on the Text component using the `fontSize` prop.
-Numbers from 0 to 6 will use values from the global type scale,
-where 0 is the largest value and 6 is the smallest.
-
-```jsx
-<Text fontSize={3}>Text</Text>
-```
-
-Larger numbers will use the number as a raw pixel value.
-
-```jsx
-<Text fontSize={72}>72px Text</Text>
-```
-
-### Typography
-
-Other typographic style can be set with the following props.
-
-```jsx
-<Text bold>Bold Text</Text>
-<Text center>Centered Text</Text>
-<Text left>Left-Aligned Text</Text>
-<Text right>Right-Aligned Text</Text>
-<Text justify>Justified Text</Text>
-<Text caps>Capitalized Text</Text>
-```
-
-### Responsive Widths
-
-Responsive widths can be set by passing an array instead of a number.
+Responsive widths, font sizes, margins, and padding can be set by passing an array instead of a number.
 The first value will be used across all breakpoints - i.e. no media query.
 The second, third, and fourth values correspond to the small, medium, and large min-width breakpoints.
 
@@ -199,57 +200,31 @@ The second, third, and fourth values correspond to the small, medium, and large 
 </Box>
 ```
 
-### Responsive Margin and Padding
 
-Responsive margin and padding can also be set using arrays.
+### Boolean Shorthand Props
 
-```jsx
-<Box
-  p={[ 1, 2, 3, 4 ]}
-  m={[ 0, 2 ]}
-/>
-```
-
-### Responsive Font Sizes
-
-Responsive font sizes work the same.
+Margin, padding, and font size props support shorthand boolean props.
 
 ```jsx
-<Text
-  is='h2'
-  fontSize={[
-    3, // 24px for all screens
-    2, // 32px at the small breakpoin
-    1, // 48px at the medium breakpoint
-    96 // Set raw pixel values for one-one styling situations
-  ]}>
-  Responsive Heading
-</Text>
-```
-
-### Shorthand Props
-
-Margin, padding, and color props support shorthand boolean props.
-
-```jsx
-<Box p2 mb3 white bgBlue>
-  Padded blue box
+<Box p2 mb3 f1>
+  padding 2
+  margin-bottom 3
+  font-size 1
 </Box>
 ```
 
 ### Creating Custom Components
 
-While the Text and Box components can be used on their own, they are intended to be used as base components for creating application-specific UI components.
+While Axs components can be used on their own, they are intended to be used as base components for creating application-specific UI components.
 
 ```jsx
-import { Box, Text, colors } from 'axs'
+import { Box, Text } from 'axs'
 
 const Label = props => (
   <Text
-    mb1
     is='label'
+    mb1
     fontSize={5}
-    gray6
     {...props}
   />
 )
@@ -259,27 +234,25 @@ const Input = props => (
     is='input'
     type='text'
     p1
-    rounded
-    borderColor='gray3'
-    display='block'
     width={1}
     {...props}
     css={{
+      display: 'block',
       fontFamily: 'inherit',
       fontSize: 'inherit',
       color: 'inherit',
       backgroundColor: 'transparent',
       WebkitAppearance: 'none',
       appearance: 'none',
-      ':focus': {
-        outline: 'none',
-        borderColor: colors.blue
-      },
       ...props.css
     }}
   />
 )
 ```
+
+### Higher Order Component
+
+T/K
 
 ## Docs
 

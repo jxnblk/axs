@@ -2,7 +2,7 @@ const x = require('reaxe')
 const Logo = require('./Logo')
 const colors = require('./colors')
 
-module.exports = props => (
+const Icon = props => (
   x.div({
     style: {
       display: 'flex',
@@ -19,3 +19,5 @@ module.exports = props => (
     })
   ])
 )
+
+module.exports = Icon
