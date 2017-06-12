@@ -1,21 +1,30 @@
+const glamor = require('glamor')
+const axs = require('./axs')
+const parse = require('./parse')
+const config = require('./config')
+const util = require('./util')
+const AxsProvider = require('./AxsProvider')
 
-import cxs from 'cxs'
-import withAxs from './withAxs'
-import config from './config'
-import Box from './Box'
-import Text from './Text'
+const Box = require('./Box')
+const Flex = require('./Flex')
+const Text = require('./Text')
+const Heading = require('./Heading')
+const Color = require('./Color')
+const Border = require('./Border')
+const Button = require('./Button')
 
-export { default as cxs } from 'cxs'
-export { default as withAxs } from './withAxs'
-export { default as config } from './config'
-export { default as Box } from './Box'
-export { default as Text } from './Text'
-
-export default {
-  cxs,
-  withAxs,
+module.exports = {
+  glamor,
+  axs,
+  parse,
   config,
+  util,
+  AxsProvider,
   Box,
-  Text
+  Flex,
+  Text,
+  Heading,
+  Color,
+  Border,
+  Button,
 }
-

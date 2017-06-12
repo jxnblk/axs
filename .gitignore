@@ -1,6 +1,3 @@
-
 dist
-demo/bundle.js
-demo/index.html
-demo/ui/index.html
-
+docs/bundle.js
+docs/index.html
