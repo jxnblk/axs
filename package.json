@@ -1,7 +1,7 @@
 {
   "name": "axs",
   "version": "2.0.0-0",
-  "description": "A build-your-own responsive typography and layout UI toolkit for React",
+  "description": "Responsive Typography & Layout for React",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src --out-dir dist",
