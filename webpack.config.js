@@ -3,10 +3,10 @@ const path = require('path')
 module.exports = {
   devtool: false,
 
-  entry: './site/entry.js',
+  entry: './docs/entry.js',
 
   output: {
-    path: path.join(__dirname, 'site'),
+    path: path.join(__dirname, 'docs'),
     filename: 'bundle.js'
   },
 
@@ -27,7 +27,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: 'site/',
+    contentBase: 'docs/',
     historyApiFallback: {
       index: '/bundle'
     }

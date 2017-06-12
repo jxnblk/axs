@@ -7,9 +7,9 @@
     "prepublish": "babel src --out-dir dist",
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack -p --progress --colors",
-    "static": "static-react site/App.js > site/index.html",
-    "deploy": "gh-pages -d site",
-    "icon": "repng site/Icon.js -w 1024 -h 512 -o site -f icon",
+    "static": "static-react docs/App.js > docs/index.html",
+    "deploy": "gh-pages -d docs",
+    "icon": "repng docs/Icon.js -w 1024 -h 512 -o docs -f icon",
     "test": "ava"
   },
   "keywords": [
