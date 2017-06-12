@@ -1,54 +1,68 @@
+const x = require('reaxe')
+const { connect } = require('funcup')
+const { div } = x
+const {
+  Flex,
+  Box,
+  Text,
+  Heading,
+  Pre
+} = require('../src')
+const Button = require('./Button')
+const { inc } = require('./updaters')
 
-import React from 'react'
-import { Box, Text } from '../src'
-import { Flex, Heading } from 'axs-ui'
-import Container from './Container'
-import Tweet from './Tweet'
-import Star from './Star'
-import Carbon from './Carbon'
-import Pre from './Pre'
-import Dit from './Dit'
+const Header = connect()(props => (
+  x(Box)({
+    py: 4,
+    css: {
+      color: '#fff',
+      backgroundColor: props.color[5] || '#000',
+      transitionProperty: 'background-color',
+      transitionDuration: '.3s',
+      transitionTimingFunction: 'ease-out'
+    },
+    onClick: e => props.update(inc)
+  }, ...[
+    x(Flex.center)({
+      py: 4,
+      css: {
+        flexWrap: 'wrap'
+      }
+    }, ...[
+      x(Heading)({
+        is: 'h1',
+        f: [ 1, null, 0 ],
+        ml: [ null, null, 'auto' ],
+        w: [ 1, 'auto' ],
+        px: 3
+      }, 'Axs'),
+      x(Box)({
+        css: {
+          width: 4,
+          height: 96,
+          backgroundColor: '#fff',
+          '@media screen and (max-width: 40em)': {
+            display: 'none'
+          }
+        }
+      }),
+      x(Box)({
+        w: [ 1, 384 ],
+        mr: 'auto',
+        px: 3
+      }, ...[
+        x(Text)({ bold: true, f: 3, mb: 2 }, 'Responsive typography and layout toolkit for React'),
+        x(Flex.center)([
+          x(Button)({
+            mr: 2,
+            is: 'a',
+            href: 'https://github.com/jxnblk/axs'
+          }, 'GitHub'),
+          x(Pre)('npm i axs')
+        ])
+      ])
+    ])
+  ])
+))
 
-export default () => (
-  <Box is='header'
-    px={[ 2, 3 ]}
-    mb4>
-    <Box py4 mb4 white bgFuschia>
-      <Container py4>
-        <Flex flexWrap='wrap' alignItems='center'>
-          <Box css={cx.pipe} pr3 mr3>
-            <Heading level={1} fontSize={[1, null, 0]}>
-              Axs
-            </Heading>
-          </Box>
-          <Box width={[1, 1/2]}>
-            <Text is='p' bold fontSize={[4, 3 ]} mt2>
-              A build-your-own responsive typography and layout UI toolkit for React
-            </Text>
-            <Pre fontSize={4} p0 my2 fuschia1 children='npm i axs' />
-          </Box>
-        </Flex>
-      </Container>
-    </Box>
-    <Flex flexWrap='wrap' alignItems='center'>
-      <Box width={[1, null, 4/8 ]}>
-        <Dit />
-        <Text fontSize={3}>
-          Axs is a React UI component library
-          that serves as a foundation for highly customized UI
-          as well as a utility belt for prototyping.
-        </Text>
-      </Box>
-      <Carbon ml={[ null, null, 'auto' ]} />
-    </Flex>
-  </Box>
-)
-
-const cx = {
-  pipe: {
-    '@media screen and (min-width:40em)': {
-      borderRightStyle: 'solid',
-      borderRightWidth: 4
-    }
-  }
-}
+module.exports = Header

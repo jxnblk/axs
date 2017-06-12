@@ -1,6 +1,5 @@
-
-import React from 'react'
-import { Box } from '../src'
+const x = require('reaxe')
+const { Box } = require('../src')
 
 const M = 'M'
 const L = 'L'
@@ -31,23 +30,23 @@ const Logo = ({
   size = 64,
   color = 'currentcolor',
   ...props
-}) => (
-  <Box is='svg'
-    display='inline-block'
-    m0
-    {...props}
-    viewBox='0 0 16 16'
-    width={size}
-    height={size}
-    style={{
-      overflow: 'visible'
-    }}
-    fill='none'
-    stroke={color}>
-    <path d={tri} />
-    <path d={handle} />
-  </Box>
-)
+}) => x(Box)({
+  ...props,
+  is: 'svg',
+  viewBox: '0 0 16 16',
+  width: size,
+  height: size,
+  fill: 'none',
+  stroke: color,
+  css: {
+    ...props.css,
+    display: 'block',
+    margin: 0,
+    overflow: 'visible',
+  }
+}, ...[
+  x('path')({ d: tri }),
+  x('path')({ d: handle }),
+])
 
-export default Logo
-
+module.exports = Logo

@@ -1,53 +1,63 @@
+const x = require('reaxe')
+const { createProvider } = require('funcup')
+const Style = require('./Style')
+const Nav = require('./Nav')
+const Carousel = require('./Carousel')
+const Hero = require('./Hero')
+const Container = require('./Container')
+const About = require('./About')
+const Usage = require('./Usage')
+const Features = require('./Features')
+const CTA = require('./CTA')
+const Footer = require('./Footer')
+const BoxDemo = require('./BoxDemo')
+const TextDemo = require('./TextDemo')
+const FlexDemo = require('./FlexDemo')
+const HeadingDemo = require('./HeadingDemo')
+const ColorDemo = require('./ColorDemo')
+const BorderDemo = require('./BorderDemo')
+const GridDemo = require('./GridDemo')
+const MediaObjectDemo = require('./MediaObjectDemo')
+const BarChartDemo = require('./BarChartDemo')
+const PercentageDemo = require('./PercentageDemo')
+const PanelDemo = require('./PanelDemo')
+const CardDemo = require('./CardDemo')
+const colors = require('./colors')
+const { div, h1 } = x
 
-import React from 'react'
-import { config } from '../src'
-import { withContext  } from 'recompose'
-import Nav from './Nav'
-import Footer from './Footer'
-import Index from './Index'
-import UI from './UI'
-import history from './history'
+const App = props => (
+  div([
+    x(Style)(),
+    x(Nav)(),
+    x(Carousel)({ index: props.index }, ...[
+      x(Hero)(),
+      x(BoxDemo)(),
+      x(TextDemo)(),
+      x(FlexDemo)(),
+      x(HeadingDemo)(),
+      x(ColorDemo)(),
+      x(BorderDemo)(),
+      x(GridDemo)(),
+      x(MediaObjectDemo)(),
+      x(BarChartDemo)(),
+      x(PercentageDemo)(),
+      x(PanelDemo)(),
+      x(CardDemo)(),
+    ]),
+    x(Container)([
+      x(About)(),
+      x(Usage)(),
+      x(Features)(),
+      x(CTA)(),
+    ]),
+    x(Footer)()
+  ])
+)
 
-class App extends React.Component {
-  constructor (props) {
-    super()
-    this.state = {
-      path: props.path
-    }
-  }
-
-  getChildContext = () => {
-    const { basehref } = this.props
-    return {
-      basehref
-    }
-  }
-
-  componentDidMount () {
-    const { pathname } = history.location
-    this.setState({ path: pathname })
-    history.listen(({ pathname }) => {
-      this.setState({ path: pathname })
-    })
-  }
-
-  render () {
-    const { path } = this.state
-
-    const view = /ui/.test(path) ? <UI /> : <Index />
-
-    return (
-      <div>
-        <Nav />
-        {view}
-      </div>
-    )
-  }
+const initialState = {
+  index: 0,
+  color: colors[0],
+  xray: false
 }
 
-App.childContextTypes = {
-  basehref: React.PropTypes.string
-}
-
-export default App
-
+module.exports = createProvider(initialState)(App)

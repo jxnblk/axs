@@ -1,45 +1,69 @@
+const x = require('reaxe')
+const { connect } = require('funcup')
+const { Chevron } = require('reline')
+const {
+  Flex,
+  Box,
+  Color,
+} = require('../src')
+const Logo = require('./Logo')
+const NavLink = require('./NavLink')
+const Hide = require('./Hide')
+const { dec, inc, setIndex, cycleColor } = require('./updaters')
+const { nav } = x
 
-import React from 'react'
-import { Box, config } from '../src'
-import { Flex } from 'axs-ui'
-import Link from './Link'
-import Travis from './Travis'
-import Tweet from './Tweet'
-import Star from './Star'
-import Logo from './Logo'
+const Nav = connect()(props => nav([
+  x(Color)({
+    color: props.color[5]
+  }, ...[
+    x(Flex.center)({ px: [ 2, 3 ], py: 2 }, ...[
+      x(Logo)({
+        mr: 2,
+        size: 24,
+        onClick: e => props.update(setIndex(0))
+      }),
+      x(NavLink)({ mr: 2, href: 'https://github.com/jxnblk/axs' }, 'GitHub'),
+      // x(NavLink)({
+      //   ml: 'auto',
+      //   children: 'color',
+      //   href: '#',
+      //   onClick: e => props.update(cycleColor)
+      // }),
 
-const Nav = () => (
-  <Flex px={[ 2, 3 ]} py2 flexWrap='wrap' alignItems='center'>
-    <Flex width={[ 1, 1/2 ]} alignItems='center'>
-      <Link p0
-        title='Home'
-        to='/'>
-        <Logo
-          size={32}
-          mr2
-          color={config.colors.fuschia}
-        />
-      </Link>
-      <Link
-        mr2
-        to='/ui'
-        children='Axs UI' />
-      <Link
-        mr2
-        href='https://github.com/jxnblk/axs'
-        children='GitHub' />
-      <Link
-        mr2
-        href='https://npmjs.com/package/axs'
-        children='npm' />
-    </Flex>
-    <Flex ml={[ null, 'auto' ]}>
-      <Travis />
-      <Star />
-      <Tweet />
-    </Flex>
-  </Flex>
-)
+      x(Hide)({ ml: 'auto', mobile: true }, [
+        x(Flex)([
+          x.a({ href: 'https://travis-ci.org/jxnblk/axs' }, [
+            x.img({ style: { display: 'block' },
+              src: 'https://img.shields.io/travis/jxnblk/axs.svg'
+            })
+          ]),
+          x(Box)({ mr: 1 }),
+          x.a({ href: 'https://github.com/jxnblk/axs' }, [
+            x.img({ style: { display: 'block' },
+              src: 'https://img.shields.io/github/stars/jxnblk/axs.svg?style=social&label=Star'
+            })
+          ])
+        ])
+      ]),
 
-export default Nav
+      x(Hide)({ ml: 'auto', desktop: true }, [
+        x(NavLink)({
+          mr: 1,
+          href: '#',
+          onClick: e => props.update(dec)
+        },
+          x(Chevron)({ left: true })
+        ),
+        x(NavLink)({
+          mx: 1,
+          href: '#',
+          onClick: e => props.update(inc)
+        },
+          x(Chevron)({ right: true })
+        ),
+      ])
+    ])
+  ])
+]))
 
+module.exports = Nav

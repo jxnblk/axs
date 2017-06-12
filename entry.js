@@ -1,40 +1,10 @@
+const h = require('react').createElement
+const { render } = require('react-dom')
+const App = require('./App')
 
-const React = require('react')
-const ReactDOM = require('react-dom')
-const { cxs, config } = require('../src')
-const html = require('./html')
-const App = require('./App').default
-
-const basehref = process.env.NODE_ENV === 'production' ? '/axs' : ''
-
-config.set({
-  typeScale: [
-    72,
-    64,
-    32,
-    24,
-    16,
-    14,
-    12,
-  ],
-  bold: 600
-})
-
-if (typeof document !== 'undefined') {
-  const path = window.location.pathname
-  ReactDOM.render(<App path={path} basehref={basehref} />, app)
+if (typeof app === 'undefined') {
+  window.app = document.createElement('div')
+  document.body.appendChild(app)
 }
 
-module.exports = (locals) => {
-  if (typeof document !== 'undefined') {
-    return
-  }
-  const { renderToString, renderToStaticMarkup } = require('react-dom/server')
-
-  const app = renderToString(<App {...locals} basehref={basehref} />)
-  const css = cxs.getCss()
-  cxs.reset()
-
-  return html({ app, css, basehref })
-}
-
+render(h(App), app)

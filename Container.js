@@ -1,18 +1,12 @@
+const x = require('reaxe')
+const { Box } = require('../src')
 
-import React from 'react'
-import { Box } from '../src'
+const Container = props => x(Box)({
+  ...props,
+  mx: 'auto',
+  css: {
+    maxWidth: 1024
+  }
+})
 
-const Container = props => (
-  <Box {...props}
-    mx='auto'
-    px={[ 2, 3 ]}
-    css={cx} />
-)
-
-const cx = {
-  maxWidth: 1024,
-  overflow: 'hidden'
-}
-
-export default Container
-
+module.exports = Container

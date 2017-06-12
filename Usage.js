@@ -1,37 +1,43 @@
+const x = require('reaxe')
+const { connect } = require('funcup')
+const {
+  Flex,
+  Box,
+  Heading,
+  Color,
+} = require('../src')
+const Pre = require('./Pre')
+const Demo = require('./Demo')
 
-import React from 'react'
-import toJsxString from 'react-element-to-jsx-string'
-import { Box, Text } from '../src'
-import { Flex, Heading } from 'axs-ui'
-import Container from './Container'
-import Pre from './Pre'
-import BasicLink from './BasicLink'
+const Usage = connect()(props => (
+  x(Box)({
+    px: 3,
+    py: 4,
+  }, [
+    x(Demo)({
+      title: 'Usage',
+      height: '416px',
+      code: example
+    }),
+  ])
+))
 
-const example = (
-  <Box p2 mb2 white bgFuschia>
-    <Text is='h2' fontSize={2}>
-      Box
-    </Text>
-  </Box>
-)
+const example = `<Box p={3}>
+  <Flex mx={-2}
+    css={{
+      alignItems: 'baseline'
+    }}>
+    <Box width={2/3} px={2}>
+      <Heading fontSize={1}>
+        Hello
+      </Heading>
+    </Box>
+    <Box width={1/3} px={2}>
+      <Text fontSize={3}>
+        Axs
+      </Text>
+    </Box>
+  </Flex>
+</Box>`
 
-const Usage = () => (
-  <Container id='usage'>
-    <Heading>
-      <BasicLink href='#usage'>
-        Usage
-      </BasicLink>
-    </Heading>
-    <Flex mx-2 py3 flexWrap='wrap' alignItems='center'>
-      <Box px2 width={[1, 1/2]}>
-        <Pre bgGray0 children={toJsxString(example)} />
-      </Box>
-      <Box px2 width={[1, 1/2]}>
-        {example}
-      </Box>
-    </Flex>
-  </Container>
-)
-
-export default Usage
-
+module.exports = Usage
