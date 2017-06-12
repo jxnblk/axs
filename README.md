@@ -3,9 +3,9 @@
 
 Responsive Typography & Layout for React
 
-![Axs](/site/icon.png?raw=true)
-
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
+
+![Axs](/site/icon.png?raw=true)
 
 ```sh
 npm i axs
@@ -61,23 +61,91 @@ under the hood, each Axs component also supports CSS-in-JS via the `css` prop to
 
 ## Components
 
+Axs includes several primitive styling components that can handle
+the bulk of styling needed for an application UI.
+All Axs components share a set of common styling [props](#core-props) for margin,
+padding, font size, and width.
+
 ### `<Box />`
-T/K
+
+The core layout component for controlling width, margin, and padding.
+
+```jsx
+<Box width={1/2} p={3} mb={2} />
+```
 
 ### `<Flex />`
-T/K
+
+An extension of the Box component with display flex.
+
+```jsx
+<Flex>
+  <Box width={1/2} />
+  <Box width={1/2} />
+</Flex>
+```
+
 
 ### `<Heading />`
-T/K
+
+A component primitive for headings, defaults to `<h2>`.
+
+```jsx
+<Heading fontSize={1} mb={2} />
+```
 
 ### `<Text />`
-T/K
+
+An extension of the Box component for text.
+Includes props for typographic styling.
+
+```jsx
+<Text fontSize={3} bold center />
+```
+
+#### Props
+
+- `bold` (boolean) sets font weight bold
+- `center` (boolean) sets text align center
 
 ### `<Color />`
-T/K
+
+An extension of the Box component for setting text and background color.
+
+```jsx
+<Color
+  color='tomato'
+  backgroundColor='lime'
+/>
+```
+
+#### Props
+
+- `color` (string) sets foreground color
+- `backgroundColor` (string) sets background color
 
 ### `<Border />`
-T/K
+
+An extension of the Box component for setting border and border radius styles.
+Defaults to a border on all sides.
+
+```jsx
+<Border
+  color='tomato'
+  top
+  bottom
+  rounded
+/>
+```
+
+#### Props
+
+- `color` (string) border color
+- `top` (boolean) sets border top
+- `right` (boolean) sets border right
+- `bottom` (boolean) sets border bottom
+- `left` (boolean) sets border left
+- `rounded` (boolean|number) sets border radius
 
 
 ### Core Props
@@ -295,7 +363,20 @@ const Input = props => (
 
 ### Higher Order Component
 
-T/K
+The Axs higher order component can be used to add the core styling props to any other component that accepts `className` as a prop.
+
+```jsx
+import { axs } from 'axs'
+import MyInput from './MyInput'
+
+const defaultStyles = {
+  borderColor: 'tomato'
+}
+
+const Input = axs(defaultStyles)(MyInput)
+
+export default Input
+```
 
 
 ## Related
