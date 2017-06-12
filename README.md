@@ -5,7 +5,7 @@ Responsive Typography & Layout for React
 
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
 
-![Axs](/site/icon.png?raw=true)
+![Axs](/docs/icon.png?raw=true)
 
 ```sh
 npm i axs
