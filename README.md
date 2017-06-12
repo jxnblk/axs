@@ -46,11 +46,12 @@ under the hood, each Axs component also supports CSS-in-JS via the `css` prop to
 ## Features
 
 - Encapsulated styles using [glamor](https://github.com/threepointone/glamor)
-  - Media queries support
-  - Pseudoclasses support
-  - Server-side rendering support
+  - Encapsulated styles
   - No leaky global styles
   - No need to maintain separate stylesheets
+  - Media queries
+  - Pseudoclasses
+  - Server-side rendering
   - Use plain JS objects
   - No tagged template literals
 - Handles common layout, typography, and color styles
@@ -379,6 +380,13 @@ export default Input
 ```
 
 
+## Server Side Renderering
+
+Server side rendering is handled with glamor.
+Read [the docs](https://github.com/threepointone/glamor/blob/master/docs/server.md)
+for more information.
+
+
 ## Related
 
 - [glamor](https://github.com/threepointone/glamor)
@@ -387,5 +395,9 @@ export default Input
 - [Rebass](http://jxnblk.com/rebass)
 - [Basscss](http://basscss.com)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
+
+
+> A hand axe is a prehistoric stone tool with two faces that is the longest-used tool in human history.
+
 
 [MIT License](LICENSE.md)
