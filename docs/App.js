@@ -25,25 +25,30 @@ const CardDemo = require('./CardDemo')
 const colors = require('./colors')
 const { div, h1 } = x
 
+const { Text, Box } = require('../src')
+
 const App = props => (
   div([
     x(Style)(),
+    /*
     x(Nav)(),
+    */
     x(Carousel)({ index: props.index }, ...[
-      x(Hero)(),
-      x(BoxDemo)(),
-      x(TextDemo)(),
-      x(FlexDemo)(),
-      x(HeadingDemo)(),
-      x(ColorDemo)(),
-      x(BorderDemo)(),
-      x(GridDemo)(),
-      x(MediaObjectDemo)(),
-      x(BarChartDemo)(),
-      x(PercentageDemo)(),
-      x(PanelDemo)(),
-      x(CardDemo)(),
+      // x(Hero)(),
+      // x(BoxDemo)(),
+      // x(TextDemo)(),
+      // x(FlexDemo)(),
+      // x(HeadingDemo)(),
+      // x(ColorDemo)(),
+      // x(BorderDemo)(),
+      // x(GridDemo)(),
+      // x(MediaObjectDemo)(),
+      // x(BarChartDemo)(),
+      // x(PercentageDemo)(),
+      // x(PanelDemo)(),
+      // x(CardDemo)(),
     ]),
+    /*
     x(Container)([
       x(About)(),
       x(Usage)(),
@@ -51,6 +56,7 @@ const App = props => (
       x(CTA)(),
     ]),
     x(Footer)()
+    */
   ])
 )
 

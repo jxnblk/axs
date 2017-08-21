@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { Box, config } = require('../src')
+const { Box } = require('../src')
 
 const Hide = ({
   mobile,

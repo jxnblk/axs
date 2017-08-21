@@ -1,8 +1,9 @@
 const { shape, array, number } = require('prop-types')
+
 module.exports = {
-  axs: shape({
+  theme: shape({
     space: array,
-    typeScale: array,
+    fontSizes: array,
     breakpoints: array,
     radius: number
   })

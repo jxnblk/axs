@@ -1,7 +1,7 @@
 
 const idx = (p, obj) => p.reduce((a, b) => (a && a[b]) ? a[b] : null, obj)
 
-const px = n => n ? (n + 'px') : n
+const px = n => typeof n === 'number' ? (n + 'px') : n
 
 const radius = n => arg => {
   if (typeof arg === 'number') return arg

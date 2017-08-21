@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "dxs": "^1.0.0-12",
     "glamor": "^2.20.25",
     "prop-types": "^15.5.10"
   },
