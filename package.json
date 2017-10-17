@@ -13,6 +13,7 @@
     "build": "x0 build docs/App.js -d docs",
     "deploy": "gh-pages -d docs",
     "icon": "repng docs/Icon.js -w 1024 -h 512 -o docs -f icon",
+    "cover": "nyc report --reporter=html --reporter=lcov",
     "test": "nyc ava"
   },
   "keywords": [
@@ -37,14 +38,17 @@
     "babel-register": "^6.18.0",
     "css-loader": "^0.28.4",
     "emotion": "^8.0.8",
+    "fela": "^6.0.2",
     "funcup": "^1.0.0-0",
     "gh-pages": "^0.12.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.9.7",
+    "nyc": "^11.2.1",
     "palx": "^1.0.2",
     "prismjs": "^1.6.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-emotion": "^8.0.8",
     "react-fela": "^6.0.2",
     "react-live": "^1.5.3",
     "react-test-renderer": "^15.5.4",
@@ -54,6 +58,7 @@
     "repng": "^2.0.0-alpha.1",
     "static-react": "^4.0.0-1",
     "styled-components": "^2.2.1",
+    "theming": "^1.1.0",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },

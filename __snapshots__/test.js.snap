@@ -1,5 +1,335 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Border emotion renders 1`] = `
+<div
+  className="css-xlc0ju"
+/>
+`;
+
+exports[`Border fela renders 1`] = `
+<div
+  renderer={
+    Object {
+      "_emitChange": [Function],
+      "_mergeStyle": [Function],
+      "_renderStyleToClassNames": [Function],
+      "cache": Object {},
+      "clear": [Function],
+      "enableRehydration": true,
+      "filterClassName": [Function],
+      "getNextRuleIdentifier": [Function],
+      "isConnectedToDOM": false,
+      "keyframePrefixes": Array [
+        "-webkit-",
+        "-moz-",
+        "",
+      ],
+      "listeners": Array [],
+      "mediaQueryOrder": Array [],
+      "nodes": Object {},
+      "plugins": Array [],
+      "renderFont": [Function],
+      "renderKeyframe": [Function],
+      "renderRule": [Function],
+      "renderStatic": [Function],
+      "selectorPrefix": "",
+      "subscribe": [Function],
+      "uniqueKeyframeIdentifier": 0,
+      "uniqueRuleIdentifier": 0,
+    }
+  }
+>
+  hello
+</div>
+`;
+
+exports[`Border glamorous renders 1`] = `
+<div
+  className="css-glamorous-glamorous-div---sc5j7q"
+/>
+`;
+
+exports[`Border styled-components renders 1`] = `
+<div
+  className="sc-ifAKCX irlYeT sc-bdVaJa bDWFJH"
+/>
+`;
+
+exports[`Box emotion renders 1`] = `
+<div
+  className="css-0"
+/>
+`;
+
+exports[`Box fela renders 1`] = `
+<div
+  renderer={
+    Object {
+      "_emitChange": [Function],
+      "_mergeStyle": [Function],
+      "_renderStyleToClassNames": [Function],
+      "cache": Object {},
+      "clear": [Function],
+      "enableRehydration": true,
+      "filterClassName": [Function],
+      "getNextRuleIdentifier": [Function],
+      "isConnectedToDOM": false,
+      "keyframePrefixes": Array [
+        "-webkit-",
+        "-moz-",
+        "",
+      ],
+      "listeners": Array [],
+      "mediaQueryOrder": Array [],
+      "nodes": Object {},
+      "plugins": Array [],
+      "renderFont": [Function],
+      "renderKeyframe": [Function],
+      "renderRule": [Function],
+      "renderStatic": [Function],
+      "selectorPrefix": "",
+      "subscribe": [Function],
+      "uniqueKeyframeIdentifier": 0,
+      "uniqueRuleIdentifier": 0,
+    }
+  }
+>
+  hello
+</div>
+`;
+
+exports[`Box glamorous renders 1`] = `
+<div
+  className="css-glamorous-div--umfki0"
+/>
+`;
+
+exports[`Box styled-components renders 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+/>
+`;
+
+exports[`Flex emotion renders 1`] = `
+<div
+  className="css-k008qs"
+/>
+`;
+
+exports[`Flex fela renders 1`] = `
+<div
+  renderer={
+    Object {
+      "_emitChange": [Function],
+      "_mergeStyle": [Function],
+      "_renderStyleToClassNames": [Function],
+      "cache": Object {},
+      "clear": [Function],
+      "enableRehydration": true,
+      "filterClassName": [Function],
+      "getNextRuleIdentifier": [Function],
+      "isConnectedToDOM": false,
+      "keyframePrefixes": Array [
+        "-webkit-",
+        "-moz-",
+        "",
+      ],
+      "listeners": Array [],
+      "mediaQueryOrder": Array [],
+      "nodes": Object {},
+      "plugins": Array [],
+      "renderFont": [Function],
+      "renderKeyframe": [Function],
+      "renderRule": [Function],
+      "renderStatic": [Function],
+      "selectorPrefix": "",
+      "subscribe": [Function],
+      "uniqueKeyframeIdentifier": 0,
+      "uniqueRuleIdentifier": 0,
+    }
+  }
+>
+  hello
+</div>
+`;
+
+exports[`Flex glamorous renders 1`] = `
+<div
+  className="css-glamorous-glamorous-div---1ra5hu7"
+/>
+`;
+
+exports[`Flex styled-components renders 1`] = `
+<div
+  className="sc-bwzfXH hKiLMS sc-bdVaJa bDWFJH"
+/>
+`;
+
+exports[`Heading emotion renders 1`] = `
+<h2
+  className="css-1ffgd1d"
+/>
+`;
+
+exports[`Heading fela renders 1`] = `
+<div
+  renderer={
+    Object {
+      "_emitChange": [Function],
+      "_mergeStyle": [Function],
+      "_renderStyleToClassNames": [Function],
+      "cache": Object {},
+      "clear": [Function],
+      "enableRehydration": true,
+      "filterClassName": [Function],
+      "getNextRuleIdentifier": [Function],
+      "isConnectedToDOM": false,
+      "keyframePrefixes": Array [
+        "-webkit-",
+        "-moz-",
+        "",
+      ],
+      "listeners": Array [],
+      "mediaQueryOrder": Array [],
+      "nodes": Object {},
+      "plugins": Array [],
+      "renderFont": [Function],
+      "renderKeyframe": [Function],
+      "renderRule": [Function],
+      "renderStatic": [Function],
+      "selectorPrefix": "",
+      "subscribe": [Function],
+      "uniqueKeyframeIdentifier": 0,
+      "uniqueRuleIdentifier": 0,
+    }
+  }
+>
+  hello
+</div>
+`;
+
+exports[`Heading glamorous renders 1`] = `
+<h2
+  className="css-glamorous-h2--1gt6urt"
+/>
+`;
+
+exports[`Heading styled-components renders 1`] = `
+<h2
+  className="sc-htpNat kDMHyT"
+/>
+`;
+
+exports[`Shadow emotion renders 1`] = `
+<div
+  className="css-ffkbw2"
+/>
+`;
+
+exports[`Shadow fela renders 1`] = `
+<div
+  renderer={
+    Object {
+      "_emitChange": [Function],
+      "_mergeStyle": [Function],
+      "_renderStyleToClassNames": [Function],
+      "cache": Object {},
+      "clear": [Function],
+      "enableRehydration": true,
+      "filterClassName": [Function],
+      "getNextRuleIdentifier": [Function],
+      "isConnectedToDOM": false,
+      "keyframePrefixes": Array [
+        "-webkit-",
+        "-moz-",
+        "",
+      ],
+      "listeners": Array [],
+      "mediaQueryOrder": Array [],
+      "nodes": Object {},
+      "plugins": Array [],
+      "renderFont": [Function],
+      "renderKeyframe": [Function],
+      "renderRule": [Function],
+      "renderStatic": [Function],
+      "selectorPrefix": "",
+      "subscribe": [Function],
+      "uniqueKeyframeIdentifier": 0,
+      "uniqueRuleIdentifier": 0,
+    }
+  }
+>
+  hello
+</div>
+`;
+
+exports[`Shadow glamorous renders 1`] = `
+<div
+  className="css-glamorous-glamorous-div---1xdhcb5"
+/>
+`;
+
+exports[`Shadow styled-components renders 1`] = `
+<div
+  className="sc-EHOje kcwxAo sc-bdVaJa bDWFJH"
+/>
+`;
+
+exports[`Text emotion renders 1`] = `
+<p
+  className="css-1ffgd1d"
+/>
+`;
+
+exports[`Text fela renders 1`] = `
+<div
+  renderer={
+    Object {
+      "_emitChange": [Function],
+      "_mergeStyle": [Function],
+      "_renderStyleToClassNames": [Function],
+      "cache": Object {},
+      "clear": [Function],
+      "enableRehydration": true,
+      "filterClassName": [Function],
+      "getNextRuleIdentifier": [Function],
+      "isConnectedToDOM": false,
+      "keyframePrefixes": Array [
+        "-webkit-",
+        "-moz-",
+        "",
+      ],
+      "listeners": Array [],
+      "mediaQueryOrder": Array [],
+      "nodes": Object {},
+      "plugins": Array [],
+      "renderFont": [Function],
+      "renderKeyframe": [Function],
+      "renderRule": [Function],
+      "renderStatic": [Function],
+      "selectorPrefix": "",
+      "subscribe": [Function],
+      "uniqueKeyframeIdentifier": 0,
+      "uniqueRuleIdentifier": 0,
+    }
+  }
+>
+  hello
+</div>
+`;
+
+exports[`Text glamorous renders 1`] = `
+<p
+  className="css-glamorous-p--1cx8m2a"
+/>
+`;
+
+exports[`Text styled-components renders 1`] = `
+<p
+  className="sc-bxivhb kdyxKO"
+/>
+`;
+
 exports[`axs component accepts css prop 1`] = `
 <div
   className="css-1bllz5t"
