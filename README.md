@@ -1,7 +1,7 @@
 
 # Axs
 
-Responsive Typography & Layout for React
+React UI components for responsive typography & layout - built with [Compositor Lab](https://compositor.io/lab)
 
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
 
@@ -9,6 +9,20 @@ Responsive Typography & Layout for React
 
 ```sh
 npm i axs
+```
+
+```js
+// styled-components
+import Axs from 'axs'
+
+// glamorous
+import Axs from 'axs/glamorous'
+
+// emotion
+import Axs from 'axs/emotion'
+
+// fela
+import Axs from 'axs/fela'
 ```
 
 ```jsx

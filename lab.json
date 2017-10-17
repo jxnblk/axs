@@ -1,0 +1,80 @@
+{
+  "name": "axs",
+  "components": [
+    {
+      "name": "Box",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "system": [
+        "flex",
+        "alignSelf"
+      ]
+    },
+    {
+      "name": "Flex",
+      "type": "Box",
+      "props": {},
+      "style": {
+        "display": "flex"
+      },
+      "system": [
+        "alignItems",
+        "justifyContent",
+        "flexWrap",
+        "flexDirection"
+      ]
+    },
+    {
+      "name": "Heading",
+      "type": "h2",
+      "props": {
+        "mt": 0,
+        "mb": 0
+      },
+      "style": {
+        "lineHeight": 1.25
+      },
+      "system": [
+        "textAlign",
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "p",
+      "props": {
+        "mt": 0,
+        "mb": 0
+      },
+      "style": {
+        "lineHeight": 1.25
+      },
+      "system": [
+        "textAlign",
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "Border",
+      "type": "Box",
+      "props": {},
+      "style": {},
+      "system": [
+        "borderWidth",
+        "borderColor",
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "Shadow",
+      "type": "Box",
+      "props": {},
+      "style": {},
+      "system": [
+        "boxShadow",
+        "borderRadius"
+      ]
+    }
+  ]
+}

@@ -1,16 +1,19 @@
 {
   "name": "axs",
-  "version": "2.0.0-1",
-  "description": "Responsive Typography & Layout for React",
-  "main": "dist/index.js",
+  "version": "3.0.0-0",
+  "description": "React UI components for responsive typography & layout",
+  "main": "index.js",
   "scripts": {
-    "prepublish": "babel src --out-dir dist",
-    "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack -p --progress --colors",
-    "static": "static-react docs/App.js > docs/index.html",
+    "prepublish": "npm run build:sc && npm run build:glamorous && npm run build:emotion && npm run build:fela",
+    "build:sc": "lab --pkg -d dist/styled-components --library styled-components",
+    "build:glamorous": "lab --pkg -d dist/glamorous --library glamorous",
+    "build:emotion": "lab --pkg -d dist/emotion --library emotion",
+    "build:fela": "lab --pkg -d dist/fela --library fela",
+    "start": "x0 dev docs/App.js",
+    "build": "x0 build docs/App.js -d docs",
     "deploy": "gh-pages -d docs",
     "icon": "repng docs/Icon.js -w 1024 -h 512 -o docs -f icon",
-    "test": "ava"
+    "test": "nyc ava"
   },
   "keywords": [
     "react",
@@ -22,6 +25,8 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
+    "@compositor/lab": "^1.0.0-32",
+    "@compositor/x0": "^2.0.0-5",
     "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
@@ -31,12 +36,16 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.18.0",
     "css-loader": "^0.28.4",
+    "emotion": "^8.0.8",
     "funcup": "^1.0.0-0",
     "gh-pages": "^0.12.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.9.7",
     "palx": "^1.0.2",
     "prismjs": "^1.6.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-fela": "^6.0.2",
     "react-live": "^1.5.3",
     "react-test-renderer": "^15.5.4",
     "react-x-ray": "^1.0.0-2",
@@ -44,54 +53,17 @@
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
     "static-react": "^4.0.0-1",
+    "styled-components": "^2.2.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "glamor": "^2.20.25",
-    "prop-types": "^15.5.10"
+    "styled-system": "^1.0.8"
   },
   "ava": {
     "require": [
       "babel-register"
     ],
     "babel": "inherit"
-  },
-  "static-react": {
-    "title": "Axs",
-    "meta": [
-      {
-        "name": "charset",
-        "content": "utf-8"
-      },
-      {
-        "name": "viewport",
-        "content": "width=device-width,initial-scale=1"
-      },
-      {
-        "name": "description",
-        "content": "Responsive typography and layout toolkit for React"
-      },
-      {
-        "name": "twitter:card",
-        "content": "summary"
-      },
-      {
-        "name": "twitter:site",
-        "content": "@jxnblk"
-      },
-      {
-        "name": "og:title",
-        "content": "Axs"
-      },
-      {
-        "name": "og:image",
-        "content": "http://jxnblk.com/axs/icon.png"
-      }
-    ],
-    "scripts": [
-      "bundle.js"
-    ]
   }
 }
