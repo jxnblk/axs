@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const {
   LiveProvider,
   LivePreview,
@@ -7,7 +7,7 @@ const {
   LiveError,
 } = require('react-live')
 const XRay = require('react-x-ray').default
-const Axs = require('../src')
+const Axs = require('..')
 const Button = require('./Button')
 const { toggleXRay } = require('./updaters')
 
@@ -134,4 +134,4 @@ const Demo = ({
   )
 }
 
-module.exports = connect()(Demo)
+module.exports = connect(Demo)

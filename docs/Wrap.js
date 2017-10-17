@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { Box } = require('../src')
+const { Box } = require('..')
 
 const Wrap = props => x(Box)({
   ...props,

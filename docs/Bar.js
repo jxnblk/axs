@@ -1,10 +1,8 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
-const { Box } = require('../src')
+const connect = require('refunk')
+const { Box } = require('..')
 
-const map = s => ({ color: s.color })
-
-const Bar = connect(map)(props => x(Box)({
+const Bar = connect(props => x(Box)({
   my: 2,
   css: {
     width: 64,

@@ -3,7 +3,7 @@ const {
   Flex,
   Box,
   Text,
-} = require('../src')
+} = require('..')
 const Container = require('./Container')
 
 const About = props => x(Flex.center)({

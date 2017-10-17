@@ -1,13 +1,13 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const { Chevron } = require('reline')
-const { Flex, Color } = require('../src')
+const { Flex, Color } = require('..')
 const Button = require('./Button')
 const NavLink = require('./NavLink')
 const Logo = require('./Logo')
 const { dec, inc } = require('./updaters')
 
-const Footer = connect()(props => x(Color)({
+const Footer = connect(props => x(Color)({
   is: 'footer',
   color: props.color[5],
   css: {

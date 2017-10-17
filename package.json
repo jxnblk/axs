@@ -29,34 +29,26 @@
     "@compositor/lab": "^1.0.0-32",
     "@compositor/x0": "^2.0.0-5",
     "ava": "^0.19.1",
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.5.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.18.0",
     "css-loader": "^0.28.4",
     "emotion": "^8.0.8",
     "fela": "^6.0.2",
-    "funcup": "^1.0.0-0",
     "gh-pages": "^0.12.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.9.7",
     "nyc": "^11.2.1",
     "palx": "^1.0.2",
     "prismjs": "^1.6.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-emotion": "^8.0.8",
     "react-fela": "^6.0.2",
     "react-live": "^1.5.3",
-    "react-test-renderer": "^15.5.4",
+    "react-test-renderer": "^16.0.0",
     "react-x-ray": "^1.0.0-2",
     "reaxe": "^1.0.0-1",
+    "refunk": "^2.0.0-1",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
-    "static-react": "^4.0.0-1",
     "styled-components": "^2.2.1",
     "theming": "^1.1.0",
     "webpack": "^2.6.1",
@@ -64,11 +56,5 @@
   },
   "dependencies": {
     "styled-system": "^1.0.8"
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   }
 }

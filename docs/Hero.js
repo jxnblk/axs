@@ -1,19 +1,19 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const {
   Flex,
   Box,
   Heading,
   Text,
   // Button,
-} = require('../src')
+} = require('..')
 const Logo = require('./Logo')
 const Pre = require('./Pre')
 const Hide = require('./Hide')
 const Button = require('./Button')
 const { inc } = require('./updaters')
 
-const Hero = connect()(props => (
+const Hero = connect(props => (
   x(Flex)({
     w: 1,
     p: [ 1, 3 ],

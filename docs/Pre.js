@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { Text } = require('../src')
+const { Text } = require('..')
 
 const Pre = props => x(Text)({
   ...props,

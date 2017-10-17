@@ -1,15 +1,15 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const {
   Flex,
   Box,
   Heading,
   Text,
-} = require('../src')
+} = require('..')
 const Button = require('./Button')
 const { setIndex } = require('./updaters')
 
-const CTA = connect()(props => (
+const CTA = connect(props => (
   x(Box)({ px: 3, py: 4 }, [
     x(Heading)({ f: 2 }, 'Get Started'),
     x(Text)({

@@ -4,7 +4,7 @@ const {
   Box,
   Heading,
   Text
-} = require('../src')
+} = require('..')
 const Bar = require('./Bar')
 
 const Features = props => x.section([

@@ -1,14 +1,14 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const { Chevron } = require('reline')
 const {
   Flex,
   Box,
   Button,
-} = require('../src')
+} = require('..')
 const { dec, inc } = require('./updaters')
 
-const Controls = connect()(props => x.div([
+const Controls = connect(props => x.div([
   x(Flex)({
     // ml: [ 0, 2 ],
     css: {

@@ -2,3 +2,5 @@ dist
 docs/bundle.js
 docs/index.html
 package-lock.json
+coverage
+.nyc_output

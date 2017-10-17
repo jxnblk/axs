@@ -1,6 +1,5 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
-const { Button } = require('../src')
+const { Button } = require('..')
 
 const Btn = props => x(Button)({
   ...props,

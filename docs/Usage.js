@@ -1,15 +1,15 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const {
   Flex,
   Box,
   Heading,
   Color,
-} = require('../src')
+} = require('..')
 const Pre = require('./Pre')
 const Demo = require('./Demo')
 
-const Usage = connect()(props => (
+const Usage = connect(props => (
   x(Box)({
     px: 3,
     py: 4,

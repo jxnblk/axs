@@ -1,6 +1,6 @@
 const { Children } = require('react')
 const x = require('reaxe')
-const { Box, Flex } = require('../src')
+const { Box, Flex } = require('..')
 const Controls = require('./Controls')
 const Hide = require('./Hide')
 

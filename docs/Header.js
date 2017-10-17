@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const { div } = x
 const {
   Flex,
@@ -7,11 +7,11 @@ const {
   Text,
   Heading,
   Pre
-} = require('../src')
+} = require('..')
 const Button = require('./Button')
 const { inc } = require('./updaters')
 
-const Header = connect()(props => (
+const Header = connect(props => (
   x(Box)({
     py: 4,
     css: {

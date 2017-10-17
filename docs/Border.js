@@ -1,8 +1,8 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
-const { Box } = require('../src')
+const connect = require('refunk')
+const { Box } = require('..')
 
-const Border = connect()(props => x(Box)({
+const Border = connect(props => x(Box)({
   ...props,
   css: {
     borderWidth: 1,

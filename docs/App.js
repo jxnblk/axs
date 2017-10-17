@@ -1,5 +1,5 @@
 const x = require('reaxe')
-const { createProvider } = require('funcup')
+const connect = require('refunk')
 const Style = require('./Style')
 const Nav = require('./Nav')
 const Carousel = require('./Carousel')
@@ -25,10 +25,11 @@ const CardDemo = require('./CardDemo')
 const colors = require('./colors')
 const { div, h1 } = x
 
-const App = props => (
+const App = connect(props => (
   div([
     x(Style)(),
     x(Nav)(),
+    /*
     x(Carousel)({ index: props.index }, ...[
       x(Hero)(),
       x(BoxDemo)(),
@@ -51,13 +52,14 @@ const App = props => (
       x(CTA)(),
     ]),
     x(Footer)()
+    */
   ])
-)
+))
 
-const initialState = {
+App.defaultProps = {
   index: 0,
   color: colors[0],
   xray: false
 }
 
-module.exports = createProvider(initialState)(App)
+module.exports = App

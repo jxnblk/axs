@@ -1,28 +1,27 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
+const connect = require('refunk')
 const { Chevron } = require('reline')
 const {
   Flex,
   Box,
-  Color,
-} = require('../src')
+} = require('..')
 const Logo = require('./Logo')
 const NavLink = require('./NavLink')
 const Hide = require('./Hide')
 const { dec, inc, setIndex, cycleColor } = require('./updaters')
 const { nav } = x
 
-const Nav = connect()(props => nav([
-  x(Color)({
+const Nav = connect(props => nav([
+  x(Box)({
     color: props.color[5]
   }, ...[
-    x(Flex.center)({ px: [ 2, 3 ], py: 2 }, ...[
+    x(Flex)({ align: 'center', px: [ 2, 3 ], py: 2 }, ...[
       x(Logo)({
         mr: 2,
         size: 24,
         onClick: e => props.update(setIndex(0))
       }),
-      x(NavLink)({ mr: 2, href: 'https://github.com/jxnblk/axs' }, 'GitHub'),
+      // x(NavLink)({ mr: 2, href: 'https://github.com/jxnblk/axs' }, 'GitHub'),
       // x(NavLink)({
       //   ml: 'auto',
       //   children: 'color',

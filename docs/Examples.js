@@ -1,6 +1,6 @@
 const x = require('reaxe')
-const { connect } = require('funcup')
-const axs = require('../src')
+const connect = require('refunk')
+const axs = require('..')
 const {
   LiveProvider,
   LiveEditor,
@@ -19,7 +19,7 @@ const {
 } = axs
 const Style = require('./Style')
 
-const Examples = connect()(props => {
+const Examples = connect(props => {
   const scope = Object.assign({}, axs, {
     color: props.color
   })
