@@ -9,6 +9,9 @@
       "system": [
         "flex",
         "alignSelf"
+      ],
+      "examples": [
+        "<Box>Box</Box>"
       ]
     },
     {
@@ -23,6 +26,9 @@
         "justifyContent",
         "flexWrap",
         "flexDirection"
+      ],
+      "examples": [
+        "<Flex>Flex</Flex>"
       ]
     },
     {
@@ -58,23 +64,35 @@
     {
       "name": "Border",
       "type": "Box",
-      "props": {},
+      "props": {
+        "borderWidth": 1,
+        "borderColor": "gray"
+      },
       "style": {},
       "system": [
         "borderWidth",
         "borderColor",
         "borderRadius"
+      ],
+      "examples": [
+        "<Border p={3} borderRadius={3}>\n  Hello\n</Border>"
       ]
     },
     {
       "name": "Shadow",
       "type": "Box",
-      "props": {},
+      "props": {
+        "boxShadow": "0 0 4px rgba(0, 0, 0, .25)"
+      },
       "style": {},
       "system": [
-        "boxShadow",
-        "borderRadius"
+        "borderRadius",
+        "boxShadow"
+      ],
+      "examples": [
+        "<Shadow p={3} borderRadius={3}>\n  Hello\n</Shadow>"
       ]
     }
-  ]
+  ],
+  "library": "styled-components"
 }
