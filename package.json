@@ -3,6 +3,7 @@
   "version": "3.0.0-0",
   "description": "React UI components for responsive typography & layout",
   "main": "index.js",
+  "lab": "dist/styled-components/lab.json",
   "scripts": {
     "prepublish": "npm run build:sc && npm run build:glamorous && npm run build:emotion && npm run build:fela",
     "build:sc": "lab --pkg -d dist/styled-components --library styled-components",
