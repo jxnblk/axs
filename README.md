@@ -13,6 +13,95 @@ Responsive Typography & Layout for React
 npm i axs
 ```
 
+- CSS-like syntax with [stylis][stylis]
+- Simple React-centric API
+- Server side rendering with no extra steps
+- Control underlying HTML tag per instance
+- Dynamic, functional styles based on props
+
+```jsx
+import React from 'react'
+import Axs from 'axs'
+
+const Hello = props => (
+  <Axs.H1
+    {...props}
+    css={`color:tomato;`}
+  />
+)
+```
+
+### Functional styles
+
+```jsx
+import React from 'react'
+import Axs from 'axs'
+
+const Hello = props => (
+  <Axs.H1
+    {...props}
+    css={`
+      color: ${props.color};
+    `}
+  />
+)
+```
+
+### Remove style props
+
+```jsx
+import React from 'react'
+import Axs from 'axs'
+
+const Hello = ({ color, ...props }) => (
+  <Axs.H1
+    {...props}
+    css={`
+      color: ${color};
+    `}
+  />
+)
+```
+
+### Extending components
+
+```jsx
+const Hello = ({ css = '', ...props }) =>
+  <Axs.H1 {...props}
+    css={`color:tomato;${css}`}
+  />
+
+const BigHello = props =>
+  <Hello {...props}
+    css={`font-size:32px`}
+  />
+```
+
+### Semantic HTML
+
+Change the underlying HTML element on a per-instance basis for proper HTML semantics
+
+```jsx
+<Hello is='h3' />
+```
+
+### Themes
+
+```jsx
+import React from 'react'
+import Axs from 'axs'
+import { withTheme } from 'theming'
+
+const Hello = withTheme(props => (
+  <Axs.H1
+    {...props}
+    css={`
+      color: ${props.theme[props.color] || props.color};
+    `}
+  />
+))
+```
+
 <!--
 ```jsx
 import React from 'react'
@@ -400,9 +489,10 @@ for more information.
 - [Basscss](http://basscss.com)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
 
-
 > A hand axe is a prehistoric stone tool with two faces that is the longest-used tool in human history.
 
 
 
 [MIT License](LICENSE.md)
+
+[stylis]: https://github.com/thysultan/stylis.js

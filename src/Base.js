@@ -1,21 +1,34 @@
 import React from 'react'
+import objss from 'objss'
 
 import { createCSS, rules } from './css'
 import Style from './Style'
 import contextTypes from './contextTypes'
 
+export const compose = (...funcs) =>
+  funcs.reduce((a, b) => (...args) => a(b(...args)))
+
 class AxsBase extends React.Component {
   static contextTypes = contextTypes
+
+  static defaultProps = {
+    // todo: rename
+    funcs: []
+  }
 
   constructor (props, context) {
     super()
 
-    console.log('context', contextTypes, context)
     this.hasProvider = typeof context.css === 'function'
     this.css = context.css || createCSS
 
+    const style = props.funcs
+      .map(fn => fn(props))
+      .map(obj => objss(obj))
+      .join('')
+
     this.state = {
-      className: this.css(props.css),
+      className: this.css(props.css, style),
     }
   }
 
@@ -32,6 +45,7 @@ class AxsBase extends React.Component {
       is = 'div',
       css,
       innerRef,
+      funcs = [],
       ...props
     } = this.props
     const { className } = this.state
@@ -50,5 +64,22 @@ class AxsBase extends React.Component {
     )
   }
 }
+
+/*
+ * <Base
+ *   {...props}
+ *   css=''
+ *   funcs={[
+ *     color,
+ *     space,
+ *     fontSize
+ *   ]}
+ * />
+ * - getStyles
+ * - styleFunctions
+ * - accessors
+ * - styleGetters
+ * - dynamics
+*/
 
 export default AxsBase

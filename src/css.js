@@ -6,7 +6,7 @@ let cache = {}
 
 export const rules = []
 
-export const createCSS = str => {
+export const createRule = str => {
   const cn = cache[str] || uuid()
   const css = stylis('.' + cn, str)
   if (!cache[str]) {
@@ -15,6 +15,9 @@ export const createCSS = str => {
   cache[str] = cn
   return cn
 }
+
+export const createCSS = (...args) =>
+  args.map(createRule).join(' ')
 
 export const reset = () => {
   while (rules.length) rules.pop()
