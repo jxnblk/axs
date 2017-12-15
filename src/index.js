@@ -1,30 +1,15 @@
-const glamor = require('glamor')
-const axs = require('./axs')
-const parse = require('./parse')
-const config = require('./config')
-const util = require('./util')
-const AxsProvider = require('./AxsProvider')
+import React from 'react'
+import tags from 'html-tags'
+import Base from './Base'
 
-const Box = require('./Box')
-const Flex = require('./Flex')
-const Text = require('./Text')
-const Heading = require('./Heading')
-const Color = require('./Color')
-const Border = require('./Border')
-const Button = require('./Button')
+export const hoc = is => props => <Base {...props} is={is} />
 
-module.exports = {
-  glamor,
-  axs,
-  parse,
-  config,
-  util,
-  AxsProvider,
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Color,
-  Border,
-  Button,
-}
+export const upper = str => str.charAt(0).toUpperCase() + str.slice(1)
+tags.forEach(tag => {
+  Base[upper(tag)] = hoc(tag)
+})
+
+export { default } from './Base'
+export { default as Provider } from './Provider'
+export { default as Style } from './Style'
+export { default as css } from './css'

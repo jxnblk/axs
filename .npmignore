@@ -1,4 +1,6 @@
 src
 docs
-webpack.config.js
-packages
+__snapshots__
+.nyc_output
+coverage
+test.js

@@ -1,6 +1,8 @@
 
 # Axs
 
+Style components with a React-centric API
+
 Responsive Typography & Layout for React
 
 [![Build Status](https://travis-ci.org/jxnblk/axs.svg?branch=master)](https://travis-ci.org/jxnblk/axs)
@@ -11,6 +13,7 @@ Responsive Typography & Layout for React
 npm i axs
 ```
 
+<!--
 ```jsx
 import React from 'react'
 import { Box, Text } from 'axs'
@@ -386,6 +389,7 @@ Server side rendering is handled with glamor.
 Read [the docs](https://github.com/threepointone/glamor/blob/master/docs/server.md)
 for more information.
 
+-->
 
 ## Related
 
@@ -398,6 +402,7 @@ for more information.
 
 
 > A hand axe is a prehistoric stone tool with two faces that is the longest-used tool in human history.
+
 
 
 [MIT License](LICENSE.md)
