@@ -326,8 +326,12 @@ Prop | Type | Description
 - [styled-components](https://github.com/styled-components/styled-components)
 - [glamor](https://github.com/threepointone/glamor)
 - [glamorous](https://github.com/paypal/glamorous)
+- [emotion](https://github.com/emotion-js/emotion)
+- [styled-jsx](https://github.com/zeit/styled-jsx)
 - [jsxstyle](https://github.com/smyte/jsxstyle)
-
+- [styled-system](https://github.com/jxnblk/styled-system)
+- [nano-style](https://github.com/jxnblk/nano-style)
+- [cxs](https://github.com/jxnblk/cxs)
 
 
 [MIT License](LICENSE.md)
