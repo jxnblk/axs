@@ -1,11 +1,11 @@
 {
   "name": "axs",
-  "version": "4.0.0-0",
+  "version": "4.0.0-1",
   "description": "Stupid simple style components for React",
   "main": "dist/index.js",
-  "module": "src/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
-    "prepublish": "babel src -d dist",
+    "prepublish": "babel src -d dist && babel src/index.js -o dist/index.es.js --no-babelrc --presets=stage-0,react",
     "start": "x0 dev docs/App.js -o",
     "build": "x0 build docs/App.js --static -d docs",
     "logo": "repng docs/Logo.js -w 768 -h 768 -o docs -f logo",
