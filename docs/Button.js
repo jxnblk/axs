@@ -1,27 +1,29 @@
-const x = require('reaxe')
-const { connect } = require('funcup')
-const { Button } = require('../src')
+import React from 'react'
+import Base from '../src'
+import { withTheme } from 'theming'
 
-const Btn = props => x(Button)({
-  ...props,
-  css: {
-    fontSize: 12,
-    fontWeight: 600,
-    textTransform: 'uppercase',
-    letterSpacing: '.2em',
-    paddingTop: 16,
-    paddingBottom: 16,
-    paddingLeft: 24,
-    paddingRight: 24,
-    color: '#fff',
-    backgroundColor: props.color || '#000',
-    borderRadius: 6,
-    cursor: 'pointer',
-    ':hover': {
-      // boxShadow: `inset 0 0 0 32px rgba(0, 0, 0, ${1/4})`
-    },
-    ...props.css
-  }
-})
+const Button = withTheme(({ theme, ...props }) =>
+  <Base.a
+    {...props}
+    css={`
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border-radius: 8px;
+      color: #fff;
+      background-color: #000;
+      transition-property: background-color;
+      transition-duration: .2s;
+      transition-timing-function: ease-out;
+      &:hover {
+        background-color: ${theme.colors.blue};
+      }
+    `}
+  />
+)
 
-module.exports = Btn
+export default Button

@@ -1,15 +1,16 @@
-const x = require('reaxe')
-const { Text } = require('../src')
+import React from 'react'
+import Text from './Text'
 
-const Pre = props => x(Text)({
-  ...props,
-  is: 'pre',
-  css: {
-    fontFamily: `'SF Mono', Menlo, monospace`,
-    fontSize: 14,
-    margin: 0,
-    overflow: 'auto'
-  }
-})
+const Pre = props =>
+  <Text
+    {...props}
+    is='pre'
+    m={0}
+    css={`
+      font-family: Menlo, monospace;
+      font-size: 14px;
+      overflow: auto;
+    `}
+  />
 
-module.exports = Pre
+export default Pre

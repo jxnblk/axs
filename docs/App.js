@@ -1,63 +1,66 @@
-const x = require('reaxe')
-const { createProvider } = require('funcup')
-const Style = require('./Style')
-const Nav = require('./Nav')
-const Carousel = require('./Carousel')
-const Hero = require('./Hero')
-const Container = require('./Container')
-const About = require('./About')
-const Usage = require('./Usage')
-const Features = require('./Features')
-const CTA = require('./CTA')
-const Footer = require('./Footer')
-const BoxDemo = require('./BoxDemo')
-const TextDemo = require('./TextDemo')
-const FlexDemo = require('./FlexDemo')
-const HeadingDemo = require('./HeadingDemo')
-const ColorDemo = require('./ColorDemo')
-const BorderDemo = require('./BorderDemo')
-const GridDemo = require('./GridDemo')
-const MediaObjectDemo = require('./MediaObjectDemo')
-const BarChartDemo = require('./BarChartDemo')
-const PercentageDemo = require('./PercentageDemo')
-const PanelDemo = require('./PanelDemo')
-const CardDemo = require('./CardDemo')
-const colors = require('./colors')
-const { div, h1 } = x
+import React from 'react'
+import { ThemeProvider } from 'theming'
+import Base, { Style } from '../src'
+import theme from './theme'
+
+import Box from './Box'
+import Logo from './Logo'
+import Heading from './Heading'
+import Text from './Text'
+import Pre from './Pre'
+import Button from './Button'
+import Link from './Link'
 
 const App = props => (
-  div([
-    x(Style)(),
-    x(Nav)(),
-    x(Carousel)({ index: props.index }, ...[
-      x(Hero)(),
-      x(BoxDemo)(),
-      x(TextDemo)(),
-      x(FlexDemo)(),
-      x(HeadingDemo)(),
-      x(ColorDemo)(),
-      x(BorderDemo)(),
-      x(GridDemo)(),
-      x(MediaObjectDemo)(),
-      x(BarChartDemo)(),
-      x(PercentageDemo)(),
-      x(PanelDemo)(),
-      x(CardDemo)(),
-    ]),
-    x(Container)([
-      x(About)(),
-      x(Usage)(),
-      x(Features)(),
-      x(CTA)(),
-    ]),
-    x(Footer)()
-  ])
+  <React.Fragment>
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
+    <title>Axs</title>
+    <meta name='description' content={description} />
+    <meta name='twitter:site' content='@jxnblk' />
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:title' content='Axs' />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content='http://jxnblk.com/axs/logo.png' />
+    <ThemeProvider theme={theme}>
+      <React.Fragment>
+        <Style css={basecss} />
+        <Box px={[ 4, 5 ]} py={3}>
+          <Logo size={256} />
+          <Heading>
+            Axs
+          </Heading>
+          <Text fontWeight={700} mb={4}>
+            {description}
+          </Text>
+          <Pre mb={4}>npm i axs</Pre>
+          <Button
+            href='https://github.com/jxnblk/axs'
+            children='GitHub'
+          />
+        </Box>
+        <Box px={[ 4, 5 ]} py={3}>
+          <Pre children={example} />
+        </Box>
+        <Box is='footer' px={[ 4, 5 ]} py={3}>
+          <Link href='http://jxnblk.com'>
+            Made by Jxnblk
+          </Link>
+        </Box>
+      </React.Fragment>
+    </ThemeProvider>
+  </React.Fragment>
 )
 
-const initialState = {
-  index: 0,
-  color: colors[0],
-  xray: false
+const basecss = `
+* { box-sizing: border-box }
+body {
+  font-family: -apple-system, system-ui, sans-serif;
+  line-height: 1.5;
+  margin: 0;
 }
+`
+const description = 'Stupid simple style components for React'
+const example = `const Heading = props =>
+  <Base.h2 {...props} css='color:tomato;' />`
 
-module.exports = createProvider(initialState)(App)
+export default App
