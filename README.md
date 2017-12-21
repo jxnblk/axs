@@ -56,7 +56,7 @@ const Heading = props =>
 
 ### CSS syntax
 
-The `css` prop uses [stylis][stylis] for a CSS-like syntax that also allows for pseudo-classes, media queries, animations, and nested selectors to be defined inline.
+The `css` prop uses [stylis][stylis] for a CSS-like syntax that allows pseudo-classes, media queries, animations, and nested selectors to be defined inline.
 See the [stylis docs][stylis] for more info.
 
 ```jsx
@@ -100,7 +100,7 @@ const Heading = props =>
 ```
 
 When using the component, the underlying element can be changed on a per-instance basis using the `is` prop.
-This is especially helpful for ensuring the use of correct HTML semantics, while keeping the styles decoupled.
+This is especially helpful for ensuring the use of correct HTML semantics, while keeping the component styles decoupled.
 
 ```jsx
 <Heading is='h2'>
@@ -163,7 +163,7 @@ const Link = props =>
 
 ### Extending components
 
-To make an Axs component extensible, pass the `css` prop argument to the Base component's `css` prop after your base styles.
+To make an Axs component extensible, pass the `css` prop argument to the Base component's `css` prop after the base styles.
 
 ```jsx
 const Heading = ({ css, ...props }) =>
@@ -176,7 +176,7 @@ const Heading = ({ css, ...props }) =>
   />
 ```
 
-Next, to make an extension from the base Heading component, pass it to the `is` prop.
+To make an extension from the base Heading component, pass it to the `is` prop.
 
 ```jsx
 const BigHeading = props =>
