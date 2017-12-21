@@ -9,6 +9,7 @@
     "start": "x0 dev docs/App.js -o",
     "build": "x0 build docs/App.js --static -d docs",
     "logo": "repng docs/Logo.js -w 768 -h 768 -o docs -f logo",
+    "size": "npm run prepublish && bundlesize",
     "cover": "nyc report --reporter=html --reporter=lcov",
     "test": "nyc ava"
   },
@@ -31,6 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "bundlesize": "^0.15.3",
     "nyc": "^11.4.1",
     "objss": "^1.0.3",
     "react-test-renderer": "^16.2.0",
@@ -49,5 +51,15 @@
       "babel-register"
     ],
     "babel": "inherit"
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "src/index.js",
+      "maxSize": "0.8 kb"
+    },
+    {
+      "path": "dist/index.js",
+      "maxSize": "1.8 kb"
+    }
+  ]
 }

@@ -30,7 +30,7 @@ const Heading = props =>
 
 ## Features
 
-- Minimal API surface
+- Minimal API surface area
 - One component, three props
 - React component-based API
 - Server side rendering with no additional setup
