@@ -34,8 +34,9 @@ const Heading = props =>
 - One component, three props
 - React component-based API
 - Server side rendering with no additional setup
+- No custom Babel plugins or additional configuration needed
 - Works in iframes
-- 0.7 kb
+- 0.7 kb in under 100 LOC
 
 ## Usage
 
@@ -328,6 +329,20 @@ Prop | Type | Description
 `is` | String or Component | sets the underlying HTML tag or React component to style
 `innerRef` | Function | callback to get the component's [React ref](https://reactjs.org/docs/refs-and-the-dom.html)
 
+## Motivation
+
+React provides a powerful, functional API for rendering HTML with JavaScript.
+Creating styles for HTML can follow a similar pattern.
+By building on top of the React API, Axs is meant to make styling components effortless
+and require as little new syntax as possible.
+While other CSS-in-JS libraries add custom factory functions, methods, and additional utilities,
+Axs relies solely on React components and props for its API.
+The hope is that this makes Axs quicker to learn, easier to use, and more interoperable with the rest of the React ecosystem.
+
+Axs also uses React to render inline style tags rather than adding custom DOM-related code,
+which makes using the library for server-side rendering work in the same way other React components do.
+This also means components can be rendered to other documents, such as in iframes,
+without the need for custom APIs or additional functionality.
 
 
 ### Related
