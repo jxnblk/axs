@@ -12,33 +12,43 @@ import Button from './Button'
 import Link from './Link'
 
 const App = props => (
-  <ThemeProvider theme={theme}>
-    <React.Fragment>
-      <Style css={basecss} />
-      <Box px={[ 4, 5 ]} py={3}>
-        <Logo size={256} />
-        <Heading>
-          Axs
-        </Heading>
-        <Text fontWeight={700} mb={4}>
-          Stupid simple style components for React
-        </Text>
-        <Pre mb={4}>npm i axs</Pre>
-        <Button
-          href='https://github.com/jxnblk/axs'
-          children='GitHub'
-        />
-      </Box>
-      <Box px={[ 4, 5 ]} py={3}>
-        <Pre children={example} />
-      </Box>
-      <Box is='footer' px={[ 4, 5 ]} py={3}>
-        <Link href='http://jxnblk.com'>
-          Made by Jxnblk
-        </Link>
-      </Box>
-    </React.Fragment>
-  </ThemeProvider>
+  <React.Fragment>
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
+    <title>Axs</title>
+    <meta name='description' content={description} />
+    <meta name='twitter:site' content='@jxnblk' />
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:title' content='Axs' />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content='http://jxnblk.com/axs/logo.png' />
+    <ThemeProvider theme={theme}>
+      <React.Fragment>
+        <Style css={basecss} />
+        <Box px={[ 4, 5 ]} py={3}>
+          <Logo size={256} />
+          <Heading>
+            Axs
+          </Heading>
+          <Text fontWeight={700} mb={4}>
+            {description}
+          </Text>
+          <Pre mb={4}>npm i axs</Pre>
+          <Button
+            href='https://github.com/jxnblk/axs'
+            children='GitHub'
+          />
+        </Box>
+        <Box px={[ 4, 5 ]} py={3}>
+          <Pre children={example} />
+        </Box>
+        <Box is='footer' px={[ 4, 5 ]} py={3}>
+          <Link href='http://jxnblk.com'>
+            Made by Jxnblk
+          </Link>
+        </Box>
+      </React.Fragment>
+    </ThemeProvider>
+  </React.Fragment>
 )
 
 const basecss = `
@@ -49,7 +59,7 @@ body {
   margin: 0;
 }
 `
-
+const description = 'Stupid simple style components for React'
 const example = `const Heading = props =>
   <Base.h2 {...props} css='color:tomato;' />`
 

@@ -8,7 +8,7 @@
     "prepublish": "babel src -d dist",
     "start": "x0 dev docs/App.js -o",
     "build": "x0 build docs/App.js --static -d docs",
-    "icon": "repng docs/Icon.js -w 1024 -h 512 -o docs -f icon",
+    "logo": "repng docs/Logo.js -w 768 -h 768 -o docs -f logo",
     "cover": "nyc report --reporter=html --reporter=lcov",
     "test": "nyc ava"
   },
@@ -34,6 +34,7 @@
     "nyc": "^11.4.1",
     "objss": "^1.0.3",
     "react-test-renderer": "^16.2.0",
+    "repng": "^1.0.1",
     "styled-system": "^1.1.1",
     "theming": "^1.3.0"
   },

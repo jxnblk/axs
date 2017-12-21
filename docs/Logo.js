@@ -27,7 +27,7 @@ const handle = [
 ].join(' ')
 
 const Logo = ({
-  size = 64,
+  size = 768,
   color = 'currentcolor',
   ...props
 }) =>
