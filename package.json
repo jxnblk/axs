@@ -1,20 +1,22 @@
 {
   "name": "axs",
-  "version": "2.0.0-1",
-  "description": "Responsive Typography & Layout for React",
+  "version": "4.0.0-0",
+  "description": "Stupid simple style components for React",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
-    "prepublish": "babel src --out-dir dist",
-    "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack -p --progress --colors",
-    "static": "static-react docs/App.js > docs/index.html",
-    "deploy": "gh-pages -d docs",
+    "prepublish": "babel src -d dist",
+    "start": "x0 dev docs/App.js -o",
+    "build": "x0 build docs/App.js --static -d docs",
     "icon": "repng docs/Icon.js -w 1024 -h 512 -o docs -f icon",
-    "test": "ava"
+    "cover": "nyc report --reporter=html --reporter=lcov",
+    "test": "nyc ava"
   },
   "keywords": [
     "react",
     "react-component",
+    "style",
+    "stylis",
     "ui",
     "css",
     "css-in-js"
@@ -22,76 +24,26 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.19.1",
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.5.1",
+    "@compositor/x0": "^3.0.2",
+    "ava": "^0.24.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.18.0",
-    "css-loader": "^0.28.4",
-    "funcup": "^1.0.0-0",
-    "gh-pages": "^0.12.0",
-    "palx": "^1.0.2",
-    "prismjs": "^1.6.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-live": "^1.5.3",
-    "react-test-renderer": "^15.5.4",
-    "react-x-ray": "^1.0.0-2",
-    "reaxe": "^1.0.0-1",
-    "reline": "^1.0.0-beta.3",
-    "repng": "^2.0.0-alpha.1",
-    "static-react": "^4.0.0-1",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "babel-register": "^6.26.0",
+    "nyc": "^11.4.1",
+    "react-test-renderer": "^16.2.0"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "glamor": "^2.20.25",
-    "prop-types": "^15.5.10"
+    "html-tags": "^2.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "stylis": "^3.4.5"
   },
   "ava": {
     "require": [
       "babel-register"
     ],
     "babel": "inherit"
-  },
-  "static-react": {
-    "title": "Axs",
-    "meta": [
-      {
-        "name": "charset",
-        "content": "utf-8"
-      },
-      {
-        "name": "viewport",
-        "content": "width=device-width,initial-scale=1"
-      },
-      {
-        "name": "description",
-        "content": "Responsive typography and layout toolkit for React"
-      },
-      {
-        "name": "twitter:card",
-        "content": "summary"
-      },
-      {
-        "name": "twitter:site",
-        "content": "@jxnblk"
-      },
-      {
-        "name": "og:title",
-        "content": "Axs"
-      },
-      {
-        "name": "og:image",
-        "content": "http://jxnblk.com/axs/icon.png"
-      }
-    ],
-    "scripts": [
-      "bundle.js"
-    ]
   }
 }
