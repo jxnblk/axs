@@ -41,7 +41,7 @@ const Heading = props =>
 
 ### Basic
 
-Create components by wrapping the Base component and passing props and `css` prop to add style.
+Create components by wrapping the Base component and passing props and a `css` prop to add style.
 
 ```jsx
 const Heading = props =>
@@ -99,7 +99,7 @@ const Heading = props =>
 ```
 
 When using the component, the underlying element can be changed on a per-instance basis using the `is` prop.
-This is especially helpful for ensuring the use of correct HTML semantics, while keep the styles decoupled.
+This is especially helpful for ensuring the use of correct HTML semantics, while keeping the styles decoupled.
 
 ```jsx
 <Heading is='h2'>
@@ -213,7 +213,8 @@ const html = renderToString(
 ### Pseudo-classes
 
 Since Axs uses [stylis][stylis] to parse strings to valid CSS,
-pseudo-classes can be added to components with a syntax like the following:
+pseudo-classes can be added to components with a syntax like the following.
+The `&` refers to the component's generated className.
 
 ```jsx
 const Link = props =>
@@ -279,13 +280,14 @@ import Base from 'axs'
 import { withTheme, ThemeProvider } from 'theming'
 import theme from './theme'
 
-const Heading = ({ color, theme, ...props }) =>
+const Heading = withTheme(({ color, theme, ...props }) =>
   <Base.h2
     {...props}
     css={`
       color: ${theme.blue};
     `}
   />
+)
 
 const App = props => (
   <ThemeProvider theme={theme}>
@@ -309,6 +311,13 @@ To change the underlying HTML element, pass a tag to the `is` prop or use one of
 ```jsx
 <Base
   is='h2'
+  css='color:tomato;'
+/>
+```
+
+```jsx
+// using a Base component key
+<Base.h2
   css='color:tomato;'
 />
 ```
