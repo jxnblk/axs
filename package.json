@@ -32,7 +32,10 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "nyc": "^11.4.1",
-    "react-test-renderer": "^16.2.0"
+    "objss": "^1.0.3",
+    "react-test-renderer": "^16.2.0",
+    "styled-system": "^1.1.1",
+    "theming": "^1.3.0"
   },
   "dependencies": {
     "html-tags": "^2.0.0",

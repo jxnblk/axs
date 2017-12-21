@@ -90,7 +90,7 @@ export class Base extends React.Component {
 }
 
 tags.forEach(tag => {
-  Base[tag] = props => <Base {...props} is={tag} />
+  Base[tag] = props => <Base is={tag} {...props} />
 })
 
 export default Base
