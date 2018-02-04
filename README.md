@@ -10,7 +10,7 @@ If you know React and you know CSS, you already know how to use this.
 [badge]: https://img.shields.io/travis/jxnblk/axs/master.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/axs
 
-![Axs](/docs/logo.png?raw=true)
+<img src='docs/logo.png?raw=true' width='256' height='256' />
 
 ```sh
 npm i axs
